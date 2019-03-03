@@ -147,11 +147,11 @@
   </header>
 
   <section class="post">
-    <p>#序言<br>在<a href="http://lanjiying.allenqin.com/2018/04/11/blockqian-yan/">Block前言</a>中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论</p>
-<table><br><br>  <tr><br>    <th width="35%," bgcolor="#eeeeee">类型</th><br>    <th width="35%," bgcolor="#eeeeee">查看源</th><br>    &lt;th width=”30%”, bgcolor=#eeeeee&gt;存储区域<br>  </tr><br> <tr><br>    <td>_NSConcreteGlobalBlock</td><br>    <td> .cpp文件/Block.h </td><br>    <td> 全局变量/静态变量区</td><br>  </tr><br>  <tr><br>    <td>_NSConcreteStackBlock </td><br>    <td> .cpp文件/Block.h</td><br>    <td> 栈区 </td><br>  </tr><br> <tr><br>    <td>_NSConcreteMallocBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteAutoBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteFinalizingBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteWeakBlockVariable </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br></table>
+    <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>在<a href="http://lanjiying.allenqin.com/2018/04/11/blockqian-yan/">Block前言</a>中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论</p>
+<table><br>  <tr><br>    <th width="35%," bgcolor="#eeeeee">类型</th><br>    <th width="35%," bgcolor="#eeeeee">查看源</th><br>    &lt;th width=”30%”, bgcolor=#eeeeee&gt;存储区域<br>  </tr><br> <tr><br>    <td>_NSConcreteGlobalBlock</td><br>    <td> .cpp文件/Block.h </td><br>    <td> 全局变量/静态变量区</td><br>  </tr><br>  <tr><br>    <td>_NSConcreteStackBlock </td><br>    <td> .cpp文件/Block.h</td><br>    <td> 栈区 </td><br>  </tr><br> <tr><br>    <td>_NSConcreteMallocBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteAutoBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteFinalizingBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteWeakBlockVariable </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br></table>
 
 <p>以上内容的查看在编译后的cpp文件以及runtime源码中都可以查看到相关信息<br><a href="https://github.com/yxy0720/YAObjectTest.git" target="_blank" rel="noopener">code已上传到Github,点击下载</a><br><a href="https://opensource.apple.com/source/objc4/objc4-680/runtime/" target="_blank" rel="noopener">runtime源码Apple官网</a><br><a href="https://github.com/yxy0720/objc-runtime" target="_blank" rel="noopener">runtime源码Github</a></p>
-<p>#特别注意点<br>Block前言中讲到默认创建的Block指针只有Global、Statck，其它四种是在运行时编译环境决定的，此根据也是根据runtime源码和注释得出结论。</p>
+<h1 id="特别注意点"><a href="#特别注意点" class="headerlink" title="特别注意点"></a>特别注意点</h1><p>Block前言中讲到默认创建的Block指针只有Global、Statck，其它四种是在运行时编译环境决定的，此根据也是根据runtime源码和注释得出结论。</p>
 <pre><code class="cpp">// the raw data space for runtime classes for blocks
 // class+meta used for stack, malloc, and collectable based blocks
 BLOCK_EXPORT void * _NSConcreteMallocBlock[32]
@@ -164,8 +164,8 @@ BLOCK_EXPORT void * _NSConcreteWeakBlockVariable[32]
     __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
 </code></pre>
 <p>从以上runtime源码和注释中我们可以很好的解释该6种Block在Mac和iOS系统中都会出现，除Global、Statck，其它四种是在运行时编译环境决定。</p>
-<p>#每种Block出现的情况<br>（最好复习一下基本数据结构）</p>
-<p>##_NSConcreteGlobalBlock<br>在以下情况下，Block为GlobalBlock (根据赋值情况会决定存储静态区的静态变量区域还是全局变量区域)<br><strong>1.Block声明为全局变量<br>2.函数区域内Block语法表达式没有使用外部变量<br>3.Block内部只引用了内部传递值或只引用了静态变量或全局变量</strong></p>
+<h1 id="每种Block出现的情况"><a href="#每种Block出现的情况" class="headerlink" title="每种Block出现的情况"></a>每种Block出现的情况</h1><p>（最好复习一下基本数据结构）</p>
+<h2 id="NSConcreteGlobalBlock"><a href="#NSConcreteGlobalBlock" class="headerlink" title="_NSConcreteGlobalBlock"></a>_NSConcreteGlobalBlock</h2><p>在以下情况下，Block为GlobalBlock (根据赋值情况会决定存储静态区的静态变量区域还是全局变量区域)<br><strong>1.Block声明为全局变量<br>2.函数区域内Block语法表达式没有使用外部变量<br>3.Block内部只引用了内部传递值或只引用了静态变量或全局变量</strong></p>
 <p>第一种情况好理解,一般我们声明的全局变量都会放在静态区,当Block被声明为全局变量时也会存放在静态区域<br>如下将Block声明为全局变量,查看编译后的cpp文件,找到对应的编译代码<br>源码:</p>
 <pre><code>#import &quot;BlockObject.h&quot;
 #import &lt;objc/runtime.h&gt;
@@ -209,7 +209,7 @@ blockStatic blk = ^(){
 <hr>
 <p>解惑：第二种情况和第三种情况我们最终查看的是输出情况，而不是clang后的源文件。查看clang后的源文件该两种情况得到的是StackBlock。编译器根据编译特性会把后两种情况默认编译后定义为StackBlock，但是我们知道OC是动态语言，所以最终还是以运行时或最终输出结果为准。</p>
 <hr>
-<p>#_NSConcreteStackBlock<br><strong>1.使用到外部局部变量、成员属性变量（非静态变量值）&amp; 2.未使用strong或copy修饰符修饰</strong><br><strong>以上条件缺一不可，只有这两个条件同时成立时，Block才为_NSConcreteStackBlock</strong><br>如果在函数内，Block只是引用了外部局部变量或成员属性变量，最终会被copy到堆上变为MallocBlock。而对于声明为属性的Block，如果修饰符为strong或copy，则也会copy到堆上，而不是StackBlock。<br>查看以下代码的最终输出（不能同时满足上述两种条件的情况下）</p>
+<h1 id="NSConcreteStackBlock"><a href="#NSConcreteStackBlock" class="headerlink" title="_NSConcreteStackBlock"></a>_NSConcreteStackBlock</h1><p><strong>1.使用到外部局部变量、成员属性变量（非静态变量值）&amp; 2.未使用strong或copy修饰符修饰</strong><br><strong>以上条件缺一不可，只有这两个条件同时成立时，Block才为_NSConcreteStackBlock</strong><br>如果在函数内，Block只是引用了外部局部变量或成员属性变量，最终会被copy到堆上变为MallocBlock。而对于声明为属性的Block，如果修饰符为strong或copy，则也会copy到堆上，而不是StackBlock。<br>查看以下代码的最终输出（不能同时满足上述两种条件的情况下）</p>
 <pre><code>@interface BlockObject()
 
 @property (nonatomic, strong)void(^proBlock)(void);
@@ -238,7 +238,7 @@ blockStatic blk = ^(){
 <pre><code>YAObjectTest[10461:1384618] &lt;__NSMallocBlock__: 0x60400025d1f0&gt;
 YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
 </code></pre><p>所以，<strong>在引用了外部变量并且没有强指针引用的情况下的Block为_NSConcreteStackBlock</strong>。</p>
-<p>#_NSConcreteMallocBlock<br>1.引用了外部变量，有strong或copy修饰符修饰<br>2.block内部需要修改引用变量的值，外部变量被<strong>block修饰<br>第一种情况在求证StackBlock的情况下已经得到验证，有strong或copy修饰后并且引用了外部变量的情况下，为** &lt;</strong>NSMallocBlock__: 0x6040002557b0&gt;**<br>有关第二种情况，在该文只做验证，后续深入解析，详见Block截获变量中的__block修饰符深入解析</p>
+<h1 id="NSConcreteMallocBlock"><a href="#NSConcreteMallocBlock" class="headerlink" title="_NSConcreteMallocBlock"></a>_NSConcreteMallocBlock</h1><p>1.引用了外部变量，有strong或copy修饰符修饰<br>2.block内部需要修改引用变量的值，外部变量被<strong>block修饰<br>第一种情况在求证StackBlock的情况下已经得到验证，有strong或copy修饰后并且引用了外部变量的情况下，为** &lt;</strong>NSMallocBlock__: 0x6040002557b0&gt;**<br>有关第二种情况，在该文只做验证，后续深入解析，详见Block截获变量中的__block修饰符深入解析</p>
 <pre><code>    __block int a = 0;
     void (^lockBlock)(void) = ^{
         a++;
@@ -251,8 +251,8 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
 <hr>
 <p>接下来的三种类型Block，因对有GC回收机制的语言不是太熟悉，在Xcode中编写的C++代码 最终查看运行时的isa指针皆为—NSStackBlock，在Xcode中并没有按照预想的查看到以下三种类型，Terminal终端g++ 编译后的可执行文件也未见以下类型，查阅资料发现以下三种出现的情况大致如下，若有对C++ 熟悉的人员 ，请不吝赐教😉</p>
 <hr>
-<p>#_NSConcreteFinalizingBlock<br>.Block需要copy到堆上，但是Block内部有ctors 和 dtors时，block会是NSFinalizingBlock</p>
-<p>#_NSConcreteAutoBlock<br>.Block需要copy到堆上若未引用到ctors和 dtors 则是NSAutoBlock<br>以上是AutoBlock和FinalizingBlock的出现情况。而对于ctors和dtors，<br>ctors中保存着程序全部构造函数的指针数组，dtors中保存着程序全部析构函数的指针数组，从两者的存储内容来看，若block引用了该两种类型，势必block会在程序运行结束时回收内存，所以会被转换为FinalizingBlock，而未引用的block则会根据情况自动回收，转换为AutoBlock。</p>
+<h1 id="NSConcreteFinalizingBlock"><a href="#NSConcreteFinalizingBlock" class="headerlink" title="_NSConcreteFinalizingBlock"></a>_NSConcreteFinalizingBlock</h1><p>.Block需要copy到堆上，但是Block内部有ctors 和 dtors时，block会是NSFinalizingBlock</p>
+<h1 id="NSConcreteAutoBlock"><a href="#NSConcreteAutoBlock" class="headerlink" title="_NSConcreteAutoBlock"></a>_NSConcreteAutoBlock</h1><p>.Block需要copy到堆上若未引用到ctors和 dtors 则是NSAutoBlock<br>以上是AutoBlock和FinalizingBlock的出现情况。而对于ctors和dtors，<br>ctors中保存着程序全部构造函数的指针数组，dtors中保存着程序全部析构函数的指针数组，从两者的存储内容来看，若block引用了该两种类型，势必block会在程序运行结束时回收内存，所以会被转换为FinalizingBlock，而未引用的block则会根据情况自动回收，转换为AutoBlock。</p>
 <p>以下是写在cpp文件中的代码</p>
 <pre><code>void testAutoBlock(){
   int * b=new int[4];
@@ -267,7 +267,7 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
     };
     std::cout&lt;&lt;myBlock&lt;&lt;std::endl;
    }；
-</code></pre><p>#_NSConcreteWeakBlockVariable<br>.GC回收机制下，用_weak 或<strong>block修饰的block 会转变成NSWeakBlockVariable<br>具体的对于</strong>weak 和__blcok修饰符，在后面截获变量和循环引用中具体详解。<br>以上是个人对于Block类型和存储区域的总结。中间为探究后三种类型浪费了很多时间，导致文章延迟。</p>
+</code></pre><h1 id="NSConcreteWeakBlockVariable"><a href="#NSConcreteWeakBlockVariable" class="headerlink" title="_NSConcreteWeakBlockVariable"></a>_NSConcreteWeakBlockVariable</h1><p>.GC回收机制下，用_weak 或<strong>block修饰的block 会转变成NSWeakBlockVariable<br>具体的对于</strong>weak 和__blcok修饰符，在后面截获变量和循环引用中具体详解。<br>以上是个人对于Block类型和存储区域的总结。中间为探究后三种类型浪费了很多时间，导致文章延迟。</p>
 
   </section>
 
@@ -289,7 +289,7 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
 #截获变量的值这一
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-05-07T10:25:14.131Z" class="post-list__meta--date date">2018-05-07</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/05/07/Block自动截获变量/">more</a></div>
+                <div class="post-list__meta"><time datetime="2018-05-07T10:25:14.131Z" class="post-list__meta--date date">2018-05-07</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/05/07/Block自动截获变量/">Read more</a></div>
                            
             </div>
         
@@ -297,14 +297,18 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">Older Post</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/04/06/Block实质/" title></a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/04/08/About Me/" title></a></h2>
                 <p class="excerpt">
                 
-                #序言《Block前言》中讲到，Block是对C语言的扩充，Block为带有自动变量（局部变量）的匿名函数。查看源码得知OC中，Block是作为对象存在。该篇文章针对这两点展开细节。
-#Block为带有自动变量（局部变量）的匿名函数接下来，根据clang命令clang -rewrite-objc B
+                
+Angelia  （AKA:滢姐、经理）
+
+初入江湖、涉世未深，不忘初心、一路前行
+MarathonerI am a half-marathoner. A half-marathoner who is not the best ,but I try my best to run better.
+F
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-04-06T12:35:45.000Z" class="post-list__meta--date date">2018-04-06</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/04/06/Block实质/">more</a></div>
+                <div class="post-list__meta"><time datetime="2018-04-08T06:46:26.000Z" class="post-list__meta--date date">2018-04-08</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/04/08/About Me/">Read more</a></div>
                        
             </div>
         
