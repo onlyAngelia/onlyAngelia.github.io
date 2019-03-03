@@ -34,8 +34,6 @@
 
     <meta name="generator" content="hexo"/>
     
-    <link rel="alternate" type="application/rss+xml" title="一世温良" href="/atom.xml">
-    
 
     <link rel="canonical" href="http://lanjiying.allenqin.com/2018/04/10/Block类型及内存区域/"/>
 
@@ -71,11 +69,9 @@
             <ul class="navigation">
               <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">Blog</a></li>
             
-              <li class="navigation__item"><a href="/favourite">黄金屋</a></li>
+              <li class="navigation__item"><a href="/favourite">插画</a></li>
             
-              <li class="navigation__item"><a href="/favourite/time.html">时光机</a></li>
-            
-              <li class="navigation__item"><a href="/favourite/image.html">幻想间</a></li>
+              <li class="navigation__item"><a href="/favourite/time.html">写作</a></li>
             
               <li class="navigation__item"><a href="/aboutme">关于我</a></li>
             
@@ -88,11 +84,18 @@
 
   <!-- Weibo-->
   
+  <li class="navigation__item">
+    <a href="https://weibo.com/u/2683037683" title="Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
 
   <!-- Github -->
   
   <li class="navigation__item">
-    <a href="https://github.com/monniya" title="GitHub" target="_blank">
+    <a href="https://github.com/onlyAngelia" title="GitHub" target="_blank">
       <i class="social fa fa-github"></i>
       <span class="label">Github</span>
     </a>
@@ -110,21 +113,7 @@
   
 <!-- Twitter -->
 
-  <li class="navigation__item">
-    <a href="https://twitter.com/onlymonniya" title="Twitter" target="_blank">
-      <i class="social fa fa-twitter"></i>
-      <span class="label">Twitter</span>
-    </a>
-  </li>
-
   
-
-  <li class="navigation__item">
-    <a href="/atom.xml" title="RSS" target="_blank">
-      <i class="social fa fa-rss"></i>
-      <span class="label">RSS</span>
-    </a>
-  </li>
 
 
 
@@ -159,7 +148,7 @@
 
   <section class="post">
     <p>#序言<br>在<a href="http://lanjiying.allenqin.com/2018/04/11/blockqian-yan/">Block前言</a>中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论</p>
-<table><br>  <tr><br>    <th width="35%," bgcolor="#eeeeee">类型</th><br>    <th width="35%," bgcolor="#eeeeee">查看源</th><br>    &lt;th width=”30%”, bgcolor=#eeeeee&gt;存储区域<br>  </tr><br> <tr><br>    <td>_NSConcreteGlobalBlock</td><br>    <td> .cpp文件/Block.h </td><br>    <td> 全局变量/静态变量区</td><br>  </tr><br>  <tr><br>    <td>_NSConcreteStackBlock </td><br>    <td> .cpp文件/Block.h</td><br>    <td> 栈区 </td><br>  </tr><br> <tr><br>    <td>_NSConcreteMallocBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteAutoBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteFinalizingBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteWeakBlockVariable </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br></table>
+<table><br><br>  <tr><br>    <th width="35%," bgcolor="#eeeeee">类型</th><br>    <th width="35%," bgcolor="#eeeeee">查看源</th><br>    &lt;th width=”30%”, bgcolor=#eeeeee&gt;存储区域<br>  </tr><br> <tr><br>    <td>_NSConcreteGlobalBlock</td><br>    <td> .cpp文件/Block.h </td><br>    <td> 全局变量/静态变量区</td><br>  </tr><br>  <tr><br>    <td>_NSConcreteStackBlock </td><br>    <td> .cpp文件/Block.h</td><br>    <td> 栈区 </td><br>  </tr><br> <tr><br>    <td>_NSConcreteMallocBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteAutoBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteFinalizingBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteWeakBlockVariable </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br></table>
 
 <p>以上内容的查看在编译后的cpp文件以及runtime源码中都可以查看到相关信息<br><a href="https://github.com/yxy0720/YAObjectTest.git" target="_blank" rel="noopener">code已上传到Github,点击下载</a><br><a href="https://opensource.apple.com/source/objc4/objc4-680/runtime/" target="_blank" rel="noopener">runtime源码Apple官网</a><br><a href="https://github.com/yxy0720/objc-runtime" target="_blank" rel="noopener">runtime源码Github</a></p>
 <p>#特别注意点<br>Block前言中讲到默认创建的Block指针只有Global、Statck，其它四种是在运行时编译环境决定的，此根据也是根据runtime源码和注释得出结论。</p>
@@ -300,7 +289,7 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
 #截获变量的值这一
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-05-07T10:25:14.131Z" class="post-list__meta--date date">2018-05-07</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/05/07/Block自动截获变量/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2018-05-07T10:25:14.131Z" class="post-list__meta--date date">2018-05-07</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/05/07/Block自动截获变量/">more</a></div>
                            
             </div>
         
@@ -315,7 +304,7 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
 #Block为带有自动变量（局部变量）的匿名函数接下来，根据clang命令clang -rewrite-objc B
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-04-06T12:35:45.000Z" class="post-list__meta--date date">2018-04-06</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/04/06/Block实质/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2018-04-06T12:35:45.000Z" class="post-list__meta--date date">2018-04-06</time> &#8226; <span class="post-list__meta--tags tags">于 </span><a class="btn-border-small" href="/2018/04/06/Block实质/">more</a></div>
                        
             </div>
         
