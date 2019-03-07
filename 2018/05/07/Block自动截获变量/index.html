@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>Block实质 | 温凉</title>
+    <title>Block自动截获变量 | 温凉</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Block实质 | 温凉">
+    <meta name="twitter:title" content="Block自动截获变量 | 温凉">
     <meta name="twitter:description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Block实质 | 温凉">
+    <meta property="og:title" content="Block自动截获变量 | 温凉">
     <meta property="og:description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
 
     
@@ -141,11 +141,11 @@
       </span> 
    
     </div>
-    <h1 class="post-title">Block实质</h1>
+    <h1 class="post-title">Block自动截获变量</h1>
   </header>
 
   <section class="post">
-    <h1 id="《Block自动截获变量》"><a href="#《Block自动截获变量》" class="headerlink" title="《Block自动截获变量》"></a>《Block自动截获变量》</h1><p><a href="https://onlyangelia.github.io/2018/04/06/Block前言/" target="_blank" rel="noopener">《Block前言》</a>中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况</p>
+    <p><a href="https://onlyangelia.github.io/2018/04/06/Block前言/" target="_blank" rel="noopener">《Block前言》</a>中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况</p>
 <p><strong><br>1.截获变量的值<br>2.截获对象,将对象指针传递进去<br>3.将变量拷贝到堆区域，并持有变量<br>4.截获变量内存地址
 </strong><br>现针对以上内容进行详细分析。</p>
 <h1 id="截获变量的值"><a href="#截获变量的值" class="headerlink" title="截获变量的值"></a>截获变量的值</h1><p>这一情况主要发生在<br>1.<strong>对基本数据类型的引用</strong>（局部参数）<br>其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前的变量的瞬间值，唯一不同的是如果是Object类型，Block会多一步copy操作。先来看基本数据常量</p>
@@ -259,8 +259,8 @@ myBlock-&gt;impl.Flags = 570425344;
                 <h2 class="post-list__post-title post-title"><a href="/2018/04/10/Block类型及内存区域/" title="Block类型及内存区域">Block类型及内存区域</a></h2>
                 <p class="excerpt">
                 
-                《Block类型及内存区域》在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论
-      类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态
+                在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论
+      类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NS
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-04-10T14:55:08.000Z" class="post-list__meta--date date">2018-04-10</time> &#8226; <span class="post-list__meta--tags tags">于 

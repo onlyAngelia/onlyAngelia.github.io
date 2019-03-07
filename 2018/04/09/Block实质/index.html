@@ -145,7 +145,7 @@
   </header>
 
   <section class="post">
-    <h1 id="《Block实质》"><a href="#《Block实质》" class="headerlink" title="《Block实质》"></a>《Block实质》</h1><p><a href="https://onlyangelia.github.io/2018/04/06/Block前言/" target="_blank" rel="noopener">《Block前言》</a>中讲到，<strong>Block</strong>是对C语言的扩充，<strong>Block为带有自动变量（局部变量）的匿名函数</strong>。查看源码得知OC中，<strong>Block是作为对象存在</strong>。该篇文章针对这两点展开细节。</p>
+    <p><a href="https://onlyangelia.github.io/2018/04/06/Block前言/" target="_blank" rel="noopener">《Block前言》</a>中讲到，<strong>Block</strong>是对C语言的扩充，<strong>Block为带有自动变量（局部变量）的匿名函数</strong>。查看源码得知OC中，<strong>Block是作为对象存在</strong>。该篇文章针对这两点展开细节。</p>
 <p>#Block为带有自动变量（局部变量）的匿名函数<br>接下来，根据clang命令<code>clang -rewrite-objc BlockObject.m</code> 得到的cpp文件查看Block具体的结构<a href="https://github.com/onlyAngelia/YAObjectTest.git" target="_blank" rel="noopener">code已上传到Github,点击下载</a></p>
 <pre><code class="objc:n"> void (^lockBlock)(void) = ^{ };
  lockBlock();
@@ -234,8 +234,8 @@ void conclusion = (*funcptr)(100);
                 <h2 class="post-list__post-title post-title"><a href="/2018/04/10/Block类型及内存区域/" title="Block类型及内存区域">Block类型及内存区域</a></h2>
                 <p class="excerpt">
                 
-                《Block类型及内存区域》在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论
-      类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态
+                在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论
+      类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NS
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-04-10T14:55:08.000Z" class="post-list__meta--date date">2018-04-10</time> &#8226; <span class="post-list__meta--tags tags">于 
@@ -251,8 +251,7 @@ void conclusion = (*funcptr)(100);
                 <h2 class="post-list__post-title post-title"><a href="/2018/04/08/Block前言/" title="Block前言">Block前言</a></h2>
                 <p class="excerpt">
                 
-                《Block前言》
-Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Blo
+                Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入
                 &hellip;
                 </p>
                 <div class="post-list__meta"><time datetime="2018-04-08T14:55:08.000Z" class="post-list__meta--date date">2018-04-08</time> &#8226; <span class="post-list__meta--tags tags">于 
