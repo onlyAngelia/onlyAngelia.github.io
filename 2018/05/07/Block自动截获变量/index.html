@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-    <title>温凉 | 不念过往、不负当下、不畏将来</title>
+    <title>Block实质 | 温凉</title>
     <meta name="renderer" content="webkit">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -15,11 +15,11 @@
     <meta name="description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="温凉 | 不念过往、不负当下、不畏将来">
+    <meta name="twitter:title" content="Block实质 | 温凉">
     <meta name="twitter:description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="温凉 | 不念过往、不负当下、不畏将来">
+    <meta property="og:title" content="Block实质 | 温凉">
     <meta property="og:description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
 
     
@@ -133,13 +133,15 @@
 
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2018-05-07T10:25:14.131Z" class="post-list__meta--date date">2018-05-07</time> &#8226; <span class="post-meta__tags tags">于  </span>
+      <time datetime="2018-05-07T14:55:08.000Z" class="post-list__meta--date date">2018-05-07</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="/tags/Objective-C-Block/">Objective-C/Block</a>
+ </span>
       <span class="page-pv">
        Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
       </span> 
    
     </div>
-    <h1 class="post-title"></h1>
+    <h1 class="post-title">Block实质</h1>
   </header>
 
   <section class="post">
@@ -254,16 +256,16 @@ myBlock-&gt;impl.Flags = 570425344;
                
             <div class="read-more-item">
                 <span class="read-more-item-dim">Older Post</span>
-                <h2 class="post-list__post-title post-title"><a href="/2018/04/18/Block前言/" title="Block前言">Block前言</a></h2>
+                <h2 class="post-list__post-title post-title"><a href="/2018/04/10/Block类型及内存区域/" title="Block类型及内存区域">Block类型及内存区域</a></h2>
                 <p class="excerpt">
                 
-                《Block前言》
-Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Blo
+                《Block类型及内存区域》在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论
+      类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态
                 &hellip;
                 </p>
-                <div class="post-list__meta"><time datetime="2018-04-18T14:55:08.000Z" class="post-list__meta--date date">2018-04-18</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="/tags/Objective-C/">Objective-C</a>
-</span><a class="btn-border-small" href="/2018/04/18/Block前言/">继续阅读</a></div>
+                <div class="post-list__meta"><time datetime="2018-04-10T14:55:08.000Z" class="post-list__meta--date date">2018-04-10</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="/tags/Objective-C-Block/">Objective-C/Block</a>
+</span><a class="btn-border-small" href="/2018/04/10/Block类型及内存区域/">继续阅读</a></div>
                        
             </div>
         
@@ -285,7 +287,26 @@ Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰
          </span>
        
     
+  
+         <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
     
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+   
 </footer>
 
 
