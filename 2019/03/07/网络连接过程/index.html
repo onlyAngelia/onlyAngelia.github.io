@@ -147,7 +147,7 @@
   <section class="post">
     <p>在<strong>TCP/IP五层模型</strong>下，通过在浏览器中浏览网页，我们来梳理下网络的连接过程。比如，我们在浏览器输入：<a href="https://onlyAnglia.github.io" target="_blank" rel="noopener">https://onlyAnglia.github.io</a> ，按下回车，到浏览器中显示出博客内容中间经历了哪些过程？先简单的讲下HTTP的连接，再在HTTP的基础上补充HTTPS的连接。</p>
 <p>讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过DHCP协议动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我们的电脑会有对应的唯一的MAC地址（MAC全称：Media Access Control，媒体访问控制），发送网络包，目标地址既要包括IP地址，也要包含MAC地址。IP地址类似于住址，MAC地址类似于身份证，两者缺一不可。IP地址和MAC地址的映射可以通过APR协议查询。</p>
-<p>记住IP地址和MAC地址这两个概念，接下来看一下网络的连接。整体的传输流程如下：<br><img src="https://github.com/onlyAngelia/onlyAngelia.github.io/blob/master/images/TCP:IP五层模型数据传输.png" alt><br>首先，机器和人不一样，并不能识别我们能熟记的域名，机器只认IP地址，所以<br>step1：进行DNS解析，（DNS解析过程比较复杂，会专门写一篇文章介绍DNS解析）使用一般地址簿或比较精准的地址簿查找协议HTTPDNS，得到域名对应的IP地址。</p>
+<p>记住IP地址和MAC地址这两个概念，接下来看一下网络的连接。整体的传输流程如下：<br><a href="https://github.com/onlyAngelia/onlyAngelia.github.io/blob/master/images/TCP:IP五层模型数据传输.png" target="_blank" rel="noopener"></a><br>首先，机器和人不一样，并不能识别我们能熟记的域名，机器只认IP地址，所以<br>step1：进行DNS解析，（DNS解析过程比较复杂，会专门写一篇文章介绍DNS解析）使用一般地址簿或比较精准的地址簿查找协议HTTPDNS，得到域名对应的IP地址。</p>
 <p>step2：经过应用层包装，使用HTTPS协议进行查找<br>step3：将应用层的包交给下一层，即传输层，传输层常用的协议有TCP或UDP<br>step4：传输层包装完毕，交给网络层，网络层协议常用的有IP协议<br>step5：网络层将IP包交给MAC层，网关再将包发出去<br>step6：查询路由表，通过路由协议进行网络传输<br>step7：找到目的IP地址后，取下MAC头，将IP包发送给目的主机的网络层，检查IP地址是否对上<br>step8：IP对上之后，将包传递给传输层，TCP发确认包，会延刚才的方向报平安，直到收到平安到达的回复，进行TCP握手<br>step9：TCP收到回复后，进行目的端口匹配，将包内容传给浏览器正在监听的端口号，RPC统筹处理请求，告诉相关进程<br>step10：RPC处理完毕，会回复一个HTTP/HTTPS包告知操作成功，像发起请求的过程一样，原路返回浏览器，浏览器接收显示结果。</p>
 
   </section>
