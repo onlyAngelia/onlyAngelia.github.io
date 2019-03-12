@@ -151,7 +151,7 @@
 <p>首先，机器和人不一样，并不能识别我们能熟记的域名，机器只认IP地址，所以<br><strong>step1：进行DNS解析，得到域名对应的IP地址</strong>（DNS解析过程比较复杂，会专门写一篇文章介绍DNS解析）使用一般地址簿或比较精准的地址簿查找协议HTTPDNS。</p>
 <p><strong>step2：经过应用层包装，使用HTTP协议进行查找</strong></p>
 <p><strong>step3：将应用层的包交给下一层，即传输层，传输层常用的协议有TCP或UDP</strong></p>
-<p><strong>step4：传输层包装完毕，交给网络层</strong><br>  网络层的第一个任务是封装IP头，将应用层传输过来的TCP或UDP报文进行封装，形成IP报文，</p>
+<p><strong>step4：传输层包装完毕，交给网络层</strong><br>  网络层的第一个任务是封装IP头，将应用层传输过来的TCP或UDP报文进行封装，形成IP报文。传输层TCP或UDP协议的报文首部中包含了源端口号、目的端口号，在网络层IP协议要将源地址、目的地址包装在IP报文中。</p>
 <p><strong>step5：网络层将IP包交给下一层，网关再将包发出去</strong></p>
 <p><strong>step6：查询路由表，通过路由协议进行网络传输</strong></p>
 <p><strong>step7：找到目的IP地址后，取下MAC头，将IP包发送给目的主机的网络层，检查IP地址是否对上</strong></p>
