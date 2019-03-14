@@ -168,8 +168,12 @@
 <p><strong>step10：TCP收到回复后，进行目的端口匹配，将包内容传给HTTP服务，RPC统筹处理请求，告诉相关进程</strong></p>
 <p><strong>TCP</strong>三次握手完成后，进行目的端口匹配，之后将包内容传给上层的<strong>HTTP服务</strong>，<strong>RPC</strong>统筹处理，告诉相关进程（<strong>Soket</strong>可能是进程在维护也可能是线程在维护监听，并且<strong>TCP</strong>往往会创立两个<strong>Socket</strong>，一个叫做就<strong>监听Socket</strong>，一个是<strong>已连接Socket</strong>，这里不详细讲述)。</p>
 <p><strong>step11：RPC处理完毕，会回复一个HTTP/HTTPS包告知操作成功，准备向接收端传输处理结果</strong></p>
-<p>在RPC处理完毕后，目的主机开始向接收方发送数据。在连接建立的时候，两方已商定起始ID，但数据的发送不是一个发送完等回复后再发送另一个，而是通过累计确认或者叫累计应答（cumulative acknowledgment）的模式进行传输，即在应答某个之前的ID表示都收到了。这样TCP需要双方有缓存进行记录，发送方的记录分四部分：第一部分是发送了并且已确认，第二部分是发送了并且尚未确认，第三部分是没有发送但在等待发送，第四部分是没有发送暂时也不会发送。第一部分和第二部分的分界线是lastByteAcked，第二部分和第三部分的分界线是lastByteSent，整个第二部分和第三部分的和叫Advertised window ，也就是我们说的接收窗口。 浏览器作为接收端在TCP报文里是会告诉发送端这个窗口大小的，超过了这个窗口的包，接收端无法接收就会丢弃。（有关接收方的窗口说明详情可自行查询）</p>
-<p><strong>step 12: TCP慢启动，进行数据传输，并随时监测窗口大小进行流量控制和拥塞控制</strong><br>刚<br><strong>step 13: 数据传输完成，进行连接终端，挥手说再见</strong></p>
+<p>在<strong>RPC</strong>处理完毕后，目的主机开始向接收方发送数据。在连接建立的时候，两方已商定<strong>起始ID</strong>，但数据的发送不是一个发送完等回复后再发送另一个，而是通过<strong>累计确认</strong>或者叫<strong>累计应答（cumulative acknowledgment）</strong> 的模式进行传输，即在应答某个之前的ID表示都收到了。这样<strong>TCP</strong>需要双方有缓存进行记录，发送方的记录分四部分：第一部分是<strong>发送了并且已确认</strong>，第二部分是<strong>发送了并且尚未确认</strong>，第三部分是<strong>没有发送但在等待发送</strong>，第四部分是<strong>没有发送暂时也不会发送</strong>。第一部分和第二部分的分界线是<strong>lastByteAcked</strong>，第二部分和第三部分的分界线是<strong>lastByteSent</strong>，整个第二部分和第三部分的和 <strong>Advertised window</strong> 。 浏览器作为接收端在TCP报文里是会告诉发送端这个窗口大小的，超过了这个窗口的包，接收端无法接收就会丢弃。（有关接收方的窗口说明详情可自行查询）</p>
+<p><strong>step 12: TCP慢启动，之后开始进行数据传输，并随时监测窗口大小进行流量控制和拥塞控制</strong><br>刚</p>
+<p>虽然浏览器作为接收方告诉了发送方窗口大小，但网络是瞬息万变的，也许这会网络变差了或者网段了，那么TCP在一开始的时候，为了避免造成通道容量溢出，一条TCP连接后，设置只能发送一个报文段cwnd（congestion window 拥塞窗口）设置为1，在收到一个确认后，cwnd加一，一次能够发送两个，当这两个报文段的确认到来的时候，每个cwnd都加一，这样两个cwnd就加二，一次就能发四个，开始呈现指数级增长。当一次发送超过ssthresh的值时代表快要溢出，此时cwnd改为增加1/cwnd，一轮下来增长一个……这是有关传输过程中的拥塞控制，关于拥塞控制仍有一些问题存在，具体的流程可自查询相关的流量控制和拥塞控制。</p>
+<p><strong>step 13:接收方浏览器接收到数据后，开始进行处理</strong></p>
+<p><strong>step 14: 数据传输完成，进行连接终端，挥手说再见</strong></p>
+<p>数据终于传输完成，到了该断开的时候，</p>
 
   </section>
 
