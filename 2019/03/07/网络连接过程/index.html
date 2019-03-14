@@ -149,8 +149,8 @@
 <p> 在<strong>TCP/IP五层模型</strong>下，通过在浏览器中浏览网页，我们来梳理下网络的连接过程。比如，我们在浏览器输入：<a href="https://onlyAnglia.github.io" target="_blank" rel="noopener">https://onlyAnglia.github.io</a> ，按下回车，到浏览器中显示出博客内容中间经历了哪些过程？先简单的讲下HTTP的连接，再在HTTP的基础上补充HTTPS的连接。当然应用层还有许多协议，例如RTMP、QUIC、GTP等，有基于TCP的，也有基于UDP的。这里举例用基于TCP的HTTP协议，有关传输层常用的协议UDP 和 TCP连接不同和详细的连接过程，后面会单独写解释,接下来看一下网络的连接。</p>
 <p>  整体的传输流程如下：<br><img src="/2019/03/07/网络连接过程/TCP-IP五层模型数据传输.png" alt></p>
 <p>  首先，机器和人不一样，并不能识别我们能熟记的域名，机器只认IP地址，所以</p>
-<p>  <strong>step1：进行DNS解析，得到域名对应的IP地址</strong>（DNS解析过程比较复杂，会专门写一篇文章介绍DNS解析）使用一般地址簿或比较精准的地址簿查找协议HTTPDNS。</p>
-<p>  <strong>step2：经过应用层包装，使用HTTP协议进行查找</strong></p>
+<p>  <strong>step1：进行DNS解析，得到域名对应的IP地址</strong><br>     浏览器先在<strong>本地DNS</strong>缓存中查找onlyAnglia.github.io 对应的IP地址，若找到则返回对应的IP；倘若<strong>本地DNS缓存</strong>中未查找到域名对应的IP地址，则接下来会像<strong>本地DNS服务器</strong>询问（如果是通过DHCP配置，本地DNS服务器由对应的网络服务商（ISP）自动分配），如果找到就直接返回IP地址；若没有找到，<strong>本地DNS服务器</strong>会向它的<strong>根域名服务器</strong>询问</p>
+<p>  <strong>step2：使用HTTP协议，经过应用层包装</strong></p>
 <p><strong>step3：将应用层的包交给下一层，即传输层，传输层常用的协议有TCP或UDP</strong></p>
 <p><strong>step4：传输层包装完毕，交给网络层</strong><br>  网络层的第一个任务是封装IP头，将应用层传输过来的TCP或UDP报文进行封装，形成IP报文。传输层TCP或UDP协议的报文首部中包含了源端口号、目的端口号，在网络层IP协议要将源地址、目的地址包装在IP报文中。</p>
 <p><strong>step5：网络层将IP包交给下一层，网关再将包发出去</strong></p>
