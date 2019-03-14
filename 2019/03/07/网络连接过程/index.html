@@ -152,9 +152,9 @@
 <p>  <strong>step1：进行DNS解析，得到域名对应的IP地址</strong>(DNS解析比较复杂，这里只说下一般流程，有关<strong>负载均衡</strong>等暂且不提)</p>
 <p>浏览器先在<strong>本地DNS</strong>缓存中查找onlyAnglia.github.io 对应的IP地址，若找到则返回对应的IP；倘若<strong>本地DNS缓存</strong>中未查找到域名对应的IP地址，则接下来会像<strong>本地DNS服务器</strong>询问（如果是通过<strong>DHCP</strong>配置，<strong>本地DNS服务器</strong>由对应的 <strong>网络服务商（ISP</strong>自动分配），如果找到就直接返回IP地址；若没有找到，<strong>本地DNS服务器</strong>会向它的<strong>根域名服务器</strong>询问,<strong>根域名服务器</strong>会告诉<strong>本地DNS服务器</strong>该向哪个<strong>顶级域名服务器</strong>询问，之后<strong>顶级域名服务器</strong>会告诉<strong>本地DNS服务器</strong>该向哪个<strong>权威域名服务器</strong>询问；接下来<strong>本地DNS服务器</strong>会找到对应的<strong>权威域名服务器</strong>查询对应的IP地址，<strong>权威服务器</strong>将对应的IP地址告诉<strong>本地DNS服务器</strong>，<strong>本地DNS服务器</strong>再将IP地址返回给浏览器，浏览器接收到对应的IP地址，准备开始建立连接。</p>
 <p>  <strong>step2：使用HTTP协议，经过应用层包装</strong></p>
-<p>查询到域名对应的IP地址之后表示请求访问的目标存在，可以进行访问。然后应用层请求构建<strong>HTTP</strong>，客户端的<strong>HTTP报文</strong>叫做<strong>请求报文</strong>，多数使用的还是<strong>HTTP1.1</strong>,在<strong>HTTP1.1</strong>的<strong>请求报文中</strong>包含了<strong>请求行</strong>、<strong>首部</strong>、<strong>正文实体</strong>。 其中，<strong>请求行</strong>包含用户<strong>请求的方法</strong>，<strong>请求URI</strong> 和 <strong>HTTP版本号</strong>。 例如：<code>POST  /form/entry  HTTP1.1</code>    <strong>首部字段</strong> 包含各种<strong>请求条件</strong>和<strong>请求属性</strong>，有些字段只是<strong>请求首部字段</strong>，部分是<strong>通用首部字段</strong>，还有一部分是<strong>实体首部字段</strong>(有关该部分可详见：<img src="https://github.com/onlyAngelia/Read-Mark/blob/master/HTTP/HTTP图解mark.md" alt="HTTP协议简单解释">)。构建好请求报文后，通过<strong>stream二进制流</strong>传递给传输层。</p>
+<p>查询到域名对应的IP地址之后表示请求访问的目标存在，可以进行访问。然后应用层请求构建<strong>HTTP</strong>，客户端的<strong>HTTP报文</strong>叫做<strong>请求报文</strong>，多数使用的还是<strong>HTTP1.1</strong>,在<strong>HTTP1.1</strong>的<strong>请求报文中</strong>包含了<strong>请求行</strong>、<strong>首部</strong>、<strong>正文实体</strong>。 其中，<strong>请求行</strong>包含用户<strong>请求的方法</strong>，<strong>请求URI</strong> 和 <strong>HTTP版本号</strong>。 例如：<code>POST  /form/entry  HTTP1.1</code>    <strong>首部字段</strong> 包含各种<strong>请求条件</strong>和<strong>请求属性</strong>，有些字段只是<strong>请求首部字段</strong>，部分是<strong>通用首部字段</strong>，还有一部分是<strong>实体首部字段</strong>(有关该部分可详见：<img src="https://github.com/onlyAngelia/Read-Mark/blob/master/HTTP/HTTP图解mark.md" alt="HTTP协议简单解释">)。构建好请求报文后，通过<strong>stream二进制流</strong>传递给传输层。并且浏览器开启端口号监听。</p>
 <p><strong>step3：传输层接收请求报文，构建请求段</strong>(传输层协议主要有UDP协议和TCP协议，HTTP是基于TCP协议)</p>
-<p>应用层将请求报文传递给传输层后，传输层根据要使用的协议进行传输层报文的封装，在这里构建的是TCP包头，传输层构建好TCP包头后，将传输来的流信息作为数据项。TCP的包头比较复杂,这和TCP的可靠连接有关，此时到了传输层后内核会开启，监听端口号，等待接下来的回应。（一般机器中会有一个网卡，也有部分机器会装有多个网卡）<br><img src="/2019/03/07/网络连接过程/TCP包头.jpg" alt> </p>
+<p>应用层将请求报文传递给传输层后，传输层根据要使用的协议进行传输层报文的封装，在这里构建的是<strong>TCP包头</strong>，传输层构建好<strong>TCP包头</strong>后，将传输来的流信息作为数据项。<strong>TCP的包头</strong>比较复杂,这和<strong>TCP</strong>的可靠连接有关，此时到了传输层后内核会开启，监听端口号，等待接下来的回应。（一般机器中会有一个网卡，也有部分机器会装有多个网卡）此时浏览器处于<strong>SYN-SENT</strong>状态。<br><img src="/2019/03/07/网络连接过程/TCP包头.jpg" alt> </p>
 <p><strong>step4：网络层接收传输层的段，构建IP包</strong>（网络传输二层叫帧，网络层叫包，传输层叫段）</p>
 <p>  网络层在接收到传输层传过来的<strong>TCP包</strong>后，第一个任务是封装<strong>IP包</strong>，将应用层传输过来的TCP包作为数据项，添加IP首部，形成IP包。传输层TCP协议的包头首部中包含了源端口号、目的端口号，在网络层IP协议要将<strong>源地址</strong>、<strong>目的地址</strong>包装在IP包中。此外，<strong>IP包中还包含了版本、首部长度、服务类型TOS、总长度、标识、标志、片偏移、首部检验和、生存时间TTL等</strong>。网络层封装完<strong>IP包</strong>后，将<strong>IP包</strong>传交给链路层。</p>
 <p><strong>step5：数据链路层接收IP包，构建MAC帧</strong></p>
@@ -164,10 +164,12 @@
 <p><strong>step8：找到目的IP地址后，网关取下MAC头，将IP包发送给目的主机的网络层，检查IP地址是否对上</strong></p>
 <p><strong>目的IP地址</strong>所在的网关接收到<strong>网络包</strong>后，发现在同一个网段内， 将包收入，然后发送给<strong>目的主机</strong>，<strong>目的主机</strong>取下<strong>MAC头</strong>，判断一下<strong>MAC地址</strong>和自己的相符，然后将<strong>IP包</strong>传给网络层，网络层取下<strong>IP包</strong>头,查看<strong>IP地址</strong>和自己的<strong>IP地址</strong>是否对上。</p>
 <p><strong>step9：IP地址对上之后，网络层将包传递给传输层，TCP发确认包，会延刚才的方向报平安，直到收到平安到达的回复，进行TCP握手</strong></p>
-<p>网络层数判断IP地址对上之后</p>
-<p><strong>step10：TCP收到回复后，进行目的端口匹配，将包内容传给浏览器正在监听的端口号，RPC统筹处理请求，告诉相关进程</strong></p>
-<p><strong>step11：RPC处理完毕，会回复一个HTTP/HTTPS包告知操作成功，像发起请求的过程一样，原路返回浏览器，浏览器接收显示结果。</strong></p>
-<p><strong>step 12: 数据传输完成，进行连接终端，挥手说再见</strong></p>
+<p>网络层数判断<strong>IP地址</strong>对上之后，根据IP头中的协议项，知道自己上层还需要<strong>TCP协议</strong>，将包传递给传输层，目的主机的内核开启，当目的主机有了IP的端口号，就可以调用<strong>listen函数</strong>进行监听(<strong>TCP</strong>和<strong>UDP</strong>都是基于 <strong>Socket</strong>,  而 <strong>listen函数 </strong>是<strong>Socket</strong>里的函数，有关 <strong>Socket</strong> 这里不详细解说)，目的主机处于<strong>LISTEN</strong>状态。传输层在收到TCP请求段后，会发送ACK包确认到达，此时目的主机处于<strong>SYN-RCVD</strong>状态，发送的网络包延刚才的路径传回，浏览器在接收到目的主机发送的SYN,ACK后进入<strong>ESTABLISHED</strong>状态，同时再发出ACK，当目的主机接收到ACK后也进入<strong>ESTABLISHED</strong>状态，此时TCP三次握手完成。</p>
+<p><strong>step10：TCP收到回复后，进行目的端口匹配，将包内容传给HTTP服务，RPC统筹处理请求，告诉相关进程</strong></p>
+<p><strong>TCP</strong>三次握手完成后，进行目的端口匹配，之后将包内容传给上层的<strong>HTTP服务</strong>，<strong>RPC</strong>统筹处理，告诉相关进程（<strong>Soket</strong>可能是进程在维护也可能是线程在维护监听，并且<strong>TCP</strong>往往会创立两个<strong>Socket</strong>，一个叫做就<strong>监听Socket</strong>，一个是<strong>已连接Socket</strong>，这里不详细讲述)。</p>
+<p><strong>step11：RPC处理完毕，会回复一个HTTP/HTTPS包告知操作成功，准备向接收端传输处理结果</strong></p>
+<p>在RPC处理完毕后，目的主机开始向接收方发送数据。在连接建立的时候，两方已商定起始ID，但数据的发送不是一个发送完等回复后再发送另一个，而是通过累计确认或者叫累计应答（cumulative acknowledgment）的模式进行传输，即在应答某个之前的ID表示都收到了。这样TCP需要双方有缓存进行记录，发送方的记录分四部分：第一部分是发送了并且已确认，第二部分是发送了并且尚未确认，第三部分是没有发送但在等待发送，第四部分是没有发送暂时也不会发送。第一部分和第二部分的分界线是lastByteAcked，第二部分和第三部分的分界线是lastByteSent，整个第二部分和第三部分的和叫Advertised window ，也就是我们说的接收窗口。 浏览器作为接收端在TCP报文里是会告诉发送端这个窗口大小的，超过了这个窗口的包，接收端无法接收就会丢弃。（有关接收方的窗口说明详情可自行查询）</p>
+<p><strong>step 12: TCP慢启动，进行数据传输，并随时监测窗口大小进行流量控制和拥塞控制</strong><br>刚<br><strong>step 13: 数据传输完成，进行连接终端，挥手说再见</strong></p>
 
   </section>
 
