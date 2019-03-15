@@ -152,7 +152,7 @@
 <p>  <strong>step1：进行DNS解析，得到域名对应的IP地址</strong>(DNS解析比较复杂，这里只说下一般流程，有关<strong>负载均衡</strong>等暂且不提)</p>
 <p>浏览器先在<strong>本地DNS</strong>缓存中查找onlyAnglia.github.io 对应的IP地址，若找到则返回对应的IP；倘若<strong>本地DNS缓存</strong>中未查找到域名对应的IP地址，则接下来会像<strong>本地DNS服务器</strong>询问（如果是通过<strong>DHCP</strong>配置，<strong>本地DNS服务器</strong>由对应的 <strong>网络服务商（ISP</strong>自动分配），如果找到就直接返回IP地址；若没有找到，<strong>本地DNS服务器</strong>会向它的<strong>根域名服务器</strong>询问,<strong>根域名服务器</strong>会告诉<strong>本地DNS服务器</strong>该向哪个<strong>顶级域名服务器</strong>询问，之后<strong>顶级域名服务器</strong>会告诉<strong>本地DNS服务器</strong>该向哪个<strong>权威域名服务器</strong>询问；接下来<strong>本地DNS服务器</strong>会找到对应的<strong>权威域名服务器</strong>查询对应的IP地址，<strong>权威服务器</strong>将对应的IP地址告诉<strong>本地DNS服务器</strong>，<strong>本地DNS服务器</strong>再将IP地址返回给浏览器，浏览器接收到对应的IP地址，准备开始建立连接。</p>
 <p>  <strong>step2：使用HTTP协议，经过应用层包装</strong></p>
-<p>查询到域名对应的IP地址之后表示请求访问的目标存在，可以进行访问。然后应用层请求构建<strong>HTTP</strong>，客户端的<strong>HTTP报文</strong>叫做<strong>请求报文</strong>，多数使用的还是<strong>HTTP1.1</strong>,在<strong>HTTP1.1</strong>的<strong>请求报文中</strong>包含了<strong>请求行</strong>、<strong>首部</strong>、<strong>正文实体</strong>。 其中，<strong>请求行</strong>包含用户<strong>请求的方法</strong>，<strong>请求URI</strong> 和 <strong>HTTP版本号</strong>。 例如：<code>POST  /form/entry  HTTP1.1</code>    <strong>首部字段</strong> 包含各种<strong>请求条件</strong>和<strong>请求属性</strong>，有些字段只是<strong>请求首部字段</strong>，部分是<strong>通用首部字段</strong>，还有一部分是<strong>实体首部字段</strong>(有关该部分可详见：<img src="https://github.com/onlyAngelia/Read-Mark/blob/master/HTTP/HTTP图解mark.md" alt="HTTP协议简单解释">)。构建好请求报文后，通过<strong>stream二进制流</strong>传递给传输层。并且浏览器开启端口号监听。</p>
+<p>查询到域名对应的IP地址之后表示请求访问的目标存在，可以进行访问。然后应用层请求构建<strong>HTTP</strong>，客户端的<strong>HTTP报文</strong>叫做<strong>请求报文</strong>，多数使用的还是<strong>HTTP1.1</strong>,在<strong>HTTP1.1</strong>的<strong>请求报文中</strong>包含了<strong>请求行</strong>、<strong>首部</strong>、<strong>正文实体</strong>。 其中，<strong>请求行</strong>包含用户<strong>请求的方法</strong>，<strong>请求URI</strong> 和 <strong>HTTP版本号</strong>。 例如：<code>POST  /form/entry  HTTP1.1</code>    <strong>首部字段</strong> 包含各种<strong>请求条件</strong>和<strong>请求属性</strong>，有些字段只是<strong>请求首部字段</strong>，部分是<strong>通用首部字段</strong>，还有一部分是<strong>实体首部字段</strong>(有关该部分可详见：<a href="https://github.com/onlyAngelia/Read-Mark/blob/master/HTTP/HTTP图解mark.md" target="_blank" rel="noopener">HTTP协议简单解释</a>)。构建好请求报文后，通过<strong>stream二进制流</strong>传递给传输层。并且浏览器开启端口号监听。</p>
 <p><strong>step3：传输层接收请求报文，构建请求段</strong>(传输层协议主要有UDP协议和TCP协议，HTTP是基于TCP协议)</p>
 <p>应用层将请求报文传递给传输层后，传输层根据要使用的协议进行传输层报文的封装，在这里构建的是<strong>TCP包头</strong>，传输层构建好<strong>TCP包头</strong>后，将传输来的流信息作为数据项。<strong>TCP的包头</strong>比较复杂,这和<strong>TCP</strong>的可靠连接有关，此时到了传输层后内核会开启，监听端口号，等待接下来的回应。（一般机器中会有一个网卡，也有部分机器会装有多个网卡）此时浏览器处于<strong>SYN-SENT</strong>状态。<br><img src="/2019/03/07/网络连接过程/TCP包头.jpg" alt> </p>
 <p><strong>step4：网络层接收传输层的段，构建IP包</strong>（网络传输二层叫帧，网络层叫包，传输层叫段）</p>
@@ -199,7 +199,7 @@
                 </p>
                 <div class="post-list__meta"><time datetime="2018-05-07T14:55:08.000Z" class="post-list__meta--date date">2018-05-07</time> &#8226; <span class="post-list__meta--tags tags">于 
   <a class="tag-link" href="../../../../tags/Objective-C-Block/">Objective-C/Block</a>
-</span><a class="btn-border-small" href="/2018/05/07/Block自动截获变量/">继续阅读</a></div>
+</span><a class="btn-border-small" href="/2018/05/07/Block自动截获变量/">阅读更多</a></div>
                        
             </div>
         
