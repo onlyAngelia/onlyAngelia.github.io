@@ -146,7 +146,7 @@
 
   <section class="post">
     <p>讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过<strong>DHCP协议(也是属于应用层的协议，基于UDP协议，全程 Dynamic Host Configuration Protocol ：动态主机配置协议)</strong> 进行动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我们的电脑会有对应的唯一的<strong>MAC地址（MAC全称：Media Access Control，媒体访问控制）</strong>，发送网络包，目标地址既要包括IP地址，也要包含MAC地址。IP地址类似于住址，MAC地址类似于身份证，两者缺一不可。IP地址和MAC地址的映射可以通过<strong>APR协议(全称：Address Resolution Protocol 地址解析协议，是属于链路层的协议 )</strong> 查询。记住IP地址和MAC地址这两个概念。</p>
-<p>在<strong>TCP/IP五层模型</strong>下，通过在浏览器中浏览网页，我们来梳理下网络的连接过程。比如，我们在浏览器输入：<a href="https://onlyAnglia.github.io" target="_blank" rel="noopener">https://onlyAnglia.github.io</a> ，按下回车，到浏览器中显示出博客内容中间经历了哪些过程？先简单的讲下HTTP的连接，再在HTTP的基础上补充HTTPS的连接。当然应用层还有许多协议，例如RTMP、QUIC、GTP等，有基于TCP的，也有基于UDP的。这里举例用基于TCP的HTTP协议，有关传输层常用的协议UDP 和 TCP连接不同和详细的连接过程，后面会单独写解释,接下来看一下网络的连接。</p>
+<p>​<br>在<strong>TCP/IP五层模型</strong>下，通过在浏览器中浏览网页，我们来梳理下网络的连接过程。比如，我们在浏览器输入：<a href="https://onlyAnglia.github.io" target="_blank" rel="noopener">https://onlyAnglia.github.io</a> ，按下回车，到浏览器中显示出博客内容中间经历了哪些过程？先简单的讲下HTTP的连接，再在HTTP的基础上补充HTTPS的连接。当然应用层还有许多协议，例如RTMP、QUIC、GTP等，有基于TCP的，也有基于UDP的。这里举例用基于TCP的HTTP协议，有关传输层常用的协议UDP 和 TCP连接不同和详细的连接过程，后面会单独写解释,接下来看一下网络的连接。</p>
 <p>整体的传输流程如下：<br><img src="/2019/03/07/网络连接过程/TCP-IP五层模型数据传输.png" alt></p>
 <p>首先，机器和人不一样，并不能识别我们能熟记的域名，机器只认IP地址，所以</p>
 <p><strong>step1：进行DNS解析，得到域名对应的IP地址</strong>(DNS解析比较复杂，这里只说下一般流程，有关<strong>负载均衡</strong>等暂且不提)</p>
