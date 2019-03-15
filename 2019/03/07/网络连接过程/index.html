@@ -176,7 +176,8 @@
 <p>​<br><strong>step 13:接收方浏览器接收到数据后，开始进行处理，逐渐在浏览器上显示</strong></p>
 <p>通过数据的传输，接收端接收到了来自发送方的网络包，当接收到一个网络包时，<strong>TCP</strong>最终将包传递给浏览器，让浏览器处理<strong>HTTP应答报文</strong>，这样随着应答报文的数量增加，网页中的内容也会逐渐的显示在浏览器上。</p>
 <p>​<br><strong>step 14: 数据传输完成，进行连接断开，四次挥手说再见</strong></p>
-<p>数据终于传输完成，到了该断开的时候。但我们知道TCP是可靠的传输连接，是相对靠谱的，那作为靠谱的协议在断开的时候不能说断开就断开，并且TCP是全双工的，所以接收端和发送端需要各自断开。数据传输完毕时，服务器和浏览器作为发送方和接收方都处于ESTABLISHED状态，此时服务器知道数据已传输完毕，准备断开，就向接收方发送FIN报文，进入FIN-WAIT-1状态；接收方收到FIN报文后，向发送方发送ACK，进入CLOSED-WAIT状态；服务端收到ACK后从FIN-WAIT-1状态进入FIN-WAIT-2状态；接收方进入CLOSED-WAIT状态结束后再向发送方发送FIN,ACK ,并进入LAST-ACK状态；发送方接收到FIN、ACK后从FIN-WAIT-2状态进入TIME-WAIT状态(等待2MSL)，并且发送ACK；接收方接收到ACK后进入CLOSED状态；服务端等待2MSL(MSL: Maximum Segment Lifetime ,报文最大生成时间)后也进入CLOSED状态。</p>
+<p>数据终于传输完成，到了该断开的时候。但我们知道<strong>TCP</strong>是可靠的传输连接，是相对靠谱的，那作为靠谱的协议在断开的时候不能说断开就断开，并且<strong>TCP</strong>是全双工的，所以接收端和发送端需要各自断开。数据传输完毕时，服务器和浏览器作为发送方和接收方都处于<strong>ESTABLISHED</strong>状态，此时服务器知道数据已传输完毕，准备断开，就向接收方发送<strong>FIN</strong>报文，进入<strong>FIN-WAIT-1</strong>状态；接收方收到<strong>FIN</strong>报文后，向发送方发送<strong>ACK</strong>，进入<strong>CLOSED-WAIT</strong>状态；服务端收到<strong>ACK</strong>后从<strong>FIN-WAIT-1</strong>状态进入<strong>FIN-WAIT-2</strong>状态；接收方进入<strong>CLOSED-WAIT</strong>状态结束后再向发送方发送<strong>FIN,ACK</strong> ,并进入<strong>LAST-ACK</strong>状态；发送方接收到<strong>FIN、ACK</strong>后从<strong>FIN-WAIT-2</strong>状态进入<strong>TIME-WAIT</strong>状态(等待<strong>2MSL</strong>)，并且发送<strong>ACK</strong>；接收方接收到<strong>ACK</strong>后进入<strong>CLOSED</strong>状态；服务端等待2<strong>MSL(MSL: Maximum Segment Lifetime ,报文最大生成时间)</strong>后也进入<strong>CLOSED</strong>状态。至此，建立的连接已经各自断开，整个连接过程结束。  </p>
+<p>为了更好的理解<strong>TCP三次握手</strong>和<strong>四次挥手</strong>，附上<strong>TCP状态机</strong><br><img src="/2019/03/07/网络连接过程/TCP状态机.jpg" alt><br>以<strong>HTTP</strong>为例讲述了网络的连接过程，其它协议与此大同小异，若是基于<strong>UDP</strong>的协议会在上述步骤中简化很多，数据传输中的<strong>socket</strong>维护也相对简单。以上就是网络的连接过程。 </p>
 
   </section>
 
