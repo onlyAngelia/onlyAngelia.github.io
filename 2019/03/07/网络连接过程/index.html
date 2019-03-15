@@ -146,7 +146,7 @@
 
   <section class="post">
     <p>讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过<strong>DHCP协议(也是属于应用层的协议，基于UDP协议，全程 Dynamic Host Configuration Protocol ：动态主机配置协议)</strong> 进行动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我们的电脑会有对应的唯一的<strong>MAC地址（MAC全称：Media Access Control，媒体访问控制）</strong>，发送网络包，目标地址既要包括IP地址，也要包含MAC地址。IP地址类似于住址，MAC地址类似于身份证，两者缺一不可。IP地址和MAC地址的映射可以通过<strong>APR协议(全称：Address Resolution Protocol 地址解析协议，是属于链路层的协议 )</strong> 查询。记住IP地址和MAC地址这两个概念。</p>
-<p>​<br>在<strong>TCP/IP五层模型</strong>下，通过在浏览器中浏览网页，我们来梳理下网络的连接过程。比如，我们在浏览器输入：<a href="https://onlyAnglia.github.io" target="_blank" rel="noopener">https://onlyAnglia.github.io</a> ，按下回车，到浏览器中显示出博客内容中间经历了哪些过程？先简单的讲下HTTP的连接，再在HTTP的基础上补充HTTPS的连接。当然应用层还有许多协议，例如RTMP、QUIC、GTP等，有基于TCP的，也有基于UDP的。这里举例用基于TCP的HTTP协议，有关传输层常用的协议UDP 和 TCP连接不同和详细的连接过程，后面会单独写解释,接下来看一下网络的连接。</p>
+<p>在<strong>TCP/IP五层模型</strong>下，通过在浏览器中浏览网页，我们来梳理下网络的连接过程。比如，我们在浏览器输入：<a href="https://onlyAnglia.github.io" target="_blank" rel="noopener">https://onlyAnglia.github.io</a> ，按下回车，到浏览器中显示出博客内容中间经历了哪些过程？先简单的讲下HTTP的连接，再在HTTP的基础上补充HTTPS的连接。当然应用层还有许多协议，例如RTMP、QUIC、GTP等，有基于TCP的，也有基于UDP的。这里举例用基于TCP的HTTP协议，有关传输层常用的协议UDP 和 TCP连接不同和详细的连接过程，后面会单独写解释,接下来看一下网络的连接。</p>
 <p>整体的传输流程如下：<br><img src="/2019/03/07/网络连接过程/TCP-IP五层模型数据传输.png" alt></p>
 <p>首先，机器和人不一样，并不能识别我们能熟记的域名，机器只认IP地址，所以</p>
 <p><strong>step1：进行DNS解析，得到域名对应的IP地址</strong>(DNS解析比较复杂，这里只说下一般流程，有关<strong>负载均衡</strong>等暂且不提)</p>
@@ -161,7 +161,7 @@
 <p>数据链路层又可称为<strong>MAC层(MAC全称 Media Access Control 媒体访问控制)</strong>，<strong>MAC层</strong>接收到<strong>IP包</strong>后，开始构建<strong>MAC帧</strong>，<strong>MAC帧</strong>开始是<strong>目标MAC地址</strong>和<strong>源MAC地址</strong>，<strong>源MAC地址</strong>毫无疑问是我们<strong>本机的MAC地址</strong>，<strong>本机的MAC地址</strong>在该设备被创造出来的时候就有，并且是唯一的(要想查看<strong>IP地址</strong>和<strong>MAC地址</strong>，linux上使用<strong>ifconfig</strong>或者<strong>ip addr</strong>，会在终端输出电脑的网络相关信息)。知道了自己设备上的<strong>MAC地址</strong>，但不知道<strong>目标IP地址</strong>对应的<strong>MAC地址</strong>，所以需要一个能够查询<strong>IP地址</strong>和<strong>MAC地址</strong>对应的协议，就是<strong>ARP（Address Resolution Protocol）协议</strong>。<strong>ARP协议</strong>只是针对<strong>IPv4</strong>，若是<strong>IPv6</strong>，要使用<strong>NDP协议</strong>。机器本地是有<strong>ARP协议缓存</strong>的，若能在<strong>ARP协议缓存</strong>中找到<strong>IP地址</strong>对应的<strong>MAC地址</strong>，便不会再去请求<strong>ARP协议</strong>，若没有则会请求<strong>ARP协议</strong>。在知道了<strong>目标IP地</strong>址对应的<strong>MAC地址</strong>后，将<strong>目标MAC地址</strong>放在<strong>MAC帧</strong>里,以太网的第二层最后面是<strong>CRC</strong>，也就是<strong>循环冗余检测</strong>，（<strong>MAC帧</strong>的其它组成不在细说）。</p>
 <p>​<br><strong>step6：MAC帧头构建好后，网关准备发包</strong></p>
 <p>MAC帧构建好，在网络中传输的网络包即构建好，然后将网络包发出去。在发包之前IP地址是否在同一个网段内的问题，通过CIDR和子网掩码计算是否在一个网段内，若在同一个网段内直接发出。一般我们访问的网站是不太可能和我们在同一网段内的，那么需要将包发往默认网关，默认网关收入包。</p>
-<p>​<br><strong>step7：网关查询路由表，通过路由协议进行网络传输</strong></p>
+<p><strong>step7：网关查询路由表，通过路由协议进行网络传输</strong></p>
 <p>网关收入包后，取下<strong>MAC帧</strong>和<strong>IP包</strong>，判断该网哪里转发，根据路由算法，选择一个合适的网段。网段的选择会涉及到两种形式的路由算法，一种是<strong>静态路由</strong>，一种是<strong>动态路由</strong>。<strong>静态路由</strong>就是在路由器上配置一条条规则，维护路由表。可以通过route命令和ip route命令查看进行<strong>静态路由</strong>的查询和配置。 <strong>动态路由</strong>使用动态路由路由器，根据路由协议算法生成动态路由表，随网络运行情况的变化而变化。<strong>动态路由协议算法</strong>也涉及两大类，第一大类算法称为<strong>距离矢量路由（distance vector  routing）</strong>适用于小型网络，最早的路由协议<strong>RIP</strong>采用该算法，第二大类算法是<strong>链路状态路由（link state routing）</strong>。内部网关协议采用基于链路状态路由算法的<strong>OSPF（Open Shortest Path First，开放式最短路径优先</strong>），网络的路由协议是基于距离矢量路由算法的<strong>BGP(Border Gateway  Protocol)</strong>。<strong>BGP</strong>分为两类，<strong>eBGP</strong>和<strong>iBGP</strong>。对于网络包，每个数据中心有自己的规则，网络中这种不同规则所构成的网络包为<strong>自治系统AS(Autonomous System)</strong>。<strong>自治系统</strong>间边界路由器使用<strong>eBGP</strong>广播路由，内部运行<strong>iBGP</strong>，让内部路由器快速找到到达外网目的的最好的边界路由器。路由器之间信息交换使用的协议，<strong>RIP</strong>使用<strong>UDP协议</strong>，<strong>OSPF</strong>直接发送<strong>IP包</strong>，而<strong>BGP</strong>使用的是<strong>TCP协议</strong>，路由之间会建立<strong>TCP连接</strong>，每60s发送一次<strong>keep-alive</strong> 消息。此外<strong>HTTP 1.1</strong>默认<strong>keep-alive</strong>是开启的。这样网络包就像跳方格一样跳了多个（也许是一个）路由器之后，终于找到了目的<strong>IP地址</strong>所在的网关。</p>
 <p>​<br><strong>step8：找到目的IP地址后，网关取下MAC头，将IP包发送给目的主机的网络层，检查IP地址是否对上</strong></p>
 <p><strong>目的IP地址</strong>所在的网关接收到<strong>网络包</strong>后，发现在同一个网段内， 将包收入，然后发送给<strong>目的主机</strong>，<strong>目的主机</strong>取下<strong>MAC头</strong>，判断一下<strong>MAC地址</strong>和自己的相符，然后将<strong>IP包</strong>传给网络层，网络层取下<strong>IP包</strong>头,查看<strong>IP地址</strong>和自己的<strong>IP地址</strong>是否对上。</p>
@@ -176,7 +176,7 @@
 <p>​<br><strong>step 13:接收方浏览器接收到数据后，开始进行处理，逐渐在浏览器上显示</strong></p>
 <p>通过数据的传输，接收端接收到了来自发送方的网络包，当接收到一个网络包时，<strong>TCP</strong>最终将包传递给浏览器，让浏览器处理<strong>HTTP应答报文</strong>，这样随着应答报文的数量增加，网页中的内容也会逐渐的显示在浏览器上。</p>
 <p>​<br><strong>step 14: 数据传输完成，进行连接断开，四次挥手说再见</strong></p>
-<p>数据终于传输完成，到了该断开的时候。但我们知道TCP是可靠的传输连接，是相对靠谱的，那作为靠谱的协议在断开的时候不能说断开就断开。</p>
+<p>数据终于传输完成，到了该断开的时候。但我们知道TCP是可靠的传输连接，是相对靠谱的，那作为靠谱的协议在断开的时候不能说断开就断开，并且TCP是全双工的，所以接收端和发送端需要各自断开。数据传输完毕时，服务器和浏览器作为发送方和接收方都处于ESTABLISHED状态，此时服务器知道数据已传输完毕，准备断开，就向接收方发送FIN报文，进入FIN-WAIT-1状态；接收方收到FIN报文后，向发送方发送ACK，进入CLOSED-WAIT状态；服务端收到ACK后从FIN-WAIT-1状态进入FIN-WAIT-2状态；接收方进入CLOSED-WAIT状态结束后再向发送方发送FIN,ACK ,并进入LAST-ACK状态；发送方接收到FIN、ACK后从FIN-WAIT-2状态进入TIME-WAIT状态(等待2MSL)，并且发送ACK；接收方接收到ACK后进入CLOSED状态；服务端等待2MSL(MSL: Maximum Segment Lifetime ,报文最大生成时间)后也进入CLOSED状态。</p>
 
   </section>
 
