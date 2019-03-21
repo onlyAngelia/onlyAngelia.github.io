@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="z">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>Block类型及内存区域 | 温凉</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Block类型及内存区域 | 温凉">
+    <meta name="twitter:description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Block类型及内存区域 | 温凉">
+    <meta property="og:description" content="喜欢OC，目前是一名iOS编程人员；在Python进修的路上">
+
+    
+    <meta name="author" content="温凉">
+    
+    <link rel="stylesheet" href="../../../../css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/avatar-small.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+
+    <link rel="canonical" href="http://lanjiying.allenqin.com/2018/04/10/Block类型及内存区域/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../../../../js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 温凉 的主页"><img src="/images/avatar.jpg" width="80" alt="温凉 logo" class="panel-cover__logo logo"></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for 温凉">温凉</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">不念过往、不负当下、不畏将来</span>
+        
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">喜欢OC，目前是一名iOS编程人员；在Python进修的路上</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="Visit the blog" class="blog-button">温凉的小镇</a></li>
+            
+              <li class="navigation__item"><a href="/aboutMe">关于我</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+  <li class="navigation__item">
+    <a href="https://weibo.com/u/2683037683" title="Weibo" target="_blank">
+      <i class="social fa fa-weibo"></i>
+      <span class="label">Weibo</span>
+    </a>
+  </li> 
+
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://github.com/onlyAngelia" title="GitHub" target="_blank">
+      <i class="social fa fa-github"></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+  
+<!-- Twitter -->
+
+  
+
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2018-04-10T14:55:08.000Z" class="post-list__meta--date date">2018-04-10</time> &#8226; <span class="post-meta__tags tags">于 
+  <a class="tag-link" href="../../../../tags/Objective-C-Block/">Objective-C/Block</a>
+ </span>
+      <span class="page-pv">
+       Read <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">Block类型及内存区域</h1>
+  </header>
+
+  <section class="post">
+    <p>在<a href="https://onlyangelia.github.io/2018/04/06/Block前言/" target="_blank" rel="noopener">Block前言</a>中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论</p>
+<table><br>  <tr><br>    <th width="35%," bgcolor="#eeeeee">类型</th><br>    <th width="35%," bgcolor="#eeeeee">查看源</th><br>    <th width="30%," bgcolor="#eeeeee">存储区域</th><br>  </tr><br> <tr><br>    <td>_NSConcreteGlobalBlock</td><br>    <td> .cpp文件/Block.h </td><br>    <td> 全局变量/静态变量区</td><br>  </tr><br>  <tr><br>    <td>_NSConcreteStackBlock </td><br>    <td> .cpp文件/Block.h</td><br>    <td> 栈区 </td><br>  </tr><br> <tr><br>    <td>_NSConcreteMallocBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteAutoBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteFinalizingBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteWeakBlockVariable </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br></table>
+
+
+<p>以上内容的查看在编译后的cpp文件以及runtime源码中都可以查看到相关信息<br><a href="https://github.com/onlyAngelia/YAObjectTest.git" target="_blank" rel="noopener">code已上传到Github,点击下载</a><br><a href="https://opensource.apple.com/source/objc4/objc4-680/runtime/" target="_blank" rel="noopener">runtime源码Apple官网</a><br><a href="https://github.com/onlyAngelia/objc-runtime" target="_blank" rel="noopener">runtime源码Github</a></p>
+<h1 id="特别注意点"><a href="#特别注意点" class="headerlink" title="特别注意点"></a>特别注意点</h1><p>Block前言中讲到默认创建的Block指针只有Global、Statck，其它四种是在运行时编译环境决定的，此根据也是根据runtime源码和注释得出结论。</p>
+<pre><code class="cpp">// the raw data space for runtime classes for blocks
+// class+meta used for stack, malloc, and collectable based blocks
+BLOCK_EXPORT void * _NSConcreteMallocBlock[32]
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
+BLOCK_EXPORT void * _NSConcreteAutoBlock[32]
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
+BLOCK_EXPORT void * _NSConcreteFinalizingBlock[32]
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
+BLOCK_EXPORT void * _NSConcreteWeakBlockVariable[32]
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
+</code></pre>
+<p>从以上runtime源码和注释中我们可以很好的解释该6种Block在Mac和iOS系统中都会出现，除Global、Statck，其它四种是在运行时编译环境决定。</p>
+<h1 id="每种Block出现的情况"><a href="#每种Block出现的情况" class="headerlink" title="每种Block出现的情况"></a>每种Block出现的情况</h1><p>（最好复习一下基本数据结构）</p>
+<h2 id="NSConcreteGlobalBlock"><a href="#NSConcreteGlobalBlock" class="headerlink" title="_NSConcreteGlobalBlock"></a>_NSConcreteGlobalBlock</h2><p>在以下情况下，Block为GlobalBlock (根据赋值情况会决定存储静态区的静态变量区域还是全局变量区域)<br><strong>1.Block声明为全局变量<br>2.函数区域内Block语法表达式没有使用外部变量<br>3.Block内部只引用了内部传递值或只引用了静态变量或全局变量</strong></p>
+<p>第一种情况好理解,一般我们声明的全局变量都会放在静态区,当Block被声明为全局变量时也会存放在静态区域<br>如下将Block声明为全局变量,查看编译后的cpp文件,找到对应的编译代码<br>源码:</p>
+<pre><code>#import &quot;BlockObject.h&quot;
+#import &lt;objc/runtime.h&gt;
+
+void (^globalBlock)(void)=^{};
+
+@interface BlockObject()
+</code></pre><p>编译后的部分代码:</p>
+<pre><code>struct __globalBlock_block_impl_0 {
+  struct __block_impl impl;
+  struct __globalBlock_block_desc_0* Desc;
+  __globalBlock_block_impl_0(void *fp, struct __globalBlock_block_desc_0 *desc, int flags=0) {
+    impl.isa = &amp;_NSConcreteGlobalBlock;
+    impl.Flags = flags;
+    impl.FuncPtr = fp;
+    Desc = desc;
+  }
+};
+</code></pre><p>`impl.isa = &amp;_NSConcreteGlobalBlock;可以看到我们声明的<strong>全局变量block为NSConcreteGlobalBlock</strong>。</p>
+<p>第二种情况我们可以看如下代码</p>
+<pre><code> typedef int (^blockStatic)(void);
+blockStatic secondBlk = ^(){
+        return 1;
+ };
+NSLog(@&quot;%@&quot;,secondBlk);
+</code></pre><p>最后查看到输出结果如下</p>
+<pre><code>YAObjectTest[8834:1196308]
+ &lt;__NSGlobalBlock__: 0x10de381c8&gt;
+</code></pre><p>所以，<strong>未引用外部变量时，最终得到的block也是NSConcreteGlobalBlock</strong>。</p>
+<p>第三种情况我看可以看如下代码</p>
+<pre><code>static int count = 100;
+typedef int (^blockStatic)(void);
+blockStatic blk = ^(){
+        return count;
+    };
+     NSLog(@&quot;%@&quot;,blk);
+</code></pre><p>最后的输出结果如下：</p>
+<pre><code>YAObjectTest[8719:1185296]
+ &lt;__NSGlobalBlock__: 0x108320188&gt;
+</code></pre><p>最后的输出也是GlobalBlock，所以，<strong>只引用静态变量或全局变量时，Block仍为NSConcreteGlobalBlock</strong>。</p>
+<hr>
+<p>解惑：第二种情况和第三种情况我们最终查看的是输出情况，而不是clang后的源文件。查看clang后的源文件该两种情况得到的是StackBlock。编译器根据编译特性会把后两种情况默认编译后定义为StackBlock，但是我们知道OC是动态语言，所以最终还是以运行时或最终输出结果为准。</p>
+<hr>
+<h1 id="NSConcreteStackBlock"><a href="#NSConcreteStackBlock" class="headerlink" title="_NSConcreteStackBlock"></a>_NSConcreteStackBlock</h1><p><strong>1.使用到外部局部变量、成员属性变量（非静态变量值）&amp; 2.未使用strong或copy修饰符修饰</strong><br><strong>以上条件缺一不可，只有这两个条件同时成立时，Block才为_NSConcreteStackBlock</strong><br>如果在函数内，Block只是引用了外部局部变量或成员属性变量，最终会被copy到堆上变为MallocBlock。而对于声明为属性的Block，如果修饰符为strong或copy，则也会copy到堆上，而不是StackBlock。<br>查看以下代码的最终输出（不能同时满足上述两种条件的情况下）</p>
+<pre><code>@interface BlockObject()
+
+@property (nonatomic, strong)void(^proBlock)(void);
+@property (nonatomic, assign)NSInteger outsideCount;
+
+@end
+
+     int a = 1;
+    //使用外部局部变量情况
+    void (^blockVariable)(void) = ^(){
+        NSLog(@&quot;%ld&quot;,(long)_outsideCount);
+    };
+    NSLog(@&quot;%@&quot;,blockVariable);
+
+    _proBlock = ^(){
+        NSLog(@&quot;%d&quot;,a);
+    };
+    NSLog(@&quot;%@&quot;,_proBlock);
+</code></pre><p>最终控制台输出如下</p>
+<pre><code> &lt;__NSMallocBlock__: 0x600000447c50&gt;
+ &lt;__NSMallocBlock__: 0x6040002557b0&gt;
+
+</code></pre><p>将proBlock的修饰符换成weak，</p>
+<pre><code>@property (nonatomic, weak)void(^proBlock)(void);
+</code></pre><p>同样的代码，会得到如下结果，proBlock会是StackBlock</p>
+<pre><code>YAObjectTest[10461:1384618] &lt;__NSMallocBlock__: 0x60400025d1f0&gt;
+YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
+</code></pre><p>所以，<strong>在引用了外部变量并且没有强指针引用的情况下的Block为_NSConcreteStackBlock</strong>。</p>
+<h1 id="NSConcreteMallocBlock"><a href="#NSConcreteMallocBlock" class="headerlink" title="_NSConcreteMallocBlock"></a>_NSConcreteMallocBlock</h1><p>1.引用了外部变量，有strong或copy修饰符修饰<br>2.block内部需要修改引用变量的值，外部变量被<strong>block修饰<br>第一种情况在求证StackBlock的情况下已经得到验证，有strong或copy修饰后并且引用了外部变量的情况下，为** &lt;</strong>NSMallocBlock__: 0x6040002557b0&gt;**<br>有关第二种情况，在该文只做验证，后续深入解析，详见Block截获变量中的__block修饰符深入解析</p>
+<pre><code>    __block int a = 0;
+    void (^lockBlock)(void) = ^{
+        a++;
+    };
+    lockBlock();
+    NSLog(@&quot;%@&quot;, lockBlock);
+</code></pre><p>最后的输出结果为</p>
+<pre><code>YAObjectTest[10853:1425358] &lt;__NSMallocBlock__: 0x60000024e610&gt;
+</code></pre><p>在此就求证了以上两种结果最后Block为_NSConcreteMallocBlock。</p>
+<hr>
+<p>接下来的三种类型Block，因对有GC回收机制的语言不是太熟悉，在Xcode中编写的C++代码 最终查看运行时的isa指针皆为—NSStackBlock，在Xcode中并没有按照预想的查看到以下三种类型，Terminal终端g++ 编译后的可执行文件也未见以下类型，查阅资料发现以下三种出现的情况大致如下，若有对C++ 熟悉的人员 ，请不吝赐教😉</p>
+<hr>
+<h1 id="NSConcreteFinalizingBlock"><a href="#NSConcreteFinalizingBlock" class="headerlink" title="_NSConcreteFinalizingBlock"></a>_NSConcreteFinalizingBlock</h1><p>.Block需要copy到堆上，但是Block内部有ctors 和 dtors时，block会是NSFinalizingBlock</p>
+<h1 id="NSConcreteAutoBlock"><a href="#NSConcreteAutoBlock" class="headerlink" title="_NSConcreteAutoBlock"></a>_NSConcreteAutoBlock</h1><p>.Block需要copy到堆上若未引用到ctors和 dtors 则是NSAutoBlock<br>以上是AutoBlock和FinalizingBlock的出现情况。而对于ctors和dtors，<br>ctors中保存着程序全部构造函数的指针数组，dtors中保存着程序全部析构函数的指针数组，从两者的存储内容来看，若block引用了该两种类型，势必block会在程序运行结束时回收内存，所以会被转换为FinalizingBlock，而未引用的block则会根据情况自动回收，转换为AutoBlock。</p>
+<p>以下是写在cpp文件中的代码</p>
+<pre><code>void testAutoBlock(){
+  int * b=new int[4];
+   __block int testCount = 100;
+   int (^myBlock)() = ^() {
+        b[0] = testCount;
+        b[1] = testCount + 1;
+        b[2] = testCount + 2;
+        b[3] = testCount + 3;
+        std::cout&lt;&lt;b&lt;&lt;std::endl;
+       return 0;
+    };
+    std::cout&lt;&lt;myBlock&lt;&lt;std::endl;
+   }；
+</code></pre><h1 id="NSConcreteWeakBlockVariable"><a href="#NSConcreteWeakBlockVariable" class="headerlink" title="_NSConcreteWeakBlockVariable"></a>_NSConcreteWeakBlockVariable</h1><p>.GC回收机制下，用_weak 或<strong>block修饰的block 会转变成NSWeakBlockVariable<br>具体的对于</strong>weak 和__blcok修饰符，在后面截获变量和循环引用中具体详解。<br>以上是个人对于Block类型和存储区域的总结。中间为探究后三种类型浪费了很多时间，导致文章延迟。</p>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+           
+    
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Newer Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/05/07/Block自动截获变量/" title="Block自动截获变量">Block自动截获变量</a></h2>
+                <p class="excerpt">
+                
+                《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况
+1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址
+现针对以上内容进行详细分析。
+截获变量的值这一情况主要发生在1.对
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-05-07T14:55:08.000Z" class="post-list__meta--date date">2018-05-07</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="../../../../tags/Objective-C-Block/">Objective-C/Block</a>
+</span><a class="btn-border-small" href="/2018/05/07/Block自动截获变量/">阅读更多</a></div>
+                           
+            </div>
+        
+        
+               
+            <div class="read-more-item">
+                <span class="read-more-item-dim">Older Post</span>
+                <h2 class="post-list__post-title post-title"><a href="/2018/04/09/Block实质/" title="Block实质">Block实质</a></h2>
+                <p class="excerpt">
+                
+                《Block前言》中讲到，Block是对C语言的扩充，Block为带有自动变量（局部变量）的匿名函数。查看源码得知OC中，Block是作为对象存在。该篇文章针对这两点展开细节。
+#Block为带有自动变量（局部变量）的匿名函数接下来，根据clang命令clang -rewrite-objc Bloc
+                &hellip;
+                </p>
+                <div class="post-list__meta"><time datetime="2018-04-09T14:55:08.000Z" class="post-list__meta--date date">2018-04-09</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="../../../../tags/Objective-C-Block/">Objective-C/Block</a>
+</span><a class="btn-border-small" href="/2018/04/09/Block实质/">阅读更多</a></div>
+                       
+            </div>
+        
+     
+   
+   
+  
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        &copy; 2019 温凉 - 本站点采用 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+       
+    </span>
+    <span class="footer__copyright">
+             - 基于 <a href="http://hexo.io">Hexo</a> 搭建，使用 <a href="https://github.com/monniya/hexo-theme-new-vno ">new-vno</a> 主题，由<a href="https://monniya.com ">@Monniya</a> 修改自 <a href="https://github.com/lenbo-ma/hexo-theme-vno" target="_blank">Vno</a>, 原创出自<a href="http://github.com/onevcat/vno" target="_blank">onevcat</a>
+         </span>
+       
+    
+  
+         <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    }); 
+    
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+   
+</footer>
+
+
+        </div>
+    </div>
+
+     
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-78918255-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>
