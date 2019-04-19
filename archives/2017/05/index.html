@@ -25,7 +25,7 @@
     
     <meta name="author" content="莯滢">
     
-    <link rel="stylesheet" href="../../css/vno.css">
+    <link rel="stylesheet" href="../../../css/vno.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 
     
@@ -42,14 +42,14 @@
 
 <body class="home-template no-js">
     <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../../../js/main.js"></script>
     <span class="mobile btn-mobile-menu">
         <i class="fa fa-list btn-mobile-menu__icon"></i>
         <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
     </span>
 
     
-<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover2.jpeg)">
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover.jpg)">
   <div class="panel-main">
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
@@ -135,15 +135,18 @@
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2019/03/07/网络连接过程/" title="link to post.title">网络连接过程</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2017/05/07/Block自动截获变量/" title="link to post.title">Block自动截获变量</a></h2>
       <p class="excerpt">
     
-      讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过DHCP协议(也是属于应用层的协议，基于UDP协议，全程 Dynamic Host Configuration Protocol ：动态主机配置协议) 进行动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我们的电脑会有对应的唯一的MAC地址（MAC全称：Media Access Control，媒体访问控
+      《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况
+1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址
+现针对以上内容进行详细分析。
+截获变量的值这一情况主要发生在1.对基本数据类型的引用（局部参数）其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2019-03-07T14:02:04.000Z" class="post-list__meta--date date">2019-03-07</time> &#8226; <span class="post-list__meta--tags tags">于 
-  <a class="tag-link" href="../../tags/计算机网络/">计算机网络</a>
-</span><a class="btn-border-small" href="/2019/03/07/网络连接过程/">阅读更多</a></div>
+      <div class="post-list__meta"><time datetime="2017-05-07T14:55:08.000Z" class="post-list__meta--date date">2017-05-07</time> &#8226; <span class="post-list__meta--tags tags">于 
+  <a class="tag-link" href="../../../tags/Block/">Block</a>, <a class="tag-link" href="../../../tags/Objective-C/">Objective-C</a>
+</span><a class="btn-border-small" href="/2017/05/07/Block自动截获变量/">阅读更多</a></div>
       <hr class="post-list__divider">
     </li>
   
