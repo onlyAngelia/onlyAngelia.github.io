@@ -68,11 +68,13 @@
 
 
 
-  <meta name="keywords" content="Objective-C,Block,">
+  <meta name="keywords" content="Block,">
 
 
 
 
+
+  <link rel="alternate" href="../../../../atom.xml" title="莯滢" type="application/atom+xml">
 
 
 
@@ -80,14 +82,14 @@
 
 
 <meta name="description" content="在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论       类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NSConcreteStackBlock      .cpp文件/Block.h     栈区">
-<meta name="keywords" content="Objective-C,Block">
+<meta name="keywords" content="Block">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Block类型及内存区域">
 <meta property="og:url" content="http://lanjiying.allenqin.com/2017/04/10/Block类型及内存区域/index.html">
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论       类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NSConcreteStackBlock      .cpp文件/Block.h     栈区">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-19T13:35:11.042Z">
+<meta property="og:updated_time" content="2019-04-28T16:55:45.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block类型及内存区域">
 <meta name="twitter:description" content="在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论       类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NSConcreteStackBlock      .cpp文件/Block.h     栈区">
@@ -100,13 +102,13 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: '莯滢'
     },
     algolia: {
       applicationID: '',
@@ -145,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -186,7 +188,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            莯冉滢滢之地
           </a>
         </li>
       
@@ -214,7 +216,7 @@
         <li class="menu-item menu-item-archives">
           <a href rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
             归档
           </a>
@@ -226,7 +228,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
-            关于
+            关于我
           </a>
         </li>
       
@@ -268,7 +270,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="莯滢">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="../../../../images/avatar.gif">
+      <meta itemprop="image" content="../../../../images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -303,6 +305,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../../../categories/Objective-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Objective-C</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -330,11 +354,11 @@
       
 
       
-        <p>在<a href="https://onlyangelia.github.io/2017/04/06/Block前言/" target="_blank" rel="noopener">Block前言</a>中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论</p>
+        <p>在<a href="https://onlyangelia.github.io/2017/04/06/Block前言/">Block前言</a>中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论</p>
 <table><br>  <tr><br>    <th width="35%," bgcolor="#eeeeee">类型</th><br>    <th width="35%," bgcolor="#eeeeee">查看源</th><br>    <th width="30%," bgcolor="#eeeeee">存储区域</th><br>  </tr><br> <tr><br>    <td>_NSConcreteGlobalBlock</td><br>    <td> .cpp文件/Block.h </td><br>    <td> 全局变量/静态变量区</td><br>  </tr><br>  <tr><br>    <td>_NSConcreteStackBlock </td><br>    <td> .cpp文件/Block.h</td><br>    <td> 栈区 </td><br>  </tr><br> <tr><br>    <td>_NSConcreteMallocBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteAutoBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteFinalizingBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteWeakBlockVariable </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br></table>
 
 
-<p>以上内容的查看在编译后的cpp文件以及runtime源码中都可以查看到相关信息<br><a href="https://github.com/onlyAngelia/YAObjectTest.git" target="_blank" rel="noopener">code已上传到Github,点击下载</a><br><a href="https://opensource.apple.com/source/objc4/objc4-680/runtime/" target="_blank" rel="noopener">runtime源码Apple官网</a><br><a href="https://github.com/onlyAngelia/objc-runtime" target="_blank" rel="noopener">runtime源码Github</a></p>
+<p>以上内容的查看在编译后的cpp文件以及runtime源码中都可以查看到相关信息<br><a href="https://github.com/onlyAngelia/YAObjectTest.git">code已上传到Github,点击下载</a><br><a href="https://opensource.apple.com/source/objc4/objc4-680/runtime/">runtime源码Apple官网</a><br><a href="https://github.com/onlyAngelia/objc-runtime">runtime源码Github</a></p>
 <h1 id="特别注意点"><a href="#特别注意点" class="headerlink" title="特别注意点"></a>特别注意点</h1><p>Block前言中讲到默认创建的Block指针只有Global、Statck，其它四种是在运行时编译环境决定的，此根据也是根据runtime源码和注释得出结论。</p>
 <pre><code class="cpp">// the raw data space for runtime classes for blocks
 // class+meta used for stack, malloc, and collectable based blocks
@@ -462,14 +486,41 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mine_wxpay.jpeg" alt="莯滢 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/mine_alipay.jpg" alt="莯滢 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="../../../../tags/Objective-C/" rel="tag"># Objective-C</a>
           
             <a href="../../../../tags/Block/" rel="tag"># Block</a>
           
@@ -562,6 +613,8 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="../../../../images/avatar.jpg" alt="莯滢">
+            
               <p class="site-author-name" itemprop="name">莯滢</p>
               <p class="site-description motion-element" itemprop="description">从事过编程，源于兴趣，目前在数据分析进修的路上</p>
           </div>
@@ -580,13 +633,22 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 <a href="../../../../tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -595,7 +657,36 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="../../../../atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2683037683" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlyAngelia" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="lanjiying@163.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-mail</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -639,7 +730,7 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -826,6 +917,8 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
   
 
   
+  
+
 
   
 

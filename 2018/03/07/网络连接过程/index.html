@@ -68,11 +68,13 @@
 
 
 
-  <meta name="keywords" content="计算机网络,">
+  <meta name="keywords" content="网络连接,">
 
 
 
 
+
+  <link rel="alternate" href="../../../../atom.xml" title="莯滢" type="application/atom+xml">
 
 
 
@@ -80,7 +82,7 @@
 
 
 <meta name="description" content="讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过DHCP协议(也是属于应用层的协议，基于UDP协议，全程 Dynamic Host Configuration Protocol ：动态主机配置协议) 进行动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我们的电脑会有对应的唯一的MAC地址（MAC全称：Media Access Control，媒体访问控">
-<meta name="keywords" content="计算机网络">
+<meta name="keywords" content="网络连接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络连接过程">
 <meta property="og:url" content="http://lanjiying.allenqin.com/2018/03/07/网络连接过程/index.html">
@@ -90,7 +92,7 @@
 <meta property="og:image" content="http://lanjiying.allenqin.com/2018/03/07/网络连接过程/TCP-IP五层模型数据传输.png">
 <meta property="og:image" content="http://lanjiying.allenqin.com/2018/03/07/网络连接过程/TCP包头.jpg">
 <meta property="og:image" content="http://lanjiying.allenqin.com/2018/03/07/网络连接过程/TCP状态机.jpg">
-<meta property="og:updated_time" content="2019-04-19T13:34:02.386Z">
+<meta property="og:updated_time" content="2019-04-28T16:56:41.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络连接过程">
 <meta name="twitter:description" content="讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过DHCP协议(也是属于应用层的协议，基于UDP协议，全程 Dynamic Host Configuration Protocol ：动态主机配置协议) 进行动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我们的电脑会有对应的唯一的MAC地址（MAC全称：Media Access Control，媒体访问控">
@@ -104,13 +106,13 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: '莯滢'
     },
     algolia: {
       applicationID: '',
@@ -149,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -190,7 +192,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            莯冉滢滢之地
           </a>
         </li>
       
@@ -218,7 +220,7 @@
         <li class="menu-item menu-item-archives">
           <a href rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
             归档
           </a>
@@ -230,7 +232,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
-            关于
+            关于我
           </a>
         </li>
       
@@ -272,7 +274,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="莯滢">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="../../../../images/avatar.gif">
+      <meta itemprop="image" content="../../../../images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -307,6 +309,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../../../categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -335,13 +359,13 @@
 
       
         <p>讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过<strong>DHCP协议(也是属于应用层的协议，基于UDP协议，全程 Dynamic Host Configuration Protocol ：动态主机配置协议)</strong> 进行动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我们的电脑会有对应的唯一的<strong>MAC地址（MAC全称：Media Access Control，媒体访问控制）</strong>，发送网络包，目标地址既要包括IP地址，也要包含MAC地址。IP地址类似于住址，MAC地址类似于身份证，两者缺一不可。IP地址和MAC地址的映射可以通过<strong>APR协议(全称：Address Resolution Protocol 地址解析协议，是属于链路层的协议 )</strong> 查询。记住IP地址和MAC地址这两个概念。</p>
-<p>​<br>在<strong>TCP/IP五层模型</strong>下，通过在浏览器中浏览网页，我们来梳理下网络的连接过程。比如，我们在浏览器输入：<a href="https://onlyAnglia.github.io" target="_blank" rel="noopener">https://onlyAnglia.github.io</a> ，按下回车，到浏览器中显示出博客内容中间经历了哪些过程？先简单的讲下HTTP的连接，再在HTTP的基础上补充HTTPS的连接。当然应用层还有许多协议，例如RTMP、QUIC、GTP等，有基于TCP的，也有基于UDP的。这里举例用基于TCP的HTTP协议，有关传输层常用的协议UDP 和 TCP连接不同和详细的连接过程，后面会单独写解释,接下来看一下网络的连接。</p>
+<p>​<br>在<strong>TCP/IP五层模型</strong>下，通过在浏览器中浏览网页，我们来梳理下网络的连接过程。比如，我们在浏览器输入：<a href="https://onlyAnglia.github.io">https://onlyAnglia.github.io</a> ，按下回车，到浏览器中显示出博客内容中间经历了哪些过程？先简单的讲下HTTP的连接，再在HTTP的基础上补充HTTPS的连接。当然应用层还有许多协议，例如RTMP、QUIC、GTP等，有基于TCP的，也有基于UDP的。这里举例用基于TCP的HTTP协议，有关传输层常用的协议UDP 和 TCP连接不同和详细的连接过程，后面会单独写解释,接下来看一下网络的连接。</p>
 <p>整体的传输流程如下：<br><img src="/2018/03/07/网络连接过程/TCP-IP五层模型数据传输.png" alt></p>
 <p>首先，机器和人不一样，并不能识别我们能熟记的域名，机器只认IP地址，所以</p>
 <p><strong>step1：进行DNS解析，得到域名对应的IP地址</strong>(DNS解析比较复杂，这里只说下一般流程，有关<strong>负载均衡</strong>等暂且不提)</p>
 <p>浏览器先在<strong>本地DNS</strong>缓存中查找onlyAnglia.github.io 对应的IP地址，若找到则返回对应的IP；倘若<strong>本地DNS缓存</strong>中未查找到域名对应的IP地址，则接下来会像<strong>本地DNS服务器</strong>询问（如果是通过<strong>DHCP</strong>配置，<strong>本地DNS服务器</strong>由对应的 <strong>网络服务商（ISP</strong>自动分配），如果找到就直接返回IP地址；若没有找到，<strong>本地DNS服务器</strong>会向它的<strong>根域名服务器</strong>询问,<strong>根域名服务器</strong>会告诉<strong>本地DNS服务器</strong>该向哪个<strong>顶级域名服务器</strong>询问，之后<strong>顶级域名服务器</strong>会告诉<strong>本地DNS服务器</strong>该向哪个<strong>权威域名服务器</strong>询问；接下来<strong>本地DNS服务器</strong>会找到对应的<strong>权威域名服务器</strong>查询对应的IP地址，<strong>权威服务器</strong>将对应的IP地址告诉<strong>本地DNS服务器</strong>，<strong>本地DNS服务器</strong>再将IP地址返回给浏览器，浏览器接收到对应的IP地址，准备开始建立连接。</p>
 <p>​<br><strong>step2：使用HTTP协议，经过应用层包装</strong></p>
-<p>查询到域名对应的IP地址之后表示请求访问的目标存在，可以进行访问。然后应用层请求构建<strong>HTTP</strong>，客户端的<strong>HTTP报文</strong>叫做<strong>请求报文</strong>，多数使用的还是<strong>HTTP1.1</strong>,在<strong>HTTP1.1</strong>的<strong>请求报文中</strong>包含了<strong>请求行</strong>、<strong>首部</strong>、<strong>正文实体</strong>。 其中，<strong>请求行</strong>包含用户<strong>请求的方法</strong>，<strong>请求URI</strong> 和 <strong>HTTP版本号</strong>。 例如：<code>POST  /form/entry  HTTP1.1</code>    <strong>首部字段</strong> 包含各种<strong>请求条件</strong>和<strong>请求属性</strong>，有些字段只是<strong>请求首部字段</strong>，部分是<strong>通用首部字段</strong>，还有一部分是<strong>实体首部字段</strong>(有关该部分可详见：<a href="https://github.com/onlyAngelia/Read-Mark/blob/master/HTTP/HTTP图解mark.md" target="_blank" rel="noopener">HTTP协议简单解释</a>)。构建好请求报文后，通过<strong>stream二进制流</strong>传递给传输层。并且浏览器开启端口号监听。</p>
+<p>查询到域名对应的IP地址之后表示请求访问的目标存在，可以进行访问。然后应用层请求构建<strong>HTTP</strong>，客户端的<strong>HTTP报文</strong>叫做<strong>请求报文</strong>，多数使用的还是<strong>HTTP1.1</strong>,在<strong>HTTP1.1</strong>的<strong>请求报文中</strong>包含了<strong>请求行</strong>、<strong>首部</strong>、<strong>正文实体</strong>。 其中，<strong>请求行</strong>包含用户<strong>请求的方法</strong>，<strong>请求URI</strong> 和 <strong>HTTP版本号</strong>。 例如：<code>POST  /form/entry  HTTP1.1</code>    <strong>首部字段</strong> 包含各种<strong>请求条件</strong>和<strong>请求属性</strong>，有些字段只是<strong>请求首部字段</strong>，部分是<strong>通用首部字段</strong>，还有一部分是<strong>实体首部字段</strong>(有关该部分可详见：<a href="https://github.com/onlyAngelia/Read-Mark/blob/master/HTTP/HTTP图解mark.md">HTTP协议简单解释</a>)。构建好请求报文后，通过<strong>stream二进制流</strong>传递给传输层。并且浏览器开启端口号监听。</p>
 <p>​<br><strong>step3：传输层接收请求报文，构建请求段</strong>(传输层协议主要有UDP协议和TCP协议，HTTP是基于TCP协议)</p>
 <p>应用层将请求报文传递给传输层后，传输层根据要使用的协议进行传输层报文的封装，在这里构建的是<strong>TCP包头</strong>，传输层构建好<strong>TCP包头</strong>后，将传输来的流信息作为数据项。<strong>TCP的包头</strong>比较复杂,这和<strong>TCP</strong>的可靠连接有关，此时到了传输层后内核会开启，监听端口号，等待接下来的回应。（一般机器中会有一个网卡，也有部分机器会装有多个网卡）此时浏览器处于<strong>SYN-SENT</strong>状态。<br><img src="/2018/03/07/网络连接过程/TCP包头.jpg" alt> </p>
 <p>​<br><strong>step4：网络层接收传输层的段，构建IP包</strong>（网络传输二层叫帧，网络层叫包，传输层叫段）</p>
@@ -377,6 +401,35 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mine_wxpay.jpeg" alt="莯滢 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/mine_alipay.jpg" alt="莯滢 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -384,7 +437,7 @@
       
         <div class="post-tags">
           
-            <a href="../../../../tags/计算机网络/" rel="tag"># 计算机网络</a>
+            <a href="../../../../tags/网络连接/" rel="tag"># 网络连接</a>
           
         </div>
       
@@ -462,6 +515,8 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="../../../../images/avatar.jpg" alt="莯滢">
+            
               <p class="site-author-name" itemprop="name">莯滢</p>
               <p class="site-description motion-element" itemprop="description">从事过编程，源于兴趣，目前在数据分析进修的路上</p>
           </div>
@@ -480,13 +535,22 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 <a href="../../../../tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -495,7 +559,36 @@
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="../../../../atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2683037683" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlyAngelia" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="lanjiying@163.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-mail</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -523,7 +616,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -710,6 +803,8 @@
   
 
   
+  
+
 
   
 

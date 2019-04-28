@@ -68,11 +68,13 @@
 
 
 
-  <meta name="keywords" content="Objective-C,Block,">
+  <meta name="keywords" content="Block,">
 
 
 
 
+
+  <link rel="alternate" href="../../../../atom.xml" title="莯滢" type="application/atom+xml">
 
 
 
@@ -80,14 +82,14 @@
 
 
 <meta name="description" content="《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况 1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址 现针对以上内容进行详细分析。 截获变量的值这一情况主要发生在1.对基本数据类型的引用（局部参数）其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前">
-<meta name="keywords" content="Objective-C,Block">
+<meta name="keywords" content="Block">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Block自动截获变量">
 <meta property="og:url" content="http://lanjiying.allenqin.com/2017/05/07/Block自动截获变量/index.html">
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况 1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址 现针对以上内容进行详细分析。 截获变量的值这一情况主要发生在1.对基本数据类型的引用（局部参数）其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-19T13:34:44.113Z">
+<meta property="og:updated_time" content="2019-04-28T16:56:35.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block自动截获变量">
 <meta name="twitter:description" content="《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况 1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址 现针对以上内容进行详细分析。 截获变量的值这一情况主要发生在1.对基本数据类型的引用（局部参数）其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前">
@@ -100,13 +102,13 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: '莯滢'
     },
     algolia: {
       applicationID: '',
@@ -145,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -186,7 +188,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            莯冉滢滢之地
           </a>
         </li>
       
@@ -214,7 +216,7 @@
         <li class="menu-item menu-item-archives">
           <a href rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
             归档
           </a>
@@ -226,7 +228,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
             
-            关于
+            关于我
           </a>
         </li>
       
@@ -268,7 +270,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="莯滢">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="../../../../images/avatar.gif">
+      <meta itemprop="image" content="../../../../images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -303,6 +305,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../../../categories/Objective-C/" itemprop="url" rel="index">
+                    <span itemprop="name">Objective-C</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -330,7 +354,7 @@
       
 
       
-        <p><a href="https://onlyangelia.github.io/2017/04/06/Block前言/" target="_blank" rel="noopener">《Block前言》</a>中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况</p>
+        <p><a href="https://onlyangelia.github.io/2017/04/06/Block前言/">《Block前言》</a>中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况</p>
 <p><strong><br>1.截获变量的值<br>2.截获对象,将对象指针传递进去<br>3.将变量拷贝到堆区域，并持有变量<br>4.截获变量内存地址
 </strong><br>现针对以上内容进行详细分析。</p>
 <h1 id="截获变量的值"><a href="#截获变量的值" class="headerlink" title="截获变量的值"></a>截获变量的值</h1><p>这一情况主要发生在<br>1.<strong>对基本数据类型的引用</strong>（局部参数）<br>其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前的变量的瞬间值，唯一不同的是如果是Object类型，Block会多一步copy操作。先来看基本数据常量</p>
@@ -410,7 +434,7 @@ __Block_byref_a_0 *__forwarding;
 <pre><code>static void __BlockObject__testBlockAutomaticInterceptVar_block_copy_0(struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*dst, struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*src) {_Block_object_assign((void*)&amp;dst-&gt;a, (void*)src-&gt;a, 8/*BLOCK_FIELD_IS_BYREF*/);}
 
 static void __BlockObject__testBlockAutomaticInterceptVar_block_dispose_0(struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*src) {_Block_object_dispose((void*)src-&gt;a, 8/*BLOCK_FIELD_IS_BYREF*/);}
-</code></pre><p>copy和dispose函数的最后一个参数变为8，意味截获的变量是<strong>block转换来的。<br>具体的关于copy和dispose 可以祥见[霜神博客《深入研究Block捕获外部变量和</strong>block实现原理》第二部分Block的copy和dispose](<a href="https://www.jianshu.com/p/ee9756f3d5f6" target="_blank" rel="noopener">https://www.jianshu.com/p/ee9756f3d5f6</a>)</p>
+</code></pre><p>copy和dispose函数的最后一个参数变为8，意味截获的变量是<strong>block转换来的。<br>具体的关于copy和dispose 可以祥见[霜神博客《深入研究Block捕获外部变量和</strong>block实现原理》第二部分Block的copy和dispose](<a href="https://www.jianshu.com/p/ee9756f3d5f6">https://www.jianshu.com/p/ee9756f3d5f6</a>)</p>
 <p>#截获内存地址<br>.对于静态变量，全局变量，Block截获的是内存地址，在Block内部可以直接修改值。<br>主要因为静态变量和全局变量的存储区域并不会发生改变，所以在Block截获时引用的是其内存地址，修改后仍旧是存储在静态区</p>
 <pre><code>static int count = 100;
  typedef int (^blockStatic)(void);
@@ -438,14 +462,41 @@ myBlock-&gt;impl.Flags = 570425344;
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mine_wxpay.jpeg" alt="莯滢 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/mine_alipay.jpg" alt="莯滢 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="../../../../tags/Objective-C/" rel="tag"># Objective-C</a>
           
             <a href="../../../../tags/Block/" rel="tag"># Block</a>
           
@@ -538,6 +589,8 @@ myBlock-&gt;impl.Flags = 570425344;
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image" src="../../../../images/avatar.jpg" alt="莯滢">
+            
               <p class="site-author-name" itemprop="name">莯滢</p>
               <p class="site-description motion-element" itemprop="description">从事过编程，源于兴趣，目前在数据分析进修的路上</p>
           </div>
@@ -556,13 +609,22 @@ myBlock-&gt;impl.Flags = 570425344;
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
 
             
               
               
               <div class="site-state-item site-state-tags">
                 <a href="../../../../tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -571,7 +633,36 @@ myBlock-&gt;impl.Flags = 570425344;
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="../../../../atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2683037683" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlyAngelia" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="lanjiying@163.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>E-mail</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -615,7 +706,7 @@ myBlock-&gt;impl.Flags = 570425344;
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -802,6 +893,8 @@ myBlock-&gt;impl.Flags = 570425344;
   
 
   
+  
+
 
   
 
