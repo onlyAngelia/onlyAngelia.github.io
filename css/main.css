@@ -1092,7 +1092,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #222;
+  background: #49b1f5;
 }
 .site-meta {
   margin: 0;
@@ -1623,6 +1623,49 @@ pre .javascript .function {
 .fancybox-close:hover {
   border: none;
 }
+#reward-container {
+  padding: 10px 0;
+  margin: 20px auto;
+  width: 90%;
+  text-align: center;
+}
+#reward-button {
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  vertical-align: text-top;
+  margin: 0;
+  padding: 0 15px;
+  border-radius: 5px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 16px;
+  color: #fff;
+  background: #f44336;
+  letter-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+}
+#reward-button span:hover {
+  background: #f7877f;
+}
+#qr {
+  padding-top: 20px;
+}
+#qr a {
+  border: 0;
+}
+#qr img {
+  width: 180px;
+  max-width: 100%;
+  display: inline-block;
+  margin: 0.8em 2em 0 2em;
+}
+#qr p {
+  text-align: center;
+}
 .rtl.post-body p,
 .rtl.post-body a,
 .rtl.post-body h1,
@@ -1765,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #115b8b;
+  background: #6aad4b;
 }
 .feed-link,
 .chat {
@@ -2956,4 +2999,60 @@ ul.breadcrumb li+li:last-child {
   .pagination {
     margin: 8px 0 0;
   }
+}
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+  border-bottom: 1px solid #0593d3;
+}
+.post-body p a:hover {
+  color: #fc6423;
+  border-bottom: none;
+  border-bottom: 1px solid #fc6423;
+}
+::selection {
+  background: #00c4b6;
+  color: #f7f7f7;
+}
+::-moz-selection {
+  background: #00c4b6;
+  color: #f7f7f7;
+}
+.site-meta {
+  padding: 20px 0;
+  color: #fff;
+  background: #49b1f5;
+}
+.site-subtitle {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #fff;
+}
+.btn {
+  color: #49b1f5;
+  background: #fff;
+  border: 2px solid #49b1f5;
+}
+.btn:hover {
+  border-color: #49b1f5;
+  color: #fff;
+  background: #49b1f5;
+}
+.posts-expand .post-title-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #49b1f5;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
 }
