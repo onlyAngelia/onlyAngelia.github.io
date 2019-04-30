@@ -132,18 +132,18 @@
 
 
 
-<meta name="description" content="Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入理解Block。 Block前言 https://onlyangelia.github.io/muy">
+<meta name="description" content="Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入理解Block。 Block前言 https://onlyangelia.github.io/Blo">
 <meta name="keywords" content="Block">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Block前言">
 <meta property="og:url" content="https://onlyangelia.github.io/urlurl/Block前言/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入理解Block。 Block前言 https://onlyangelia.github.io/muy">
+<meta property="og:description" content="Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入理解Block。 Block前言 https://onlyangelia.github.io/Blo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-30T04:51:01.161Z">
+<meta property="og:updated_time" content="2019-04-30T05:03:17.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Block前言">
-<meta name="twitter:description" content="Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入理解Block。 Block前言 https://onlyangelia.github.io/muy">
+<meta name="twitter:description" content="Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入理解Block。 Block前言 https://onlyangelia.github.io/Blo">
 
 
 
@@ -389,7 +389,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  831
+                  827
                 </span>
               
 
@@ -427,10 +427,10 @@
 
       
         <p><strong>Block</strong>可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从<code>Block实质</code>、<code>Block类型及内存区域</code>、<code>Block截获自动变量</code>、<code>Block循环引用问题</code>深入理解Block。</p>
-<p><a href="https://onlyangelia.github.io/muying/Block前言/">Block前言 https://onlyangelia.github.io/muying/Block前言/)</a></p>
-<p><a href="https://onlyangelia.github.io/muying/Block实质/">Block实质详解 https://onlyangelia.github.io/muying/Block实质/</a></p>
-<p><a href="https://onlyangelia.github.io/muying/Block类型及内存区域/">Block类型及内存区域 https://onlyangelia.github.io/muying/Block类型及内存区域/</a></p>
-<p><a href="https://onlyangelia.github.io/muying/Block自动截获变量/">Block截获变量 https://onlyangelia.github.io/muying/Block自动截获变量/</a></p>
+<p><a href="https://onlyangelia.github.io/Block前言/">Block前言 https://onlyangelia.github.io/Block前言/)</a></p>
+<p><a href="https://onlyangelia.github.io/Block实质/">Block实质详解 https://onlyangelia.github.io/Block实质/</a></p>
+<p><a href="https://onlyangelia.github.io/Block类型及内存区域/">Block类型及内存区域 https://onlyangelia.github.io/Block类型及内存区域/</a></p>
+<p><a href="https://onlyangelia.github.io/Block自动截获变量/">Block截获变量 https://onlyangelia.github.io/Block自动截获变量/</a></p>
 <h1 id="Block实质"><a href="#Block实质" class="headerlink" title="Block实质"></a>Block实质</h1><p>在OC语言中，<strong>Block</strong>从OS X Snow Leopard 和 iOS 4起开始引入，才被众多OC语言使用者周知。OC是基于C语言编写，Block也是基于C语言的扩充，那Block是扩充的何种功能呢？简而言之，Block是<strong><code>带有自动变量（局部变量）的匿名函数</code></strong>。但OC语言又是对C语言的扩展，是OOL，所以Block在OC中的存在绝不仅仅是一段函数。我们可以使用<strong>clang</strong>命令，查看Block在OC中的实现。(clang -rewrite-objc 源文件名 note：具体如何clang，详情Google )<br>具体沿着编译后的cpp文件查找，会查找到如下最<strong>原始结构</strong></p>
 <pre><code class="cpp">struct __block_impl {
 void *isa;
@@ -439,7 +439,7 @@ int Reserved;
 void *FuncPtr;
 }
 </code></pre>
-<p>可以看到，结构体中有isa指针,Block的实质是与OC中常见objc_object结构体类似,由此可见<strong>Block在OC中是作为对象存在</strong>。<br><a href="https://onlyangelia.github.io/muying/Block实质/">Block实质详解</a></p>
+<p>可以看到，结构体中有isa指针,Block的实质是与OC中常见objc_object结构体类似,由此可见<strong>Block在OC中是作为对象存在</strong>。<br><a href="https://onlyangelia.github.io/Block实质/">Block实质详解</a></p>
 <h1 id="Block类型及内存区域"><a href="#Block类型及内存区域" class="headerlink" title="Block类型及内存区域"></a>Block类型及内存区域</h1><p>在Block实质中，我们探究到了Block的最原始结构，那么Block<br>有哪几种类型呢，接下来看Block结构体中的<strong>isa指针</strong>。<br>在编译后的cpp文件中，我们可以看到构造函数中会有如下赋值</p>
 <pre><code class="cpp">__BlockObject__init_block_impl_0(void *fp, struct __BlockObject__init_block_desc_0 *desc, int flags=0) {
     impl.isa = &amp;_NSConcreteStackBlock;
@@ -450,8 +450,8 @@ void *FuncPtr;
 </code></pre>
 <p>可以看到 <code>**impl.isa = &amp;_NSConcreteStackBlock**</code>,<code>_NSConcreteStackBlock</code>就代表了Block类型。<br>类似_NSConcreteStackBlock这样的结构还有以下几种</p>
 <p>|类型|查看源|存储区域<br>_NSConcreteGlobalBlock    | .cpp文件/Block.h | 全局变量/静态变量区<br>_NSConcreteStackBlock      | .cpp文件/Block.h|栈区<br>_NSConcreteMallocBlock     |Block_private.h文件|堆区<br>_NSConcreteAutoBlock |Block_private.h文件|堆区<br>_NSConcreteFinalizingBlock |Block_private.h文件|堆区<br>_NSConcreteWeakBlockVariable |Block_private.h文件|堆区</p>
-<p>通过编译后cpp文件以及查看runtime中与Block相关文件，找到以上六种类型。我们创建的Block默认赋值的isa指针会有<code>_NSConcreteGlobalBlock</code>和<code>_NSConcreteStackBlock 两种类型，</code>，其它四种是在运行期间，编译器根据情况生成。<br>有关各Block类型、存储区域 以及各类型和存储区域和各种场景的对应详情点击<br> <a href="https://onlyangelia.github.io/muying/Block类型及内存区域/">Block类型及内存区域</a></p>
-<h1 id="Block截获变量"><a href="#Block截获变量" class="headerlink" title="Block截获变量"></a>Block截获变量</h1><p>使用Block期间，不可避免要使用一些外部变量或全局变量以及对象等。而Block对于引用的变量或对象有自动截获的能力。对于Global、Stack、Malloc 类型的Block都有自动截获的能力，但对于不同的变量或者是在不同情况下，Block截获变量会出现以下情况：<br>1.截获变量的值<br>2.截获变量的指针<br>3.将变量拷贝到堆区域，并持有变量<br>对于每种情况的具体分析，详见<a href="https://onlyangelia.github.io/muying/Block自动截获变量/">《Block自动截获变量》</a></p>
+<p>通过编译后cpp文件以及查看runtime中与Block相关文件，找到以上六种类型。我们创建的Block默认赋值的isa指针会有<code>_NSConcreteGlobalBlock</code>和<code>_NSConcreteStackBlock 两种类型，</code>，其它四种是在运行期间，编译器根据情况生成。<br>有关各Block类型、存储区域 以及各类型和存储区域和各种场景的对应详情点击<br> <a href="https://onlyangelia.github.io/Block类型及内存区域/">Block类型及内存区域</a></p>
+<h1 id="Block截获变量"><a href="#Block截获变量" class="headerlink" title="Block截获变量"></a>Block截获变量</h1><p>使用Block期间，不可避免要使用一些外部变量或全局变量以及对象等。而Block对于引用的变量或对象有自动截获的能力。对于Global、Stack、Malloc 类型的Block都有自动截获的能力，但对于不同的变量或者是在不同情况下，Block截获变量会出现以下情况：<br>1.截获变量的值<br>2.截获变量的指针<br>3.将变量拷贝到堆区域，并持有变量<br>对于每种情况的具体分析，详见<a href="https://onlyangelia.github.io/Block自动截获变量/">《Block自动截获变量》</a></p>
 
       
     </div>
