@@ -496,10 +496,10 @@ code {
   font-family: 'PT Mono', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
-  padding: 2px 4px;
+  padding: 5px;
   word-wrap: break-word;
-  color: #555;
-  background: #eee;
+  color: #f56c6c;
+  background: #f2f6fc;
   border-radius: 3px;
   font-size: 13px;
 }
@@ -1951,7 +1951,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2205ff;
+  background: #5ed124;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3307,15 +3307,4 @@ pre .javascript .function {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
-}
-code {
-  color: #f56c6c;
-  background: #f2f6fc;
-  margin: 2px;
-}
-.highlight,
-pre {
-  margin: 5px 0;
-  padding: 5px;
-  border-radius: 3px;
 }
