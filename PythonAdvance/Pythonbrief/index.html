@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="../../lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="../../lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="../../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="../../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="../../css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="../../images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,">
+
+
+
+
+
+  <link rel="alternate" href="../../atom.xml" title="莯滢" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Python是一种解释型语言，一门完善的面向对象高级编程语言，无需编译和链接，为编写大型程序提供更多的结构和支持，并且与Shell脚本相比，适合编写GUI应用程序或游戏。Python提供来大量的多种类型标准模块，模块提供了诸如I/O、 系统调用、Socket支持、用户图形（GUI工具）、机器学习、可视化等；内置高级的数据结构类型，为数据分析提供了更多支持；Python是可扩展的，可以将Python">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python前篇">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/Pythonbrief/index.html">
+<meta property="og:site_name" content="莯滢">
+<meta property="og:description" content="Python是一种解释型语言，一门完善的面向对象高级编程语言，无需编译和链接，为编写大型程序提供更多的结构和支持，并且与Shell脚本相比，适合编写GUI应用程序或游戏。Python提供来大量的多种类型标准模块，模块提供了诸如I/O、 系统调用、Socket支持、用户图形（GUI工具）、机器学习、可视化等；内置高级的数据结构类型，为数据分析提供了更多支持；Python是可扩展的，可以将Python">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-03T15:29:51.001Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python前篇">
+<meta name="twitter:description" content="Python是一种解释型语言，一门完善的面向对象高级编程语言，无需编译和链接，为编写大型程序提供更多的结构和支持，并且与Shell脚本相比，适合编写GUI应用程序或游戏。Python提供来大量的多种类型标准模块，模块提供了诸如I/O、 系统调用、Socket支持、用户图形（GUI工具）、机器学习、可视化等；内置高级的数据结构类型，为数据分析提供了更多支持；Python是可扩展的，可以将Python">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/Pythonbrief/">
+
+
+
+
+
+  <title>Python前篇 | 莯滢</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/onlyAngelia" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">莯滢</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不念过往、不负当下、不畏将来</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-莯冉滢滢">
+          <a href="https://onlyangelia.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            莯冉滢滢
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="https://onlyangelia.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="https://onlyangelia.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="https://onlyangelia.github.io/aboutMe/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://onlyangelia.github.io">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="莯滢">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="../../images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="莯滢">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python前篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T13:34:08+08:00">
+                2018-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/PythonAdvance/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python是一种解释型语言，一门完善的面向对象高级编程语言，无需编译和链接，为编写大型程序提供更多的结构和支持，并且与Shell脚本相比，适合编写GUI应用程序或游戏。Python提供来大量的多种类型标准模块，模块提供了诸如I/O、 系统调用、Socket支持、用户图形（GUI工具）、机器学习、可视化等；内置高级的数据结构类型，为数据分析提供了更多支持；Python是可扩展的，可以将Python解释器集成进其它应用程序。</p>
+<p><strong>Python学习建议</strong>：对于学习Python的建议是可以先敲几行代码，再回头看具体的类型和语法解释，因为这样会理解深刻，地基也能打的更牢靠。然后在这一组循环结束之后，再进行Python高阶学习，效率会更高。</p>
+<p>Python官网：<a href="https://www.python.org/">https://www.python.org/</a></p>
+<h2 id="Python下载安装"><a href="#Python下载安装" class="headerlink" title="Python下载安装"></a>Python下载安装</h2><p>官网地址<a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>提供各种版本的平台安装包，可以根据自己电脑版本下载对应的平台包。本人电脑是Mac 版，所以安装的Mac OS X平台包。不过Mac系统自带Python2.7环境，可以打开Termail 输入<code>Python -v</code>查看版本号，或者打开Python自带的IDLE，解释器开头会有Python环境的描述。因为本人要学习Python3，所以保留了自带的Python2.7环境，又下载来Python3.6，同时存在两种版本。若只想将Python2.7升级到Python3.6，则需要将下载后的Python3.6 替换原有的Python2.7。 </p>
+<p>通常Python安装目录是:<code>/usr/local/bin</code>  ,如果是windows，安装目录一般是<code>C:\Python36</code>, 这里目录并不是固定Python36，如果安装版本是3.5，则目录就是<code>C:\Python35</code></p>
+<h2 id="Python-IDE：模式-amp-类型"><a href="#Python-IDE：模式-amp-类型" class="headerlink" title="Python IDE：模式&amp;类型"></a>Python IDE：模式&amp;类型</h2><p>Python运行，需要通过IDE，Python IDE有很多种，例如：IDLE、PyCharm、Sublime Text、iPython、Vim、Eclipse + PyDev、jupyter、notebook+spyder3等，可以根据个人不同习惯安装适合的IDE，以JAVA开发为主的编程人员可能更习惯使用Eclipse，不太会编码的人员可能使用notebook+spyder3更普遍，不过本人使用最频繁的IDE是Pycharm，Pycharm自带错误提示和输入提示，节约编码时间，提高编码效率，并且适合编写爬虫。</p>
+<p>以上IDE中有IDE是工作在交互模式下，例如IDLE，打开IDLE会发现每行都以<code>&gt;&gt;&gt;</code>开头，<code>&gt;&gt;&gt;</code>是主标识符。若解释器从tty读取命名，则称解释器工作于<strong>交互模式</strong>，IDLE就是工作于交互模式的解释器，这种模式是根据主提示符来执行，主提示符通常情况下标识为三个大于号<code>&gt;&gt;&gt;</code> ，继续部分称为从属提示符，通常是三个点<code>...</code>,</p>
+<p>在第一行主提示符之前，IDE打印欢迎信息、版本号和授权提示，这就是我们打开Python安装包自带的IDLE就能查看版本号的原因。因为交互模式的工作方式，每行代码敲完后都需要回车，回车之后会继续有三个大于号<code>&gt;&gt;&gt;</code> 的提示符，再继续输入后面的内容。脚本式编程的IDE 不会有提示符，代码编写完成后再运行即可。</p>
+<h2 id="Python-IDE-环境设计"><a href="#Python-IDE-环境设计" class="headerlink" title="Python IDE 环境设计"></a>Python IDE 环境设计</h2><p>Python3 之前默认的编码格式是ASCII格式，在没有修改编码格式之前无法打印汉字，不过Python3 之后这个问题不存在，默认情况下源码文件以<strong>UTF-8</strong>编码。若使用的Python3之前的版本，则在编写程序之间需要添加一行注释：</p>
+<pre><code class="python"># -*- coding: utf-8 -*-
+</code></pre>
+<p>若要支持其它文字，则需要输入对应的编码格式。</p>
+<p>针对部分IDE，可以统一设置编码格式，统一设置编码格式后则不需要在每次编码的时候添加注释。统一设置一般是在setting(mac版为偏好设置)中，找到对应的File encodings 将其中的IDE Encoding和Project Encoding设置为utf-8</p>
+<h2 id="Python-基础语法"><a href="#Python-基础语法" class="headerlink" title="Python 基础语法"></a>Python 基础语法</h2><p>###1.缩进问题</p>
+<p>​    缩进在Python中作为语法出现，表示代码的层级关系，同一个代码块的语句必须包含相同的缩进空格数。所以空格缩进问题要特别注意，多一个空格或少空格会造成语法错误。</p>
+<pre><code class="python">IndentationError: unindent does not match any outer indentation level
+</code></pre>
+<p>###2.标识符</p>
+<p>标识符由字母、数字、下划线构成，第一个字符必须是字母表中字母或下划线<code>_</code>，并且标识符区分大小写。以下划线开头的标识符有特殊含义， 单下划线开头<code>_modelorclassname</code>代表不能直接访问的类属性,需通过类提供的接口进行访问，不能用<code>from xxx import *</code>导入；双下划线开头<code>__propertyname</code>代表类的私有成员；以双下划线开头和结尾的<code>__name__</code> 是Python特殊方法专用表示，如<code>__init()__</code>代表类的构造函数。此外，Python3 现在可以接收非ASCII字符。</p>
+<p>###3.注释</p>
+<p>单行注释用<strong>#</strong>开头，多行注释可以用多个#号，或者是三个单引号’’’，或者三个双引号”””</p>
+<pre><code class="python">#Python简介
+#Python基础语法
+
+&#39;&#39;&#39;
+Python简介
+Python基础语法
+&#39;&#39;&#39;
+
+&quot;&quot;&quot;
+Python简介
+Python基础语法
+&quot;&quot;&quot;
+</code></pre>
+<p>###4.保留字</p>
+<p>保留字是Python系统的关键字，所以开发者不能用来当标识符。Python3中可以查看所有保留字</p>
+<pre><code class="python">&gt;&gt;&gt; import keyword
+&gt;&gt;&gt; keyword.kwlist
+[&#39;False&#39;, &#39;None&#39;, &#39;True&#39;, &#39;and&#39;, &#39;as&#39;, &#39;assert&#39;, &#39;break&#39;, &#39;class&#39;, &#39;continue&#39;, &#39;def&#39;, &#39;del&#39;, &#39;elif&#39;, &#39;else&#39;, &#39;except&#39;, &#39;finally&#39;, &#39;for&#39;, &#39;from&#39;, &#39;global&#39;, &#39;if&#39;, &#39;import&#39;, &#39;in&#39;, &#39;is&#39;, &#39;lambda&#39;, &#39;nonlocal&#39;, &#39;not&#39;, &#39;or&#39;, &#39;pass&#39;, &#39;raise&#39;, &#39;return&#39;, &#39;try&#39;, &#39;while&#39;, &#39;with&#39;, &#39;yield&#39;]
+</code></pre>
+<p>###5.多行语句</p>
+<p>在[],{},()中的语句可以直接回车换行进行多行语句书写，但非以上结构中的语句，要想换行写必须使用反斜杠<code>\</code>。</p>
+<pre><code class="python">number = 120000000 + 2000000000 + \
+                 3424546 + 58690765465\
+               234567789 + 5678900
+</code></pre>
+<h3 id="6-标点符号问题"><a href="#6-标点符号问题" class="headerlink" title="6.标点符号问题"></a>6.标点符号问题</h3><p>Python环境中，除了Python流程控制函数后需要输入冒号以此来区分控制语句的多行代码，其它情况每行代码后无需加任何标点符号。</p>
+<h3 id="7-空行"><a href="#7-空行" class="headerlink" title="7.空行"></a>7.空行</h3><p>空行在Python中也是程序代码的一部分，但空行并不是Python语法的一部分。函数之间、类的方法之间用空行分隔，表式一段新的代码的开始，不插入空行也不会报错。</p>
+<h3 id="8-一行显示多条语句"><a href="#8-一行显示多条语句" class="headerlink" title="8.一行显示多条语句"></a>8.一行显示多条语句</h3><p>Python中可以在同一行中写多条语句，这个时候语句之间要使用分号<strong>；</strong>分割。交互式IDE中会一次性输出多条语句的执行结果。</p>
+<h3 id="9-多个语句构成代码组"><a href="#9-多个语句构成代码组" class="headerlink" title="9. 多个语句构成代码组"></a>9. 多个语句构成代码组</h3><p>前面讲到缩进相同的代码代表同一个层级，这些代码构成来一个代码块，称为代码组。</p>
+<p><strong>if</strong>、<strong>while</strong>等控制语句就会形成代码组。以及自定义函数<strong>def</strong> 或 <strong>class</strong>后面可以形成代码组。 交互式系统中代码组最后一行必须是空行 以此来表示代码组结束。</p>
+<h3 id="10-import-与-from-…-import"><a href="#10-import-与-from-…-import" class="headerlink" title="10. import 与 from … import"></a>10. import 与 from … import</h3><p>Python中导入模块有<strong>import</strong>与<strong>form…import</strong>两种方式。整个模块导入用import格式，从某个模块中导入某个函数使用from…import个数。多个模块导入或某个模块导入多个函数，则在模块或特定函数之间用逗号<strong>,</strong>分割</p>
+<pre><code class="python">import modulename
+import moduleone,moduletwo
+
+from modulename import funcname
+from modulename import funcone,functwo
+
+</code></pre>
+<h3 id="11-模块下载"><a href="#11-模块下载" class="headerlink" title="11.模块下载"></a>11.模块下载</h3><p>Python具有兼容性，许多第三方module要自己下载，打开Terimal,输入：</p>
+<pre><code class="python">python -m install modulename  #modulename 为要下载的部件名称
+</code></pre>
+<p>如果电脑上有多个Python版本，需要指定Python版本进行下载</p>
+<pre><code class="python">python3 -m install modulename 
+</code></pre>
+<h3 id="12-命令行参数"><a href="#12-命令行参数" class="headerlink" title="12. 命令行参数"></a>12. 命令行参数</h3><p>在Terimal中使用<strong>-h</strong>参数可以查看各参数帮助信息：</p>
+<pre><code class="python">apple@muyingdeMacBook-Pro ~&gt; python -h
+usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Options and arguments (and corresponding environment variables):
+-B     : don&#39;t write .py[co] files on import; also PYTHONDONTWRITEBYTECODE=x
+-c cmd : program passed in as string (terminates option list)
+-d     : debug output from parser; also PYTHONDEBUG=x
+-E     : ignore PYTHON* environment variables (such as PYTHONPATH)
+-h     : print this help message and exit (also --help)
+-i     : inspect interactively after running script; forces a prompt even
+         if stdin does not appear to be a terminal; also PYTHONINSPECT=x
+-m mod : run library module as a script (terminates option list)
+-O     : optimize generated bytecode slightly; also PYTHONOPTIMIZE=x
+-OO    : remove doc-strings in addition to the -O optimizations
+-R     : use a pseudo-random salt to make hash() values of various types be
+         unpredictable between separate invocations of the interpreter, as
+         a defense against denial-of-service attacks
+-Q arg : division options: -Qold (default), -Qwarn, -Qwarnall, -Qnew
+-s     : don&#39;t add user site directory to sys.path; also PYTHONNOUSERSITE
+-S     : don&#39;t imply &#39;import site&#39; on initialization
+-t     : issue warnings about inconsistent tab usage (-tt: issue errors)
+-u     : unbuffered binary stdout and stderr; also PYTHONUNBUFFERED=x
+         see man page for details on internal buffering relating to &#39;-u&#39;
+-v     : verbose (trace import statements); also PYTHONVERBOSE=x
+         can be supplied multiple times to increase verbosity
+-V     : print the Python version number and exit (also --version)
+-W arg : warning control; arg is action:message:category:module:lineno
+         also PYTHONWARNINGS=arg
+-x     : skip first line of source, allowing use of non-Unix forms of #!cmd
+-3     : warn about Python 3.x incompatibilities that 2to3 cannot trivially fix
+file   : program read from script file
+-      : program read from stdin (default; interactive mode if a tty)
+arg ...: arguments passed to program in sys.argv[1:]
+
+Other environment variables:
+PYTHONSTARTUP: file executed on interactive startup (no default)
+PYTHONPATH   : &#39;:&#39;-separated list of directories prefixed to the
+               default module search path.  The result is sys.path.
+PYTHONHOME   : alternate &lt;prefix&gt; directory (or &lt;prefix&gt;:&lt;exec_prefix&gt;).
+               The default module search path uses &lt;prefix&gt;/pythonX.X.
+PYTHONCASEOK : ignore case in &#39;import&#39; statements (Windows).
+PYTHONIOENCODING: Encoding[:errors] used for stdin/stdout/stderr.
+PYTHONHASHSEED: if this variable is set to &#39;random&#39;, the effect is the same
+   as specifying the -R option: a random value is used to seed the hashes of
+   str, bytes and datetime objects.  It can also be set to an integer
+   in the range [0,4294967295] to get hash values with a predictable seed.
+</code></pre>
+<p>此外，Python提供来<strong>getopt</strong>模块获取命令行参数， 或者用<strong>sys</strong> 模块的<strong>sys.argv</strong>获取命令行参数</p>
+<p>####sys模块:</p>
+<p><code>sys.argv[0]表示脚本名</code></p>
+<p><code>sys.argv是命令行参数列表</code></p>
+<p><code>len(sys.argv)是命令行参数个数</code></p>
+<p>.py文件(.py为Python文件的后缀)中：</p>
+<pre><code class="python">import sys
+print (&#39;命令行参数个数为:&#39;, len(sys.argv))
+pring (&#39;命令行参数列表:&#39;, str(sys.argv)) 
+</code></pre>
+<p>执行和输出结果为:</p>
+<pre><code class="python">python3 classname.py arg1 arg2
+
+输出结果：
+命令行参数个数为： 4
+命令行参数列表：[&#39;classname.py&#39;, &#39;arg1&#39;, &#39;arg2&#39;]
+</code></pre>
+<p>####getopt模块</p>
+<p>getopt模块专门处理命令行参数，用于获取命令行选型和参数支持短选项模式<code>-</code>和长选项模式<code>—</code></p>
+<p>模块中共有：两个方法；一个异常。 用来处理解析命令行参数。</p>
+<p><strong>getopt</strong>方法：</p>
+<p>此方法解析命令行参数列表：</p>
+<pre><code class="python">getopt.getopt(args, options[, long_options])
+</code></pre>
+<p>方法参数说明:</p>
+<p>args：要解析的命令行参数列表</p>
+<p>options: 以字符串格式定义，options后的冒号: 表示该选项必须有附加的参数，没有则代表不需要附加参数。</p>
+<p>long_options ： 列表格式定义，long_options 后的等号表示如果设置该选项，必须有附加的参数，否则就不附加参数。</p>
+<p>返回值由两个元素组成：第一个是 <strong>(option, value)</strong> 元组的列表。 第二个是参数列表，包含那些没有’-‘或’–’的参数。</p>
+<p><strong>gnu_getopt</strong>方法:</p>
+<p>getopt.getopt方法在遇到第一个不符合设置的参数时就会自动忽略，而gnu_getopt方法则不会存在这样的情况，即使参数不符合设定也会将结果输出出来，能够得到全部的命令行参数。</p>
+<p><strong>GetoptError</strong>异常：</p>
+<p>没有找到参数列表或选项需要的参数为空时会触发此异常。异常的参数是一个字符串，表示错误的原因。属性msg和opt为相关选项的错误信息。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mine_wxpay.jpeg" alt="莯滢 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/mine_alipay.jpg" alt="莯滢 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>作者：</strong>
+    莯滢
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://onlyangelia.github.io/PythonAdvance/Pythonbrief/" title="Python前篇">https://onlyangelia.github.io/PythonAdvance/Pythonbrief/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../../computerIntnet/intnetlink/" rel="next" title="网络连接过程">
+                <i class="fa fa-chevron-left"></i> 网络连接过程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDAxMy8yMDU0OA=="></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="../../images/avatar.jpg" alt="莯滢">
+            
+              <p class="site-author-name" itemprop="name">莯滢</p>
+              <p class="site-description motion-element" itemprop="description">从事过编程，源于兴趣，目前在数据分析进修的路上</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="../../archives">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="../../categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="../../tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="../../atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2683037683" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlyAngelia" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-github"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="lanjiying@163.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope-o"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python下载安装"><span class="nav-number">1.</span> <span class="nav-text">Python下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-IDE：模式-amp-类型"><span class="nav-number">2.</span> <span class="nav-text">Python IDE：模式&amp;类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-IDE-环境设计"><span class="nav-number">3.</span> <span class="nav-text">Python IDE 环境设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-基础语法"><span class="nav-number">4.</span> <span class="nav-text">Python 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-标点符号问题"><span class="nav-number">4.1.</span> <span class="nav-text">6.标点符号问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-空行"><span class="nav-number">4.2.</span> <span class="nav-text">7.空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-一行显示多条语句"><span class="nav-number">4.3.</span> <span class="nav-text">8.一行显示多条语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-多个语句构成代码组"><span class="nav-number">4.4.</span> <span class="nav-text">9. 多个语句构成代码组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-import-与-from-…-import"><span class="nav-number">4.5.</span> <span class="nav-text">10. import 与 from … import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-模块下载"><span class="nav-number">4.6.</span> <span class="nav-text">11.模块下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-命令行参数"><span class="nav-number">4.7.</span> <span class="nav-text">12. 命令行参数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">莯滢</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">12.8k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="../../lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="../../js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../../js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="../../js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../../js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="../../js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="../../js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../../js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
