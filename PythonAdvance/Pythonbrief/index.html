@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="Python是一种解释型语言，一门完善的面向对象高级编程语言，无需编译和链接，为编写大型程序提供更多的结构和支持，并且与Shell脚本相比，适合编写GUI应用程序或游戏。Python提供来大量的多种类型标准模块，模块提供了诸如I/O、 系统调用、Socket支持、用户图形（GUI工具）、机器学习、可视化等；内置高级的数据结构类型，为数据分析提供了更多支持；Python是可扩展的，可以将Python">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-03T15:29:51.001Z">
+<meta property="og:updated_time" content="2019-05-03T15:49:13.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python前篇">
 <meta name="twitter:description" content="Python是一种解释型语言，一门完善的面向对象高级编程语言，无需编译和链接，为编写大型程序提供更多的结构和支持，并且与Shell脚本相比，适合编写GUI应用程序或游戏。Python提供来大量的多种类型标准模块，模块提供了诸如I/O、 系统调用、Socket支持、用户图形（GUI工具）、机器学习、可视化等；内置高级的数据结构类型，为数据分析提供了更多支持；Python是可扩展的，可以将Python">
@@ -439,14 +439,11 @@
 </code></pre>
 <p>若要支持其它文字，则需要输入对应的编码格式。</p>
 <p>针对部分IDE，可以统一设置编码格式，统一设置编码格式后则不需要在每次编码的时候添加注释。统一设置一般是在setting(mac版为偏好设置)中，找到对应的File encodings 将其中的IDE Encoding和Project Encoding设置为utf-8</p>
-<h2 id="Python-基础语法"><a href="#Python-基础语法" class="headerlink" title="Python 基础语法"></a>Python 基础语法</h2><p>###1.缩进问题</p>
-<p>​    缩进在Python中作为语法出现，表示代码的层级关系，同一个代码块的语句必须包含相同的缩进空格数。所以空格缩进问题要特别注意，多一个空格或少空格会造成语法错误。</p>
+<h2 id="Python-基础语法"><a href="#Python-基础语法" class="headerlink" title="Python 基础语法"></a>Python 基础语法</h2><h3 id="1-缩进问题"><a href="#1-缩进问题" class="headerlink" title="1.缩进问题"></a>1.缩进问题</h3><p>​    缩进在Python中作为语法出现，表示代码的层级关系，同一个代码块的语句必须包含相同的缩进空格数。所以空格缩进问题要特别注意，多一个空格或少空格会造成语法错误。</p>
 <pre><code class="python">IndentationError: unindent does not match any outer indentation level
 </code></pre>
-<p>###2.标识符</p>
-<p>标识符由字母、数字、下划线构成，第一个字符必须是字母表中字母或下划线<code>_</code>，并且标识符区分大小写。以下划线开头的标识符有特殊含义， 单下划线开头<code>_modelorclassname</code>代表不能直接访问的类属性,需通过类提供的接口进行访问，不能用<code>from xxx import *</code>导入；双下划线开头<code>__propertyname</code>代表类的私有成员；以双下划线开头和结尾的<code>__name__</code> 是Python特殊方法专用表示，如<code>__init()__</code>代表类的构造函数。此外，Python3 现在可以接收非ASCII字符。</p>
-<p>###3.注释</p>
-<p>单行注释用<strong>#</strong>开头，多行注释可以用多个#号，或者是三个单引号’’’，或者三个双引号”””</p>
+<h3 id="2-标识符"><a href="#2-标识符" class="headerlink" title="2.标识符"></a>2.标识符</h3><p>标识符由字母、数字、下划线构成，第一个字符必须是字母表中字母或下划线<code>_</code>，并且标识符区分大小写。以下划线开头的标识符有特殊含义， 单下划线开头<code>_modelorclassname</code>代表不能直接访问的类属性,需通过类提供的接口进行访问，不能用<code>from xxx import *</code>导入；双下划线开头<code>__propertyname</code>代表类的私有成员；以双下划线开头和结尾的<code>__name__</code> 是Python特殊方法专用表示，如<code>__init()__</code>代表类的构造函数。此外，Python3 现在可以接收非ASCII字符。</p>
+<h3 id="3-注释"><a href="#3-注释" class="headerlink" title="3.注释"></a>3.注释</h3><p>单行注释用<strong>#</strong>开头，多行注释可以用多个#号，或者是三个单引号’’’，或者三个双引号”””</p>
 <pre><code class="python">#Python简介
 #Python基础语法
 
@@ -460,14 +457,12 @@ Python简介
 Python基础语法
 &quot;&quot;&quot;
 </code></pre>
-<p>###4.保留字</p>
-<p>保留字是Python系统的关键字，所以开发者不能用来当标识符。Python3中可以查看所有保留字</p>
+<h3 id="4-保留字"><a href="#4-保留字" class="headerlink" title="4.保留字"></a>4.保留字</h3><p>保留字是Python系统的关键字，所以开发者不能用来当标识符。Python3中可以查看所有保留字</p>
 <pre><code class="python">&gt;&gt;&gt; import keyword
 &gt;&gt;&gt; keyword.kwlist
 [&#39;False&#39;, &#39;None&#39;, &#39;True&#39;, &#39;and&#39;, &#39;as&#39;, &#39;assert&#39;, &#39;break&#39;, &#39;class&#39;, &#39;continue&#39;, &#39;def&#39;, &#39;del&#39;, &#39;elif&#39;, &#39;else&#39;, &#39;except&#39;, &#39;finally&#39;, &#39;for&#39;, &#39;from&#39;, &#39;global&#39;, &#39;if&#39;, &#39;import&#39;, &#39;in&#39;, &#39;is&#39;, &#39;lambda&#39;, &#39;nonlocal&#39;, &#39;not&#39;, &#39;or&#39;, &#39;pass&#39;, &#39;raise&#39;, &#39;return&#39;, &#39;try&#39;, &#39;while&#39;, &#39;with&#39;, &#39;yield&#39;]
 </code></pre>
-<p>###5.多行语句</p>
-<p>在[],{},()中的语句可以直接回车换行进行多行语句书写，但非以上结构中的语句，要想换行写必须使用反斜杠<code>\</code>。</p>
+<h3 id="5-多行语句"><a href="#5-多行语句" class="headerlink" title="5.多行语句"></a>5.多行语句</h3><p>在[],{},()中的语句可以直接回车换行进行多行语句书写，但非以上结构中的语句，要想换行写必须使用反斜杠<code>\</code>。</p>
 <pre><code class="python">number = 120000000 + 2000000000 + \
                  3424546 + 58690765465\
                234567789 + 5678900
@@ -822,7 +817,7 @@ pring (&#39;命令行参数列表:&#39;, str(sys.argv))
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python下载安装"><span class="nav-number">1.</span> <span class="nav-text">Python下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-IDE：模式-amp-类型"><span class="nav-number">2.</span> <span class="nav-text">Python IDE：模式&amp;类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-IDE-环境设计"><span class="nav-number">3.</span> <span class="nav-text">Python IDE 环境设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-基础语法"><span class="nav-number">4.</span> <span class="nav-text">Python 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-标点符号问题"><span class="nav-number">4.1.</span> <span class="nav-text">6.标点符号问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-空行"><span class="nav-number">4.2.</span> <span class="nav-text">7.空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-一行显示多条语句"><span class="nav-number">4.3.</span> <span class="nav-text">8.一行显示多条语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-多个语句构成代码组"><span class="nav-number">4.4.</span> <span class="nav-text">9. 多个语句构成代码组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-import-与-from-…-import"><span class="nav-number">4.5.</span> <span class="nav-text">10. import 与 from … import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-模块下载"><span class="nav-number">4.6.</span> <span class="nav-text">11.模块下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-命令行参数"><span class="nav-number">4.7.</span> <span class="nav-text">12. 命令行参数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python下载安装"><span class="nav-number">1.</span> <span class="nav-text">Python下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-IDE：模式-amp-类型"><span class="nav-number">2.</span> <span class="nav-text">Python IDE：模式&amp;类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-IDE-环境设计"><span class="nav-number">3.</span> <span class="nav-text">Python IDE 环境设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-基础语法"><span class="nav-number">4.</span> <span class="nav-text">Python 基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-缩进问题"><span class="nav-number">4.1.</span> <span class="nav-text">1.缩进问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-标识符"><span class="nav-number">4.2.</span> <span class="nav-text">2.标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-注释"><span class="nav-number">4.3.</span> <span class="nav-text">3.注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-保留字"><span class="nav-number">4.4.</span> <span class="nav-text">4.保留字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-多行语句"><span class="nav-number">4.5.</span> <span class="nav-text">5.多行语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-标点符号问题"><span class="nav-number">4.6.</span> <span class="nav-text">6.标点符号问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-空行"><span class="nav-number">4.7.</span> <span class="nav-text">7.空行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-一行显示多条语句"><span class="nav-number">4.8.</span> <span class="nav-text">8.一行显示多条语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-多个语句构成代码组"><span class="nav-number">4.9.</span> <span class="nav-text">9. 多个语句构成代码组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-import-与-from-…-import"><span class="nav-number">4.10.</span> <span class="nav-text">10. import 与 from … import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-模块下载"><span class="nav-number">4.11.</span> <span class="nav-text">11.模块下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-命令行参数"><span class="nav-number">4.12.</span> <span class="nav-text">12. 命令行参数</span></a></li></ol></li></ol></div>
             
 
           </div>
