@@ -133,14 +133,14 @@
 <meta name="description" content="Python3有六个标准数据类型： .不可变数据类型：Number(数字)、String(字符串)、Tuple(元组) .可变数据类型： List(列表)、Dictionary(字典)、Set(集合) 在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python数据类型(一)数字类型及其运算">
+<meta property="og:title" content="Python数据类型(一)数字类型">
 <meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/index.html">
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="Python3有六个标准数据类型： .不可变数据类型：Number(数字)、String(字符串)、Tuple(元组) .可变数据类型： List(列表)、Dictionary(字典)、Set(集合) 在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-05T15:32:54.199Z">
+<meta property="og:updated_time" content="2019-05-06T03:37:03.974Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python数据类型(一)数字类型及其运算">
+<meta name="twitter:title" content="Python数据类型(一)数字类型">
 <meta name="twitter:description" content="Python3有六个标准数据类型： .不可变数据类型：Number(数字)、String(字符串)、Tuple(元组) .可变数据类型： List(列表)、Dictionary(字典)、Set(集合) 在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举">
 
 
@@ -177,7 +177,7 @@
 
 
 
-  <title>Python数据类型(一)数字类型及其运算 | 莯滢</title>
+  <title>Python数据类型(一)数字类型 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python数据类型(一)数字类型及其运算</h1>
+          <h1 class="post-title" itemprop="name headline">Python数据类型(一)数字类型</h1>
         
 
         <div class="post-meta">
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.2k
+                  3.8k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  17
+                  16
                 </span>
               
             </div>
@@ -441,7 +441,8 @@
 <p>.可变数据类型： List(列表)、Dictionary(字典)、Set(集合)</p>
 <p>在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举)等。</p>
 <p>该篇讲述Number(数字)的各种类型、衍生类型Decimal类型和Fractions类型的适用情况以及针对数据类型的运算规则。</p>
-<h1 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h1><p>Python3 支持int、float、bool、complext、Decimal、Fraction 等数值类型，数值类型可以直接进行<code>+、-、*、/</code>运算，<code>()</code>用于分组。内置函数<code>type()</code>和<code>isinstance()</code>可以查看变量所指的对象类型，<strong>适用于所有的数据类型</strong>,两者的区别是<code>type()</code>不认为子类是父类类型  <code>isinstance()</code>认为子类是父类类型。</p>
+<p><strong>Number</strong>：</p>
+<p>Python3 支持int、float、bool、complext、Decimal、Fraction 等数值类型，数值类型可以直接进行<code>+、-、*、/</code>运算，<code>()</code>用于分组。内置函数<code>type()</code>和<code>isinstance()</code>可以查看变量所指的对象类型，<strong>适用于所有的数据类型</strong>,两者的区别是<code>type()</code>不认为子类是父类类型  <code>isinstance()</code>认为子类是父类类型。</p>
 <h2 id="int-整数"><a href="#int-整数" class="headerlink" title="int(整数)"></a>int(整数)</h2><p>整数(例如<code>4，5，6</code>)类型为<strong>int</strong> 类型，Python3之后只有一种整数类型int，表示长整型，不再有之前的<strong>long</strong>类型。在Python2中用数字0表示<code>False</code>，用数字1表示<code>True</code>，但是Python3 中直接把<code>True</code>和<code>False</code>定义为关键字，其值还是表示0和1。</p>
 <pre><code class="python">&gt;&gt;&gt; a = 1; b=2
 &gt;&gt;&gt; isinstance(a, int)
@@ -791,56 +792,7 @@ Fraction(7, 1000000)
 <p>1.像上面提到的，使用math中函数替代 ，如math.ceiling</p>
 <p>2.Python自带整除</p>
 <p>3.可以将浮点型做截断转成字符串</p>
-<h1 id="数值运算："><a href="#数值运算：" class="headerlink" title="数值运算："></a>数值运算：</h1><p>数字类型的数据可以进行数值运算，</p>
-<h2 id="Decimal运算"><a href="#Decimal运算" class="headerlink" title="Decimal运算"></a>Decimal运算</h2><p>Decimal 进行  $+ 、- 、\times 、/$  运算</p>
-<pre><code class="python">&gt;&gt;&gt; data = list(map(Decimal, &#39;1.34 1.87 3.45 2.35 1.00 0.03 9.25&#39;.split()))
-&gt;&gt;&gt; sum (data)
-Decimal(&#39;19.29&#39;)
-&gt;&gt;&gt; min(data)
-Decimal(&#39;0.03&#39;)
-&gt;&gt;&gt; max(data)
-Decimal(&#39;9.25&#39;)
-&gt;&gt;&gt; min(data)
-Decimal(&#39;0.03&#39;)
-&gt;&gt;&gt; a,b,c = data[:3]
-&gt;&gt;&gt; a * 5
-Decimal(&#39;6.70&#39;)
-&gt;&gt;&gt; a * b
-Decimal(&#39;2.5058&#39;)
-&gt;&gt;&gt; c % a
-Decimal(&#39;0.77&#39;)
-&gt;&gt;&gt; a + b + c
-Decimal(&#39;6.66&#39;)
-&gt;&gt;&gt; a - b
-Decimal(&#39;-0.53&#39;)
-&gt;&gt;&gt; 
-</code></pre>
-<p>当余数运算%应用于Decimal对象时，结果的符号是被除数的符号，而不是除数的符号</p>
-<pre><code class="python">&gt;&gt;&gt; -5 % 8
-3
-&gt;&gt;&gt; Decimal(-5) % Decimal(8)
-Decimal(&#39;-5&#39;)
-&gt;&gt;&gt; Decimal(8) % Decimal(-5)
-Decimal(&#39;3&#39;)
-</code></pre>
-<p>同样Decimal也可以进行一些数学函数运算</p>
-<pre><code class="python">&gt;&gt;&gt; Decimal(2).sqrt()
-Decimal(&#39;1.41421&#39;)
-&gt;&gt;&gt; Decimal(1).exp()
-Decimal(&#39;2.71828&#39;)
-&gt;&gt;&gt; Decimal(10).ln
-&lt;built-in method ln of decimal.Decimal object at 0x1073b04a8&gt;
-&gt;&gt;&gt; Decimal(10).ln()
-Decimal(&#39;2.30259&#39;)
-&gt;&gt;&gt; Decimal(&#39;10&#39;).log10()
-Decimal(&#39;1&#39;)
-</code></pre>
-<p>关于四舍五入，Decimal的quantize()方法可以将数字四舍五入为固定函数</p>
-<pre><code class="python">&gt;&gt;&gt; Decimal(&#39;7.325&#39;).quantize(Decimal(&#39;0.01&#39;), rounding=ROUND_DOWN)
-Decimal(&#39;7.32&#39;)
-&gt;&gt;&gt; Decimal(&#39;7.325&#39;).quantize(Decimal(&#39;1.&#39;), rounding=ROUND_UP)
-Decimal(&#39;8&#39;)
-</code></pre>
+<p>有关具体的各类Number运算，详见：<a href>数值运算&amp;数学模块</a></p>
 
       
     </div>
@@ -890,7 +842,7 @@ Decimal(&#39;8&#39;)
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/" title="Python数据类型(一)数字类型及其运算">https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/</a>
+    <a href="https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/" title="Python数据类型(一)数字类型">https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -1092,7 +1044,7 @@ Decimal(&#39;8&#39;)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Number"><span class="nav-number">1.</span> <span class="nav-text">Number</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-整数"><span class="nav-number">1.1.</span> <span class="nav-text">int(整数)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float（浮点数）"><span class="nav-number">1.2.</span> <span class="nav-text">float（浮点数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex（复数）"><span class="nav-number">1.3.</span> <span class="nav-text">complex（复数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decimal-十进制定点和浮点数"><span class="nav-number">1.4.</span> <span class="nav-text">Decimal(十进制定点和浮点数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——十进制数"><span class="nav-number">1.4.1.</span> <span class="nav-text">Decimal构成——十进制数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——信号"><span class="nav-number">1.4.2.</span> <span class="nav-text">Decimal构成——信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——算术上下文"><span class="nav-number">1.4.3.</span> <span class="nav-text">Decimal构成——算术上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-常数"><span class="nav-number">1.4.4.</span> <span class="nav-text">Decimal 常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal方法"><span class="nav-number">1.4.5.</span> <span class="nav-text">Decimal方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-注意点"><span class="nav-number">1.4.6.</span> <span class="nav-text">Decimal 注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fraction-分数-："><span class="nav-number">1.5.</span> <span class="nav-text">Fraction(分数)：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction构建方式"><span class="nav-number">1.5.1.</span> <span class="nav-text">Fraction构建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction属性和方法"><span class="nav-number">1.5.2.</span> <span class="nav-text">Fraction属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#round-函数注意点"><span class="nav-number">1.5.3.</span> <span class="nav-text">round()函数注意点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数值运算："><span class="nav-number">2.</span> <span class="nav-text">数值运算：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Decimal运算"><span class="nav-number">2.1.</span> <span class="nav-text">Decimal运算</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-整数"><span class="nav-number">1.</span> <span class="nav-text">int(整数)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float（浮点数）"><span class="nav-number">2.</span> <span class="nav-text">float（浮点数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex（复数）"><span class="nav-number">3.</span> <span class="nav-text">complex（复数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decimal-十进制定点和浮点数"><span class="nav-number">4.</span> <span class="nav-text">Decimal(十进制定点和浮点数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——十进制数"><span class="nav-number">4.1.</span> <span class="nav-text">Decimal构成——十进制数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——信号"><span class="nav-number">4.2.</span> <span class="nav-text">Decimal构成——信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——算术上下文"><span class="nav-number">4.3.</span> <span class="nav-text">Decimal构成——算术上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-常数"><span class="nav-number">4.4.</span> <span class="nav-text">Decimal 常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal方法"><span class="nav-number">4.5.</span> <span class="nav-text">Decimal方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-注意点"><span class="nav-number">4.6.</span> <span class="nav-text">Decimal 注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fraction-分数-："><span class="nav-number">5.</span> <span class="nav-text">Fraction(分数)：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction构建方式"><span class="nav-number">5.1.</span> <span class="nav-text">Fraction构建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction属性和方法"><span class="nav-number">5.2.</span> <span class="nav-text">Fraction属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#round-函数注意点"><span class="nav-number">5.3.</span> <span class="nav-text">round()函数注意点</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1133,7 +1085,7 @@ Decimal(&#39;8&#39;)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">17k</span>
+    <span title="Site words total count">16.7k</span>
   
 </div>
 
