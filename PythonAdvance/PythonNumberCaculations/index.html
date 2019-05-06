@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="../../lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="../../lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="../../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="../../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="../../css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="../../images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,">
+
+
+
+
+
+  <link rel="alternate" href="../../atom.xml" title="莯滢" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="所有的类型都可以被比较、检测逻辑值、转换字符串，所有的数据类型都可进行数学运算。 逻辑值检测任何数据类型或对象皆可进行逻辑值检测，默认情况下均被视为真值，除非对象或所属类重定义了bool()方法且返回False 或者是对象定义了len()方法且返回零。 以下是在逻辑检测时被视为假值的对象: .被定义为假值的常量：None 和 False .任何数值类型的零：0，0.0，0j,Decimal(0),">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python数字运算(-)数值、哈希、布尔等运算">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/index.html">
+<meta property="og:site_name" content="莯滢">
+<meta property="og:description" content="所有的类型都可以被比较、检测逻辑值、转换字符串，所有的数据类型都可进行数学运算。 逻辑值检测任何数据类型或对象皆可进行逻辑值检测，默认情况下均被视为真值，除非对象或所属类重定义了bool()方法且返回False 或者是对象定义了len()方法且返回零。 以下是在逻辑检测时被视为假值的对象: .被定义为假值的常量：None 和 False .任何数值类型的零：0，0.0，0j,Decimal(0),">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-06T14:29:26.668Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python数字运算(-)数值、哈希、布尔等运算">
+<meta name="twitter:description" content="所有的类型都可以被比较、检测逻辑值、转换字符串，所有的数据类型都可进行数学运算。 逻辑值检测任何数据类型或对象皆可进行逻辑值检测，默认情况下均被视为真值，除非对象或所属类重定义了bool()方法且返回False 或者是对象定义了len()方法且返回零。 以下是在逻辑检测时被视为假值的对象: .被定义为假值的常量：None 和 False .任何数值类型的零：0，0.0，0j,Decimal(0),">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/">
+
+
+
+
+
+  <title>Python数字运算(-)数值、哈希、布尔等运算 | 莯滢</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/onlyAngelia" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">莯滢</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不念过往、不负当下、不畏将来</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-一份耕耘">
+          <a href="https://onlyangelia.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            一份耕耘
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-一份收获">
+          <a href="https://onlyangelia.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            一份收获
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-果实标签">
+          <a href="https://onlyangelia.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            果实标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-果实分类">
+          <a href="https://onlyangelia.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br>
+            
+            果实分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于耕作者">
+          <a href="https://onlyangelia.github.io/aboutMe/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于耕作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://onlyangelia.github.io">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="莯滢">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="../../images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="莯滢">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python数字运算(-)数值、哈希、布尔等运算</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T20:34:35+08:00">
+                2018-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/PythonAdvance/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>所有的类型都可以被比较、检测逻辑值、转换字符串，所有的数据类型都可进行数学运算。</p>
+<h2 id="逻辑值检测"><a href="#逻辑值检测" class="headerlink" title="逻辑值检测"></a>逻辑值检测</h2><p>任何数据类型或对象皆可进行逻辑值检测，默认情况下均被视为真值，除非对象或所属类重定义了<strong>bool</strong>()方法且返回<code>False</code> 或者是对象定义了<strong>len</strong>()方法且返回零。</p>
+<p>以下是在逻辑检测时被视为假值的对象:</p>
+<p>.被定义为假值的常量：<code>None 和 False</code></p>
+<p>.任何数值类型的零：<code>0，0.0，0j,Decimal(0),Fraction(0,1)</code></p>
+<p>.空的序列和多项集：<code>&#39;&#39;，()，{}，set(),range(0)</code></p>
+<h2 id="Bool运算"><a href="#Bool运算" class="headerlink" title="Bool运算"></a>Bool运算</h2><p>Bool运算包括 <code>and、or、not</code>，按照优先级排列not &gt; and &gt; or</p>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>结果</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x or y</td>
+<td>如果x为false，那么返回y，否则返回x</td>
+<td>or为短路运算符，只有在第一个参数为假值时才会对第二个参数求值</td>
+</tr>
+<tr>
+<td>x and y</td>
+<td>如果x为false，那么返回x，否则返回y</td>
+<td>and同样是短路运算符，只有在第一个参数为真值时才会对第二个参数求值</td>
+</tr>
+<tr>
+<td>not x</td>
+<td>如果x为false，那么返回True，否则返回False</td>
+<td>优先级比非布尔运算符低，因此 <code>not a == b</code>会被解读为<code>not (a==b)</code>，而<code>a == not b</code>会造成语法错误</td>
+</tr>
+</tbody>
+</table>
+<h2 id="比较运算"><a href="#比较运算" class="headerlink" title="比较运算"></a>比较运算</h2><p>Python中有八种比较运算符，优先级相同，但都比布尔运算优先级高，并且比较运算符可以任意串联。例如，<code>x&lt;y&lt;=z</code>等价于 <code>x&lt; y and y &lt;=z</code>,不同之处是前者y只被求值一次，后者会被求值两次，相同点是在x&lt;y结果为假时z都不会被求值。</p>
+<p>八种比较运算符如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算符</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>&lt;</strong></td>
+<td style="text-align:center">小于</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&lt;=</strong></td>
+<td style="text-align:center">小于或等于</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&gt;</strong></td>
+<td style="text-align:center">大于</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>&gt;=</strong></td>
+<td style="text-align:center">大于等于</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>==</strong></td>
+<td style="text-align:center">等于</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>!=</strong></td>
+<td style="text-align:center">不等于</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>is</strong></td>
+<td style="text-align:center">对象标识</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>is not</strong></td>
+<td style="text-align:center">否定的对象标识</td>
+</tr>
+</tbody>
+</table>
+<h3 id="比较运算注意点"><a href="#比较运算注意点" class="headerlink" title="比较运算注意点"></a>比较运算注意点</h3><p>. 不同数字、不同类型对象比较时绝不会相等</p>
+<p>. 函数类型仅支持简化形式比较</p>
+<p>. &lt;,&lt;=,&gt;,&gt;= 运算符在比较复数和其它数字类型时，或在两个对象具有无法被比较的不同类型时，或在未定义次序的其他情况时，以上皆会产生TypeErroe异常</p>
+<p>. 不同标识类的实例比较，除非定义了<strong>eq</strong>()方法，否则不相等</p>
+<p>. 类实例不能与相同类或其他实例或其它类型对象进行排序，除非定义了 <strong>it</strong>(),<strong>le</strong>(),<strong>gt</strong>(),<strong>ge</strong>()这些函数</p>
+<p>. <code>is</code> 和 <code>is not</code>无法自定义，可以被应用于任意两个对象不引发异常。</p>
+<p>. in 和 not in ，与上面八种比较运算符具有相同优先级，但只能支持iterable(可迭代对象)或实现了<strong>contains</strong>()方法的类型</p>
+<h2 id="数字运算"><a href="#数字运算" class="headerlink" title="数字运算"></a>数字运算</h2><p>所有的数字类型，除了复数类型，都支持下面的运算操作，所有数字运算的优先级都高于比较运算，以下按照<strong>优先级升序排列</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">运算</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>+</strong></td>
+<td>两数之和</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>-</strong></td>
+<td>两数之差</td>
+</tr>
+<tr>
+<td style="text-align:center">$ \times $</td>
+<td>两数乘积</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>/</strong></td>
+<td>两数相除，结果返回商</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>//</strong></td>
+<td>两数整除，结果返回商数</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>%</strong></td>
+<td>两数相除结果取余数</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>-x</strong></td>
+<td>x取反</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>+x</strong></td>
+<td>x取正</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>abs(x)</strong></td>
+<td>x的绝对值</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>int(x)</strong></td>
+<td>将x转换为整数</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>float(x)</strong></td>
+<td>将x转换为浮点数</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>complex(re,im)</strong></td>
+<td>一个带有实部re和虚部im的复数，im默认为0</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>c.conjugate()</strong></td>
+<td>复数c的gonge</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>divmod(x,y)</strong></td>
+<td>执行x//y x%y ，得到x被y除之后的商和余数</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>pow(x,y)</strong></td>
+<td>x的y次幂</td>
+</tr>
+<tr>
+<td style="text-align:center">x **y</td>
+<td>同样表示x的y次幂</td>
+</tr>
+<tr>
+<td style="text-align:center">invmod(x,y)</td>
+<td>对x模y取反</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数字运算注意点："><a href="#数字运算注意点：" class="headerlink" title="数字运算注意点："></a>数字运算注意点：</h3><p>. / 除法运算返回的永远是一个浮点数</p>
+<p>.// 整除结果值是一个整数，但结果的类型不一定是int。 运算结果永远向负无穷方向舍入， 1//2 为0, (-1)//2 为-1，1//(-2)为-1,(-1)//(-2)为0。</p>
+<p>. % 不能用于复数</p>
+<p>. int() 若从浮点数转换为整数会被舍入或被截断，原因在前面文章数字类型中提到过，因为二进制浮点数问题</p>
+<p>数字类型还能进行数学函数运算，具体会在后面math和cmath模块讲到。</p>
+<h2 id="整数类型按位运算"><a href="#整数类型按位运算" class="headerlink" title="整数类型按位运算"></a>整数类型按位运算</h2><p>按位运算只对整数有意义，按位运算优先级低于数字运算，高于比较运算，但一元运算<code>~</code>与其它一元算术运算符优先级相同。</p>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>含义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x\</td>
+<td>y</td>
+<td>x和y按位或</td>
+<td></td>
+</tr>
+<tr>
+<td>x^y</td>
+<td>x和y按位异或</td>
+<td></td>
+</tr>
+<tr>
+<td>x&amp;y</td>
+<td>x和y按位与</td>
+<td></td>
+</tr>
+<tr>
+<td>x&lt;&lt;n</td>
+<td>x左移n位</td>
+<td>负的移位会引发ValueError，左移n位等价于不带溢出检测的乘以pow(2,n)</td>
+</tr>
+<tr>
+<td>x&gt;&gt;n</td>
+<td>x右移n位</td>
+<td>负的移位同样会引发ValueErroe，右移n位等价于不带溢出检测的除以pow(2,n)</td>
+</tr>
+<tr>
+<td>~x</td>
+<td>x按位取反</td>
+</tr>
+</tbody>
+</table>
+<h2 id="数字类型的哈希运算"><a href="#数字类型的哈希运算" class="headerlink" title="数字类型的哈希运算"></a>数字类型的哈希运算</h2><p>不同数字类型的两个数，要做== 比较运算时，必须转车哈希值，即hash(x)==hash(y)。为便于在各种数字类型上实现并保证效率，Python对数字类型的哈希运算是基于任意有理数定义统一的数学函数，本质上hash()是通过以一个固定质数P进行P降模。P的值在 Python 中可以 <a href="https://docs.python.org/zh-cn/3.6/library/sys.html#sys.hash_info"><code>sys.hash_info</code></a> 的 <code>modulus</code> 属性的形式被访问。</p>
+<p>CPython implementation detail: 所用质数设定，在 C long 为 32 位的机器上 <code>P = 2**31 - 1</code> 而在 C long 为 64 位的机器上 <code>P = 2**61 - 1</code></p>
+<p>运算规则如下：</p>
+<ul>
+<li>如果 <code>x = m / n</code> 是一个非负有理数，且 <code>n</code> 不能被 <code>P</code> 整除，则定义 <code>hash(x)</code> 为 <code>m * invmod(n, P) % P</code>。</li>
+<li>如果 <code>x = m / n</code> 是一个非负有理数，且 <code>n</code> 能被 <code>P</code> 整除（但 <code>m</code> 不能）则 <code>n</code> 不能对 <code>P</code> 降模，以上规则不适用；在此情况下则定义 <code>hash(x)</code> 为常数值 <code>sys.hash_info.inf</code>。</li>
+<li>如果 <code>x = m / n</code> 是一个负有理数，则定义 <code>hash(x)</code> 为 <code>-hash(-x)</code>。 如果结果哈希值为 <code>-1</code> 则将其替换为 <code>-2</code>。</li>
+<li>特定值 <code>sys.hash_info.inf</code>, <code>-sys.hash_info.inf</code> 和 <code>sys.hash_info.nan</code> 被用作正无穷、负无穷和空值（所分别对应的）哈希值。 （所有可哈希的空值都具有相同的哈希值）</li>
+<li>对于一个 <a href="https://docs.python.org/zh-cn/3.6/library/functions.html#complex"><code>complex</code></a> 值 <code>z</code>，会通过计算 <code>hash(z.real) + sys.hash_info.imag * hash(z.imag)</code> 将实部和虚部的哈希值结合起来，并进行降模 <code>2**sys.hash_info.width</code> 以使其处于 <code>range(-2**(sys.hash_info.width - 1), 2**(sys.hash_info.width - 1))</code> 范围之内。 同样地，如果结果为 <code>-1</code> 则将其替换为 <code>-2</code></li>
+</ul>
+<p>为了更好的理解运算规则，用代码实现如下:</p>
+<p>对分数求哈希值：</p>
+<pre><code class="python">&gt;&gt;&gt; import sys,math
+&gt;&gt;&gt; def hash_fraction(m,n):
+    &#39;&#39;&#39;计算比例数m/n的哈希值，m和n为整数，n为正数&#39;&#39;&#39;
+    P = sys.hash_info.modulus
+    #去掉P的公因数，除非m和n互质
+    while m%P == n%P ==0:
+        m,n = m//P, n//P
+    #如果n能被P整除，hash值为固定值
+    if n % P == 0:
+        hash_value = sys.hash_info.inf
+    else:
+        #如果n不能被P整除，则对P进行降模处理
+        hash_value = (abs(m)%P)*pow(n,P-2,P)%P
+    #判断m是否是负数，对负数求hash
+    if m &lt; 0:
+        hash_value = -hash_value
+    if hash_value == -1:
+        hash_value = -2
+    return hash_value
+</code></pre>
+<p>对float浮点数类型求哈希值：</p>
+<pre><code class="python">&gt;&gt;&gt; def hash_float(x):
+    #计算浮点数x的哈希值
+    if math.isnan(x):
+        return sys.hash_info.nan
+    elif math.isinf(x):
+        return sys.hash_info.inf if x &gt; 0 else -sys.hash_info.inf
+    else:
+        return hash_fraction(*x.as_integer_ratio())
+</code></pre>
+<p>对复数类型求哈希值：</p>
+<pre><code class="python">#计算复数z的哈希值
+    hash_value = hash_float(z.real) + sys.hash_info.imag * hash_float(z.imag)
+    M = 2 **(sys.hash_info.width - 1)
+    hash_value = (hash_value &amp; (M-1)) - (hash_value&amp;M)
+    if hash_value == -1:
+        hash_value = -2
+    return hash_value
+</code></pre>
+<h2 id="Decimal运算实例"><a href="#Decimal运算实例" class="headerlink" title="Decimal运算实例"></a>Decimal运算实例</h2><p>Decimal 进行  $+ 、- 、\times 、/$  运算</p>
+<pre><code class="python">&gt;&gt;&gt; data = list(map(Decimal, &#39;1.34 1.87 3.45 2.35 1.00 0.03 9.25&#39;.split()))
+&gt;&gt;&gt; sum (data)
+Decimal(&#39;19.29&#39;)
+&gt;&gt;&gt; min(data)
+Decimal(&#39;0.03&#39;)
+&gt;&gt;&gt; max(data)
+Decimal(&#39;9.25&#39;)
+&gt;&gt;&gt; min(data)
+Decimal(&#39;0.03&#39;)
+&gt;&gt;&gt; a,b,c = data[:3]
+&gt;&gt;&gt; a * 5
+Decimal(&#39;6.70&#39;)
+&gt;&gt;&gt; a * b
+Decimal(&#39;2.5058&#39;)
+&gt;&gt;&gt; c % a
+Decimal(&#39;0.77&#39;)
+&gt;&gt;&gt; a + b + c
+Decimal(&#39;6.66&#39;)
+&gt;&gt;&gt; a - b
+Decimal(&#39;-0.53&#39;)
+&gt;&gt;&gt; 
+</code></pre>
+<p>当余数运算%应用于Decimal对象时，结果的符号是被除数的符号，而不是除数的符号</p>
+<pre><code class="python">&gt;&gt;&gt; -5 % 8
+3
+&gt;&gt;&gt; Decimal(-5) % Decimal(8)
+Decimal(&#39;-5&#39;)
+&gt;&gt;&gt; Decimal(8) % Decimal(-5)
+Decimal(&#39;3&#39;)
+</code></pre>
+<p>同样Decimal也可以进行一些数学函数运算</p>
+<pre><code class="python">&gt;&gt;&gt; Decimal(2).sqrt()
+Decimal(&#39;1.41421&#39;)
+&gt;&gt;&gt; Decimal(1).exp()
+Decimal(&#39;2.71828&#39;)
+&gt;&gt;&gt; Decimal(10).ln
+&lt;built-in method ln of decimal.Decimal object at 0x1073b04a8&gt;
+&gt;&gt;&gt; Decimal(10).ln()
+Decimal(&#39;2.30259&#39;)
+&gt;&gt;&gt; Decimal(&#39;10&#39;).log10()
+Decimal(&#39;1&#39;)
+</code></pre>
+<p>关于四舍五入，Decimal的quantize()方法可以将数字四舍五入为固定函数</p>
+<pre><code class="python">&gt;&gt;&gt; Decimal(&#39;7.325&#39;).quantize(Decimal(&#39;0.01&#39;), rounding=ROUND_DOWN)
+Decimal(&#39;7.32&#39;)
+&gt;&gt;&gt; Decimal(&#39;7.325&#39;).quantize(Decimal(&#39;1.&#39;), rounding=ROUND_UP)
+Decimal(&#39;8&#39;)
+</code></pre>
+<h2 id="Fraction运算实例"><a href="#Fraction运算实例" class="headerlink" title="Fraction运算实例"></a>Fraction运算实例</h2><p>Fraction同样可以进行$+、-、\times /$   四则运算和%运算等</p>
+<pre><code class="python">&gt;&gt;&gt; from fractions import Fraction
+&gt;&gt;&gt; import math
+&gt;&gt;&gt; Fraction(2,3) + Fraction(3,5)
+Fraction(19, 15)
+&gt;&gt;&gt; Fraction(2,3) - Fraction(3,5)
+Fraction(1, 15)
+&gt;&gt;&gt; Fraction(2,3) * Fraction(3,5)
+Fraction(2, 5)
+&gt;&gt;&gt; Fraction(2,3) / Fraction(3,5)
+Fraction(10, 9)
+&gt;&gt;&gt; Fraction(2,3) % Fraction(-3, 5)
+Fraction(-8, 15)
+&gt;&gt;&gt; Fraction(2,3) % Fraction(3,5)
+Fraction(1, 15)
+</code></pre>
+<p>Fraction没有sqrt()、exp()等函数方法。</p>
+<p>参考文献：</p>
+<p>1.<a href="https://docs.python.org/zh-cn/3.6/contents.html">https://docs.python.org/zh-cn/3.6/contents.html</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mine_wxpay.jpeg" alt="莯滢 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/mine_alipay.jpg" alt="莯滢 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>作者：</strong>
+    莯滢
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/" title="Python数字运算(-)数值、哈希、布尔等运算">https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../PythonBasicDataTypeNumber/" rel="next" title="Python数据类型(一)数字类型">
+                <i class="fa fa-chevron-left"></i> Python数据类型(一)数字类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDAxMy8yMDU0OA=="></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="../../images/avatar.jpg" alt="莯滢">
+            
+              <p class="site-author-name" itemprop="name">莯滢</p>
+              <p class="site-description motion-element" itemprop="description">从事过编程，源于兴趣，目前在数据分析进修的路上</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="../../archives">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="../../categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="../../tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="../../atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2683037683" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlyAngelia" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-github"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="lanjiying@163.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope-o"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑值检测"><span class="nav-number">1.</span> <span class="nav-text">逻辑值检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bool运算"><span class="nav-number">2.</span> <span class="nav-text">Bool运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较运算"><span class="nav-number">3.</span> <span class="nav-text">比较运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比较运算注意点"><span class="nav-number">3.1.</span> <span class="nav-text">比较运算注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字运算"><span class="nav-number">4.</span> <span class="nav-text">数字运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数字运算注意点："><span class="nav-number">4.1.</span> <span class="nav-text">数字运算注意点：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数类型按位运算"><span class="nav-number">5.</span> <span class="nav-text">整数类型按位运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字类型的哈希运算"><span class="nav-number">6.</span> <span class="nav-text">数字类型的哈希运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decimal运算实例"><span class="nav-number">7.</span> <span class="nav-text">Decimal运算实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fraction运算实例"><span class="nav-number">8.</span> <span class="nav-text">Fraction运算实例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">莯滢</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">20.1k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="../../lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="../../js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../../js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="../../js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../../js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="../../js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="../../js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../../js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+ 
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

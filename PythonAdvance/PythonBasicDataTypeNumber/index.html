@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="Python3有六个标准数据类型： .不可变数据类型：Number(数字)、String(字符串)、Tuple(元组) .可变数据类型： List(列表)、Dictionary(字典)、Set(集合) 在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-06T03:37:03.974Z">
+<meta property="og:updated_time" content="2019-05-06T14:07:14.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python数据类型(一)数字类型">
 <meta name="twitter:description" content="Python3有六个标准数据类型： .不可变数据类型：Number(数字)、String(字符串)、Tuple(元组) .可变数据类型： List(列表)、Dictionary(字典)、Set(集合) 在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举">
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.8k
+                  4.9k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  16
+                  20
                 </span>
               
             </div>
@@ -437,13 +437,13 @@
 
       
         <p>Python3有六个标准数据类型：</p>
-<p>.不可变数据类型：Number(数字)、String(字符串)、Tuple(元组)</p>
-<p>.可变数据类型： List(列表)、Dictionary(字典)、Set(集合)</p>
-<p>在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举)等。</p>
+<p>.不可变数据类型：<strong>Number(数字)、String(字符串)、Tuple(元组)</strong></p>
+<p>.可变数据类型： <strong>List(列表)、Dictionary(字典)、Set(集合)</strong></p>
+<p>在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：<strong>Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举)</strong>等。</p>
 <p>该篇讲述Number(数字)的各种类型、衍生类型Decimal类型和Fractions类型的适用情况以及针对数据类型的运算规则。</p>
 <p><strong>Number</strong>：</p>
-<p>Python3 支持int、float、bool、complext、Decimal、Fraction 等数值类型，数值类型可以直接进行<code>+、-、*、/</code>运算，<code>()</code>用于分组。内置函数<code>type()</code>和<code>isinstance()</code>可以查看变量所指的对象类型，<strong>适用于所有的数据类型</strong>,两者的区别是<code>type()</code>不认为子类是父类类型  <code>isinstance()</code>认为子类是父类类型。</p>
-<h2 id="int-整数"><a href="#int-整数" class="headerlink" title="int(整数)"></a>int(整数)</h2><p>整数(例如<code>4，5，6</code>)类型为<strong>int</strong> 类型，Python3之后只有一种整数类型int，表示长整型，不再有之前的<strong>long</strong>类型。在Python2中用数字0表示<code>False</code>，用数字1表示<code>True</code>，但是Python3 中直接把<code>True</code>和<code>False</code>定义为关键字，其值还是表示0和1。</p>
+<p>Python3 支持<strong>int、float、bool、complext、Decimal、Fraction</strong> 等数值类型，数值类型可以直接进行<code>+、-、*、/</code>运算，<code>()</code>用于分组。内置函数<code>type()</code>和<code>isinstance()</code>可以查看变量所指的对象类型，<strong>适用于所有的数据类型</strong>,两者的区别是<code>type()</code>不认为子类是父类类型  <code>isinstance()</code>认为子类是父类类型。</p>
+<h2 id="int-整数"><a href="#int-整数" class="headerlink" title="int(整数)"></a>int(整数)</h2><p>整数(例如<code>4，5，6</code>)类型为<strong>int</strong> 类型，Python3之后只有一种整数类型int，表示长整型，不再有之前的<strong>long</strong>类型。在Python2中用数字0表示<code>False</code>，用数字1表示<code>True</code>，但是Python3 中直接把<code>True</code>和<code>False</code>定义为关键字，其值还是表示0和1。布尔值属于整数的子类型，整数具有无限的精度。</p>
 <pre><code class="python">&gt;&gt;&gt; a = 1; b=2
 &gt;&gt;&gt; isinstance(a, int)
 True
@@ -451,9 +451,81 @@ True
 &lt;class &#39;int&#39;&gt; 
 #以上两个函数同样适用于其它Number类型以及String等
 </code></pre>
-<h2 id="float（浮点数）"><a href="#float（浮点数）" class="headerlink" title="float（浮点数）"></a>float（浮点数）</h2><p>带小数部分的数字（如：<code>4.5，6.78</code>）是<strong>float类型</strong>。<code>float()</code>函数可以将数字转换为<strong>float类型</strong>。</p>
+<h3 id="整数类型附加方法"><a href="#整数类型附加方法" class="headerlink" title="整数类型附加方法"></a>整数类型附加方法</h3><p>int 类型实现了<a href="https://docs.python.org/zh-cn/3.6/library/numbers.html#numbers.Integral"><code>numbers.Integral</code></a> <a href="https://docs.python.org/zh-cn/3.6/glossary.html#term-abstract-base-class">abstract base class</a>，也提供了其他方法</p>
+<h4 id="bit-length"><a href="#bit-length" class="headerlink" title="bit_length()"></a>bit_length()</h4><p><code>int.bit_length()</code>返回以二进制表示一个整数所需要的位数，不包括符号位和前面的零</p>
+<pre><code class="python">&gt;&gt;&gt; a = -13
+&gt;&gt;&gt;#转换成二进制
+&gt;&gt;&gt; bin(a)
+&#39;-0b1101&#39;
+&gt;&gt;&gt; a.bit_length()
+4
+</code></pre>
+<p>如果a的值为0，则<code>bit_length(</code>)函数返回0，如果a的值不为0，则<code>bit_length()</code>是使得<code>2**(k-1) &lt;= abs(x)&lt; 2 **k</code>的 唯一正整数k,同样abs(a)小到足以具有正确的舍入对数时，则<code>k = 1 + int(log(abs(x),2))</code>。</p>
+<p>等价于：</p>
+<pre><code class="python">&gt;&gt;&gt; def bit_length(self):
+    s = bin(self)   #将整数转换为二进制
+    s = s.lstrip(&#39;-0b&#39;) #将二进制的前缀去掉
+    return len(s)   #返回二进制位的长度
+</code></pre>
+<h4 id="to-bytes"><a href="#to-bytes" class="headerlink" title="to_bytes()"></a>to_bytes()</h4><p>int.<strong>to_bytes</strong>(length, byteorder, *,signed=False)返回一个整数的字节数组，是Python3.1新增加的功能</p>
+<p>参数含义：</p>
+<p>length: 整数字节数，如果不能用给定的字节数来表示则会引发OverflowError</p>
+<p>byteorder:  确定用于表示整数的字节顺序，byteorder为’big’表示最高位字节放在字节位开头。byteorder为’little’表示最高位字节放在字节数组的末尾。</p>
+<p>signed: 是否使用二进制补码来表示整数，如果signed为False并且给出的是负整数，则会引发<a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#OverflowError"><code>OverflowError</code></a>。默认值为False</p>
+<pre><code class="python">&gt;&gt;&gt; a = 1024
+&gt;&gt;&gt; a.to_bytes(2, byteorder=&#39;big&#39;)
+b&#39;\x04\x00&#39;
+&gt;&gt;&gt; a.to_bytes(10, byteorder=&#39;big&#39;)
+b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00&#39;
+&gt;&gt;&gt; a.to_bytes(10, byteorder=&#39;big&#39;, signed=True)
+b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00&#39;
+&gt;&gt;&gt; b = -1024
+&gt;&gt;&gt; b.to_bytes(10, byteorder=&#39;big&#39;, signed=True)
+b&#39;\xff\xff\xff\xff\xff\xff\xff\xff\xfc\x00&#39;
+&gt;&gt;&gt; c = 1000
+&gt;&gt;&gt; c.to_bytes((c.bit_length()+7)//8, byteorder=&#39;little&#39;)
+b&#39;\xe8\x03&#39;
+</code></pre>
+<h4 id="from-bytes"><a href="#from-bytes" class="headerlink" title="from_bytes()"></a>from_bytes()</h4><p>int.from_bytes(bytes, byteorder, *, signed=False) 返回给定字节数组表示的整数，是Python3.2增加的功能。</p>
+<p>参数含义:</p>
+<p>bytes: 必须是一个<a href="https://docs.python.org/zh-cn/3.6/glossary.html#term-bytes-like-object">bytes-like object</a> 或是生成字节的可迭代对象</p>
+<p>byteorder： 表示整数的字节顺序，如果 <em>byteorder</em> 为 <code>&quot;big&quot;</code>，则最高位字节放在字节数组的开头。 如果 <em>byteorder</em> 为 <code>&quot;little&quot;</code>，则最高位字节放在字节数组的末尾</p>
+<p>signed：是否使用二进制补码表示</p>
+<pre><code class="python">&gt;&gt;&gt; int.from_bytes(b&#39;\x04\x00&#39;,byteorder=&#39;big&#39;)
+1024
+&gt;&gt;&gt; int.from_bytes(b&#39;\x00\x00\x00\x00\x00\x00\x00\x00\x04\x00&#39;, byteorder=&#39;big&#39;)
+1024
+&gt;&gt;&gt; int.from_bytes(b&#39;\xff\xff\xff\xff\xff\xff\xff\xff\xfc\x00&#39;, byteorder=&#39;big&#39;,signed=True)
+-1024
+</code></pre>
+<h2 id="float（浮点数）"><a href="#float（浮点数）" class="headerlink" title="float（浮点数）"></a>float（浮点数）</h2><p>带小数部分的数字（如：<code>4.5，6.78</code>）是<strong>float类型</strong>。<code>float()</code>函数可以将数字转换为<strong>float类型</strong>。浮点数通常使用C中的double来实现，浮点数精度和内部表示可以查看<a href="https://docs.python.org/zh-cn/3.6/library/sys.html#sys.float_info"><code>sys.float_info</code></a></p>
 <pre><code class="python">&gt;&gt;&gt; float(8)
 8.0
+</code></pre>
+<h3 id="浮点数类型附加方法"><a href="#浮点数类型附加方法" class="headerlink" title="浮点数类型附加方法"></a>浮点数类型附加方法</h3><p>float 类型实现了 <a href="https://docs.python.org/zh-cn/3.6/library/numbers.html#numbers.Real"><code>numbers.Real</code></a> <a href="https://docs.python.org/zh-cn/3.6/glossary.html#term-abstract-base-class">abstract base class</a>。 float 具有以下附加方法。</p>
+<h4 id="as-integer-ratio"><a href="#as-integer-ratio" class="headerlink" title="as_integer_ratio()"></a>as_integer_ratio()</h4><p>float.as_integer_ratio() 返回一对整数，其比率证照等于原浮点数并且分母为整数，如果是无穷大会引发 <a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#OverflowError"><code>OverflowError</code></a> 而 NaN 则会引发 <a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#ValueError"><code>ValueError</code></a></p>
+<pre><code class="py">&gt;&gt;&gt; 2.5.as_integer_ratio()
+(5, 2)
+</code></pre>
+<h4 id="is-integer"><a href="#is-integer" class="headerlink" title="is_integer()"></a>is_integer()</h4><p>float.is_integer() 如果float实例可以用有限位整数表示则返回<code>True</code>，否则返回<code>False</code></p>
+<pre><code class="py">&gt;&gt;&gt; 2.0.is_integer()
+True
+&gt;&gt;&gt; 3.3.is_integer()
+False
+</code></pre>
+<p><strong>注意点</strong>：</p>
+<p>以上两个方法都支持与十六进制数、字符串之间转换。由于 Python 浮点数在内部存储为二进制数，因此浮点数与 <em>十进制数</em> 字符串之间的转换往往会导致微小的舍入错误。 而十六进制数字符串却允许精确地表示和描述浮点数。 这在进行调试和数值工作时非常有用。</p>
+<h4 id="hex"><a href="#hex" class="headerlink" title="hex()"></a>hex()</h4><p><code>float.hex()</code> 以十六进制字符串的形式返回一个浮点数，如果是有限浮点数，这种表示法将包含前导的 <code>0x</code> 和尾随的 <code>p</code> 加指数，此方法是<strong>实例方法</strong></p>
+<pre><code class="python">&gt;&gt;&gt; 4.7.hex()
+&#39;0x1.2cccccccccccdp+2&#39;
+&gt;&gt;&gt; 3.3.hex()
+&#39;0x1.a666666666666p+1&#39;
+</code></pre>
+<h4 id="fromhex"><a href="#fromhex" class="headerlink" title="fromhex()"></a>fromhex()</h4><p><code>float.fromhex()</code>是<strong>类方法</strong>，返回以十六进制字符串 <em>s</em> 表示的浮点数的类方法，返回的字符串可以带有前导和尾随的空格</p>
+<pre><code class="python">&gt;&gt;&gt; float.fromhex(&#39;0x1.a666666666666p+1&#39;)
+3.3
+&gt;&gt;&gt; float.fromhex(&#39;0x1.2cccccccccccdp+2&#39;)
+4.7
 </code></pre>
 <h2 id="complex（复数）"><a href="#complex（复数）" class="headerlink" title="complex（复数）"></a>complex（复数）</h2><p>complext由实部re和虚部im构成，实部和虚部都是浮点类型，使用后缀j和J表示虚数部分，表示为a+bj，函数<code>complex(re,im)</code>同样可以构造复数。</p>
 <pre><code class="python">&gt;&gt;&gt; complex(4.5, 1.2)
@@ -792,7 +864,7 @@ Fraction(7, 1000000)
 <p>1.像上面提到的，使用math中函数替代 ，如math.ceiling</p>
 <p>2.Python自带整除</p>
 <p>3.可以将浮点型做截断转成字符串</p>
-<p>有关具体的各类Number运算，详见：<a href>数值运算&amp;数学模块</a></p>
+<p>有关具体的各类Number运算，详见：<a href>Python数字运算(-)数值、哈希、布尔等运算</a></p>
 
       
     </div>
@@ -880,6 +952,10 @@ Fraction(7, 1000000)
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="../PythonNumberCaculations/" rel="prev" title="Python数字运算(-)数值、哈希、布尔等运算">
+                Python数字运算(-)数值、哈希、布尔等运算 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -960,7 +1036,7 @@ Fraction(7, 1000000)
               
                 <a href="../../archives">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1044,7 +1120,7 @@ Fraction(7, 1000000)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-整数"><span class="nav-number">1.</span> <span class="nav-text">int(整数)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float（浮点数）"><span class="nav-number">2.</span> <span class="nav-text">float（浮点数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex（复数）"><span class="nav-number">3.</span> <span class="nav-text">complex（复数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decimal-十进制定点和浮点数"><span class="nav-number">4.</span> <span class="nav-text">Decimal(十进制定点和浮点数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——十进制数"><span class="nav-number">4.1.</span> <span class="nav-text">Decimal构成——十进制数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——信号"><span class="nav-number">4.2.</span> <span class="nav-text">Decimal构成——信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——算术上下文"><span class="nav-number">4.3.</span> <span class="nav-text">Decimal构成——算术上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-常数"><span class="nav-number">4.4.</span> <span class="nav-text">Decimal 常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal方法"><span class="nav-number">4.5.</span> <span class="nav-text">Decimal方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-注意点"><span class="nav-number">4.6.</span> <span class="nav-text">Decimal 注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fraction-分数-："><span class="nav-number">5.</span> <span class="nav-text">Fraction(分数)：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction构建方式"><span class="nav-number">5.1.</span> <span class="nav-text">Fraction构建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction属性和方法"><span class="nav-number">5.2.</span> <span class="nav-text">Fraction属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#round-函数注意点"><span class="nav-number">5.3.</span> <span class="nav-text">round()函数注意点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-整数"><span class="nav-number">1.</span> <span class="nav-text">int(整数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数类型附加方法"><span class="nav-number">1.1.</span> <span class="nav-text">整数类型附加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bit-length"><span class="nav-number">1.1.1.</span> <span class="nav-text">bit_length()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#to-bytes"><span class="nav-number">1.1.2.</span> <span class="nav-text">to_bytes()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#from-bytes"><span class="nav-number">1.1.3.</span> <span class="nav-text">from_bytes()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float（浮点数）"><span class="nav-number">2.</span> <span class="nav-text">float（浮点数）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数类型附加方法"><span class="nav-number">2.1.</span> <span class="nav-text">浮点数类型附加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#as-integer-ratio"><span class="nav-number">2.1.1.</span> <span class="nav-text">as_integer_ratio()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#is-integer"><span class="nav-number">2.1.2.</span> <span class="nav-text">is_integer()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hex"><span class="nav-number">2.1.3.</span> <span class="nav-text">hex()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fromhex"><span class="nav-number">2.1.4.</span> <span class="nav-text">fromhex()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex（复数）"><span class="nav-number">3.</span> <span class="nav-text">complex（复数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decimal-十进制定点和浮点数"><span class="nav-number">4.</span> <span class="nav-text">Decimal(十进制定点和浮点数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——十进制数"><span class="nav-number">4.1.</span> <span class="nav-text">Decimal构成——十进制数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——信号"><span class="nav-number">4.2.</span> <span class="nav-text">Decimal构成——信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——算术上下文"><span class="nav-number">4.3.</span> <span class="nav-text">Decimal构成——算术上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-常数"><span class="nav-number">4.4.</span> <span class="nav-text">Decimal 常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal方法"><span class="nav-number">4.5.</span> <span class="nav-text">Decimal方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-注意点"><span class="nav-number">4.6.</span> <span class="nav-text">Decimal 注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fraction-分数-："><span class="nav-number">5.</span> <span class="nav-text">Fraction(分数)：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction构建方式"><span class="nav-number">5.1.</span> <span class="nav-text">Fraction构建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction属性和方法"><span class="nav-number">5.2.</span> <span class="nav-text">Fraction属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#round-函数注意点"><span class="nav-number">5.3.</span> <span class="nav-text">round()函数注意点</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1085,7 +1161,7 @@ Fraction(7, 1000000)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">16.7k</span>
+    <span title="Site words total count">20.1k</span>
   
 </div>
 
