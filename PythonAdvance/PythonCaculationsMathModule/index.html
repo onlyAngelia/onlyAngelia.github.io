@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="Block,">
+  <meta name="keywords" content="Python,">
 
 
 
@@ -130,18 +130,18 @@
 
 
 
-<meta name="description" content="《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况 1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址 现针对以上内容进行详细分析。 截获变量的值这一情况主要发生在1.对基本数据类型的引用（局部参数）其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前">
-<meta name="keywords" content="Block">
+<meta name="description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Block自动截获变量">
-<meta property="og:url" content="https://onlyangelia.github.io/Objective-C/blockbrief/index.html">
+<meta property="og:title" content="Python数字运算(二)math模块">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况 1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址 现针对以上内容进行详细分析。 截获变量的值这一情况主要发生在1.对基本数据类型的引用（局部参数）其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前">
+<meta property="og:description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-30T15:09:34.656Z">
+<meta property="og:updated_time" content="2019-05-07T03:57:41.216Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Block自动截获变量">
-<meta name="twitter:description" content="《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况 1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址 现针对以上内容进行详细分析。 截获变量的值这一情况主要发生在1.对基本数据类型的引用（局部参数）其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前">
+<meta name="twitter:title" content="Python数字运算(二)math模块">
+<meta name="twitter:description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
 
 
 
@@ -171,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="https://onlyangelia.github.io/Objective-C/blockbrief/">
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/">
 
 
 
 
 
-  <title>Block自动截获变量 | 莯滢</title>
+  <title>Python数字运算(二)math模块 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Block自动截获变量</h1>
+          <h1 class="post-title" itemprop="name headline">Python数字运算(二)math模块</h1>
         
 
         <div class="post-meta">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T22:55:08+08:00">
-                2017-05-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T13:49:09+08:00">
+                2018-05-02
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/Objective-C/" itemprop="url" rel="index">
-                    <span itemprop="name">Objective-C</span>
+                  <a href="../../categories/PythonAdvance/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
                   </a>
                 </span>
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  1.6k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  7
                 </span>
               
             </div>
@@ -436,104 +436,328 @@
       
 
       
-        <p><a href="https://onlyangelia.github.io/Objective-C/blockindex/">《Block前言》</a>中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况</p>
-<p><strong><br>1.截获变量的值<br>2.截获对象,将对象指针传递进去<br>3.将变量拷贝到堆区域，并持有变量<br>4.截获变量内存地址
-</strong><br>现针对以上内容进行详细分析。</p>
-<h1 id="截获变量的值"><a href="#截获变量的值" class="headerlink" title="截获变量的值"></a>截获变量的值</h1><p>这一情况主要发生在<br>1.<strong>对基本数据类型的引用</strong>（局部参数）<br>其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前的变量的瞬间值，唯一不同的是如果是Object类型，Block会多一步copy操作。先来看基本数据常量</p>
-<pre><code>int a = 0;
-void (^lockBlock)(void) = ^{
-        NSLog(@&quot;a = %d&quot;,a);
-};
-++a;
-lockBlock();
-NSLog(@&quot;%@&quot;, lockBlock);
-</code></pre><p>以上代码最后输出</p>
-<pre><code>YAObjectTest[7397:1142111] a = 0
- YAObjectTest[7397:1142111] &lt;__NSMallocBlock__: 0x604000443e10&gt;
-</code></pre><p>发现a的值在执行block之前做了修改，执行block后获取到的还是a的原来值。<br>查看编译后的cpp文件</p>
-<pre><code>void (*lockBlock)(void) = ((void (*)())&amp;__BlockObject__testBlockAutomaticInterceptVar_block_impl_0((void *)__BlockObject__testBlockAutomaticInterceptVar_block_func_0, &amp;__BlockObject__testBlockAutomaticInterceptVar_block_desc_0_DATA, a));
-</code></pre><p>可以看到传入lockBlock结构体中的仅有a的值，再看_block_impl_0中</p>
-<pre><code>struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0
-{
-  struct __block_impl impl;
-  struct __BlockObject__testBlockAutomaticInterceptVar_block_desc_0* Desc;
-  int a;
-  __BlockObject__testBlockAutomaticInterceptVar_block_impl_0(void *fp, struct __BlockObject__testBlockAutomaticInterceptVar_block_desc_0 *desc, int _a, int flags=0) : a(_a) {
-    impl.isa = &amp;_NSConcreteStackBlock;
-    impl.Flags = flags;
-    impl.FuncPtr = fp;
-    Desc = desc;
-  }
-};
-</code></pre><p>该部分的第五行<code>int a；</code>可以明确的看到a 是值的形式存在。</p>
-<p>为何会是引入a的值而不是a的内存地址呢？主要原因是<strong>int a 和LockBlock的存储区域不同，因int a = 0的声明是在函数内，所以是在栈区，而lockBlock在引用了局部变量后转换为MallocBlock存放在堆区</strong>。</p>
-<p>在上述Block的实现函数<code>__BlockObject__testBlockAutomaticInterceptVar_block_func_0</code>中，我们可以看到如下部分</p>
-<pre><code>int a = __cself-&gt;a; // bound by copy
-</code></pre><p>系统自动给我们加上了注释，<code>bound by copy</code>，变量<code>int a</code> ，是用 <code>__cself-&gt;</code> 来访问的,Block仅仅捕获了 <code>a</code> 的值，并没有捕获<code>a</code>的内存地址。<br>所以在testBlockAutomaticInterceptVar`这个函数中后来即使我们重写int a 的值，依旧无法去改变Block外面变量a的值</p>
-<hr>
-<hr>
-<p>也正是基于以上原因，我们无法在Block内部更改自动截获的变量，更改截获的自动变量编译器会报以下错误</p>
-<pre><code>Variable is not assignable (missing __block type specifier)
-</code></pre><p>变量无法在Block中改变外部变量的值，所以编译过程中就报编译错误</p>
-<hr>
-<hr>
-<h1 id="截获对象-将对象指针传递进去，并持有变量"><a href="#截获对象-将对象指针传递进去，并持有变量" class="headerlink" title="截获对象,将对象指针传递进去，并持有变量"></a>截获对象,将对象指针传递进去，并持有变量</h1><p>相比较于基本数据常量而言，Block截获Object上，会有区分，Block截获的是对象，传入的是对象的指针，但是会多传入一部分内容，而且会多一步copy操作</p>
-<pre><code> NSString *testString = @&quot;It is just a joke&quot;;
- void (^lockBlock)(void) = ^{
-        [testString stringByAppendingString:@&quot;Yeah, I&#39;m sure&quot;];
-  };
-   lockBlock();
-  NSLog(@&quot;%@&quot;,testString);
-  NSLog(@&quot;%@&quot;, lockBlock);
-</code></pre><p>用以上OC代码运行会发现testString的内存地址是一样的<code>&lt;__NSArrayM 0x604000240090&gt;</code>，同样不能在Block内部进行初始化操作（因为重新初始化Block内部的引用对象内存地址会发生变化这是不允许的）。</p>
-<p>查看clang后的cpp文件，我们发现lockBlock声明赋值的部分编译后的代码如下</p>
-<pre><code>void (*lockBlock)(void) = ((void (*)())&amp;__BlockObject__testBlockAutomaticInterceptVar_block_impl_0((void *)__BlockObject__testBlockAutomaticInterceptVar_block_func_0, &amp;__BlockObject__testBlockAutomaticInterceptVar_block_desc_0_DATA, testString, 570425344));
-</code></pre><p>相比较于基本数据常量而言，<strong>传递参数多了后面的<code>570425344</code>（这一部分后面探讨）</strong>。其它和基本数据类型一样，直接以<code>NSString *testString;</code>出现在<code>__BlockObject__testBlockAutomaticInterceptVar_block_impl_0</code>结构体中，在<code>__BlockObject__testBlockAutomaticInterceptVar_block_func_0</code>结构体中以<br><code>NSString *testString = __cself-&gt;testString; // bound by copy</code>——cself-&gt; 形式调用。</p>
-<p>引用对象不同的是会多出来以下函数</p>
-<pre><code>static void __BlockObject__testBlockAutomaticInterceptVar_block_copy_0(struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*dst, struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*src) {_Block_object_assign((void*)&amp;dst-&gt;testString, (void*)src-&gt;testString, 3/*BLOCK_FIELD_IS_OBJECT*/);}
-
-static void __BlockObject__testBlockAutomaticInterceptVar_block_dispose_0(struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*src) {_Block_object_dispose((void*)src-&gt;testString, 3/*BLOCK_FIELD_IS_OBJECT*/);}
-</code></pre><p>在编译文件中看到引用对象时有_block_copy  和 _block_dispose函数。这两个函数的作用相当于内存管理MRC中的copy 和 release操作，调用_block_copy将引用对象进行copy操作，调用_block_dispose相当于对testString 进行release操作。<br>copy具体的执行操作是申请内存，将栈数据复制过去，将Class改一下，最后向捕获到的对象发送retain，增加block的引用计数，dispose函数正好相反。<br>copy和dsipose函数中最后一个参数代表截获的参数类型，3 代表是Block，编译后的代码中注释了BLOCK_FIELD_IS_OBJECT，其它形式如下<br>.BLOCK_FIELD_IS_BLOCK；<br>.BLOCK_FIELD_IS_WEAK;<br>.BLOCK_BYREF_CALLER<br>.BLOCK_FIELD_IS_BYREF</p>
-<p>与截获基本数据类型相同，截获对象传递的是指针，所以在Block内不能再对对象进行初始化，但其本身自带的方法可以调用，MallocBlock会持有引用的变量。</p>
-<p>#变量拷贝到堆区域，并持有变量<br>.__block 修饰符修饰</p>
-<p>#<strong>block<br>对于对象，Block引用内部可以进行操作不能初始化，但对于基本数据类型如何进行更改呢，这个时候会用到`</strong>block`修饰符。该修饰符的主要作用是将基本数据常量写入结构体转变为对象，copy到堆上，持有变量。来看下代码和转换后的代码</p>
-<pre><code> __block int a = 0;
- void (^lockBlock)(void) = ^{
-      a = 2;
- };
-</code></pre><p>编译后的代码</p>
-<pre><code>__attribute__((__blocks__(byref))) __Block_byref_a_0 a = {(void*)0,(__Block_byref_a_0 *)&amp;a, 0, sizeof(__Block_byref_a_0), 0};
-  void (*lockBlock)(void) = ((void (*)())&amp;__BlockObject__testBlockAutomaticInterceptVar_block_impl_0((void *)__BlockObject__testBlockAutomaticInterceptVar_block_func_0, &amp;__BlockObject__testBlockAutomaticInterceptVar_block_desc_0_DATA, (__Block_byref_a_0 *)&amp;a, 570425344));
-</code></pre><p>可以看到int a 被转换为<code>_blocks__(byref）</code>类型，在Block使用时传入的<code>(__Block_byref_a_0 *)&amp;a</code>，而具体的a被转换后的结构体，</p>
-<pre><code>struct __Block_byref_a_0 {
-  void *__isa;
-__Block_byref_a_0 *__forwarding;
- int __flags;
- int __size;
- int a;
-};
-</code></pre><p>和对象的结构体一样包含isa指针，并且还有一个<strong>forwarding指针，flags、size、和一个int a 。此时，发现int a作为结构体成员，而</strong>forwarding指针是指向其本身，这就保证了被拷贝到堆区之后依然能够找到该变量。<br>将参数转变成对象之后，其也会增加</p>
-<pre><code>static void __BlockObject__testBlockAutomaticInterceptVar_block_copy_0(struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*dst, struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*src) {_Block_object_assign((void*)&amp;dst-&gt;a, (void*)src-&gt;a, 8/*BLOCK_FIELD_IS_BYREF*/);}
-
-static void __BlockObject__testBlockAutomaticInterceptVar_block_dispose_0(struct __BlockObject__testBlockAutomaticInterceptVar_block_impl_0*src) {_Block_object_dispose((void*)src-&gt;a, 8/*BLOCK_FIELD_IS_BYREF*/);}
-</code></pre><p>copy和dispose函数的最后一个参数变为8，意味截获的变量是<strong>block转换来的。<br>具体的关于copy和dispose 可以祥见[霜神博客《深入研究Block捕获外部变量和</strong>block实现原理》第二部分Block的copy和dispose](<a href="https://www.jianshu.com/p/ee9756f3d5f6">https://www.jianshu.com/p/ee9756f3d5f6</a>)</p>
-<p>#截获内存地址<br>.对于静态变量，全局变量，Block截获的是内存地址，在Block内部可以直接修改值。<br>主要因为静态变量和全局变量的存储区域并不会发生改变，所以在Block截获时引用的是其内存地址，修改后仍旧是存储在静态区</p>
-<pre><code>static int count = 100;
- typedef int (^blockStatic)(void);
- blockStatic blk = ^(){
-    count = 1000;
-   return count;
-  };
-</code></pre><p>转换后的函数实现如下</p>
-<pre><code>static int __BlockObject__testBlockKinds_block_func_0(struct __BlockObject__testBlockKinds_block_impl_0 *__cself) {
-        count = 1000;
-        return count;
-  }
-</code></pre><p>在Block内部直接可以修改count的值，对count的引用直接获取的内存地址，且在__block _impl 结构体中并没有将count值引用或copy。</p>
-<p>#结尾补充：”570425344”代表啥？<br>细心的大佬们肯定发现了在Block语法转换时候，若引用的是对象，则后面必跟一个数字<strong>570425344</strong> ，且不管是不同项目、不同类、不同Block，这个数值是固定的。为了这个问题也困惑了好久，开始以为这就是一个判断是否是对象的枚举类型。最后特不好意思的咨询霜大神，醍醐灌顶。可能和霜神之间隔了570425344光年的距离，这距离差在解决问题的思路和办法上，我是一直在编译后的cpp文件中查看，发现并没有解释，只能通过尝试来得出一个猜想。霜神是直接将这串数次Google ，而Google 告诉我们了答案（虽然这答案未必准备，但比我的想法好多了）。</p>
-<pre><code>myBlock-&gt;impl.isa = &amp;_NSConcreteStackBlock;
-myBlock-&gt;impl.Flags = 570425344;
-</code></pre><p><code>570425344</code>为Flags的偏移量，这个偏移量是固定的。大家可以自己代码运行下查看GlobalBlock的Flags为10位数正数，StackBlock和MallocBlock的Flags为10位数负数，<br>这里暂时将”<code>570425344&quot;</code>理解为Flags的偏移量，若有大佬知道确切答案，希望能不吝赐教</p>
+        <p><strong>math</strong>是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用<strong>cmath</strong>模块的同名函数，无特殊情况下，<strong>math</strong>模块中的函数返回值均为浮点数。</p>
+<h2 id="数论与表示函数"><a href="#数论与表示函数" class="headerlink" title="数论与表示函数"></a>数论与表示函数</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义/代码实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>ceil</strong>(x)</td>
+<td>返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.<strong>ceil</strong>()返回一个Integer类的值</td>
+</tr>
+<tr>
+<td>math.<strong>copysign</strong>(x,y)</td>
+<td>返回一个基于x的绝对值和y的符号的浮点数&gt;&gt;&gt; math.copysign(2.4, -1.2)<br>-2.4</td>
+</tr>
+<tr>
+<td>math.<strong>fabs</strong>(x)</td>
+<td>返回x的绝对值</td>
+</tr>
+<tr>
+<td>math.<strong>factorial</strong>(x)</td>
+<td>返回x的阶乘，当x不是整数或者是负数时，引发ValueError异常</td>
+</tr>
+<tr>
+<td>math.<strong>floor</strong>(x)</td>
+<td>返回x的向下取整，小于或等于x的最大整数，如果x不是浮点数，则委托x.<strong>floor</strong>()返回一个Integral值</td>
+</tr>
+<tr>
+<td>math.<strong>fmod</strong>(x,y)</td>
+<td>x除以y的余数，但结果并不一定与x%y相同，x%y取余是向下取余，而fomd函数是向靠近0的方向取余，并且fmod函数精度更准确，所以fmod()函数更适合浮点数</td>
+</tr>
+<tr>
+<td>math.<strong>frexp</strong>(x)</td>
+<td>返回x的尾数和指数对(m，e),m是一个浮点数，e是一个整数，m和e要满足 <code>x== m * 2 **e</code>。 如果x为零，则返回(0.0,0)</td>
+</tr>
+<tr>
+<td>math.<strong>fsum</strong>(iterable)</td>
+<td>返回迭代中的精确浮点值，通过跟踪多个中间部分和 以此避免精度损失。该方法的准确性取决于IEEE-754算术保证和 舍入模式为半偶的典型情况，在一些非Windows版本中，底层C库使用扩展精度添加，并且有时可能会使中间和加倍，导致在最低有效位中关闭。<br>&gt;&gt;&gt; sum([.1, .1, .1, .1, .1, .1, .1, .1, .1, .1])<br>0.9999999999999999<br>&gt;&gt;&gt; math. fsum([.1, .1, .1, .1, .1, .1, .1, .1, .1, .1])<br>1.0<br></td>
+</tr>
+<tr>
+<td>math.<strong>gcd</strong>(a,b)</td>
+<td>返回a和b的最大公约数，如果a或b之一非负，则函数函数的值是同时能正常a和b的最大正整数，gcd(0，0)则返回0</td>
+</tr>
+<tr>
+<td>math.<strong>isclose</strong>(a,b,*,rel_tol=1e-09,abs_tol=0.0)</td>
+<td>若a和b的值比较接近则返回True，否则返回False。判定标准是根据给定的绝对和相对容差。rel_tol是相对容差，必须大于0，是a和b之间允许的最大差值。abs_tol是最小绝对容差，至少为0</td>
+</tr>
+<tr>
+<td>math.<strong>isfinite</strong>(x)</td>
+<td>如果x是有限位数，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>math.<strong>isinf</strong>(x)</td>
+<td>如果x是正无穷或负无穷，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>math.<strong>isnan</strong>(x)</td>
+<td>如果x是NaN，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>math.<strong>ldexp</strong>(x,i)</td>
+<td>返回<code>x*(2**i)</code>, 是函数frexp()的反函数</td>
+</tr>
+<tr>
+<td>math.modf(x)</td>
+<td>返回x的小数和整数部分，两个结果都带有x的符号并且是浮点数</td>
+</tr>
+<tr>
+<td>math.trunc(x)</td>
+<td>返回x实部截断Integeral</td>
+</tr>
+</tbody>
+</table>
+<h2 id="幂函数与对数函数"><a href="#幂函数与对数函数" class="headerlink" title="幂函数与对数函数"></a>幂函数与对数函数</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义/代码示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>exp</strong>(x)</td>
+<td>返回 e**x</td>
+</tr>
+<tr>
+<td>math.<strong>expm1</strong>(x)</td>
+<td>返回e**x - 1</td>
+</tr>
+<tr>
+<td>math.<strong>log</strong>(x,base)</td>
+<td>使用一个参数，则返回x的自然对数(底为e)。使用两个参数，返回给定的base的对数x，计算为log(x)/log(base)。</td>
+</tr>
+<tr>
+<td>math.<strong>log1p</strong>(x)</td>
+<td>返回1+x(base e)的自然对数</td>
+</tr>
+<tr>
+<td>math.<strong>log2</strong>(x)</td>
+<td>返回x以2为底的对数，比log(x,2)准确度高</td>
+</tr>
+<tr>
+<td>math.<strong>log10</strong>(x)</td>
+<td>返回x底为10的对数，比log(x,10)准确度高</td>
+</tr>
+<tr>
+<td>math.<strong>pow</strong>(x,y)</td>
+<td>返回x的y次幂</td>
+</tr>
+<tr>
+<td>math.<strong>sqrt</strong>(x)</td>
+<td>返回x的平方根</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">&gt;&gt;&gt; x = 5
+&gt;&gt;&gt; math.exp(x)
+148.4131591025766
+&gt;&gt;&gt; math.expm1(x)
+147.4131591025766
+&gt;&gt;&gt; math.log(x)
+1.6094379124341003
+&gt;&gt;&gt; math.log(x, 2)
+2.321928094887362
+&gt;&gt;&gt; math.log1p(x)
+1.791759469228055
+&gt;&gt;&gt; math.log2(x)
+2.321928094887362
+&gt;&gt;&gt; math.log10(x)
+0.6989700043360189
+&gt;&gt;&gt; math.pow(x, 2)
+25.0
+&gt;&gt;&gt; math.sqrt(x)
+2.23606797749979
+</code></pre>
+<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义/代码示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>acos</strong>(x)</td>
+<td>以弧度为单位返回x的反余弦值</td>
+</tr>
+<tr>
+<td>math.<strong>asin</strong>(x)</td>
+<td>以弧度为单位返回x的反正弦值</td>
+</tr>
+<tr>
+<td>math.<strong>atan</strong>(x)</td>
+<td>以弧度为单位返回x的反正切值</td>
+</tr>
+<tr>
+<td>math.<strong>atan2</strong>(y,x)</td>
+<td>以弧度为单位返回athan(y/x)，结果在-pi和pi之间，可以计算角度的正确象限</td>
+</tr>
+<tr>
+<td>math.<strong>cos</strong>(x)</td>
+<td>返回x弧度的余弦值</td>
+</tr>
+<tr>
+<td>math.<strong>hypot</strong>(x,y)</td>
+<td>返回欧几里德范数，sqrt(x<em>x + y\</em>y),是原点到点(x，y)的向量距离</td>
+</tr>
+<tr>
+<td>math.<strong>sin</strong>(x)</td>
+<td>返回x弧度的正弦值</td>
+</tr>
+<tr>
+<td>math.<strong>tan</strong>(x)</td>
+<td>返回x弧度的正切值</td>
+</tr>
+</tbody>
+</table>
+<p>注意： x的取值若超出范围，否则会报<code>ValueError: math domain error</code></p>
+<pre><code class="python">&gt;&gt;&gt; math.acos(2.3)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#26&gt;&quot;, line 1, in &lt;module&gt;
+    math.acos(2.3)
+ValueError: math domain error
+&gt;&gt;&gt; math.acos(0.5)
+1.0471975511965976
+&gt;&gt;&gt; math.asin(0.5)
+0.5235987755982988
+&gt;&gt;&gt; math.atan(0.5)
+0.46364760900080615
+&gt;&gt;&gt; math.atan2(0.5,0.5)
+0.7853981633974483
+&gt;&gt;&gt; math.cos(0.5)
+0.8775825618903728
+&gt;&gt;&gt; math.hypot(0.5,0.5)
+0.7071067811865476
+&gt;&gt;&gt; math.sin(0.5)
+0.479425538604203
+&gt;&gt;&gt; math.tan(0.5)
+0.5463024898437905
+&gt;&gt;&gt; math.tan(1)
+1.557407724654902
+&gt;&gt;&gt; math.tan(1.4)
+5.797883715482887
+&gt;&gt;&gt; math.tan(2)
+-2.185039863261519
+&gt;&gt;&gt; math.tan(2.5)
+-0.7470222972386602
+</code></pre>
+<h2 id="角度转换"><a href="#角度转换" class="headerlink" title="角度转换"></a>角度转换</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>degrees</strong>(x)</td>
+<td>将角度x从弧度转换为度数</td>
+</tr>
+<tr>
+<td>math.<strong>radians</strong>(x)</td>
+<td>将角度x从度数转换为弧度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><p>双曲函数是基于双曲线而非圆来对三角函数进行模拟</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>acosh</strong>(x)</td>
+<td>返回x的反双曲余弦值</td>
+</tr>
+<tr>
+<td>math.<strong>asinh</strong>(x)</td>
+<td>返回x的反双曲正弦值</td>
+</tr>
+<tr>
+<td>math.<strong>atanh</strong>(x)</td>
+<td>返回x的反双曲正切值</td>
+</tr>
+<tr>
+<td>math.<strong>cosh</strong>(x)</td>
+<td>返回x的双曲余弦值</td>
+</tr>
+<tr>
+<td>math.<strong>sinh</strong>(x)</td>
+<td>返回x的双曲正弦值</td>
+</tr>
+<tr>
+<td>math.<strong>tanh</strong>(x)</td>
+<td>返回x的双曲正切值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="特殊函数"><a href="#特殊函数" class="headerlink" title="特殊函数"></a>特殊函数</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>erf</strong>(x)</td>
+<td>用来计算传统的统计函数，如累积标准正态分布</td>
+</tr>
+<tr>
+<td>math.<strong>erfc</strong>(x)</td>
+<td>返回x的互补误差函数，<a href="https://en.wikipedia.org/wiki/Error_function">互补错误函数</a> 定义为 <code>1.0 - erf(x)</code></td>
+</tr>
+<tr>
+<td>math.<strong>gamma</strong>(x)</td>
+<td>返回x的伽马函数值</td>
+</tr>
+<tr>
+<td>math.<strong>lgamma</strong>(x)</td>
+<td>返回Gamma函数x绝对值的自然对数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="math模块中的常数"><a href="#math模块中的常数" class="headerlink" title="math模块中的常数"></a>math模块中的常数</h2><table>
+<thead>
+<tr>
+<th>常数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>pi</strong></td>
+<td>数学常数π=3.1415926…</td>
+</tr>
+<tr>
+<td>math.<strong>e</strong></td>
+<td>数学常数e= 2.718281….</td>
+</tr>
+<tr>
+<td>math.<strong>tau</strong></td>
+<td>数学常数τ = 6.283185…</td>
+</tr>
+<tr>
+<td>math.<strong>inf</strong></td>
+<td>正无穷大浮点数，负无穷大浮点数使用-math.<strong>inf</strong></td>
+</tr>
+<tr>
+<td>math.<strong>nan</strong></td>
+<td>浮点”非数字”值</td>
+</tr>
+</tbody>
+</table>
+<p>math模块是数学函数的包装模块，若使用不符合数学规范，则会触发<a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#ValueError"><code>ValueError</code></a> </p>
+<p>参考文献：</p>
+<p>1.<a href="https://docs.python.org/English/3.6/library/math.html#math.fmod">https://docs.python.org/English/3.6/library/math.html#math.fmod</a></p>
 
       
     </div>
@@ -583,7 +807,7 @@ myBlock-&gt;impl.Flags = 570425344;
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/Objective-C/blockbrief/" title="Block自动截获变量">https://onlyangelia.github.io/Objective-C/blockbrief/</a>
+    <a href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/" title="Python数字运算(二)math模块">https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -598,7 +822,7 @@ myBlock-&gt;impl.Flags = 570425344;
       
         <div class="post-tags">
           
-            <a href="../../tags/Block/" rel="tag"><i class="fa fa-tag"></i> Block</a>
+            <a href="../../tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -611,8 +835,8 @@ myBlock-&gt;impl.Flags = 570425344;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../blockmemory/" rel="next" title="Block类型及内存区域">
-                <i class="fa fa-chevron-left"></i> Block类型及内存区域
+              <a href="../PythonNumberCaculations/" rel="next" title="Python数字运算(-)数值、哈希、按位、布尔等运算">
+                <i class="fa fa-chevron-left"></i> Python数字运算(-)数值、哈希、按位、布尔等运算
               </a>
             
           </div>
@@ -620,10 +844,6 @@ myBlock-&gt;impl.Flags = 570425344;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="../../computerIntnet/intnetlink/" rel="prev" title="网络连接过程">
-                网络连接过程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -789,7 +1009,7 @@ myBlock-&gt;impl.Flags = 570425344;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#截获变量的值"><span class="nav-number">1.</span> <span class="nav-text">截获变量的值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#截获对象-将对象指针传递进去，并持有变量"><span class="nav-number">2.</span> <span class="nav-text">截获对象,将对象指针传递进去，并持有变量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论与表示函数"><span class="nav-number">1.</span> <span class="nav-text">数论与表示函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂函数与对数函数"><span class="nav-number">2.</span> <span class="nav-text">幂函数与对数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角函数"><span class="nav-number">3.</span> <span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#角度转换"><span class="nav-number">4.</span> <span class="nav-text">角度转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲函数"><span class="nav-number">5.</span> <span class="nav-text">双曲函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊函数"><span class="nav-number">6.</span> <span class="nav-text">特殊函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#math模块中的常数"><span class="nav-number">7.</span> <span class="nav-text">math模块中的常数</span></a></li></ol></div>
             
 
           </div>

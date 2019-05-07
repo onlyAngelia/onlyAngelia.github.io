@@ -133,14 +133,14 @@
 <meta name="description" content="所有的类型都可以被比较、检测逻辑值、转换字符串，所有的数据类型都可进行数学运算。 逻辑值检测任何数据类型或对象皆可进行逻辑值检测，默认情况下均被视为真值，除非对象或所属类重定义了bool()方法且返回False 或者是对象定义了len()方法且返回零。 以下是在逻辑检测时被视为假值的对象: .被定义为假值的常量：None 和 False .任何数值类型的零：0，0.0，0j,Decimal(0),">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python数字运算(-)数值、哈希、布尔等运算">
+<meta property="og:title" content="Python数字运算(-)数值、哈希、按位、布尔等运算">
 <meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/index.html">
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="所有的类型都可以被比较、检测逻辑值、转换字符串，所有的数据类型都可进行数学运算。 逻辑值检测任何数据类型或对象皆可进行逻辑值检测，默认情况下均被视为真值，除非对象或所属类重定义了bool()方法且返回False 或者是对象定义了len()方法且返回零。 以下是在逻辑检测时被视为假值的对象: .被定义为假值的常量：None 和 False .任何数值类型的零：0，0.0，0j,Decimal(0),">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-06T14:29:26.668Z">
+<meta property="og:updated_time" content="2019-05-07T02:26:47.435Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python数字运算(-)数值、哈希、布尔等运算">
+<meta name="twitter:title" content="Python数字运算(-)数值、哈希、按位、布尔等运算">
 <meta name="twitter:description" content="所有的类型都可以被比较、检测逻辑值、转换字符串，所有的数据类型都可进行数学运算。 逻辑值检测任何数据类型或对象皆可进行逻辑值检测，默认情况下均被视为真值，除非对象或所属类重定义了bool()方法且返回False 或者是对象定义了len()方法且返回零。 以下是在逻辑检测时被视为假值的对象: .被定义为假值的常量：None 和 False .任何数值类型的零：0，0.0，0j,Decimal(0),">
 
 
@@ -177,7 +177,7 @@
 
 
 
-  <title>Python数字运算(-)数值、哈希、布尔等运算 | 莯滢</title>
+  <title>Python数字运算(-)数值、哈希、按位、布尔等运算 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python数字运算(-)数值、哈希、布尔等运算</h1>
+          <h1 class="post-title" itemprop="name headline">Python数字运算(-)数值、哈希、按位、布尔等运算</h1>
         
 
         <div class="post-meta">
@@ -515,11 +515,11 @@
 </table>
 <h3 id="比较运算注意点"><a href="#比较运算注意点" class="headerlink" title="比较运算注意点"></a>比较运算注意点</h3><p>. 不同数字、不同类型对象比较时绝不会相等</p>
 <p>. 函数类型仅支持简化形式比较</p>
-<p>. &lt;,&lt;=,&gt;,&gt;= 运算符在比较复数和其它数字类型时，或在两个对象具有无法被比较的不同类型时，或在未定义次序的其他情况时，以上皆会产生TypeErroe异常</p>
+<p>. &lt;,&lt;=,&gt;,&gt;= 运算符在比较复数和其它数字类型时，或在两个对象具有无法被比较的不同类型时，或在未定义次序的其他情况时，以上皆会产生<code>TypeErroe</code>异常</p>
 <p>. 不同标识类的实例比较，除非定义了<strong>eq</strong>()方法，否则不相等</p>
 <p>. 类实例不能与相同类或其他实例或其它类型对象进行排序，除非定义了 <strong>it</strong>(),<strong>le</strong>(),<strong>gt</strong>(),<strong>ge</strong>()这些函数</p>
 <p>. <code>is</code> 和 <code>is not</code>无法自定义，可以被应用于任意两个对象不引发异常。</p>
-<p>. in 和 not in ，与上面八种比较运算符具有相同优先级，但只能支持iterable(可迭代对象)或实现了<strong>contains</strong>()方法的类型</p>
+<p>.<code>in</code> 和 <code>not in</code> ，与上面八种比较运算符具有相同优先级，但只能支持<strong>iterable(可迭代对象)</strong>或实现了<strong>contains</strong>()方法的类型</p>
 <h2 id="数字运算"><a href="#数字运算" class="headerlink" title="数字运算"></a>数字运算</h2><p>所有的数字类型，除了复数类型，都支持下面的运算操作，所有数字运算的优先级都高于比较运算，以下按照<strong>优先级升序排列</strong>：</p>
 <table>
 <thead>
@@ -579,7 +579,7 @@
 </tr>
 <tr>
 <td style="text-align:center"><strong>c.conjugate()</strong></td>
-<td>复数c的gonge</td>
+<td>复数c的共轭</td>
 </tr>
 <tr>
 <td style="text-align:center"><strong>divmod(x,y)</strong></td>
@@ -646,13 +646,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="数字类型的哈希运算"><a href="#数字类型的哈希运算" class="headerlink" title="数字类型的哈希运算"></a>数字类型的哈希运算</h2><p>不同数字类型的两个数，要做== 比较运算时，必须转车哈希值，即hash(x)==hash(y)。为便于在各种数字类型上实现并保证效率，Python对数字类型的哈希运算是基于任意有理数定义统一的数学函数，本质上hash()是通过以一个固定质数P进行P降模。P的值在 Python 中可以 <a href="https://docs.python.org/zh-cn/3.6/library/sys.html#sys.hash_info"><code>sys.hash_info</code></a> 的 <code>modulus</code> 属性的形式被访问。</p>
+<h2 id="数字类型的哈希运算"><a href="#数字类型的哈希运算" class="headerlink" title="数字类型的哈希运算"></a>数字类型的哈希运算</h2><p><strong>不同数字类型的两个数，要做== 比较运算时，必须转成哈希值，即hash(x)==hash(y)</strong>。为便于在各种数字类型上实现并保证效率，Python对数字类型的哈希运算是基于任意有理数定义统一的数学函数，本质上hash()是通过以一个固定质数P进行P降模。P的值在 Python 中可以 <a href="https://docs.python.org/zh-cn/3.6/library/sys.html#sys.hash_info"><code>sys.hash_info</code></a> 的 <code>modulus</code> 属性的形式被访问。</p>
 <p>CPython implementation detail: 所用质数设定，在 C long 为 32 位的机器上 <code>P = 2**31 - 1</code> 而在 C long 为 64 位的机器上 <code>P = 2**61 - 1</code></p>
 <p>运算规则如下：</p>
 <ul>
-<li>如果 <code>x = m / n</code> 是一个非负有理数，且 <code>n</code> 不能被 <code>P</code> 整除，则定义 <code>hash(x)</code> 为 <code>m * invmod(n, P) % P</code>。</li>
-<li>如果 <code>x = m / n</code> 是一个非负有理数，且 <code>n</code> 能被 <code>P</code> 整除（但 <code>m</code> 不能）则 <code>n</code> 不能对 <code>P</code> 降模，以上规则不适用；在此情况下则定义 <code>hash(x)</code> 为常数值 <code>sys.hash_info.inf</code>。</li>
-<li>如果 <code>x = m / n</code> 是一个负有理数，则定义 <code>hash(x)</code> 为 <code>-hash(-x)</code>。 如果结果哈希值为 <code>-1</code> 则将其替换为 <code>-2</code>。</li>
+<li>如果 <code>x = m / n</code> 是一个非负比例数，且 <code>n</code> 不能被 <code>P</code> 整除，则定义 <code>hash(x)</code> 为 <code>m * invmod(n, P) % P</code>。</li>
+<li>如果 <code>x = m / n</code> 是一个非负比例数，且 <code>n</code> 能被 <code>P</code> 整除（但 <code>m</code> 不能）则 <code>n</code> 不能对 <code>P</code> 降模，以上规则不适用；在此情况下则定义 <code>hash(x)</code> 为常数值 <code>sys.hash_info.inf</code>。</li>
+<li>如果 <code>x = m / n</code> 是一个负比例数，则定义 <code>hash(x)</code> 为 <code>-hash(-x)</code>。 如果结果哈希值为 <code>-1</code> 则将其替换为 <code>-2</code>。</li>
 <li>特定值 <code>sys.hash_info.inf</code>, <code>-sys.hash_info.inf</code> 和 <code>sys.hash_info.nan</code> 被用作正无穷、负无穷和空值（所分别对应的）哈希值。 （所有可哈希的空值都具有相同的哈希值）</li>
 <li>对于一个 <a href="https://docs.python.org/zh-cn/3.6/library/functions.html#complex"><code>complex</code></a> 值 <code>z</code>，会通过计算 <code>hash(z.real) + sys.hash_info.imag * hash(z.imag)</code> 将实部和虚部的哈希值结合起来，并进行降模 <code>2**sys.hash_info.width</code> 以使其处于 <code>range(-2**(sys.hash_info.width - 1), 2**(sys.hash_info.width - 1))</code> 范围之内。 同样地，如果结果为 <code>-1</code> 则将其替换为 <code>-2</code></li>
 </ul>
@@ -814,7 +814,7 @@ Fraction(1, 15)
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/" title="Python数字运算(-)数值、哈希、布尔等运算">https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/</a>
+    <a href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/" title="Python数字运算(-)数值、哈希、按位、布尔等运算">https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculations/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -851,6 +851,10 @@ Fraction(1, 15)
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="../PythonCaculationsMathModule/" rel="prev" title="Python数字运算(二)math模块">
+                Python数字运算(二)math模块 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -932,7 +936,7 @@ Fraction(1, 15)
               
                 <a href="../../archives">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1057,7 +1061,7 @@ Fraction(1, 15)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">20.1k</span>
+    <span title="Site words total count">21.8k</span>
   
 </div>
 
