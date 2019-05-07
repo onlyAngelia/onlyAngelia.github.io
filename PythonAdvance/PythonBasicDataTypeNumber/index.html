@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="Python3有六个标准数据类型： .不可变数据类型：Number(数字)、String(字符串)、Tuple(元组) .可变数据类型： List(列表)、Dictionary(字典)、Set(集合) 在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T02:02:54.734Z">
+<meta property="og:updated_time" content="2019-05-07T09:55:45.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python数据类型(一)数字类型">
 <meta name="twitter:description" content="Python3有六个标准数据类型： .不可变数据类型：Number(数字)、String(字符串)、Tuple(元组) .可变数据类型： List(列表)、Dictionary(字典)、Set(集合) 在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举">
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.9k
+                  5.1k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  20
+                  21
                 </span>
               
             </div>
@@ -531,6 +531,12 @@ False
 <pre><code class="python">&gt;&gt;&gt; complex(4.5, 1.2)
 (4.5+1.2j)
 </code></pre>
+<h3 id="复数极坐标"><a href="#复数极坐标" class="headerlink" title="复数极坐标"></a>复数极坐标</h3><p>Python中复数本质上实现是一个长方形坐标系或由笛卡尔坐标系存储。它被定义为实部和虚部：</p>
+<p><code>z=z.real + z.imag*1j</code></p>
+<p>极坐标系 提供了可供选择的表达复数的方式，在极坐标系中复数z被定义为是由模数<em>r</em>和位项角<em>phi</em>构成。模数<em>r</em>是由z到原点的距离，位项角<em>phi</em>是正x轴到原点与z轴连接线段按弧度计算的逆时针角度。</p>
+<pre><code class="python">The modulus r is the distance from z to the origin, while the phase phi is the counterclockwise angle, measured in radians, from the positive x-axis to the line segment that joins the origin to z
+</code></pre>
+<p>有关于复数极坐标的转换函数可以查看：<a href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/">Python数字运算(三)cmath模块</a></p>
 <h2 id="Decimal-十进制定点和浮点数"><a href="#Decimal-十进制定点和浮点数" class="headerlink" title="Decimal(十进制定点和浮点数)"></a>Decimal(十进制定点和浮点数)</h2><p>Decimal能够快速正确舍入十进制，为十进制浮点运算提供支持。Decimal是基于浮点模型，方便十进制浮点数科学运算，并且提高来精确性。Decimal保留尾数零，如<code>1.30 + 1.70 = 3.00</code>, <code>1.20 *1.40 =1.6800</code> ;</p>
 <p>具有严格相等不变量的会计或金融程序中，会优先选择Decimal类型，举例来说，<code>1.0-1.0</code> 结果恰好为0，但是在二进制数值中结果为<code>5.5511151231257827e-017</code>，虽然无限接近于0，但是仍然存在误差，若用Decimal则不会存在这样的误差，其结果为0；Decimal作为十进制的浮点数可以设置精度(默认为28个精度)</p>
 <p>Decimal由<strong>十进制数</strong>、<strong>信号</strong>、和<strong>算数上下文</strong>组成。</p>
@@ -1036,7 +1042,7 @@ Fraction(7, 1000000)
               
                 <a href="../../archives">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1120,7 +1126,7 @@ Fraction(7, 1000000)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-整数"><span class="nav-number">1.</span> <span class="nav-text">int(整数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数类型附加方法"><span class="nav-number">1.1.</span> <span class="nav-text">整数类型附加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bit-length"><span class="nav-number">1.1.1.</span> <span class="nav-text">bit_length()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#to-bytes"><span class="nav-number">1.1.2.</span> <span class="nav-text">to_bytes()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#from-bytes"><span class="nav-number">1.1.3.</span> <span class="nav-text">from_bytes()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float（浮点数）"><span class="nav-number">2.</span> <span class="nav-text">float（浮点数）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数类型附加方法"><span class="nav-number">2.1.</span> <span class="nav-text">浮点数类型附加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#as-integer-ratio"><span class="nav-number">2.1.1.</span> <span class="nav-text">as_integer_ratio()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#is-integer"><span class="nav-number">2.1.2.</span> <span class="nav-text">is_integer()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hex"><span class="nav-number">2.1.3.</span> <span class="nav-text">hex()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fromhex"><span class="nav-number">2.1.4.</span> <span class="nav-text">fromhex()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex（复数）"><span class="nav-number">3.</span> <span class="nav-text">complex（复数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decimal-十进制定点和浮点数"><span class="nav-number">4.</span> <span class="nav-text">Decimal(十进制定点和浮点数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——十进制数"><span class="nav-number">4.1.</span> <span class="nav-text">Decimal构成——十进制数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——信号"><span class="nav-number">4.2.</span> <span class="nav-text">Decimal构成——信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——算术上下文"><span class="nav-number">4.3.</span> <span class="nav-text">Decimal构成——算术上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-常数"><span class="nav-number">4.4.</span> <span class="nav-text">Decimal 常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal方法"><span class="nav-number">4.5.</span> <span class="nav-text">Decimal方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-注意点"><span class="nav-number">4.6.</span> <span class="nav-text">Decimal 注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fraction-分数-："><span class="nav-number">5.</span> <span class="nav-text">Fraction(分数)：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction构建方式"><span class="nav-number">5.1.</span> <span class="nav-text">Fraction构建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction属性和方法"><span class="nav-number">5.2.</span> <span class="nav-text">Fraction属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#round-函数注意点"><span class="nav-number">5.3.</span> <span class="nav-text">round()函数注意点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#int-整数"><span class="nav-number">1.</span> <span class="nav-text">int(整数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整数类型附加方法"><span class="nav-number">1.1.</span> <span class="nav-text">整数类型附加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bit-length"><span class="nav-number">1.1.1.</span> <span class="nav-text">bit_length()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#to-bytes"><span class="nav-number">1.1.2.</span> <span class="nav-text">to_bytes()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#from-bytes"><span class="nav-number">1.1.3.</span> <span class="nav-text">from_bytes()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#float（浮点数）"><span class="nav-number">2.</span> <span class="nav-text">float（浮点数）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点数类型附加方法"><span class="nav-number">2.1.</span> <span class="nav-text">浮点数类型附加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#as-integer-ratio"><span class="nav-number">2.1.1.</span> <span class="nav-text">as_integer_ratio()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#is-integer"><span class="nav-number">2.1.2.</span> <span class="nav-text">is_integer()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hex"><span class="nav-number">2.1.3.</span> <span class="nav-text">hex()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fromhex"><span class="nav-number">2.1.4.</span> <span class="nav-text">fromhex()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex（复数）"><span class="nav-number">3.</span> <span class="nav-text">complex（复数）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#复数极坐标"><span class="nav-number">3.1.</span> <span class="nav-text">复数极坐标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decimal-十进制定点和浮点数"><span class="nav-number">4.</span> <span class="nav-text">Decimal(十进制定点和浮点数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——十进制数"><span class="nav-number">4.1.</span> <span class="nav-text">Decimal构成——十进制数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——信号"><span class="nav-number">4.2.</span> <span class="nav-text">Decimal构成——信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal构成——算术上下文"><span class="nav-number">4.3.</span> <span class="nav-text">Decimal构成——算术上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-常数"><span class="nav-number">4.4.</span> <span class="nav-text">Decimal 常数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal方法"><span class="nav-number">4.5.</span> <span class="nav-text">Decimal方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-注意点"><span class="nav-number">4.6.</span> <span class="nav-text">Decimal 注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fraction-分数-："><span class="nav-number">5.</span> <span class="nav-text">Fraction(分数)：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction构建方式"><span class="nav-number">5.1.</span> <span class="nav-text">Fraction构建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraction属性和方法"><span class="nav-number">5.2.</span> <span class="nav-text">Fraction属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#round-函数注意点"><span class="nav-number">5.3.</span> <span class="nav-text">round()函数注意点</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1161,7 +1167,7 @@ Fraction(7, 1000000)
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21.8k</span>
+    <span title="Site words total count">22.9k</span>
   
 </div>
 

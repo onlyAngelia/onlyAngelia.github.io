@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="Block,">
+  <meta name="keywords" content="Python,">
 
 
 
@@ -130,18 +130,18 @@
 
 
 
-<meta name="description" content="在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论       类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NSConcreteStackBlock      .cpp文件/Block.h     栈区">
-<meta name="keywords" content="Block">
+<meta name="description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Block类型及内存区域">
-<meta property="og:url" content="https://onlyangelia.github.io/Objective-C/blockmemory/index.html">
+<meta property="og:title" content="Python数字运算(三)cmath模块">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论       类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NSConcreteStackBlock      .cpp文件/Block.h     栈区">
+<meta property="og:description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-30T15:05:16.864Z">
+<meta property="og:updated_time" content="2019-05-07T10:57:39.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Block类型及内存区域">
-<meta name="twitter:description" content="在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论       类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NSConcreteStackBlock      .cpp文件/Block.h     栈区">
+<meta name="twitter:title" content="Python数字运算(三)cmath模块">
+<meta name="twitter:description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
 
 
 
@@ -171,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="https://onlyangelia.github.io/Objective-C/blockmemory/">
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/">
 
 
 
 
 
-  <title>Block类型及内存区域 | 莯滢</title>
+  <title>Python数字运算(三)cmath模块 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Block类型及内存区域</h1>
+          <h1 class="post-title" itemprop="name headline">Python数字运算(三)cmath模块</h1>
         
 
         <div class="post-meta">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T22:55:08+08:00">
-                2017-04-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T12:56:50+08:00">
+                2018-05-03
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/Objective-C/" itemprop="url" rel="index">
-                    <span itemprop="name">Objective-C</span>
+                  <a href="../../categories/PythonAdvance/" itemprop="url" rel="index">
+                    <span itemprop="name">Python进阶</span>
                   </a>
                 </span>
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  838
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  3
                 </span>
               
             </div>
@@ -436,128 +436,212 @@
       
 
       
-        <p>在<a href="https://onlyangelia.github.io/Objective-C/blockindex/">Block前言</a>中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论</p>
-<table><br>  <tr><br>    <th width="35%," bgcolor="#eeeeee">类型</th><br>    <th width="35%," bgcolor="#eeeeee">查看源</th><br>    <th width="30%," bgcolor="#eeeeee">存储区域</th><br>  </tr><br> <tr><br>    <td>_NSConcreteGlobalBlock</td><br>    <td> .cpp文件/Block.h </td><br>    <td> 全局变量/静态变量区</td><br>  </tr><br>  <tr><br>    <td>_NSConcreteStackBlock </td><br>    <td> .cpp文件/Block.h</td><br>    <td> 栈区 </td><br>  </tr><br> <tr><br>    <td>_NSConcreteMallocBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteAutoBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteFinalizingBlock </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br><tr><br>    <td>_NSConcreteWeakBlockVariable </td><br>    <td> Block_private.h文件</td><br>    <td> 堆区</td><br>  </tr><br></table>
-
-
-<p>以上内容的查看在编译后的cpp文件以及runtime源码中都可以查看到相关信息<br><a href="https://github.com/onlyAngelia/YAObjectTest.git">code已上传到Github,点击下载</a><br><a href="https://opensource.apple.com/source/objc4/objc4-680/runtime/">runtime源码Apple官网</a><br><a href="https://github.com/onlyAngelia/objc-runtime">runtime源码Github</a></p>
-<h1 id="特别注意点"><a href="#特别注意点" class="headerlink" title="特别注意点"></a>特别注意点</h1><p>Block前言中讲到默认创建的Block指针只有Global、Statck，其它四种是在运行时编译环境决定的，此根据也是根据runtime源码和注释得出结论。</p>
-<pre><code class="cpp">// the raw data space for runtime classes for blocks
-// class+meta used for stack, malloc, and collectable based blocks
-BLOCK_EXPORT void * _NSConcreteMallocBlock[32]
-    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
-BLOCK_EXPORT void * _NSConcreteAutoBlock[32]
-    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
-BLOCK_EXPORT void * _NSConcreteFinalizingBlock[32]
-    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
-BLOCK_EXPORT void * _NSConcreteWeakBlockVariable[32]
-    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_2);
+        <p><strong>cmath</strong>模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算</p>
+<h2 id="复数极坐标系转换函数"><a href="#复数极坐标系转换函数" class="headerlink" title="复数极坐标系转换函数"></a>复数极坐标系转换函数</h2><p>在<a href="https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/">Python数据类型(一)数字类型</a>中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>phase</strong>(x)</td>
+<td>以浮点数的形式返回x的弧度，范围在[-π，π]</td>
+</tr>
+<tr>
+<td>cmath.<strong>polar</strong>(x)</td>
+<td>返回x在极坐标系中的坐标(r,phi)</td>
+</tr>
+<tr>
+<td>cmath.<strong>rect</strong>(r, phi)</td>
+<td>返回坐标(r, phi)在极坐标系中对应的复数</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">&gt;&gt;&gt; import cmath
+&gt;&gt;&gt; cmath.phase(complex(-1.0, 0.0))
+3.141592653589793
+&gt;&gt;&gt; cmath.phase(complex(-1.0,0.0))
+3.141592653589793
+&gt;&gt;&gt; cmath.phase(complex(-0.5, 0.0))
+3.141592653589793
+&gt;&gt;&gt; cmath.phase(complex(-0.5, 0.3))
+2.601173153319209
+&gt;&gt;&gt; cmath.polar(complex(-0.5, 0.3))
+(0.58309518948453, 2.601173153319209)
+&gt;&gt;&gt; cmath.rect(0.58309518948453, 2.601173153319209)
+(-0.49999999999999994+0.3j)
 </code></pre>
-<p>从以上runtime源码和注释中我们可以很好的解释该6种Block在Mac和iOS系统中都会出现，除Global、Statck，其它四种是在运行时编译环境决定。</p>
-<h1 id="每种Block出现的情况"><a href="#每种Block出现的情况" class="headerlink" title="每种Block出现的情况"></a>每种Block出现的情况</h1><p>（最好复习一下基本数据结构）</p>
-<h2 id="NSConcreteGlobalBlock"><a href="#NSConcreteGlobalBlock" class="headerlink" title="_NSConcreteGlobalBlock"></a>_NSConcreteGlobalBlock</h2><p>在以下情况下，Block为GlobalBlock (根据赋值情况会决定存储静态区的静态变量区域还是全局变量区域)<br><strong>1.Block声明为全局变量<br>2.函数区域内Block语法表达式没有使用外部变量<br>3.Block内部只引用了内部传递值或只引用了静态变量或全局变量</strong></p>
-<p>第一种情况好理解,一般我们声明的全局变量都会放在静态区,当Block被声明为全局变量时也会存放在静态区域<br>如下将Block声明为全局变量,查看编译后的cpp文件,找到对应的编译代码<br>源码:</p>
-<pre><code>#import &quot;BlockObject.h&quot;
-#import &lt;objc/runtime.h&gt;
-
-void (^globalBlock)(void)=^{};
-
-@interface BlockObject()
-</code></pre><p>编译后的部分代码:</p>
-<pre><code>struct __globalBlock_block_impl_0 {
-  struct __block_impl impl;
-  struct __globalBlock_block_desc_0* Desc;
-  __globalBlock_block_impl_0(void *fp, struct __globalBlock_block_desc_0 *desc, int flags=0) {
-    impl.isa = &amp;_NSConcreteGlobalBlock;
-    impl.Flags = flags;
-    impl.FuncPtr = fp;
-    Desc = desc;
-  }
-};
-</code></pre><p>`impl.isa = &amp;_NSConcreteGlobalBlock;可以看到我们声明的<strong>全局变量block为NSConcreteGlobalBlock</strong>。</p>
-<p>第二种情况我们可以看如下代码</p>
-<pre><code> typedef int (^blockStatic)(void);
-blockStatic secondBlk = ^(){
-        return 1;
- };
-NSLog(@&quot;%@&quot;,secondBlk);
-</code></pre><p>最后查看到输出结果如下</p>
-<pre><code>YAObjectTest[8834:1196308]
- &lt;__NSGlobalBlock__: 0x10de381c8&gt;
-</code></pre><p>所以，<strong>未引用外部变量时，最终得到的block也是NSConcreteGlobalBlock</strong>。</p>
-<p>第三种情况我看可以看如下代码</p>
-<pre><code>static int count = 100;
-typedef int (^blockStatic)(void);
-blockStatic blk = ^(){
-        return count;
-    };
-     NSLog(@&quot;%@&quot;,blk);
-</code></pre><p>最后的输出结果如下：</p>
-<pre><code>YAObjectTest[8719:1185296]
- &lt;__NSGlobalBlock__: 0x108320188&gt;
-</code></pre><p>最后的输出也是GlobalBlock，所以，<strong>只引用静态变量或全局变量时，Block仍为NSConcreteGlobalBlock</strong>。</p>
-<hr>
-<p>解惑：第二种情况和第三种情况我们最终查看的是输出情况，而不是clang后的源文件。查看clang后的源文件该两种情况得到的是StackBlock。编译器根据编译特性会把后两种情况默认编译后定义为StackBlock，但是我们知道OC是动态语言，所以最终还是以运行时或最终输出结果为准。</p>
-<hr>
-<h1 id="NSConcreteStackBlock"><a href="#NSConcreteStackBlock" class="headerlink" title="_NSConcreteStackBlock"></a>_NSConcreteStackBlock</h1><p><strong>1.使用到外部局部变量、成员属性变量（非静态变量值）&amp; 2.未使用strong或copy修饰符修饰</strong><br><strong>以上条件缺一不可，只有这两个条件同时成立时，Block才为_NSConcreteStackBlock</strong><br>如果在函数内，Block只是引用了外部局部变量或成员属性变量，最终会被copy到堆上变为MallocBlock。而对于声明为属性的Block，如果修饰符为strong或copy，则也会copy到堆上，而不是StackBlock。<br>查看以下代码的最终输出（不能同时满足上述两种条件的情况下）</p>
-<pre><code>@interface BlockObject()
-
-@property (nonatomic, strong)void(^proBlock)(void);
-@property (nonatomic, assign)NSInteger outsideCount;
-
-@end
-
-     int a = 1;
-    //使用外部局部变量情况
-    void (^blockVariable)(void) = ^(){
-        NSLog(@&quot;%ld&quot;,(long)_outsideCount);
-    };
-    NSLog(@&quot;%@&quot;,blockVariable);
-
-    _proBlock = ^(){
-        NSLog(@&quot;%d&quot;,a);
-    };
-    NSLog(@&quot;%@&quot;,_proBlock);
-</code></pre><p>最终控制台输出如下</p>
-<pre><code> &lt;__NSMallocBlock__: 0x600000447c50&gt;
- &lt;__NSMallocBlock__: 0x6040002557b0&gt;
-
-</code></pre><p>将proBlock的修饰符换成weak，</p>
-<pre><code>@property (nonatomic, weak)void(^proBlock)(void);
-</code></pre><p>同样的代码，会得到如下结果，proBlock会是StackBlock</p>
-<pre><code>YAObjectTest[10461:1384618] &lt;__NSMallocBlock__: 0x60400025d1f0&gt;
-YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
-</code></pre><p>所以，<strong>在引用了外部变量并且没有强指针引用的情况下的Block为_NSConcreteStackBlock</strong>。</p>
-<h1 id="NSConcreteMallocBlock"><a href="#NSConcreteMallocBlock" class="headerlink" title="_NSConcreteMallocBlock"></a>_NSConcreteMallocBlock</h1><p>1.引用了外部变量，有strong或copy修饰符修饰<br>2.block内部需要修改引用变量的值，外部变量被<strong>block修饰<br>第一种情况在求证StackBlock的情况下已经得到验证，有strong或copy修饰后并且引用了外部变量的情况下，为** &lt;</strong>NSMallocBlock__: 0x6040002557b0&gt;**<br>有关第二种情况，在该文只做验证，后续深入解析，详见Block截获变量中的__block修饰符深入解析</p>
-<pre><code>    __block int a = 0;
-    void (^lockBlock)(void) = ^{
-        a++;
-    };
-    lockBlock();
-    NSLog(@&quot;%@&quot;, lockBlock);
-</code></pre><p>最后的输出结果为</p>
-<pre><code>YAObjectTest[10853:1425358] &lt;__NSMallocBlock__: 0x60000024e610&gt;
-</code></pre><p>在此就求证了以上两种结果最后Block为_NSConcreteMallocBlock。</p>
-<hr>
-<p>接下来的三种类型Block，因对有GC回收机制的语言不是太熟悉，在Xcode中编写的C++代码 最终查看运行时的isa指针皆为—NSStackBlock，在Xcode中并没有按照预想的查看到以下三种类型，Terminal终端g++ 编译后的可执行文件也未见以下类型，查阅资料发现以下三种出现的情况大致如下，若有对C++ 熟悉的人员 ，请不吝赐教😉</p>
-<hr>
-<h1 id="NSConcreteFinalizingBlock"><a href="#NSConcreteFinalizingBlock" class="headerlink" title="_NSConcreteFinalizingBlock"></a>_NSConcreteFinalizingBlock</h1><p>.Block需要copy到堆上，但是Block内部有ctors 和 dtors时，block会是NSFinalizingBlock</p>
-<h1 id="NSConcreteAutoBlock"><a href="#NSConcreteAutoBlock" class="headerlink" title="_NSConcreteAutoBlock"></a>_NSConcreteAutoBlock</h1><p>.Block需要copy到堆上若未引用到ctors和 dtors 则是NSAutoBlock<br>以上是AutoBlock和FinalizingBlock的出现情况。而对于ctors和dtors，<br>ctors中保存着程序全部构造函数的指针数组，dtors中保存着程序全部析构函数的指针数组，从两者的存储内容来看，若block引用了该两种类型，势必block会在程序运行结束时回收内存，所以会被转换为FinalizingBlock，而未引用的block则会根据情况自动回收，转换为AutoBlock。</p>
-<p>以下是写在cpp文件中的代码</p>
-<pre><code>void testAutoBlock(){
-  int * b=new int[4];
-   __block int testCount = 100;
-   int (^myBlock)() = ^() {
-        b[0] = testCount;
-        b[1] = testCount + 1;
-        b[2] = testCount + 2;
-        b[3] = testCount + 3;
-        std::cout&lt;&lt;b&lt;&lt;std::endl;
-       return 0;
-    };
-    std::cout&lt;&lt;myBlock&lt;&lt;std::endl;
-   }；
-</code></pre><h1 id="NSConcreteWeakBlockVariable"><a href="#NSConcreteWeakBlockVariable" class="headerlink" title="_NSConcreteWeakBlockVariable"></a>_NSConcreteWeakBlockVariable</h1><p>.GC回收机制下，用_weak 或<strong>block修饰的block 会转变成NSWeakBlockVariable<br>具体的对于</strong>weak 和__blcok修饰符，在后面截获变量和循环引用中具体详解。<br>以上是个人对于Block类型和存储区域的总结。中间为探究后三种类型浪费了很多时间，导致文章延迟。</p>
+<h2 id="幂函数与对数函数"><a href="#幂函数与对数函数" class="headerlink" title="幂函数与对数函数"></a>幂函数与对数函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>exp</strong>(x)</td>
+<td>返回<code>e**x</code></td>
+</tr>
+<tr>
+<td>cmath.<strong>log</strong>(x,base)</td>
+<td>返回以base为底x的对数</td>
+</tr>
+<tr>
+<td>cmath.<strong>log10</strong>(x)</td>
+<td>返回以10为底x的对数</td>
+</tr>
+<tr>
+<td>cmath.<strong>sqrt</strong>(x)</td>
+<td>x的开方</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">&gt;&gt;&gt; cmath.exp(complex(2.0, 0.0))
+(7.38905609893065+0j)
+&gt;&gt;&gt; cmath.exp(complex(10.0, 2.0))
+(-9166.244060822655+20028.608669281643j)
+&gt;&gt;&gt; cmath.log10(complex(100.0,2.0))
+(2.0000868415292326+0.008684731797315706j)
+&gt;&gt;&gt; cmath.sqrt(complex(2.0, 1.0))
+(1.455346690225355+0.34356074972251244j)
+</code></pre>
+<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>acos</strong>(x)</td>
+<td>返回x的反余弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>asin</strong>(x)</td>
+<td>返回x的反正弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>atan</strong>(x)</td>
+<td>返回x的反正切值</td>
+</tr>
+<tr>
+<td>cmath.<strong>cos</strong>(x)</td>
+<td>返回x的余弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>sin</strong>(x)</td>
+<td>返回x的正弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>tan</strong>(x)</td>
+<td>返回x的正切值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>acosh</strong>(x)</td>
+<td>返回双曲线中x的反余弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>asinh</strong>(x)</td>
+<td>返回双曲线中x的反正弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>atanh</strong>(x)</td>
+<td>返回双曲线中x的反正切值</td>
+</tr>
+<tr>
+<td>cmath.<strong>cosh</strong>(x)</td>
+<td>返回双曲线中x的余弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>sinh</strong>(x)</td>
+<td>返回双曲线中x的正弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>tanh</strong>(x)</td>
+<td>返回双曲线中x的正切值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="分类函数"><a href="#分类函数" class="headerlink" title="分类函数"></a>分类函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>isfinite</strong>(x)</td>
+<td>模数r和弧度phi都是有理数，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>cmath.<strong>isinf</strong>(x)</td>
+<td>模数r和弧度phi都趋近于正无穷，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>cmath.<strong>isnan</strong>(x)</td>
+<td>模数r和弧度phi都是Nan，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>cmath.<strong>isclose</strong>(a,b,*,rel_tol,abs_tol)</td>
+<td>若a和b的值比较接近则返回True，否则返回False。判定标准是根据给定的绝对和相对容差。rel_tol是相对容差，必须大于0，是a和b之间允许的最大差值。abs_tol是最小绝对容差，至少为0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常数"><a href="#常数" class="headerlink" title="常数"></a>常数</h2><table>
+<thead>
+<tr>
+<th>常数名</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>pi</strong></td>
+<td>常数π=3.141926….</td>
+</tr>
+<tr>
+<td>cmath.<strong>e</strong></td>
+<td>常数e= 2.718281….</td>
+</tr>
+<tr>
+<td>cmath.<strong>tau</strong></td>
+<td>常数τ = 6.283185…，为π的两倍</td>
+</tr>
+<tr>
+<td>cmath.<strong>inf</strong></td>
+<td>正无穷大浮点数</td>
+</tr>
+<tr>
+<td>cmath.<strong>infj</strong></td>
+<td>实部为0，虚部为正无穷大浮点数的复数</td>
+</tr>
+<tr>
+<td>cmath.<strong>nan</strong></td>
+<td>浮点数”非数值”</td>
+</tr>
+<tr>
+<td>cmath.<strong>nanj</strong></td>
+<td>实部为0，虚部为Nan的”非数值”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>cmath</strong>模块与<strong>math</strong>模块许多功能看上去相似，但实际上是不同的功能。cmath返回的值是复数，哪怕虚部为0。许多人不理解为什么单独定义一个cmath模块而不是math模块一起解决复数运算问题。假设有一天需要用特别复杂的方式去计算，就会理解这么定义的原因。</p>
 
       
     </div>
@@ -607,7 +691,7 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/Objective-C/blockmemory/" title="Block类型及内存区域">https://onlyangelia.github.io/Objective-C/blockmemory/</a>
+    <a href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/" title="Python数字运算(三)cmath模块">https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -622,7 +706,7 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
       
         <div class="post-tags">
           
-            <a href="../../tags/Block/" rel="tag"><i class="fa fa-tag"></i> Block</a>
+            <a href="../../tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
         </div>
       
@@ -635,8 +719,8 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../blocknature/" rel="next" title="Block实质">
-                <i class="fa fa-chevron-left"></i> Block实质
+              <a href="../PythonCaculationsMathModule/" rel="next" title="Python数字运算(二)math模块">
+                <i class="fa fa-chevron-left"></i> Python数字运算(二)math模块
               </a>
             
           </div>
@@ -644,10 +728,6 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="../blockbrief/" rel="prev" title="Block自动截获变量">
-                Block自动截获变量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -813,7 +893,7 @@ YAObjectTest[10461:1384618] &lt;__NSStackBlock__: 0x7ffee9f07930&gt;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#特别注意点"><span class="nav-number">1.</span> <span class="nav-text">特别注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#每种Block出现的情况"><span class="nav-number">2.</span> <span class="nav-text">每种Block出现的情况</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NSConcreteGlobalBlock"><span class="nav-number">2.1.</span> <span class="nav-text">_NSConcreteGlobalBlock</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NSConcreteStackBlock"><span class="nav-number">3.</span> <span class="nav-text">_NSConcreteStackBlock</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NSConcreteMallocBlock"><span class="nav-number">4.</span> <span class="nav-text">_NSConcreteMallocBlock</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NSConcreteFinalizingBlock"><span class="nav-number">5.</span> <span class="nav-text">_NSConcreteFinalizingBlock</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NSConcreteAutoBlock"><span class="nav-number">6.</span> <span class="nav-text">_NSConcreteAutoBlock</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NSConcreteWeakBlockVariable"><span class="nav-number">7.</span> <span class="nav-text">_NSConcreteWeakBlockVariable</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#复数极坐标系转换函数"><span class="nav-number">1.</span> <span class="nav-text">复数极坐标系转换函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂函数与对数函数"><span class="nav-number">2.</span> <span class="nav-text">幂函数与对数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角函数"><span class="nav-number">3.</span> <span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲函数"><span class="nav-number">4.</span> <span class="nav-text">双曲函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类函数"><span class="nav-number">5.</span> <span class="nav-text">分类函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常数"><span class="nav-number">6.</span> <span class="nav-text">常数</span></a></li></ol></div>
             
 
           </div>
