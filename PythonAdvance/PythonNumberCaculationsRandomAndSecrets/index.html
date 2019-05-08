@@ -130,18 +130,18 @@
 
 
 
-<meta name="description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
+<meta name="description" content="random模块random模块实现了这种分布的伪随机数生成器，随机数可以被应用于数学、安全等领域，并且也经常被嵌入算法中，用以提高算法效率，在机器学习算法中对随机数的设定是必要的一步，并且随机数的设定会影响算法的好坏。 random模块提供的函数是基于random.Random类的隐藏实例的绑定方法，几乎所有模块函数都依赖于基本函数random()，random()函数在半开放区间[0.0, 1">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python运算(二)math模块">
-<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/index.html">
+<meta property="og:title" content="莯滢">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsRandomAndSecrets/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
+<meta property="og:description" content="random模块random模块实现了这种分布的伪随机数生成器，随机数可以被应用于数学、安全等领域，并且也经常被嵌入算法中，用以提高算法效率，在机器学习算法中对随机数的设定是必要的一步，并且随机数的设定会影响算法的好坏。 random模块提供的函数是基于random.Random类的隐藏实例的绑定方法，几乎所有模块函数都依赖于基本函数random()，random()函数在半开放区间[0.0, 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T13:40:44.571Z">
+<meta property="og:updated_time" content="2019-05-08T10:39:07.729Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python运算(二)math模块">
-<meta name="twitter:description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
+<meta name="twitter:title" content="莯滢">
+<meta name="twitter:description" content="random模块random模块实现了这种分布的伪随机数生成器，随机数可以被应用于数学、安全等领域，并且也经常被嵌入算法中，用以提高算法效率，在机器学习算法中对随机数的设定是必要的一步，并且随机数的设定会影响算法的好坏。 random模块提供的函数是基于random.Random类的隐藏实例的绑定方法，几乎所有模块函数都依赖于基本函数random()，random()函数在半开放区间[0.0, 1">
 
 
 
@@ -171,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/">
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsRandomAndSecrets/">
 
 
 
 
 
-  <title>Python运算(二)math模块 | 莯滢</title>
+  <title> | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python运算(二)math模块</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T13:49:09+08:00">
-                2018-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T18:52:27+08:00">
+                2018-05-03
               </time>
             
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  2.6k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  10
                 </span>
               
             </div>
@@ -436,328 +436,250 @@
       
 
       
-        <p><strong>math</strong>是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用<strong>cmath</strong>模块的同名函数，无特殊情况下，<strong>math</strong>模块中的函数返回值均为浮点数。</p>
-<h2 id="数论与表示函数"><a href="#数论与表示函数" class="headerlink" title="数论与表示函数"></a>数论与表示函数</h2><table>
+        <h1 id="random模块"><a href="#random模块" class="headerlink" title="random模块"></a>random模块</h1><p><strong>random</strong>模块实现了这种分布的伪随机数生成器，随机数可以被应用于数学、安全等领域，并且也经常被嵌入算法中，用以提高算法效率，在机器学习算法中对随机数的设定是必要的一步，并且随机数的设定会影响算法的好坏。</p>
+<p><strong>random</strong>模块提供的函数是基于random.Random类的隐藏实例的绑定方法，几乎所有模块函数都依赖于基本函数<code>random()</code>，<code>random()</code>函数在半开放区间[0.0, 1.0)内均匀生成随机浮点数。用Randon类作为子类，重写 <code>random()</code> 、 <code>seed()</code> 、 <code>getstate()</code> 以及 <code>setstate()</code> 方法可以自己设计不同随机生成器。</p>
+<p><strong>random</strong>针对整数，范围有统一的选择；针对序列，随机元素统一选择、存在用于生成列表的随机排列函数，以及用于随机抽样而无需替换的函数；针对实数轴，有计算<strong>均匀、正态(高斯)、对数正态、负指数、伽马和贝塔分布</strong>的函数，生成角度分布，可以使用<strong>von Mises</strong>分布。</p>
+<h2 id="Bookkeeping-函数"><a href="#Bookkeeping-函数" class="headerlink" title="Bookkeeping 函数"></a>Bookkeeping 函数</h2><table>
 <thead>
 <tr>
-<th>函数名</th>
-<th>释义/代码实例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>ceil</strong>(x)</td>
-<td>返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.<strong>ceil</strong>()返回一个Integer类的值</td>
-</tr>
-<tr>
-<td>math.<strong>copysign</strong>(x,y)</td>
-<td>返回一个基于x的绝对值和y的符号的浮点数&gt;&gt;&gt; math.copysign(2.4, -1.2)<br>-2.4</td>
-</tr>
-<tr>
-<td>math.<strong>fabs</strong>(x)</td>
-<td>返回x的绝对值</td>
-</tr>
-<tr>
-<td>math.<strong>factorial</strong>(x)</td>
-<td>返回x的阶乘，当x不是整数或者是负数时，引发ValueError异常</td>
-</tr>
-<tr>
-<td>math.<strong>floor</strong>(x)</td>
-<td>返回x的向下取整，小于或等于x的最大整数，如果x不是浮点数，则委托x.<strong>floor</strong>()返回一个Integral值</td>
-</tr>
-<tr>
-<td>math.<strong>fmod</strong>(x,y)</td>
-<td>x除以y的余数，但结果并不一定与x%y相同，x%y取余是向下取余，而fomd函数是向靠近0的方向取余，并且fmod函数精度更准确，所以fmod()函数更适合浮点数</td>
-</tr>
-<tr>
-<td>math.<strong>frexp</strong>(x)</td>
-<td>返回x的尾数和指数对(m，e),m是一个浮点数，e是一个整数，m和e要满足 <code>x== m * 2 **e</code>。 如果x为零，则返回(0.0,0)</td>
-</tr>
-<tr>
-<td>math.<strong>fsum</strong>(iterable)</td>
-<td>返回迭代中的精确浮点值，通过跟踪多个中间部分和 以此避免精度损失。该方法的准确性取决于IEEE-754算术保证和 舍入模式为半偶的典型情况，在一些非Windows版本中，底层C库使用扩展精度添加，并且有时可能会使中间和加倍，导致在最低有效位中关闭。<br>&gt;&gt;&gt; sum([.1, .1, .1, .1, .1, .1, .1, .1, .1, .1])<br>0.9999999999999999<br>&gt;&gt;&gt; math. fsum([.1, .1, .1, .1, .1, .1, .1, .1, .1, .1])<br>1.0<br></td>
-</tr>
-<tr>
-<td>math.<strong>gcd</strong>(a,b)</td>
-<td>返回a和b的最大公约数，如果a或b之一非负，则函数函数的值是同时能正常a和b的最大正整数，gcd(0，0)则返回0</td>
-</tr>
-<tr>
-<td>math.<strong>isclose</strong>(a,b,*,rel_tol=1e-09,abs_tol=0.0)</td>
-<td>若a和b的值比较接近则返回True，否则返回False。判定标准是根据给定的绝对和相对容差。rel_tol是相对容差，必须大于0，是a和b之间允许的最大差值。abs_tol是最小绝对容差，至少为0</td>
-</tr>
-<tr>
-<td>math.<strong>isfinite</strong>(x)</td>
-<td>如果x是有限位数，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>math.<strong>isinf</strong>(x)</td>
-<td>如果x是正无穷或负无穷，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>math.<strong>isnan</strong>(x)</td>
-<td>如果x是NaN，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>math.<strong>ldexp</strong>(x,i)</td>
-<td>返回<code>x*(2**i)</code>, 是函数frexp()的反函数</td>
-</tr>
-<tr>
-<td>math.modf(x)</td>
-<td>返回x的小数和整数部分，两个结果都带有x的符号并且是浮点数</td>
-</tr>
-<tr>
-<td>math.trunc(x)</td>
-<td>返回x实部截断Integeral</td>
-</tr>
-</tbody>
-</table>
-<h2 id="幂函数与对数函数"><a href="#幂函数与对数函数" class="headerlink" title="幂函数与对数函数"></a>幂函数与对数函数</h2><table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>释义/代码示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>exp</strong>(x)</td>
-<td>返回 e**x</td>
-</tr>
-<tr>
-<td>math.<strong>expm1</strong>(x)</td>
-<td>返回e**x - 1</td>
-</tr>
-<tr>
-<td>math.<strong>log</strong>(x,base)</td>
-<td>使用一个参数，则返回x的自然对数(底为e)。使用两个参数，返回给定的base的对数x，计算为log(x)/log(base)。</td>
-</tr>
-<tr>
-<td>math.<strong>log1p</strong>(x)</td>
-<td>返回1+x(base e)的自然对数</td>
-</tr>
-<tr>
-<td>math.<strong>log2</strong>(x)</td>
-<td>返回x以2为底的对数，比log(x,2)准确度高</td>
-</tr>
-<tr>
-<td>math.<strong>log10</strong>(x)</td>
-<td>返回x底为10的对数，比log(x,10)准确度高</td>
-</tr>
-<tr>
-<td>math.<strong>pow</strong>(x,y)</td>
-<td>返回x的y次幂</td>
-</tr>
-<tr>
-<td>math.<strong>sqrt</strong>(x)</td>
-<td>返回x的平方根</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="python">&gt;&gt;&gt; x = 5
-&gt;&gt;&gt; math.exp(x)
-148.4131591025766
-&gt;&gt;&gt; math.expm1(x)
-147.4131591025766
-&gt;&gt;&gt; math.log(x)
-1.6094379124341003
-&gt;&gt;&gt; math.log(x, 2)
-2.321928094887362
-&gt;&gt;&gt; math.log1p(x)
-1.791759469228055
-&gt;&gt;&gt; math.log2(x)
-2.321928094887362
-&gt;&gt;&gt; math.log10(x)
-0.6989700043360189
-&gt;&gt;&gt; math.pow(x, 2)
-25.0
-&gt;&gt;&gt; math.sqrt(x)
-2.23606797749979
-</code></pre>
-<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>释义/代码示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>acos</strong>(x)</td>
-<td>以弧度为单位返回x的反余弦值</td>
-</tr>
-<tr>
-<td>math.<strong>asin</strong>(x)</td>
-<td>以弧度为单位返回x的反正弦值</td>
-</tr>
-<tr>
-<td>math.<strong>atan</strong>(x)</td>
-<td>以弧度为单位返回x的反正切值</td>
-</tr>
-<tr>
-<td>math.<strong>atan2</strong>(y,x)</td>
-<td>以弧度为单位返回athan(y/x)，结果在-pi和pi之间，可以计算角度的正确象限</td>
-</tr>
-<tr>
-<td>math.<strong>cos</strong>(x)</td>
-<td>返回x弧度的余弦值</td>
-</tr>
-<tr>
-<td>math.<strong>hypot</strong>(x,y)</td>
-<td>返回欧几里德范数，sqrt(x<em>x + y\</em>y),是原点到点(x，y)的向量距离</td>
-</tr>
-<tr>
-<td>math.<strong>sin</strong>(x)</td>
-<td>返回x弧度的正弦值</td>
-</tr>
-<tr>
-<td>math.<strong>tan</strong>(x)</td>
-<td>返回x弧度的正切值</td>
-</tr>
-</tbody>
-</table>
-<p>注意： x的取值若超出范围，否则会报<code>ValueError: math domain error</code></p>
-<pre><code class="python">&gt;&gt;&gt; math.acos(2.3)
-Traceback (most recent call last):
-  File &quot;&lt;pyshell#26&gt;&quot;, line 1, in &lt;module&gt;
-    math.acos(2.3)
-ValueError: math domain error
-&gt;&gt;&gt; math.acos(0.5)
-1.0471975511965976
-&gt;&gt;&gt; math.asin(0.5)
-0.5235987755982988
-&gt;&gt;&gt; math.atan(0.5)
-0.46364760900080615
-&gt;&gt;&gt; math.atan2(0.5,0.5)
-0.7853981633974483
-&gt;&gt;&gt; math.cos(0.5)
-0.8775825618903728
-&gt;&gt;&gt; math.hypot(0.5,0.5)
-0.7071067811865476
-&gt;&gt;&gt; math.sin(0.5)
-0.479425538604203
-&gt;&gt;&gt; math.tan(0.5)
-0.5463024898437905
-&gt;&gt;&gt; math.tan(1)
-1.557407724654902
-&gt;&gt;&gt; math.tan(1.4)
-5.797883715482887
-&gt;&gt;&gt; math.tan(2)
--2.185039863261519
-&gt;&gt;&gt; math.tan(2.5)
--0.7470222972386602
-</code></pre>
-<h2 id="角度转换"><a href="#角度转换" class="headerlink" title="角度转换"></a>角度转换</h2><table>
-<thead>
-<tr>
-<th>函数名</th>
+<th>函数</th>
 <th>释义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>math.<strong>degrees</strong>(x)</td>
-<td>将角度x从弧度转换为度数</td>
+<td>random.<strong>seed</strong>(a=None, version=2)</td>
+<td>初始化随机数生成器，如果a被省略为或为None，则使用当前系统时间。如果提供随机源，则使用提供的随机源，如果a是int类型，则直接使用。</td>
 </tr>
 <tr>
-<td>math.<strong>radians</strong>(x)</td>
-<td>将角度x从度数转换为弧度</td>
+<td>random.<strong>getstate</strong>()</td>
+<td>捕获随机生成器当前内部状态的对象，可以将该对象传递给setstate()来恢复状态</td>
+</tr>
+<tr>
+<td>random.<strong>setstate</strong>(state)</td>
+<td>state是调用getstate()获得，并且setstate()将生成器的内部状态恢复到getstate()被调用时候的状态</td>
+</tr>
+<tr>
+<td>random.<strong>getrandbits</strong>(k)</td>
+<td>返回带有K位随机的Python整数，此方法随MersenneTwister生成器一起提供其他一些生成器也可以将其作为API的可选部分提供(注：Python 使用 Mersenne Twister 作为核心生成器。 它产生 53 位精度浮点数，周期为 2**19937-1)。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><p>双曲函数是基于双曲线而非圆来对三角函数进行模拟</p>
+<h2 id="整数随机函数"><a href="#整数随机函数" class="headerlink" title="整数随机函数"></a>整数随机函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>random.<strong>randrange</strong>(stop)</td>
+<td>返回不高于stop的一个随机数</td>
+</tr>
+<tr>
+<td>random.<strong>randrange</strong>(start, stop, step)</td>
+<td>从 <code>range(start, stop, step)</code> 返回一个随机选择的元素，相当于 <code>choice(range(start, stop, step))</code> ，但实际上并没有构建一个 range 对象，<em>在 3.2 版更改:</em> <a href="https://docs.python.org/zh-cn/3.6/library/random.html#random.randrange"><code>randrange()</code></a> 在生成均匀分布的值方面更为复杂</td>
+</tr>
+<tr>
+<td>random.<strong>randint</strong>(a,b)</td>
+<td>返回随机满足a&lt;=N&lt;=b的随机整数N。相当于 <code>randrange(a, b+1)</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">&gt;&gt;&gt; import random
+&gt;&gt;&gt; random.randrange(100)
+94
+&gt;&gt;&gt; random.randrange(0, 100, 3)
+81
+&gt;&gt;&gt; random.randint(0, 10)
+4
+</code></pre>
+<h2 id="序列随机函数"><a href="#序列随机函数" class="headerlink" title="序列随机函数"></a>序列随机函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>random.<strong>choice</strong>(seq)</td>
+<td>从非空序列 <em>seq</em> 返回一个随机元素。 如果 <em>seq</em> 为空，则引发 <a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#IndexError"><code>IndexError</code></a></td>
+</tr>
+<tr>
+<td>random.<strong>choices</strong>(population, weights =None, *, cum_weights=None, k = 1 )</td>
+<td>从<em>population</em>中选择替换，返回大小为 <em>k</em> 的元素列表。 如果 <em>population</em> 为空，则引发 IndexError。如果指定了weight序列，则根据相对权重进行选择。或者，如果给出 <em>cum_weights</em> 序列，则根据累积权重（可能使用 <a href="https://docs.python.org/zh-cn/3.6/library/itertools.html#itertools.accumulate"><code>itertools.accumulate()</code></a> 计算）进行选择。 例如，相对权重<code>[10, 5, 30, 5]</code>相当于累积权重<code>[10, 15, 45, 50]</code>。 在内部，相对权重在进行选择之前会转换为累积权重，因此提供累积权重可以节省工作量。如果既未指定 <em>weight</em> 也未指定 <em>cum_weights</em> ，则以相等的概率进行选择。 如果提供了权重序列，则它必须与 <em>population</em> 序列的长度相同。<em>weights</em> 或 <em>cum_weights</em> 可以使用任何与 <a href="https://docs.python.org/zh-cn/3.6/library/random.html#module-random"><code>random()</code></a> 返回的 <a href="https://docs.python.org/zh-cn/3.6/library/functions.html#float"><code>float</code></a> 值互操作的数值类型（包括整数，浮点数和分数但不包括十进制小数</td>
+</tr>
+<tr>
+<td>random.<strong>shuffle</strong>(x, random)</td>
+<td>将序列x随机打乱位置。可选参数 <em>random</em> 是一个0参数函数，在 [0.0, 1.0) 中返回随机浮点数；默认情况下，这是函数 <a href="https://docs.python.org/zh-cn/3.6/library/random.html#random.random"><code>random()</code></a> 。要改变一个不可变的序列并返回一个新的打乱列表，请使用<code>sample(x, k=len(x))</code>。</td>
+</tr>
+<tr>
+<td>random.<strong>sample</strong>(poplation, k)</td>
+<td>返回从总体序列或集合中选择的唯一元素的 <em>k</em> 长度列表。 用于无重复的随机抽样。返回包含来自总体的元素的新列表，同时保持原始总体不变。 结果列表按选择顺序排列，因此所有子切片也将是有效的随机样本。 这允许抽奖获奖者（样本）被划分为大奖和第二名获胜者（子切片）。要从一系列整数中选择样本，请使用 <a href="https://docs.python.org/zh-cn/3.6/library/stdtypes.html#range"><code>range()</code></a> 对象作为参数。 对于从大量人群中采样，这种方法特别快速且节省空间：<code>sample(range(10000000), k=60)</code> 。</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">&gt;&gt;&gt; random.choice([&#39;win&#39;, &#39;lose&#39;, &#39;draw&#39;])
+&#39;lose&#39;
+&gt;&gt;&gt; deck = &#39;one two three foure&#39;.split()
+&gt;&gt;&gt; random.shuffle(deck)
+&gt;&gt;&gt; deck
+[&#39;three&#39;, &#39;two&#39;, &#39;one&#39;, &#39;foure&#39;]
+&gt;&gt;&gt; random.sample([23,12,45,23,45,678,34,75], k = 4)
+[23, 75, 34, 23]
+</code></pre>
+<h2 id="分布函数"><a href="#分布函数" class="headerlink" title="分布函数"></a>分布函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>random.<strong>random</strong>()</td>
+<td>返回[0.0, 1.0)范围内的一个随机浮点数</td>
+</tr>
+<tr>
+<td>random.<strong>uniform</strong>(a,b)</td>
+<td>返回一个随机浮点数 <em>N</em> ，当 <code>a &lt;= b</code> 时 <code>a &lt;= N &lt;= b</code> ，当 <code>b &lt; a</code> 时 <code>b &lt;= N &lt;= a</code> 。</td>
+</tr>
+<tr>
+<td>random.<strong>triangular</strong>(low,high,mode)</td>
+<td>返回一个随机浮点数N，使得low &lt;= N &lt;= high 并在这些边界之间使用指定的 <em>mode</em> 。 <em>low</em> 和 <em>high</em> 边界默认为零和一。 <em>mode</em> 参数默认为边界之间的中点，给出对称分布</td>
+</tr>
+<tr>
+<td>random.<strong>betavariate</strong>(alpha,beta)</td>
+<td>Beta分布，参数alpha、beta都必须&gt;0，返回的范围介于0~1之间</td>
+</tr>
+<tr>
+<td>random.<strong>expovariate</strong>(lambd)</td>
+<td>指数分布，lambd是1.0除以所需的平均值，非零。如果lambd为正，则返回0到正无穷；如果lambd为负，则返回负无穷到0。</td>
+</tr>
+<tr>
+<td>random.<strong>gammavariate</strong>(alpha,beta)</td>
+<td>Gmma分布，参数alpha和beta必须&gt;0。</td>
+</tr>
+<tr>
+<td>random.<strong>gauss</strong>(mu,sigma)</td>
+<td>高斯分布，mu是平均值，sigma是标准差</td>
+</tr>
+<tr>
+<td>random.<strong>lognormvariate</strong>(mu,sigma)</td>
+<td>对数正态分布，如果采用的是自然对数，则会得到平均值为mu，方差为sigma的正态分布，mu可以是任何职，sigma必须大于零</td>
+</tr>
+<tr>
+<td>random.<strong>normalvariate</strong>(mu, sigma)</td>
+<td>正态分布，mu是平均值，sigma是标准差</td>
+</tr>
+<tr>
+<td>random.<strong>vonmisesvariate</strong>(mu, kappa)</td>
+<td>mu是平均角度，以弧度表示，介于0和2<em>pi之间，kappa是浓度参数，必须大于或等于零，如果kappa等于零，则该分部在0到2\</em>pi的范围内较少到均匀的随机角度。</td>
+</tr>
+<tr>
+<td>random.<strong>paretovariate</strong>(alpha)</td>
+<td>帕累托分布，alpha是形状参数</td>
+</tr>
+<tr>
+<td>random.<strong>weibullvariate</strong>(alpha, beta)</td>
+<td>威布尔分布，alpha是比例参数，beta是形状参数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Gmma分布</strong>的概率函数为：</p>
+<p>​                                            $pdf(x) = \dfrac{x^{(alpha-1)}\times math.exp(\dfrac{-x}{beta})}{math.gamma(alpha)\times beta^ {alpha}}$</p>
+<pre><code class="python">&gt;&gt;&gt; import random
+&gt;&gt;&gt; random.random()
+0.024784298572476104
+&gt;&gt;&gt; random.uniform(2.0, 5.0)
+3.4259267542329748
+&gt;&gt;&gt; random.triangular(0.3, 1.5, 0.9)
+1.1348586558465164
+&gt;&gt;&gt; random.betavariate(0.3, 0.25)
+0.9983372793378633
+&gt;&gt;&gt; random.expovariate(3.0)
+1.680963868987473
+&gt;&gt;&gt; random.gammavariate(0.25, 2.0)
+0.0888430548880927
+&gt;&gt;&gt; random.gauss(13, 2.64)
+14.755902455467584
+</code></pre>
+<h2 id="替代随机生成器"><a href="#替代随机生成器" class="headerlink" title="替代随机生成器"></a>替代随机生成器</h2><p>使用os.urandom()函数的类，用从操作系统提供的源生成随机数，但这并非适用于所有的系统，也不依赖于软件的序列状态，生成的序列不可再现，因此导致seed()方法没有效果而被忽略，getstate()和setstate()函数被调用会引发<a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#NotImplementedError"><code>NotImplementedError</code></a>。因此random模块提供了替代随机生成器：</p>
+<p>random.<strong>SystemRandom</strong>(seed)</p>
+<h2 id="随机序列重现问题"><a href="#随机序列重现问题" class="headerlink" title="随机序列重现问题"></a>随机序列重现问题</h2><p>有的时候需要重现伪随机数生成器给出的序列，这在一些特殊情况下有着特殊的作用，通过重新使用新种子值，只要没有多个线程同时运行，相同的序列就可以在两次不同运行之间重现。</p>
+<p>多数的随机模块算法和种子函数都会在Python版本中发生变化，但不变的方面有两个：</p>
+<p>. 如果添加了新的生成方法，则会提供向后兼容的随机生成器</p>
+<p>. 当兼容的生成器被赋予相同种子，生成器的random()方法将会产生相同的序列</p>
+<h1 id="secrets模块："><a href="#secrets模块：" class="headerlink" title="secrets模块："></a>secrets模块：</h1><p>虽然<strong>random</strong>模块可以生成随机数，但是并不能对生成随机数的种子、随机机制、生成的随机序列进行加密。而<strong>secrets</strong>模块就是专门用来为管理像密码、验证码、加密token等需要加密数据而生成具有非常强加密性的随机数字。</p>
+<h2 id="加密随机数函数"><a href="#加密随机数函数" class="headerlink" title="加密随机数函数"></a>加密随机数函数</h2><p>secrets模块能够提供最强的能够操作系统提供的加密随机性资源。其访问和生成函数如下:</p>
 <table>
 <thead>
 <tr>
-<th>函数名</th>
+<th>函数</th>
 <th>释义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>math.<strong>acosh</strong>(x)</td>
-<td>返回x的反双曲余弦值</td>
+<td>secrets.<strong>SystemRandom</strong></td>
+<td>生成加密系统随机函数生成器</td>
 </tr>
 <tr>
-<td>math.<strong>asinh</strong>(x)</td>
-<td>返回x的反双曲正弦值</td>
+<td>secrets.<strong>choice</strong>(sequence)</td>
+<td>从非空序列sequence中随机返回一个元素</td>
 </tr>
 <tr>
-<td>math.<strong>atanh</strong>(x)</td>
-<td>返回x的反双曲正切值</td>
+<td>secrets.<strong>randbelow</strong>(n)</td>
+<td>返回[0,n)范围内的随机数</td>
 </tr>
 <tr>
-<td>math.<strong>cosh</strong>(x)</td>
-<td>返回x的双曲余弦值</td>
-</tr>
-<tr>
-<td>math.<strong>sinh</strong>(x)</td>
-<td>返回x的双曲正弦值</td>
-</tr>
-<tr>
-<td>math.<strong>tanh</strong>(x)</td>
-<td>返回x的双曲正切值</td>
+<td>secrets.<strong>randbits</strong>(k)</td>
+<td>随机返回一个bit长度为k的整数</td>
 </tr>
 </tbody>
 </table>
-<h2 id="特殊函数"><a href="#特殊函数" class="headerlink" title="特殊函数"></a>特殊函数</h2><table>
+<h2 id="生成tokens"><a href="#生成tokens" class="headerlink" title="生成tokens"></a>生成tokens</h2><p>secrets模块为密码以及网络访问提供了生成token函数</p>
+<table>
 <thead>
 <tr>
-<th>函数名</th>
+<th>函数</th>
 <th>释义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>math.<strong>erf</strong>(x)</td>
-<td>用来计算传统的统计函数，如累积标准正态分布</td>
+<td>secrets.<strong>token_bytes</strong>(nbytes=None)</td>
+<td>随机返回字节数长度为nbytes值的字节形式的字符串，如果nbytes=None则使用默认的nbytes长度</td>
 </tr>
 <tr>
-<td>math.<strong>erfc</strong>(x)</td>
-<td>返回x的互补误差函数，<a href="https://en.wikipedia.org/wiki/Error_function">互补错误函数</a> 定义为 <code>1.0 - erf(x)</code></td>
+<td>secrets.<strong>token_hex</strong>(nbytes=None)</td>
+<td>随机返回文本长度为nbytes的文本字符串，如果nbytes=None则使用默认的nbytes长度</td>
 </tr>
 <tr>
-<td>math.<strong>gamma</strong>(x)</td>
-<td>返回x的伽马函数值</td>
-</tr>
-<tr>
-<td>math.<strong>lgamma</strong>(x)</td>
-<td>返回Gamma函数x绝对值的自然对数</td>
+<td>secrets.<strong>token_urlsafe</strong>(nbytes=None)</td>
+<td>随机返回URL-safe文本字符串，文本形式经过Base64转换，如果nbytes=None则使用默认的nbytes长度</td>
 </tr>
 </tbody>
 </table>
-<h2 id="math模块中的常数"><a href="#math模块中的常数" class="headerlink" title="math模块中的常数"></a>math模块中的常数</h2><table>
-<thead>
-<tr>
-<th>常数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>pi</strong></td>
-<td>数学常数π=3.1415926…</td>
-</tr>
-<tr>
-<td>math.<strong>e</strong></td>
-<td>数学常数e= 2.718281….</td>
-</tr>
-<tr>
-<td>math.<strong>tau</strong></td>
-<td>数学常数τ = 6.283185…</td>
-</tr>
-<tr>
-<td>math.<strong>inf</strong></td>
-<td>正无穷大浮点数，负无穷大浮点数使用-math.<strong>inf</strong></td>
-</tr>
-<tr>
-<td>math.<strong>nan</strong></td>
-<td>浮点”非数字”值</td>
-</tr>
-</tbody>
-</table>
-<p>math模块是数学函数的包装模块，若使用不符合数学规范，则会触发<a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#ValueError"><code>ValueError</code></a> </p>
-<p>参考文献：</p>
-<p>1.<a href="https://docs.python.org/English/3.6/library/math.html#math.fmod">https://docs.python.org/English/3.6/library/math.html#math.fmod</a></p>
+<pre><code class="python">&gt;&gt;&gt; import secrets
+&gt;&gt;&gt; secrets.token_bytes(16)
+b&#39;\xe4\xef\x0e`\xf6k\xda\x01\xc2\xd0\x94L\x84B\xe2v&#39;
+&gt;&gt;&gt; secrets.token_hex(16)
+&#39;1e702fc2ed63e4e08d2b075d62b6e782&#39;
+&gt;&gt;&gt; secrets.token_urlsafe(16)
+&#39;EsZPaNvSuNKw6XpHr6xCCQ&#39;
+</code></pre>
+<h2 id="token字节长度问题"><a href="#token字节长度问题" class="headerlink" title="token字节长度问题"></a>token字节长度问题</h2><p>关于token字节长度问题过去很长一段时间没有得到明确的值，直到2015年，32个字节(256bits)长度确定为是token最能接受的高效的长度。如果想要更改token字节长度，就需要给出token的长度。</p>
+<h2 id="字节比较功能"><a href="#字节比较功能" class="headerlink" title="字节比较功能"></a>字节比较功能</h2><p>secrets模块中的secrets__compare_digest__(a,b)函数可以用来进行字节或字符的比较，如果a和b是一样的，则返回Ture，如果不同则返回False</p>
+<h2 id="secrets-练习"><a href="#secrets-练习" class="headerlink" title="secrets 练习"></a>secrets 练习</h2><pre><code class="python">&gt;&gt;&gt; import string
+&gt;&gt;&gt; alphabet = string.ascii_letters + string.digits
+&gt;&gt;&gt; while True:
+    password = &#39;&#39;.join(secrets.choice(alphabet) for i in range(10))
+    if(any(c.islower() for c in password) and any(c.isupper() for c in password) and sum(c.isdigit() for c in password) &gt;= 3):
+        break
+</code></pre>
 
       
     </div>
@@ -807,7 +729,7 @@ ValueError: math domain error
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/" title="Python运算(二)math模块">https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/</a>
+    <a href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsRandomAndSecrets/" title>https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsRandomAndSecrets/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -835,8 +757,8 @@ ValueError: math domain error
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../PythonNumberCaculations/" rel="next" title="Python数字运算(-)数值、哈希、按位、布尔等运算">
-                <i class="fa fa-chevron-left"></i> Python数字运算(-)数值、哈希、按位、布尔等运算
+              <a href="../PythonNumberCaculationsCmathModule/" rel="next" title="Python数字运算(三)cmath模块">
+                <i class="fa fa-chevron-left"></i> Python数字运算(三)cmath模块
               </a>
             
           </div>
@@ -844,10 +766,6 @@ ValueError: math domain error
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="../PythonNumberCaculationsCmathModule/" rel="prev" title="Python数字运算(三)cmath模块">
-                Python数字运算(三)cmath模块 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1013,7 +931,7 @@ ValueError: math domain error
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论与表示函数"><span class="nav-number">1.</span> <span class="nav-text">数论与表示函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂函数与对数函数"><span class="nav-number">2.</span> <span class="nav-text">幂函数与对数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角函数"><span class="nav-number">3.</span> <span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#角度转换"><span class="nav-number">4.</span> <span class="nav-text">角度转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲函数"><span class="nav-number">5.</span> <span class="nav-text">双曲函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊函数"><span class="nav-number">6.</span> <span class="nav-text">特殊函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#math模块中的常数"><span class="nav-number">7.</span> <span class="nav-text">math模块中的常数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#random模块"><span class="nav-number">1.</span> <span class="nav-text">random模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bookkeeping-函数"><span class="nav-number">1.1.</span> <span class="nav-text">Bookkeeping 函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整数随机函数"><span class="nav-number">1.2.</span> <span class="nav-text">整数随机函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列随机函数"><span class="nav-number">1.3.</span> <span class="nav-text">序列随机函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布函数"><span class="nav-number">1.4.</span> <span class="nav-text">分布函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#替代随机生成器"><span class="nav-number">1.5.</span> <span class="nav-text">替代随机生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机序列重现问题"><span class="nav-number">1.6.</span> <span class="nav-text">随机序列重现问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#secrets模块："><span class="nav-number">2.</span> <span class="nav-text">secrets模块：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加密随机数函数"><span class="nav-number">2.1.</span> <span class="nav-text">加密随机数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成tokens"><span class="nav-number">2.2.</span> <span class="nav-text">生成tokens</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token字节长度问题"><span class="nav-number">2.3.</span> <span class="nav-text">token字节长度问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节比较功能"><span class="nav-number">2.4.</span> <span class="nav-text">字节比较功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#secrets-练习"><span class="nav-number">2.5.</span> <span class="nav-text">secrets 练习</span></a></li></ol></li></ol></div>
             
 
           </div>
