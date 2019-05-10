@@ -441,7 +441,7 @@
         
           
           在Block前言中，讲到Block 的isa指针六种类型，以及每种类型的存储区域。简单回顾一下最终结论
-      类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NS
+      类型    查看源    存储区域       _NSConcreteGlobalBlock     .cpp文件/Block.h      全局变量/静态变量区        _NSConcreteStackBlock      .cpp文件/Block.h     栈区        _NSConcreteMallocBlock      Block_private.h文件     堆区      _NSConcreteAutoBlock      Block_private
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -621,7 +621,12 @@
         
           
           《Block前言》中讲到，Block是对C语言的扩充，Block为带有自动变量（局部变量）的匿名函数。查看源码得知OC中，Block是作为对象存在。该篇文章针对这两点展开细节。
-#Block为带有自动变量（局部变量）的匿名函数接下来，根据clang命令clang -rewrite-objc Bloc
+#Block为带有自动变量（局部变量）的匿名函数接下来，根据clang命令clang -rewrite-objc BlockObject.m 得到的cpp文件查看Block具体的结构code已上传到Github,点击下载
+ void (^lockBlock)(void) = ^{ };
+ lockBlock();
+
+执行clang命令后对应代码会有如下结果
+void (*lockBlock)(void) = ((voi
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -800,7 +805,8 @@
       
         
           
-          Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入
+          Block可能已经是被大家讨论的滚瓜烂熟的话题了，却经久不衰。总结这篇文章的起因是在一个开发群里许多iOSer咨询block问题，于是写该系列Block文章系统梳理一下有关Block的知识体系。该系列文章会从Block实质、Block类型及内存区域、Block截获自动变量、Block循环引用问题深入理解Block。
+Block实质在OC语言中，Block从OS X Snow Leopard 和 iOS 4起开始引入，才被众多OC语言使用者周知。OC是基于C语言编写，Block也是基于C语言的扩充，那Block是扩充的何种功能呢？简而言之，Block是带有自动变量（局部变量）的匿名函数。但OC语
           ...
           <!--noindex-->
           <div class="post-button text-center">

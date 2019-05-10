@@ -442,7 +442,10 @@
           
           Python中处理文本数据使用由Unicode编码构成的不可变序列字符串—str对象。字符串表达形式如下:
 .单引号 ‘This article describes information about str object’
-.双引号 “This article describes informat
+.双引号 “This article describes information about str object”
+.三重引号 ‘’‘ This article describes information about str object’’’
+使用三重引号的字符串可以跨越多行，并且所有的空字符串都包含在字符串值中。
+str类型同样是不可变类型，除了上面三种显式构建方式
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -621,7 +624,18 @@
       
         
           
-          statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类
+          statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有：
+平均&amp;中位数函数(平均值、中位数等)
+
+
+函数
+释义
+
+
+
+
+statistic.mean()
+返回数据的算术平均值，如果数据为空，则会触发StatisticsError。算术平均值容易受到异常值的影
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -801,7 +815,8 @@
         
           
           random模块random模块实现了这种分布的伪随机数生成器，随机数可以被应用于数学、安全等领域，并且也经常被嵌入算法中，用以提高算法效率，在机器学习算法中对随机数的设定是必要的一步，并且随机数的设定会影响算法的好坏。
-random模块提供的函数是基于random.Random类的隐藏实例的绑定方
+random模块提供的函数是基于random.Random类的隐藏实例的绑定方法，几乎所有模块函数都依赖于基本函数random()，random()函数在半开放区间[0.0, 1.0)内均匀生成随机浮点数。用Randon类作为子类，重写 random() 、 seed() 、 getstate() 以及 setstate() 方法可以自己设计不同随机生成器。
+random针对
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -992,7 +1007,20 @@ random模块提供的函数是基于random.Random类的隐藏实例的绑定方
 
 
 cmath.phase(x)
-以浮点数的形式返回x的弧度，范围在
+以浮点数的形式返回x的弧度，范围在[-π，π]
+
+
+cmath.polar(x)
+返回x在极坐标系中的坐标(r,phi)
+
+
+cmath.rect(r, phi)
+返回坐标(r, phi)在极坐标系中对应的复数
+
+
+
+&gt;&gt;&gt; import cmath
+&gt;&gt;&gt; cmath.phase(complex
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1182,7 +1210,18 @@ cmath.phase(x)
 
 
 math.ceil(x)
-返回大于或等于x的最小整数，如果x不是浮点数
+返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值
+
+
+math.copysign(x,y)
+返回一个基于x的绝对值和y的符号的浮点数&gt;&gt;&gt; math.copysign(2.4, -1.2)-2.4
+
+
+math.fabs(x)
+返回x的绝对值
+
+
+math.factorial
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1364,7 +1403,10 @@ math.ceil(x)
           所有的类型都可以被比较、检测逻辑值、转换字符串，所有的数据类型都可进行数学运算。
 逻辑值检测任何数据类型或对象皆可进行逻辑值检测，默认情况下均被视为真值，除非对象或所属类重定义了bool()方法且返回False 或者是对象定义了len()方法且返回零。
 以下是在逻辑检测时被视为假值的对象:
-.被定义
+.被定义为假值的常量：None 和 False
+.任何数值类型的零：0，0.0，0j,Decimal(0),Fraction(0,1)
+.空的序列和多项集：&#39;&#39;，()，{}，set(),range(0)
+Bool运算Bool运算包括 and、or、not，按照优先级排列not &gt; an
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1546,7 +1588,10 @@ math.ceil(x)
           Python3有六个标准数据类型：
 .不可变数据类型：Number(数字)、String(字符串)、Tuple(元组)
 .可变数据类型： List(列表)、Dictionary(字典)、Set(集合)
-在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型
+在每种基本数据类型下会有其它一些衍生类型。以上六种是基本的数据类型，除基本数据类型外，其它数据类型有：Datetime(时间)、Calendar(日历)、Collection(容器)、enum(枚举)等。
+该篇讲述Number(数字)的各种类型、衍生类型Decimal类型和Fractions类型的适用情况以及针对数据类型的运算规则。
+Number：
+Python3 支持int、float、boo
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1725,7 +1770,8 @@ math.ceil(x)
       
         
           
-          Python是一种解释型语言，一门完善的面向对象高级编程语言，无需编译和链接，为编写大型程序提供更多的结构和支持，并且与Shell脚本相比，适合编写GUI应用程序或游戏。Python提供大量的多种类型标准模块，模块提供了诸如I/O、 系统调用、Socket支持、用户图形（GUI工具）、机器学习、可视
+          Python是一种解释型语言，一门完善的面向对象高级编程语言，无需编译和链接，为编写大型程序提供更多的结构和支持，并且与Shell脚本相比，适合编写GUI应用程序或游戏。Python提供大量的多种类型标准模块，模块提供了诸如I/O、 系统调用、Socket支持、用户图形（GUI工具）、机器学习、可视化等；内置高级的数据结构类型，为数据分析提供了更多支持；Python是可扩展的，可以将Python解释器集成进其它应用程序。
+Python学习建议：对于学习Python的建议是可以先敲几行代码，再回头看具体的类型和语法解释，因为这样会理解深刻，地基也能打的更牢靠。然后在这一组循环结束之后，再进行Py
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1904,7 +1950,7 @@ math.ceil(x)
       
         
           
-          讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过DHCP协议(也是属于应用层的协议，基于UDP协议，全程 Dynamic Host Configuration Protocol ：动态主机配置协议) 进行动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我
+          讲解连接过程之前，先解释几点，给后面的阐述做铺垫。在我们的电脑启动时，会通过DHCP协议(也是属于应用层的协议，基于UDP协议，全程 Dynamic Host Configuration Protocol ：动态主机配置协议) 进行动态配置IP地址（当然也可以手动配置IP，一般人不会这么做），并且我们的电脑会有对应的唯一的MAC地址（MAC全称：Media Access Control，媒体访问控制），发送网络包，目标地址既要包括IP地址，也要包含MAC地址。IP地址类似于住址，MAC地址类似于身份证，两者缺一不可。IP地址和MAC地址的映射可以通过APR协议(全称：Address Resol
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -2086,7 +2132,10 @@ math.ceil(x)
           《Block前言》中讲到，不论何种类型的Block都自带截获变量这一技能，而针对不同的变量类型和不同的情况，自动截获分为以下情况
 1.截获变量的值2.截获对象,将对象指针传递进去3.将变量拷贝到堆区域，并持有变量4.截获变量内存地址
 现针对以上内容进行详细分析。
-截获变量的值这一情况主要发生在1.对
+截获变量的值这一情况主要发生在1.对基本数据类型的引用（局部参数）其实说白了，对于所有类型，Block自动截获的皆为在Block截获之前的变量的瞬间值，唯一不同的是如果是Object类型，Block会多一步copy操作。先来看基本数据常量
+int a = 0;
+void (^lockBlock)(void) = ^{
+        
           ...
           <!--noindex-->
           <div class="post-button text-center">
