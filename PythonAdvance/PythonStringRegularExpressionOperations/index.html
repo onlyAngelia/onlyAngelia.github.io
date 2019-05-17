@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="正则表达式（称为RE，或正则，或正则表达式模式）本质上是嵌入在Python中的一种微小的、高度专业化的编程语言。re模块提供来正则表达式匹配操作，用来对文本进行一些处理优化。匹配模式和被搜索的字符串既可以是Unicode字符串(str)，也可以是8位字节串(bytes)，不过两者不能混用。绝大多数正则表达式操作都提供了相应的函数，函数不需要先编译一个对象，但损失来一些优化参数。另外，第三方模块re">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T10:30:57.524Z">
+<meta property="og:updated_time" content="2019-05-17T13:11:55.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python文本处理(-)正则表达式操作-re模块 &amp; regex模块">
 <meta name="twitter:description" content="正则表达式（称为RE，或正则，或正则表达式模式）本质上是嵌入在Python中的一种微小的、高度专业化的编程语言。re模块提供来正则表达式匹配操作，用来对文本进行一些处理优化。匹配模式和被搜索的字符串既可以是Unicode字符串(str)，也可以是8位字节串(bytes)，不过两者不能混用。绝大多数正则表达式操作都提供了相应的函数，函数不需要先编译一个对象，但损失来一些优化参数。另外，第三方模块re">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T00:39:21+08:00">
-                2018-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T00:39:21+08:00">
+                2017-05-05
               </time>
             
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  6.6k
+                  7.8k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  25
+                  31
                 </span>
               
             </div>
@@ -596,6 +596,14 @@
 <tr>
 <td><code>\Z</code></td>
 <td>只匹配字符串结束</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>匹配空字符串，但只在单词开始或结尾的位置。通常 <code>\b</code> 定义为 <code>\w</code> 和 <code>\W</code> 字符之间，或者 <code>\w</code> 和字符串开始/结尾的边界</td>
+</tr>
+<tr>
+<td><code>\B</code></td>
+<td>匹配空字符串，但 <em>不</em> 能在词的开头或者结尾</td>
 </tr>
 </tbody>
 </table>
@@ -946,6 +954,81 @@ if match:
 </tr>
 </tbody>
 </table>
+<p><strong>代码示例</strong>:</p>
+<pre><code class="python">&gt;&gt;&gt; import regex
+&gt;&gt;&gt;#设定的匹配规则是：匹配以十进制数字开头对十进制数字匹配超过1次 或者满足匹配字母和数字超过1次；其中 ？= 代表lookahead assertion
+&gt;&gt;&gt; regex.match(r&#39;(?(?=\d)\d+|\w+)&#39;, &#39;123abc&#39;)
+&lt;regex.Match object; span=(0, 3), match=&#39;123&#39;&gt;
+&gt;&gt;&gt; regex.match(r&#39;(?(?=\d)\d+|\w+)&#39;, &#39;abc123&#39;)
+&lt;regex.Match object; span=(0, 6), match=&#39;abc123&#39;&gt;
+&gt;&gt;&gt;#对于上面的匹配规则可以看出|匹配符 若满足第一个正则表达式则不判断第二个表达式，例如第一个例子中给出的字符是&#39;123abc&#39;然后前面的123 满足第一条匹配规则，所以看到匹配对象返回的span是(0，3)；而对于第二个例子中给出的字符&#39;abc123&#39;并不满足第一条匹配十进制数字说以进行第二项表达式的匹配，发现与第二条表达式匹配，匹配结果是&#39;abc123&#39;,所以返回的span是(0,6)
+&gt;&gt;&gt;&gt;&gt;&gt; print (regex.match(r&#39;(?(?=\d)\d+\b|\w+)&#39;, &#39;123abc&#39;))
+None
+&gt;&gt;&gt; print (regex.match(r&#39;(?:(?=\d)\d+\b|\w+)&#39;, &#39;123abc&#39;))
+&lt;regex.Match object; span=(0, 6), match=&#39;123abc&#39;&gt;
+&gt;&gt;#在上面的操作中修改了正则表达式，加入\b代表匹配的数字开始和结束必须是空字符;第一条语句在&#39;123abc&#39;不满足条件的时候没有进行第二条正则表达式的匹配；第二条语句因为?:代表后面的语句都要匹配一遍，所以在第一条正则表达式不满足条件的时候去匹配了第二条正则表达式
+
+</code></pre>
+<hr>
+<p><strong>使用POSIX返回最左边的最长匹配，可以使用POSIX标志(?P)</strong></p>
+<pre><code class="python">&gt;&gt;&gt;#正常拼写规则
+&gt;&gt;&gt; regex.search(r&#39;Mr|Mrs&#39;, &#39;Mrs&#39;)
+&lt;regex.Match object; span=(0, 2), match=&#39;Mr&#39;&gt;
+&gt;&gt;&gt; regex.search(r&#39;one(self)?(selfsufficient)?&#39;, &#39;oneselfsufficient&#39;)
+&lt;regex.Match object; span=(0, 7), match=&#39;oneself&#39;&gt;
+&gt;&gt;&gt;#使用POSIX标志之后
+&gt;&gt;&gt; regex.search(r&#39;(?p)Mr|Mrs&#39;, &#39;Mrs&#39;)
+&lt;regex.Match object; span=(0, 3), match=&#39;Mrs&#39;&gt;
+&gt;&gt;&gt; regex.search(r&#39;(?p)one(self)?(selfsufficient)?&#39;, &#39;oneselfsufficient&#39;)
+&lt;regex.Match object; span=(0, 17), match=&#39;oneselfsufficient&#39;&gt;
+</code></pre>
+<p>不过这样做的缺点是：耗时更长，因为在找到匹配项之后不会立即返回，而是继续查找看是否有更长的匹配项</p>
+<hr>
+<p><strong>使用<code>?(DEFINE)</code>在没有分组名为’DEDINE’的情况下，可以使用其在分组</strong></p>
+<pre><code class="python">&gt;&gt;&gt; regex.search(r&#39;(?(DEFINE)(?P&lt;quant&gt;\d+)(?P&lt;item&gt;\w+))(?&amp;quant) (?&amp;item)&#39;, &#39;5 elephants&#39;)
+&lt;regex.Match object; span=(0, 11), match=&#39;5 elephants&#39;&gt;
+&gt;&gt;&gt; regex.search(r&#39;(?P&lt;quant&gt;\d+)(?P&lt;item&gt;\w+)(?&amp;quant) (?&amp;item)&#39;, &#39;5 elephants&#39;)
+&gt;&gt;&gt; 
+</code></pre>
+<hr>
+<p>正则表达式中添加<code>(*PRUNE)</code> <code>(*SKIP)</code> and <code>(*FAIL)</code> 情况如下：</p>
+<p><code>(*PRUNE)</code>能将回溯信息丢弃到该点，在原子组 或 lookaround中使用时不会影响封闭模式。</p>
+<p><code>(*SKIP)</code> 与 <code>(*PRUNE)</code>类似，但是会设置文本中下次尝试匹配的起始位置，同样在原子组 或 lookaround中使用时不会影响封闭模式。</p>
+<p><code>(*FAIL)</code>会导致立即回溯，<code>(*F)</code>是其缩写。</p>
+<hr>
+<p>使用<code>\K</code>则会整个在<code>K</code>位置出现之后的匹配部分，在<code>K</code>位置之前的将被舍弃，但是不会影响捕获组返回的内容。</p>
+<pre><code class="python">&gt;&gt;&gt; m = regex.search(r&#39;(\w\w\K\w\w\w)&#39;, &#39;abcdef&#39;)
+&gt;&gt;&gt; print (m)
+&lt;regex.Match object; span=(2, 5), match=&#39;cde&#39;&gt;
+&gt;&gt;&gt; m[0]
+&#39;cde&#39;
+&gt;&gt;&gt; m[1]
+&#39;abcde&#39;
+&gt;&gt;&gt;
+&gt;&gt;&gt; m = regex.search(r&#39;(?r)(\w\w\K\w\w\w\w)&#39;, &#39;abcdef&#39;)
+&gt;&gt;&gt; m[0]
+&#39;ab&#39;
+&gt;&gt;&gt; m[1]
+&#39;abcdef&#39;
+</code></pre>
+<hr>
+<p><strong>可以使用订阅获取重复捕获组的捕获为expandf、subf、subfn添加捕获订阅</strong></p>
+<pre><code class="python">&gt;&gt;&gt; m = regex.match(r&quot;(\w)+&quot;, &quot;abc&quot;)
+&gt;&gt;&gt; m.expandf(&quot;{1}&quot;)
+&#39;c&#39;
+&gt;&gt;&gt; m.expandf(&quot;{1[0]} {1[1]} {1[2]}&quot;)
+&#39;a b c&#39;
+&gt;&gt;&gt; m.expandf(&quot;{1[-1]} {1[-2]} {1[-3]}&quot;)
+&#39;c b a&#39;
+&gt;&gt;&gt;
+&gt;&gt;&gt; m = regex.match(r&quot;(?P&lt;letter&gt;\w)+&quot;, &quot;abc&quot;)
+&gt;&gt;&gt; m.expandf(&quot;{letter}&quot;)
+&#39;c&#39;
+&gt;&gt;&gt; m.expandf(&quot;{letter[0]} {letter[1]} {letter[2]}&quot;)
+&#39;a b c&#39;
+&gt;&gt;&gt; m.expandf(&quot;{letter[-1]} {letter[-2]} {letter[-3]}&quot;)
+&#39;c b a&#39;
+</code></pre>
 
       
     </div>
@@ -1238,7 +1321,7 @@ if match:
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">41.9k</span>
+    <span title="Site words total count">43.1k</span>
   
 </div>
 
