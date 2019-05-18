@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="正则表达式（称为RE，或正则，或正则表达式模式）本质上是嵌入在Python中的一种微小的、高度专业化的编程语言。re模块提供来正则表达式匹配操作，用来对文本进行一些处理优化。匹配模式和被搜索的字符串既可以是Unicode字符串(str)，也可以是8位字节串(bytes)，不过两者不能混用。绝大多数正则表达式操作都提供了相应的函数，函数不需要先编译一个对象，但损失来一些优化参数。另外，第三方模块re">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T13:11:55.917Z">
+<meta property="og:updated_time" content="2019-05-18T16:15:05.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python文本处理(-)正则表达式操作-re模块 &amp; regex模块">
 <meta name="twitter:description" content="正则表达式（称为RE，或正则，或正则表达式模式）本质上是嵌入在Python中的一种微小的、高度专业化的编程语言。re模块提供来正则表达式匹配操作，用来对文本进行一些处理优化。匹配模式和被搜索的字符串既可以是Unicode字符串(str)，也可以是8位字节串(bytes)，不过两者不能混用。绝大多数正则表达式操作都提供了相应的函数，函数不需要先编译一个对象，但损失来一些优化参数。另外，第三方模块re">
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  7.8k
+                  9.3k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  31
+                  39
                 </span>
               
             </div>
@@ -804,7 +804,7 @@ if match:
 <tbody>
 <tr>
 <td>match.expand(<em>template</em>)</td>
-<td></td>
+<td>返回通过对模板字符串模板执行反斜杠替换获得的字符串</td>
 </tr>
 <tr>
 <td>math.group([<em>group1</em>,….])</td>
@@ -1028,6 +1028,131 @@ None
 &#39;a b c&#39;
 &gt;&gt;&gt; m.expandf(&quot;{letter[-1]} {letter[-2]} {letter[-3]}&quot;)
 &#39;c b a&#39;
+</code></pre>
+<hr>
+<p><strong>部分匹配是指匹配到字符串结尾的匹配项，但是前提是字符串已提前分割，只是想知道如果字符未被截断，会不会是完全匹配</strong>。部分匹配支持<code>match</code>、 <code>search</code>、 <code>fullmatch</code>、 <code>findite</code>函数，函数参数为<code>partial</code>。 通过设置参数<code>partial</code>可以决定是否开启部分匹配。</p>
+<p>举例：限制用户输入4个数字，并且在输入的时候逐字检查</p>
+<pre><code class="python">&gt;&gt;&gt; import regex
+&gt;&gt;&gt; pattern = regex.compile(r&#39;\d{4}&#39;)
+&gt;&gt;&gt; #最初没有值输入
+&gt;&gt;&gt; print (pattern.fullmatch(&#39; &#39;, partial=True))
+None
+&gt;&gt;&gt; #可以是空字符,此时是部分匹配
+&gt;&gt;&gt; #用户输入字母，不符合匹配规则
+&gt;&gt;&gt; print (pattern.fullmatch(&#39;a&#39;, partial=True))
+None
+&gt;&gt;&gt; #用户输入数字，符合匹配规则，此时也是部分匹配
+&gt;&gt;&gt; print (pattern.fullmatch(&#39;2&#39;, partial=True))
+&lt;regex.Match object; span=(0, 1), match=&#39;2&#39;, partial=True&gt;
+&gt;&gt;&gt; #用户继续输入数字
+&gt;&gt;&gt; print (pattern.fullmatch(&#39;234&#39;, partial=True))
+&lt;regex.Match object; span=(0, 3), match=&#39;234&#39;, partial=True&gt;
+&gt;&gt;&gt; #以上输入的内容仍然符合匹配规则，但依旧是部分匹配
+&gt;&gt;&gt; #用户继续输入
+&gt;&gt;&gt; print (pattern.fullmatch(&#39;2345&#39;, partial=True))
+&lt;regex.Match object; span=(0, 4), match=&#39;2345&#39;&gt;
+&gt;&gt;&gt; #此时的匹配是完全匹配不再是部分匹配
+&gt;&gt;&gt; pattern.fullmatch(&#39;2345&#39;, partial=True).partial
+False
+</code></pre>
+<hr>
+<p><code>*</code><strong>操作符在<code>sub()</code>函数中不能正确的工作</strong>。</p>
+<pre><code class="python">&gt;&gt;&gt; regex.sub(&#39;(?V0).*&#39;, &#39;x&#39;, &#39;test&#39;)
+&#39;x&#39;
+&gt;&gt;&gt; regex.sub(&#39;(?V1).*&#39;, &#39;x&#39;, &#39;test&#39;)
+&#39;xx&#39;
+&gt;&gt;&gt; regex.sub(&#39;(?V0).*&#39;, &#39;|&#39;, &#39;test&#39;)
+&#39;|&#39;
+&gt;&gt;&gt; regex.sub(&#39;(?V0).*?&#39;, &#39;|&#39;, &#39;test&#39;)
+&#39;|t|e|s|t|&#39;
+&gt;&gt;&gt; regex.sub(&#39;(?V1).*?&#39;, &#39;|&#39;, &#39;test&#39;)
+&#39;|||||||||&#39;
+</code></pre>
+<hr>
+<p><strong><code>capturesdict</code>是<code>groupdict</code>和<code>captures</code>的结合，<code>groupdict</code>返回分组信息和统计，<code>captures</code>返回分组特征的具体信息，而<code>capturesdict</code>返回分组信息列表，列表中包含每个特征信息</strong> 。</p>
+<pre><code class="python">&gt;&gt;&gt; m = regex.match(r&quot;(?:(?P&lt;word&gt;\w+) (?P&lt;digits&gt;\d+)\n)+&quot;, &#39;one 1\ntwo 2\nthree 3\n&#39;)
+&gt;&gt;&gt; m.groupdict()
+{&#39;word&#39;: &#39;three&#39;, &#39;digits&#39;: &#39;3&#39;}
+&gt;&gt;&gt; m.captures(&#39;word&#39;)
+[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]
+&gt;&gt;&gt; m.captures(&#39;digits&#39;)
+[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]
+&gt;&gt;&gt; m.capturesdict()
+{&#39;word&#39;: [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;], &#39;digits&#39;: [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]}
+</code></pre>
+<hr>
+<p><strong>支持拷贝分组名称</strong></p>
+<pre><code class="python">&gt;&gt;&gt; #两个分组特征，第二个特征会覆盖第一个特征
+&gt;&gt;&gt; m = regex.match(r&quot;(?P&lt;item&gt;\w+)? or (?P&lt;item&gt;\w+)?&quot;, &#39;first or third&#39;)
+&gt;&gt;&gt; m.group(&#39;item&#39;)
+&#39;third&#39;
+&gt;&gt;&gt; m.captures(&#39;item&#39;)
+[&#39;first&#39;, &#39;third&#39;]
+&gt;&gt;&gt; #只有第二个特征分组
+&gt;&gt;&gt; m = regex.match(r&quot;(?P&lt;item&gt;\w+)? or (?P&lt;item&gt;\w+)?&quot;, &quot; or second&quot;)
+&gt;&gt;&gt; m.group(&#39;item&#39;)
+&#39;second&#39;
+&gt;&gt;&gt; m.captures(&#39;item&#39;)
+[&#39;second&#39;]
+&gt;&gt;&gt; #两个分组特征，第二个特征会覆盖第一个特征
+&gt;&gt;&gt; m = regex.match(r&#39;(?P&lt;item&gt;\w*) or (?P&lt;item&gt;\w+)&#39;, &#39; or second&#39;)
+&gt;&gt;&gt; m.group(&#39;item&#39;)
+&#39;second&#39;
+&gt;&gt;&gt; m.captures(&#39;item&#39;)
+[&#39;&#39;, &#39;second&#39;]
+</code></pre>
+<hr>
+<p><strong>匹配对象包含对搜索字符串的引用，通过调用其属性<code>string</code>可以查看。通过<code>detach_string</code>可以分离原字符串，使字符串可用于垃圾回收，如果字符串非常大，可以减少内存使用</strong>。</p>
+<pre><code class="python">&gt;&gt;&gt; m = regex.search(r&#39;\w+&#39;, &#39;Hi MuYing&#39;)
+&gt;&gt;&gt; print (m.group())
+Hi
+&gt;&gt;&gt; print (m.string)
+Hi MuYing
+&gt;&gt;&gt; m.detach_string()
+&gt;&gt;&gt; print (m.group())
+Hi
+&gt;&gt;&gt; print (m.string)
+None
+</code></pre>
+<hr>
+<p><strong>使用<code>?R</code> 或则’?0’可以进行递归匹配，<code>?1</code>、<code>?2</code>可以抓取对应的捕获组</strong>。</p>
+<pre><code class="python">&gt;&gt;&gt; m = regex.search(r&#39;(\w)(?:(?R)|(\w?))\1&#39;, &#39;kayak&#39;)
+&gt;&gt;&gt; m.group(0, 1, 2)
+(&#39;kayak&#39;, &#39;k&#39;, None)
+&gt;&gt;&gt; regex.match(r&quot;(Tarzan|Jane) loves (?1)&quot;, &quot;Tarzan loves Jane&quot;).groups()
+(&#39;Tarzan&#39;,)
+&gt;&gt;&gt; regex.match(r&quot;(MuYing|drawing) loves (?1)&quot;, &quot;MuYing loves drawing&quot;).groups()
+(&#39;MuYing&#39;,)
+</code></pre>
+<hr>
+<p><strong>regex通常尝试精确匹配，但有时需要进行近似匹配或“模糊”匹配，因为搜索的文本可能包含插入、删除或替换字符形式的错误。模糊正则表达式指定允许哪些类型的错误，以及可选地指定每种类型的最小值和最大值，或者只指定允许的最大值</strong>。（不能只指定最小值）</p>
+<p>指定的类型错误有：</p>
+<p>(1) <code>i</code> 表示插入</p>
+<p>(2)<code>d</code>表示删除</p>
+<p>(3)<code>s</code>表示替代</p>
+<p>(4)<code>e</code>表示任何错误类型</p>
+<p>在近似匹配中，如果指定了某种错误类型，就不能再指定任何错误类型。默认情况下，模糊匹配搜索满足给定约束的第一个匹配。EnhanceMatch标志将使其尝试改进已找到匹配的匹配（即减少错误数）。BestMatch标志将使其搜索最佳匹配。并且匹配对象存在一个属性可以查看指定的删除、插入、替代错误数量，该属性是<code>fuzzy_counts</code>。匹配对象还有一个属性<code>fuzzy_changes</code>，它给出了替换、插入和删除位置的元组。</p>
+<hr>
+<p><strong>其它应用示例</strong>：</p>
+<pre><code class="python">&gt;&gt;&gt; print (regex.fullmatch(r&#39;abc&#39;,  &#39;abc&#39;).span())
+(0, 3)
+&gt;&gt;&gt; print (regex.fullmatch(r&#39;abc&#39;,  &#39;abcd&#39;))
+None
+&gt;&gt;&gt; print (regex.fullmatch(r&#39;abc&#39;, &#39;abcd&#39;, endpos=3).span())
+(0, 3)
+&gt;&gt;&gt; print (regex.fullmatch(r&#39;abc&#39;, &#39;xabcx&#39;, pos=1, endpos=4).span())
+(1, 4)
+&gt;&gt;&gt; regex.match(r&#39;a.*?&#39;, &#39;abcd&#39;).group(0)
+&#39;a&#39;
+&gt;&gt;&gt; regex.fullmatch(r&#39;a.*?&#39;, &#39;abcd&#39;).group(0)
+&#39;abcd&#39;
+&gt;&gt;&gt; regex.subf(r&#39;(\w+) (\w+)&#39;, &#39;{0} =&gt; {2} {1}&#39;,  &#39;foo bar&#39;)
+&#39;foo bar =&gt; bar foo&#39;
+&gt;&gt;&gt; regex.subf(r&#39;(?P&lt;word1&gt;\w+) (?P&lt;word2&gt;\w+)&#39;, &#39;{word2} {word1}&#39;, &#39;foo bar&#39; )
+&#39;bar foo&#39;
+&gt;&gt;&gt; m = regex.match(r&#39;(\w+) (\w)&#39;, &#39;foo bar&#39;)
+&gt;&gt;&gt; m.expandf(&#39;{0} =&gt; {2} {1}&#39;)
+&#39;foo b =&gt; b foo&#39;
 </code></pre>
 
       
@@ -1321,7 +1446,7 @@ None
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">43.1k</span>
+    <span title="Site words total count">44.6k</span>
   
 </div>
 
