@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://onlyangelia.github.io/"/>
-  <updated>2019-05-22T02:30:00.526Z</updated>
+  <updated>2019-05-22T03:10:42.399Z</updated>
   <id>https://onlyangelia.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL数据存储引擎 &amp; B+树索引</title>
+    <link href="https://onlyangelia.github.io/MySQL/MySQlEnginesAndIndex/"/>
+    <id>https://onlyangelia.github.io/MySQL/MySQlEnginesAndIndex/</id>
+    <published>2017-06-02T14:04:58.000Z</published>
+    <updated>2019-05-22T03:10:42.399Z</updated>
+    
+    <content type="html"><![CDATA[<p>MySQL的存储引擎目前总共有9种<code>ARCHIVE</code>、<code>BLACKHOLE</code>、<code>MRG_MYISAM</code>、<code>FEDERATED</code>、<code>MyISAM</code>、<code>PERFORMANCE_SCHEMA、InnoDB、MEMORY</code>、<code>CSV</code>，但常用的有两种，一种是<strong>InnoDB</strong>，一种是<strong>MyISAM</strong>。可以在MySQL中使用命令行<code>show engines</code>查看MySQL支持的所有存储引擎， 若想要比较好的显示结果可以使用<code>show engines \G</code>命令查看MySQL的数据存储引擎，结果会显示存储引擎名称、特性以及支持的功能。</p><p>以下是通过<code>show engines \G</code>命令查看的存储引擎结果：</p><pre><code class="python">*************************** 1. row ***************************      Engine: ARCHIVE     Support: YES     Comment: Archive storage engineTransactions: NO          XA: NO  Savepoints: NO*************************** 2. row ***************************      Engine: BLACKHOLE     Support: YES     Comment: /dev/null storage engine (anything you write to it disappears)Transactions: NO          XA: NO  Savepoints: NO*************************** 3. row ***************************      Engine: MRG_MYISAM     Support: YES     Comment: Collection of identical MyISAM tablesTransactions: NO          XA: NO  Savepoints: NO*************************** 4. row ***************************      Engine: FEDERATED     Support: NO     Comment: Federated MySQL storage engineTransactions: NULL          XA: NULL  Savepoints: NULL*************************** 5. row ***************************      Engine: MyISAM     Support: YES     Comment: MyISAM storage engineTransactions: NO          XA: NO  Savepoints: NO*************************** 6. row ***************************      Engine: PERFORMANCE_SCHEMA     Support: YES     Comment: Performance SchemaTransactions: NO          XA: NO  Savepoints: NO*************************** 7. row ***************************      Engine: InnoDB     Support: DEFAULT     Comment: Supports transactions, row-level locking, and foreign keysTransactions: YES          XA: YES  Savepoints: YES*************************** 8. row ***************************      Engine: MEMORY     Support: YES     Comment: Hash based, stored in memory, useful for temporary tablesTransactions: NO          XA: NO  Savepoints: NO*************************** 9. row ***************************      Engine: CSV     Support: YES     Comment: CSV storage engineTransactions: NO          XA: NO  Savepoints: NO</code></pre><p>重点来关注常用的两种：InnoDB、MyISAM。</p><h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><p>InnoDB作为MySQL的存储结构，其存储文件为</p><p>​                                        $ InnoDB=\begin{cases} *_. frm &amp; 表结构定义文件 \  \ ibdata1 &amp; 表空间存放元数据、Buffer、UNDO日志\end{cases} $</p><p>随着创建的数据库越来越多或数据库中创建的数据越来越多，ibdata1文件会越来越大，如何对InnoDB进行瘦身也是经常讨论的问题。</p><h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><p>MyISAM的存储文件个数相比较InnoDB而言多了一个，其文件结构为</p><p>​                                        $MyISAM=\begin{cases} <em>_. frm &amp; 表结构定义文件 \  \ </em><em>.MYD &amp; 数据文件 \  \ *</em>.MYI &amp; 索引文件\end{cases}$</p><p>可以发现MyISAM的存储与InnoDB的不同，其将索引作为单独的一个文件，而InnoDB则是索引和数据都存放在表空间中，这也导致了两者内部的索引原理不同。</p><h2 id="InnoDB与MyISAM特性比较"><a href="#InnoDB与MyISAM特性比较" class="headerlink" title="InnoDB与MyISAM特性比较"></a>InnoDB与MyISAM特性比较</h2><p>InnoDB与MyISAM虽然都是常用的数据存储引擎，在特性上两者有很大不同，下面从以下方面将两者进行对比：</p><table><thead><tr><th>特性</th><th>InnoDB</th><th>MyISAM</th></tr></thead><tbody><tr><td>事务</td><td>支持</td><td>不支持</td></tr><tr><td>数据锁定</td><td>支持</td><td>不支持</td></tr><tr><td>全文索引</td><td>不支持</td><td>支持</td></tr><tr><td>外键约束</td><td>支持</td><td>不支持</td></tr><tr><td>表空间大小</td><td>较大</td><td>较小</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;MySQL的存储引擎目前总共有9种&lt;code&gt;ARCHIVE&lt;/code&gt;、&lt;code&gt;BLACKHOLE&lt;/code&gt;、&lt;code&gt;MRG_MYISAM&lt;/code&gt;、&lt;code&gt;FEDERATED&lt;/code&gt;、&lt;code&gt;MyISAM&lt;/code&gt;、&lt;code&gt;PER
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://onlyangelia.github.io/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://onlyangelia.github.io/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Python文本处理(二)difflib &amp; textwrap 模块</title>

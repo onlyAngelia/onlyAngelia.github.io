@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="Python,">
+  <meta name="keywords" content="MySQL,">
 
 
 
@@ -130,18 +130,18 @@
 
 
 
-<meta name="description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
-<meta name="keywords" content="Python">
+<meta name="description" content="MySQL的存储引擎目前总共有9种ARCHIVE、BLACKHOLE、MRG_MYISAM、FEDERATED、MyISAM、PERFORMANCE_SCHEMA、InnoDB、MEMORY、CSV，但常用的有两种，一种是InnoDB，一种是MyISAM。可以在MySQL中使用命令行show engines查看MySQL支持的所有存储引擎， 若想要比较好的显示结果可以使用show engines">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python运算(五)统计statistic模块">
-<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsStatisticModule/index.html">
+<meta property="og:title" content="MySQL数据存储引擎 &amp; B+树索引">
+<meta property="og:url" content="https://onlyangelia.github.io/MySQL/MySQlEnginesAndIndex/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
+<meta property="og:description" content="MySQL的存储引擎目前总共有9种ARCHIVE、BLACKHOLE、MRG_MYISAM、FEDERATED、MyISAM、PERFORMANCE_SCHEMA、InnoDB、MEMORY、CSV，但常用的有两种，一种是InnoDB，一种是MyISAM。可以在MySQL中使用命令行show engines查看MySQL支持的所有存储引擎， 若想要比较好的显示结果可以使用show engines">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T11:18:33.904Z">
+<meta property="og:updated_time" content="2019-05-22T03:10:42.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python运算(五)统计statistic模块">
-<meta name="twitter:description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
+<meta name="twitter:title" content="MySQL数据存储引擎 &amp; B+树索引">
+<meta name="twitter:description" content="MySQL的存储引擎目前总共有9种ARCHIVE、BLACKHOLE、MRG_MYISAM、FEDERATED、MyISAM、PERFORMANCE_SCHEMA、InnoDB、MEMORY、CSV，但常用的有两种，一种是InnoDB，一种是MyISAM。可以在MySQL中使用命令行show engines查看MySQL支持的所有存储引擎， 若想要比较好的显示结果可以使用show engines">
 
 
 
@@ -171,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsStatisticModule/">
+  <link rel="canonical" href="https://onlyangelia.github.io/MySQL/MySQlEnginesAndIndex/">
 
 
 
 
 
-  <title>Python运算(五)统计statistic模块 | 莯滢</title>
+  <title>MySQL数据存储引擎 & B+树索引 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python运算(五)统计statistic模块</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL数据存储引擎 & B+树索引</h1>
         
 
         <div class="post-meta">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T22:44:39+08:00">
-                2017-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-02T22:04:58+08:00">
+                2017-06-02
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/PythonAdvance/" itemprop="url" rel="index">
-                    <span itemprop="name">Python进阶</span>
+                  <a href="../../categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  939
+                  595
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  2
                 </span>
               
             </div>
@@ -436,107 +436,117 @@
       
 
       
-        <p><strong>statistics</strong>模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 <strong>int</strong>, <strong>float</strong>, <strong>decimal.Decimal</strong> 和 <strong>fractions.Fraction</strong>。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用<code>map()</code>函数转换成可识别的类型<code>map(float, inpud_data)</code>。 <strong>statistics</strong>模块中的统计函数有：</p>
-<h2 id="平均-amp-中位数函数-平均值、中位数等"><a href="#平均-amp-中位数函数-平均值、中位数等" class="headerlink" title="平均&amp;中位数函数(平均值、中位数等)"></a>平均&amp;中位数函数(平均值、中位数等)</h2><table>
+        <p>MySQL的存储引擎目前总共有9种<code>ARCHIVE</code>、<code>BLACKHOLE</code>、<code>MRG_MYISAM</code>、<code>FEDERATED</code>、<code>MyISAM</code>、<code>PERFORMANCE_SCHEMA、InnoDB、MEMORY</code>、<code>CSV</code>，但常用的有两种，一种是<strong>InnoDB</strong>，一种是<strong>MyISAM</strong>。可以在MySQL中使用命令行<code>show engines</code>查看MySQL支持的所有存储引擎， 若想要比较好的显示结果可以使用<code>show engines \G</code>命令查看MySQL的数据存储引擎，结果会显示存储引擎名称、特性以及支持的功能。</p>
+<p>以下是通过<code>show engines \G</code>命令查看的存储引擎结果：</p>
+<pre><code class="python">*************************** 1. row ***************************
+      Engine: ARCHIVE
+     Support: YES
+     Comment: Archive storage engine
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+*************************** 2. row ***************************
+      Engine: BLACKHOLE
+     Support: YES
+     Comment: /dev/null storage engine (anything you write to it disappears)
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+*************************** 3. row ***************************
+      Engine: MRG_MYISAM
+     Support: YES
+     Comment: Collection of identical MyISAM tables
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+*************************** 4. row ***************************
+      Engine: FEDERATED
+     Support: NO
+     Comment: Federated MySQL storage engine
+Transactions: NULL
+          XA: NULL
+  Savepoints: NULL
+*************************** 5. row ***************************
+      Engine: MyISAM
+     Support: YES
+     Comment: MyISAM storage engine
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+*************************** 6. row ***************************
+      Engine: PERFORMANCE_SCHEMA
+     Support: YES
+     Comment: Performance Schema
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+*************************** 7. row ***************************
+      Engine: InnoDB
+     Support: DEFAULT
+     Comment: Supports transactions, row-level locking, and foreign keys
+Transactions: YES
+          XA: YES
+  Savepoints: YES
+*************************** 8. row ***************************
+      Engine: MEMORY
+     Support: YES
+     Comment: Hash based, stored in memory, useful for temporary tables
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+*************************** 9. row ***************************
+      Engine: CSV
+     Support: YES
+     Comment: CSV storage engine
+Transactions: NO
+          XA: NO
+  Savepoints: NO
+
+</code></pre>
+<p>重点来关注常用的两种：InnoDB、MyISAM。</p>
+<h2 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h2><p>InnoDB作为MySQL的存储结构，其存储文件为</p>
+<p>​                                        $ InnoDB=\begin{cases} *_. frm &amp; 表结构定义文件 \  \ ibdata1 &amp; 表空间存放元数据、Buffer、UNDO日志\end{cases} $</p>
+<p>随着创建的数据库越来越多或数据库中创建的数据越来越多，ibdata1文件会越来越大，如何对InnoDB进行瘦身也是经常讨论的问题。</p>
+<h2 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h2><p>MyISAM的存储文件个数相比较InnoDB而言多了一个，其文件结构为</p>
+<p>​                                        $MyISAM=\begin{cases} <em>_. frm &amp; 表结构定义文件 \  \ </em><em>.MYD &amp; 数据文件 \  \ *</em>.MYI &amp; 索引文件\end{cases}$</p>
+<p>可以发现MyISAM的存储与InnoDB的不同，其将索引作为单独的一个文件，而InnoDB则是索引和数据都存放在表空间中，这也导致了两者内部的索引原理不同。</p>
+<h2 id="InnoDB与MyISAM特性比较"><a href="#InnoDB与MyISAM特性比较" class="headerlink" title="InnoDB与MyISAM特性比较"></a>InnoDB与MyISAM特性比较</h2><p>InnoDB与MyISAM虽然都是常用的数据存储引擎，在特性上两者有很大不同，下面从以下方面将两者进行对比：</p>
+<table>
 <thead>
 <tr>
-<th>函数</th>
-<th>释义</th>
+<th>特性</th>
+<th>InnoDB</th>
+<th>MyISAM</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>statistic.<strong>mean</strong>()</td>
-<td>返回数据的算术平均值，如果数据为空，则会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a>。算术平均值容易受到异常值的影响，并不是一个稳定的估量值。</td>
+<td>事务</td>
+<td>支持</td>
+<td>不支持</td>
 </tr>
 <tr>
-<td>statistic.<strong>harmonic_mean</strong>()</td>
-<td>返回调和优化平均值。调和平均值又被称为倒数平均值，是算术平均值的倒数。计算形式如下：数据a，b，c 的调和平均值为$\dfrac{3}{\dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}}$     如果数据为空，或数据存在负数，同样会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a></td>
+<td>数据锁定</td>
+<td>支持</td>
+<td>不支持</td>
 </tr>
 <tr>
-<td>statistic.<strong>median</strong>()</td>
-<td>返回数据的中位数，如果数据总和为偶数，则返回中间两个数字的平均值。中位数比较稳定，不太容易受异常数据的影响。如果数据为空，同样会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a></td>
+<td>全文索引</td>
+<td>不支持</td>
+<td>支持</td>
 </tr>
 <tr>
-<td>statistic.<strong>median_low</strong>()</td>
-<td>返回较低平均值，当数据总数为偶数时，取中间位置较小的数值</td>
+<td>外键约束</td>
+<td>支持</td>
+<td>不支持</td>
 </tr>
 <tr>
-<td>statistic.<strong>median_high</strong>()</td>
-<td>返回较高平均值，当数据总数为偶数时，取中间位置较大的数值</td>
-</tr>
-<tr>
-<td>statistic.<strong>median_grouped</strong>(data, interval = 1)</td>
-<td>返回分组连续数据的中位数，以50%位数计算，interval代表计算间距，默认为1</td>
-</tr>
-<tr>
-<td>statistic.<strong>media_mode</strong>()</td>
-<td>返回出现频率最高的数值</td>
+<td>表空间大小</td>
+<td>较大</td>
+<td>较小</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="python">&gt;&gt;&gt; import statistics
-&gt;&gt;&gt; statistics.mean([23.4,47.2,56.45,65.8])
-48.2125
-&gt;&gt;&gt; statistics.harmonic_mean([2.4, 3.6, 12.3])
-3.867248908296943
-&gt;&gt;&gt; statistics.median([12,4,6,8,9,14,35])
-9
-&gt;&gt;&gt; statistics.median([1,3,5,7])
-4.0
-&gt;&gt;&gt; statistics.median_low([1,3,5,7])
-3
-&gt;&gt;&gt; statistics.median_high([1,3,5,7])
-5
-&gt;&gt;&gt; statistics.median_grouped([52,52,53,54])
-52.5
-&gt;&gt;&gt; statistics.median_grouped([1,2,2,3,4,4,4,4,4,5])
-3.7
-&gt;&gt;&gt; statistics.median_grouped([1,3,5,7], interval =1)
-4.5
-&gt;&gt;&gt; statistics.median_grouped([1,3,5,7], interval = 2)
-4.0
-&gt;&gt;&gt; statistics.mode([1,1,2,3,3,3,3,4])
-3
-&gt;&gt;&gt; statistics.mode([&#39;red&#39;,&#39;blue&#39;,&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;,&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;,&#39;red&#39;])
-&#39;red&#39;
-</code></pre>
-<h2 id="分布函数-方差、标准差等"><a href="#分布函数-方差、标准差等" class="headerlink" title="分布函数(方差、标准差等)"></a>分布函数(方差、标准差等)</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>statistics.<strong>pstdev</strong>(data, mu=None)</td>
-<td>返回数据的总体标准差，mu为平均值，如果给值则用指定的数值，如果没有指定，则自动计算</td>
-</tr>
-<tr>
-<td>statistics.<strong>pvariance</strong>(data, mu=None)</td>
-<td>返回数据的总体方差,mu为平均值，如果指定数据则用给定值，如果未给出，则自动计算</td>
-</tr>
-<tr>
-<td>statistics.<strong>stdev</strong>(data, xbar=None)</td>
-<td>返回数据的样品标准差，xbar如果指定则用给的值，如果没有指定则自动计算。</td>
-</tr>
-<tr>
-<td>statistics.<strong>variance</strong>(data, xbar=None)</td>
-<td>返回样本方差，如果指定xbar则用给的值，如果没有给出，则自动计算</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="python">&gt;&gt;&gt; statistics.pstdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-0.986893273527251
-&gt;&gt;&gt; statistics.pvariance([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-0.9739583333333334
-&gt;&gt;&gt; statistics.stdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-1.0810874155219827
-&gt;&gt;&gt; statistics.variance([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-1.16875
-</code></pre>
-<p>有关Python针对数据的运算各个类型数据的运算和相关的算术模块整理完毕，正因为Python对数据运算处理的庞大，使得Python在数据分析之中占有重要的位置。同时有许多外置框架将Python数据结构改良和对统计模块的扩展，例如Numpy、Pandas等，非常方便数据清洗。</p>
 
       
     </div>
@@ -586,7 +596,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsStatisticModule/" title="Python运算(五)统计statistic模块">https://onlyangelia.github.io/PythonAdvance/PythonCaculationsStatisticModule/</a>
+    <a href="https://onlyangelia.github.io/MySQL/MySQlEnginesAndIndex/" title="MySQL数据存储引擎 & B+树索引">https://onlyangelia.github.io/MySQL/MySQlEnginesAndIndex/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -601,7 +611,7 @@
       
         <div class="post-tags">
           
-            <a href="../../tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+            <a href="../../tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
           
         </div>
       
@@ -614,8 +624,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../PythonNumberCaculationsRandomAndSecrets/" rel="next" title="Python运算(四)random模块&secrets模块">
-                <i class="fa fa-chevron-left"></i> Python运算(四)random模块&secrets模块
+              <a href="../../PythonAdvance/PythonStringOperationsDifflibAndTextwrap/" rel="next" title="Python文本处理(二)difflib & textwrap 模块">
+                <i class="fa fa-chevron-left"></i> Python文本处理(二)difflib & textwrap 模块
               </a>
             
           </div>
@@ -623,10 +633,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="../PythonDataTypeString/" rel="prev" title="Python数据类型(二)文本类型-str">
-                Python数据类型(二)文本类型-str <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -792,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#平均-amp-中位数函数-平均值、中位数等"><span class="nav-number">1.</span> <span class="nav-text">平均&amp;中位数函数(平均值、中位数等)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布函数-方差、标准差等"><span class="nav-number">2.</span> <span class="nav-text">分布函数(方差、标准差等)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#InnoDB"><span class="nav-number">1.</span> <span class="nav-text">InnoDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MyISAM"><span class="nav-number">2.</span> <span class="nav-text">MyISAM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#InnoDB与MyISAM特性比较"><span class="nav-number">3.</span> <span class="nav-text">InnoDB与MyISAM特性比较</span></a></li></ol></div>
             
 
           </div>
