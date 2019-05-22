@@ -130,18 +130,18 @@
 
 
 
-<meta name="description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
+<meta name="description" content="unicodedata模块unicodedata模块提供对Unicode字符数据库（UCD）的访问，该数据库为所有Unicode字符定义字符属性，数据库中包含的数据从UCD 9.0.0版编译而来。unicodedata模块使用的名称和符号与Unicode#44标准附件一致。 unicodedata模块定义的函数如下： unicodedata.lookup()​    unicodedata.loo">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python数字运算(三)cmath模块">
-<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/index.html">
+<meta property="og:title" content="Python文本处理(三)unicodedata &amp; stringprep &amp; readline模块">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonStringOperationsUnicodedataStringprepAndReadlineModules/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
+<meta property="og:description" content="unicodedata模块unicodedata模块提供对Unicode字符数据库（UCD）的访问，该数据库为所有Unicode字符定义字符属性，数据库中包含的数据从UCD 9.0.0版编译而来。unicodedata模块使用的名称和符号与Unicode#44标准附件一致。 unicodedata模块定义的函数如下： unicodedata.lookup()​    unicodedata.loo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T11:17:43.605Z">
+<meta property="og:updated_time" content="2019-05-22T13:52:07.940Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python数字运算(三)cmath模块">
-<meta name="twitter:description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
+<meta name="twitter:title" content="Python文本处理(三)unicodedata &amp; stringprep &amp; readline模块">
+<meta name="twitter:description" content="unicodedata模块unicodedata模块提供对Unicode字符数据库（UCD）的访问，该数据库为所有Unicode字符定义字符属性，数据库中包含的数据从UCD 9.0.0版编译而来。unicodedata模块使用的名称和符号与Unicode#44标准附件一致。 unicodedata模块定义的函数如下： unicodedata.lookup()​    unicodedata.loo">
 
 
 
@@ -171,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/">
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonStringOperationsUnicodedataStringprepAndReadlineModules/">
 
 
 
 
 
-  <title>Python数字运算(三)cmath模块 | 莯滢</title>
+  <title>Python文本处理(三)unicodedata & stringprep & readline模块 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python数字运算(三)cmath模块</h1>
+          <h1 class="post-title" itemprop="name headline">Python文本处理(三)unicodedata & stringprep & readline模块</h1>
         
 
         <div class="post-meta">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T12:56:50+08:00">
-                2017-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-06T10:26:39+08:00">
+                2017-05-06
               </time>
             
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  838
+                  2.1k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  7
                 </span>
               
             </div>
@@ -436,212 +436,102 @@
       
 
       
-        <p><strong>cmath</strong>模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算</p>
-<h2 id="复数极坐标系转换函数"><a href="#复数极坐标系转换函数" class="headerlink" title="复数极坐标系转换函数"></a>复数极坐标系转换函数</h2><p>在<a href="https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/">Python数据类型(一)数字类型</a>中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：</p>
-<table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>phase</strong>(x)</td>
-<td>以浮点数的形式返回x的弧度，范围在[-π，π]</td>
-</tr>
-<tr>
-<td>cmath.<strong>polar</strong>(x)</td>
-<td>返回x在极坐标系中的坐标(r,phi)</td>
-</tr>
-<tr>
-<td>cmath.<strong>rect</strong>(r, phi)</td>
-<td>返回坐标(r, phi)在极坐标系中对应的复数</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="python">&gt;&gt;&gt; import cmath
-&gt;&gt;&gt; cmath.phase(complex(-1.0, 0.0))
-3.141592653589793
-&gt;&gt;&gt; cmath.phase(complex(-1.0,0.0))
-3.141592653589793
-&gt;&gt;&gt; cmath.phase(complex(-0.5, 0.0))
-3.141592653589793
-&gt;&gt;&gt; cmath.phase(complex(-0.5, 0.3))
-2.601173153319209
-&gt;&gt;&gt; cmath.polar(complex(-0.5, 0.3))
-(0.58309518948453, 2.601173153319209)
-&gt;&gt;&gt; cmath.rect(0.58309518948453, 2.601173153319209)
-(-0.49999999999999994+0.3j)
+        <h1 id="unicodedata模块"><a href="#unicodedata模块" class="headerlink" title="unicodedata模块"></a>unicodedata模块</h1><p><strong>unicodedata</strong>模块提供对Unicode字符数据库（<strong>UCD</strong>）的访问，该数据库为所有Unicode字符定义字符属性，数据库中包含的数据从<strong>UCD 9.0.0</strong>版编译而来。unicodedata模块使用的名称和符号与Unicode#44标准附件一致。</p>
+<p><strong>unicodedata</strong>模块定义的函数如下：</p>
+<h2 id="unicodedata-lookup"><a href="#unicodedata-lookup" class="headerlink" title="unicodedata.lookup()"></a>unicodedata.lookup()</h2><p>​    unicodedata.<strong>lookup</strong>(<em>name</em>)函数是按名称查找字符，如果找到具有给定名称的字符，则返回相应的字符，若未找到，则引发KeyError错误。Python3.3之后，添加了对名称别名和命名序列的支持。</p>
+<h2 id="unicodedata-name"><a href="#unicodedata-name" class="headerlink" title="unicodedata.name()"></a>unicodedata.name()</h2><p>​    unicodedata.<strong>name</strong>(chr, default)函数返回分配给字符chr的名称作为字符串，如果没有定义这样的值，则返回默认值，如果没有给出默认值个会引发ValueError。</p>
+<h2 id="unicodedata-decimal"><a href="#unicodedata-decimal" class="headerlink" title="unicodedata.decimal()"></a>unicodedata.decimal()</h2><p>​    unicodedata.<strong>decimal</strong>(<em>chr， default</em>)返回分配给字符chr的十进制作为整数。如果没有定义这样的值，则返回defalut，如果没有给出默认值，则会引发ValueError。</p>
+<h2 id="unicodedata-digit"><a href="#unicodedata-digit" class="headerlink" title="unicodedata.digit()"></a>unicodedata.digit()</h2><p>​    unicodedata.<strong>digit</strong>(chr, default)返回分配给字符chr的数字值作为整数，如果没有定义这样的值，则返回默认值defalut，如果没有给出defalut，则会引发ValueError。</p>
+<h2 id="unicodedata-numeric"><a href="#unicodedata-numeric" class="headerlink" title="unicodedata.numeric()"></a>unicodedata.numeric()</h2><p>​    unicodedata.<strong>numeric</strong>(<em>chr, default</em>)返回分配给字符chr的数值作为浮点数，如果值没有被定义，则返回默认值default，如果没有设定默认值，则会引发ValueError。</p>
+<h2 id="unicodedata-category"><a href="#unicodedata-category" class="headerlink" title="unicodedata.category()"></a>unicodedata.category()</h2><p>​    unicodedata.<strong>category</strong>(chr)返回分配给字符chr的常规类别为字符串。</p>
+<h2 id="unicodedata-bidirectional-chr"><a href="#unicodedata-bidirectional-chr" class="headerlink" title="unicodedata.bidirectional(chr)"></a>unicodedata.bidirectional(chr)</h2><p>​    unicodedata.<strong>bidirectional</strong>(<em>chr</em>)返回分配给字符chr的双向类作为字符串，如果未定义此类值，则返回空字符串。</p>
+<h2 id="unicodedata-combining"><a href="#unicodedata-combining" class="headerlink" title="unicodedata.combining()"></a>unicodedata.combining()</h2><p>​    unicodedata.<strong>combining</strong>(chr)返回分配给字符chr的规范组合类作为整数，如果没有定义组合，则返回0。</p>
+<h2 id="unicodedata-east-asian-width"><a href="#unicodedata-east-asian-width" class="headerlink" title="unicodedata.east_asian_width()"></a>unicodedata.east_asian_width()</h2><p>​    unicodedata.<strong>east_asian_width</strong>(chr)返回分配给字符chr的宽度。</p>
+<h2 id="unicodedata-mirrored"><a href="#unicodedata-mirrored" class="headerlink" title="unicodedata.mirrored()"></a>unicodedata.mirrored()</h2><p>​    unicodedata.<strong>mirrored</strong>(chr)返回分配给字符chr的镜像属性为整数，如果字符在双向文本中被识别为“镜像”字符，则返回 <code>1</code> ，否则返回 <code>0</code>。</p>
+<h2 id="unicodedata-decomposition"><a href="#unicodedata-decomposition" class="headerlink" title="unicodedata.decomposition()"></a>unicodedata.decomposition()</h2><p>​    unicodedata.<strong>decomposition</strong>(chr) 以字符串形式返回分配给字符chr的字符分解映射，如果未定义此类映射，则返回空字符串。</p>
+<h2 id="unicodedata-normalize-form-unistr"><a href="#unicodedata-normalize-form-unistr" class="headerlink" title="unicodedata.normalize(form, unistr)"></a>unicodedata.normalize(form, unistr)</h2><p>​    unicodedata__normalize__(<em>form, unistr</em>)返回unicode字符串unistr的规范形式。form的有效值为<code>NFC</code>、<code>NFKC</code>、“NFD”和“NFKD”。</p>
+<p>​    对于每个字符，有两种规范形式：规范形式C和规范形式D。规范形式D（NFD）也称为规范分解，将每个字符转换为其分解形式。规范形式C（NFC）首先应用规范分解，然后再次组合预组合字符。除了这两种形式之外，还有另外两种基于兼容性等效的正常形式。除了这两种形式之外，还有另外两种基于兼容性等效的正常形式。在Unicode中，支持某些字符与其它格式统一组成的字符，例如，u+2160（罗马数字1）实际上与u+0049（拉丁文大写字母I）相同，为了与现有字符集（如GB2312）兼容，Unicode支持这种形式的字符。标准形式KD（NFKD）将应用兼容性分解，即将所有兼容性字符替换为它们的等效字符。标准形式KC（NFKC）首先应用兼容性分解，然后是规范组合。</p>
+<p>​    即使对两个Unicode字符串进行了规范化处理，表面上看上去相同，但如果一个字符串具有组合字符，而另一个字符串不具有组合字符，则它们之间的比较可能并不相等。</p>
+<p>除了提供的功能函数之外，unicodedata还提供了属性：</p>
+<h2 id="unicodedata-unidata-version"><a href="#unicodedata-unidata-version" class="headerlink" title="unicodedata.unidata_version"></a>unicodedata.unidata_version</h2><p>​    unicodedata.<strong>unidata_version</strong> 该属性代表模块中使用的Unicode数据库的版本号</p>
+<h2 id="unicodedata-ucd-3-2-0"><a href="#unicodedata-ucd-3-2-0" class="headerlink" title="unicodedata.ucd_3_2_0"></a>unicodedata.ucd_3_2_0</h2><p>​    unicodedata.<strong>ucd_3_2_0</strong>  这是一个对象，其方法与整个模块相同，但对需要此特定版本的Unicode数据库（如IDNA）的应用程序使用Unicode3.2版本数据库。</p>
+<p><strong>unicodedata</strong>模块应用示例：</p>
+<pre><code class="python">&gt;&gt;&gt; import unicodedata
+&gt;&gt;&gt; unicodedata.lookup(&#39;LEFT CURLY BRACKET&#39;)
+&#39;{&#39;
+&gt;&gt;&gt; unicodedata.name (&#39;/&#39;)
+&#39;SOLIDUS&#39;
+&gt;&gt;&gt; unicodedata.decimal(&#39;8&#39;)
+8
+&gt;&gt;&gt; unicodedata.category(&#39;A&#39;)
+&#39;Lu&#39;
+&gt;&gt;&gt; unicodedata.bidirectional(&#39;\u0660&#39;)
+&#39;AN&#39;
 </code></pre>
-<h2 id="幂函数与对数函数"><a href="#幂函数与对数函数" class="headerlink" title="幂函数与对数函数"></a>幂函数与对数函数</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>exp</strong>(x)</td>
-<td>返回<code>e**x</code></td>
-</tr>
-<tr>
-<td>cmath.<strong>log</strong>(x,base)</td>
-<td>返回以base为底x的对数</td>
-</tr>
-<tr>
-<td>cmath.<strong>log10</strong>(x)</td>
-<td>返回以10为底x的对数</td>
-</tr>
-<tr>
-<td>cmath.<strong>sqrt</strong>(x)</td>
-<td>x的开方</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="python">&gt;&gt;&gt; cmath.exp(complex(2.0, 0.0))
-(7.38905609893065+0j)
-&gt;&gt;&gt; cmath.exp(complex(10.0, 2.0))
-(-9166.244060822655+20028.608669281643j)
-&gt;&gt;&gt; cmath.log10(complex(100.0,2.0))
-(2.0000868415292326+0.008684731797315706j)
-&gt;&gt;&gt; cmath.sqrt(complex(2.0, 1.0))
-(1.455346690225355+0.34356074972251244j)
-</code></pre>
-<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>acos</strong>(x)</td>
-<td>返回x的反余弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>asin</strong>(x)</td>
-<td>返回x的反正弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>atan</strong>(x)</td>
-<td>返回x的反正切值</td>
-</tr>
-<tr>
-<td>cmath.<strong>cos</strong>(x)</td>
-<td>返回x的余弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>sin</strong>(x)</td>
-<td>返回x的正弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>tan</strong>(x)</td>
-<td>返回x的正切值</td>
-</tr>
-</tbody>
-</table>
-<h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>acosh</strong>(x)</td>
-<td>返回双曲线中x的反余弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>asinh</strong>(x)</td>
-<td>返回双曲线中x的反正弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>atanh</strong>(x)</td>
-<td>返回双曲线中x的反正切值</td>
-</tr>
-<tr>
-<td>cmath.<strong>cosh</strong>(x)</td>
-<td>返回双曲线中x的余弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>sinh</strong>(x)</td>
-<td>返回双曲线中x的正弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>tanh</strong>(x)</td>
-<td>返回双曲线中x的正切值</td>
-</tr>
-</tbody>
-</table>
-<h2 id="分类函数"><a href="#分类函数" class="headerlink" title="分类函数"></a>分类函数</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>isfinite</strong>(x)</td>
-<td>模数r和弧度phi都是有理数，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>cmath.<strong>isinf</strong>(x)</td>
-<td>模数r和弧度phi都趋近于正无穷，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>cmath.<strong>isnan</strong>(x)</td>
-<td>模数r和弧度phi都是Nan，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>cmath.<strong>isclose</strong>(a,b,*,rel_tol,abs_tol)</td>
-<td>若a和b的值比较接近则返回True，否则返回False。判定标准是根据给定的绝对和相对容差。rel_tol是相对容差，必须大于0，是a和b之间允许的最大差值。abs_tol是最小绝对容差，至少为0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="常数"><a href="#常数" class="headerlink" title="常数"></a>常数</h2><table>
-<thead>
-<tr>
-<th>常数名</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>pi</strong></td>
-<td>常数π=3.141926….</td>
-</tr>
-<tr>
-<td>cmath.<strong>e</strong></td>
-<td>常数e= 2.718281….</td>
-</tr>
-<tr>
-<td>cmath.<strong>tau</strong></td>
-<td>常数τ = 6.283185…，为π的两倍</td>
-</tr>
-<tr>
-<td>cmath.<strong>inf</strong></td>
-<td>正无穷大浮点数</td>
-</tr>
-<tr>
-<td>cmath.<strong>infj</strong></td>
-<td>实部为0，虚部为正无穷大浮点数的复数</td>
-</tr>
-<tr>
-<td>cmath.<strong>nan</strong></td>
-<td>浮点数”非数值”</td>
-</tr>
-<tr>
-<td>cmath.<strong>nanj</strong></td>
-<td>实部为0，虚部为Nan的”非数值”</td>
-</tr>
-</tbody>
-</table>
-<p><strong>cmath</strong>模块与<strong>math</strong>模块许多功能看上去相似，但实际上是不同的功能。cmath返回的值是复数，哪怕虚部为0。许多人不理解为什么单独定义一个cmath模块而不是math模块一起解决复数运算问题。假设有一天需要用特别复杂的方式去计算，就会理解这么定义的原因。</p>
+<hr>
+<h1 id="stringprep模块-处理Intnet字符"><a href="#stringprep模块-处理Intnet字符" class="headerlink" title="stringprep模块-处理Intnet字符"></a>stringprep模块-处理Intnet字符</h1><p>​    <strong>stringprep</strong>主要针对互联网字符处理的模块。在互联网上识别事物（如主机名）时，通常需要比较这些标识以判断是否相等，具体执行比较的方式后的结果可能取决于应用程序域，例如，它是否应该不区分大小写，可能还需要限制可能的标识，或只允许包含“可打印”字符的标识。</p>
+<p>​     <a href="https://tools.ietf.org/html/rfc3454.html"><strong>RFC 3454</strong></a> 制定了网络协议中Unicode字符串的预备过程。在将字符串传递到导线上之前，将使用预备过程对其进行处理，处理成规范化的形式。RFC定义了一组表，这些表可以组合成概要文件。每个概要文件必须定义它使用的表，以及<strong>stringprep</strong>过程的其他可选部分。<strong>stringprep</strong>配置文件的一个示例是<strong>NamePrep</strong>，它用于国际化域名。</p>
+<p>​      <strong>stringprep</strong>模块只公开来自<strong>RFC3454</strong>的表，由于这些表若用字典<strong>dic</strong>或列表<strong>list</strong>表示会非常大，因此模块在内部使用<strong>Unicode字符数据库</strong>，模块源代码本身是使用mkstringprep.py实用程序生成的。</p>
+<p>​    基于以上原因，这些表作为函数公开，而不是作为数据结构公开。RFC中有两种表：<strong>集合</strong>和<strong>映射</strong>。对于集合，<strong>stringprep</strong>提供征函数（如果参数是集合的一部分，则返回true的函数）。对于映射，模块提供了映射函数：给定键，返回关联的值。</p>
+<p>​    以下是stringprep模块提供的可用列表(函数表示)：</p>
+<h2 id="stringprep列表"><a href="#stringprep列表" class="headerlink" title="stringprep列表"></a>stringprep列表</h2><p>stringprep.<strong>in_talbe_a1</strong>(code) </p>
+<p>​    确定代码是否在表A.1中（Unicode 3.2中的未分配代码点)。</p>
+<hr>
+<p>stringprep.<strong>in_table_b1</strong>(code)</p>
+<p>   确定代码是否在表B.1中(通常映射为无)        </p>
+<hr>
+<p>stringprep.<strong>map_table_b2</strong>(code)</p>
+<p>​    根据表B.2返回code映射的集合值(与NFKC一起使用折叠映射)</p>
+<hr>
+<p>stringprep.<strong>map_table_b3</strong>(code)</p>
+<p>​    根据表B.3返回code映射的集合值(用于不进行规范化的案例折叠的映射)</p>
+<hr>
+<p>stringprep.<strong>in_table_c_11</strong>(code)</p>
+<p>​    确定代码是否在表C.1.1中(ASCII空格字符)</p>
+<hr>
+<p>stingprep.<strong>in_table_c12</strong>(code)</p>
+<p>​    确定代码是否在表C.1.2中(没有ASCII空格字符)</p>
+<hr>
+<p>stringprep.<strong>in_table_c11_c12</strong>(code)</p>
+<p>​    确定代码是否在表C.1中(空格字符，C.1.1和C.1.2的联合)</p>
+<hr>
+<p>stringprep.<strong>in_table_c21</strong>(code)</p>
+<p>​    确定代码是否在表C.2.1中(ASCII 控制字符)</p>
+<hr>
+<p>stringprep.<strong>in_table_c22</strong>(code)</p>
+<p>​    确定代码是否在表C.2.2中(没有控制字符)</p>
+<hr>
+<p>stringprep.<strong>in_table_c21_c22</strong>(code)</p>
+<p>​    确定代码是否在表C.2中(控制字符， 表的C.2.1和C.2.2的联合)</p>
+<hr>
+<p>stringprep.<strong>in_table_c3</strong>(code)</p>
+<p>​    确定代码是否在表C.3中(私有使用)</p>
+<hr>
+<p>stringprep.<strong>in_table_c4</strong>(code)</p>
+<p>​    确定代码是否在表C.4中(非字符代码点)</p>
+<hr>
+<p>stringprep.<strong>in_table_c5</strong>(code)</p>
+<p>​    确定代码是否在表C.5中(替代码)</p>
+<hr>
+<p>stringprep.<strong>in_table_c6</strong>(code)</p>
+<p>​    确定代码是否在表C.6中(不适用于纯文本)</p>
+<hr>
+<p>stringprep.<strong>in_table_c7</strong>(code)</p>
+<p>​    确定代码是否在表C.7中(不适合规范表示)</p>
+<hr>
+<p>stringprep.<strong>in_table_c8</strong>(code)</p>
+<p>​    确定代码是否在表C.8中(更改显示属性或已弃用)</p>
+<hr>
+<p>stringprep.<strong>in_table_c9</strong>(code)</p>
+<p>​    确定代码是否在表C.9中(标记字符)</p>
+<hr>
+<p>stringprep.<strong>in_table_d1</strong>(code)</p>
+<p>​    确定代码是否在表D.1中(具有双向属性“R”或“AL”的字符)</p>
+<hr>
+<p>stringprep.<strong>in_table_d2</strong>(code)</p>
+<p>​    确定代码是否在表D.2中(具有双向属性“L”的字符)</p>
+<h1 id="readline-GNU-readline接口"><a href="#readline-GNU-readline接口" class="headerlink" title="readline - GNU readline接口"></a>readline - GNU readline接口</h1><p>​    <strong>readline</strong>模块模块定义了许多函数，以便于从Python解释器完成历史文件的读写。模块可以直接使用，也可以通过<strong>rlcompleter</strong>模块使用，后者支持在交互提示下完成Python标识符。使用此模块进行的设置会影响解释器的交互提示和内置<code>input（）</code>函数提供的提示的行为。</p>
+<p>​    底层的<strong>readline</strong>库API可以由<strong>libedit</strong>库而不是<strong>gnu readline</strong>实现。在MacOS X上，readline模块检测运行时使用的库。<strong>libedit</strong>的配置文件与<strong>gnu readline</strong>的配置文件不同，如果以编程方式加载配置字符串，则可以检查<strong>readline</strong>中的文本“libedit”。要区分<strong>gnu readline</strong>和<strong>libedit</strong>，使用<strong>doc</strong>。</p>
 
       
     </div>
@@ -691,7 +581,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/" title="Python数字运算(三)cmath模块">https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/</a>
+    <a href="https://onlyangelia.github.io/PythonAdvance/PythonStringOperationsUnicodedataStringprepAndReadlineModules/" title="Python文本处理(三)unicodedata & stringprep & readline模块">https://onlyangelia.github.io/PythonAdvance/PythonStringOperationsUnicodedataStringprepAndReadlineModules/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -719,8 +609,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../PythonCaculationsMathModule/" rel="next" title="Python运算(二)math模块">
-                <i class="fa fa-chevron-left"></i> Python运算(二)math模块
+              <a href="../PythonStringOperationsDifflibAndTextwrap/" rel="next" title="Python文本处理(二)difflib & textwrap 模块">
+                <i class="fa fa-chevron-left"></i> Python文本处理(二)difflib & textwrap 模块
               </a>
             
           </div>
@@ -729,8 +619,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="../PythonNumberCaculationsRandomAndSecrets/" rel="prev" title="Python运算(四)random模块&secrets模块">
-                Python运算(四)random模块&secrets模块 <i class="fa fa-chevron-right"></i>
+              <a href="../../MySQL/MySQlEnginesAndIndex/" rel="prev" title="MySQL数据存储引擎 & B+树索引">
+                MySQL数据存储引擎 & B+树索引 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -897,7 +787,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#复数极坐标系转换函数"><span class="nav-number">1.</span> <span class="nav-text">复数极坐标系转换函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂函数与对数函数"><span class="nav-number">2.</span> <span class="nav-text">幂函数与对数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角函数"><span class="nav-number">3.</span> <span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲函数"><span class="nav-number">4.</span> <span class="nav-text">双曲函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类函数"><span class="nav-number">5.</span> <span class="nav-text">分类函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常数"><span class="nav-number">6.</span> <span class="nav-text">常数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unicodedata模块"><span class="nav-number">1.</span> <span class="nav-text">unicodedata模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-lookup"><span class="nav-number">1.1.</span> <span class="nav-text">unicodedata.lookup()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-name"><span class="nav-number">1.2.</span> <span class="nav-text">unicodedata.name()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-decimal"><span class="nav-number">1.3.</span> <span class="nav-text">unicodedata.decimal()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-digit"><span class="nav-number">1.4.</span> <span class="nav-text">unicodedata.digit()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-numeric"><span class="nav-number">1.5.</span> <span class="nav-text">unicodedata.numeric()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-category"><span class="nav-number">1.6.</span> <span class="nav-text">unicodedata.category()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-bidirectional-chr"><span class="nav-number">1.7.</span> <span class="nav-text">unicodedata.bidirectional(chr)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-combining"><span class="nav-number">1.8.</span> <span class="nav-text">unicodedata.combining()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-east-asian-width"><span class="nav-number">1.9.</span> <span class="nav-text">unicodedata.east_asian_width()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-mirrored"><span class="nav-number">1.10.</span> <span class="nav-text">unicodedata.mirrored()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-decomposition"><span class="nav-number">1.11.</span> <span class="nav-text">unicodedata.decomposition()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-normalize-form-unistr"><span class="nav-number">1.12.</span> <span class="nav-text">unicodedata.normalize(form, unistr)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-unidata-version"><span class="nav-number">1.13.</span> <span class="nav-text">unicodedata.unidata_version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-ucd-3-2-0"><span class="nav-number">1.14.</span> <span class="nav-text">unicodedata.ucd_3_2_0</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stringprep模块-处理Intnet字符"><span class="nav-number">2.</span> <span class="nav-text">stringprep模块-处理Intnet字符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stringprep列表"><span class="nav-number">2.1.</span> <span class="nav-text">stringprep列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#readline-GNU-readline接口"><span class="nav-number">3.</span> <span class="nav-text">readline - GNU readline接口</span></a></li></ol></div>
             
 
           </div>
