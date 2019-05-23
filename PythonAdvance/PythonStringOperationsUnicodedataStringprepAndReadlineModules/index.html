@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="unicodedata模块unicodedata模块提供对Unicode字符数据库（UCD）的访问，该数据库为所有Unicode字符定义字符属性，数据库中包含的数据从UCD 9.0.0版编译而来。unicodedata模块使用的名称和符号与Unicode#44标准附件一致。 unicodedata模块定义的函数如下： unicodedata.lookup()​    unicodedata.loo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T13:52:07.940Z">
+<meta property="og:updated_time" content="2019-05-23T15:47:14.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python文本处理(三)unicodedata &amp; stringprep &amp; readline模块">
 <meta name="twitter:description" content="unicodedata模块unicodedata模块提供对Unicode字符数据库（UCD）的访问，该数据库为所有Unicode字符定义字符属性，数据库中包含的数据从UCD 9.0.0版编译而来。unicodedata模块使用的名称和符号与Unicode#44标准附件一致。 unicodedata模块定义的函数如下： unicodedata.lookup()​    unicodedata.loo">
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  4.1k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  15
                 </span>
               
             </div>
@@ -530,8 +530,132 @@
 <hr>
 <p>stringprep.<strong>in_table_d2</strong>(code)</p>
 <p>​    确定代码是否在表D.2中(具有双向属性“L”的字符)</p>
-<h1 id="readline-GNU-readline接口"><a href="#readline-GNU-readline接口" class="headerlink" title="readline - GNU readline接口"></a>readline - GNU readline接口</h1><p>​    <strong>readline</strong>模块模块定义了许多函数，以便于从Python解释器完成历史文件的读写。模块可以直接使用，也可以通过<strong>rlcompleter</strong>模块使用，后者支持在交互提示下完成Python标识符。使用此模块进行的设置会影响解释器的交互提示和内置<code>input（）</code>函数提供的提示的行为。</p>
+<h1 id="readline模块-GNU-readline接口"><a href="#readline模块-GNU-readline接口" class="headerlink" title="readline模块 - GNU readline接口"></a>readline模块 - GNU readline接口</h1><p>​    <strong>readline</strong>模块模块定义了许多函数，以便于从Python解释器完成历史文件的读写。模块可以直接使用，也可以通过<strong>rlcompleter</strong>模块使用，后者支持在交互提示下完成Python标识符。使用此模块进行的设置会影响解释器的交互提示和内置<code>input（）</code>函数提供的提示的行为。</p>
 <p>​    底层的<strong>readline</strong>库API可以由<strong>libedit</strong>库而不是<strong>gnu readline</strong>实现。在MacOS X上，readline模块检测运行时使用的库。<strong>libedit</strong>的配置文件与<strong>gnu readline</strong>的配置文件不同，如果以编程方式加载配置字符串，则可以检查<strong>readline</strong>中的文本“libedit”。要区分<strong>gnu readline</strong>和<strong>libedit</strong>，使用<strong>doc</strong>。</p>
+<h2 id="Init-file-初始化文件"><a href="#Init-file-初始化文件" class="headerlink" title="Init file 初始化文件"></a>Init file 初始化文件</h2><p>以下函数与init文件和用户配置有关：</p>
+<h3 id="pares-and-bind"><a href="#pares-and-bind" class="headerlink" title="pares_and_bind()"></a>pares_and_bind()</h3><p>​    readline.<strong>parse_and_bind</strong>(string) </p>
+<p>​    执行字符串参数中提供的init行，调用底层库中的<code>rl_parse_and_bind（）</code>函数</p>
+<h3 id="read-init-file"><a href="#read-init-file" class="headerlink" title="read_init_file()"></a>read_init_file()</h3><p>​    readline.<strong>read_init_file</strong>(filename)</p>
+<p>​    执行readline初始化文件,默认文件名是使用的最后一个文件名，会调用底层库中的<code>rl_read_init_file（）</code>函数。</p>
+<h2 id="Line-buffer"><a href="#Line-buffer" class="headerlink" title="Line buffer"></a>Line buffer</h2><p>以下功能在<strong>line buffer</strong> 行缓冲器上运行:</p>
+<h3 id="get-line-buffer"><a href="#get-line-buffer" class="headerlink" title="get_line_buffer()"></a>get_line_buffer()</h3><p>​    readline.<strong>get_line_buffer</strong>()</p>
+<p>​    返回行缓冲区的当前内容（底层库中的rl_line_buffer）</p>
+<h3 id="insert-text"><a href="#insert-text" class="headerlink" title="insert_text()"></a>insert_text()</h3><p>​    readline.<strong>insert_text</strong>(string) </p>
+<p>​    在光标位置将文本插入行缓冲区。这将调用底层库中的<code>rl_insert_text（）</code>，但忽略返回值</p>
+<h3 id="redisplay"><a href="#redisplay" class="headerlink" title="redisplay()"></a>redisplay()</h3><p>​    readline.<strong>redisplay</strong>() </p>
+<p>​    更改屏幕上显示的内容以反映行缓冲区的当前内容， 调用底层库中的<code>rl_redisplay()</code>函数</p>
+<h2 id="History-file"><a href="#History-file" class="headerlink" title="History file"></a>History file</h2><p>​    以下功能在历史文件基础上操作执行：</p>
+<h3 id="read-history-file"><a href="#read-history-file" class="headerlink" title="read_history_file()"></a>read_history_file()</h3><p>​    readline.<strong>read_history_file</strong>(filename) </p>
+<p>​    加载一个readline历史文件，并将其附加到历史列表中，默认文件名为~/.history。这将调用底层库中的<code>read_history()</code>函数</p>
+<h3 id="write-history-file"><a href="#write-history-file" class="headerlink" title="write_history_file()"></a>write_history_file()</h3><p>​    readline.<strong>write_history_file</strong>(filename)</p>
+<p>​    将历史记录列表保存到历史文件中，覆盖任何现有的文件，默认文件名为<code>~/.history</code>，调用底层库<code>write_history()</code></p>
+<h3 id="append-history-file"><a href="#append-history-file" class="headerlink" title="append_history_file()"></a>append_history_file()</h3><p>​    readline.<strong>append_history_file</strong>(filename)</p>
+<p>​    将历史记录的最后一项附加到文件(文件必须已经存在)中，默认文件名为~/.history，会调用底层库的<code>append_history()</code>函数，只有为支持该版本的函数库编译了python时，该函数才存在。</p>
+<h3 id="get-history-length"><a href="#get-history-length" class="headerlink" title="get_history_length()"></a>get_history_length()</h3><p>​    readline.<strong>get_history_length</strong>()</p>
+<p>​    获得历史文件内容的行数。</p>
+<h3 id="set-history-length"><a href="#set-history-length" class="headerlink" title="set_history_length()"></a>set_history_length()</h3><p>​    readline.<strong>set_history_length</strong>(length)</p>
+<p>​    设置或返回要保存在历史文件中的所需行数。<code>write_history_file（）</code>函数通过调用底层库中的<code>history_truncate_file（）</code>，使用此值截断历史文件。负值表示历史文件大小不受限制。</p>
+<h2 id="History-list"><a href="#History-list" class="headerlink" title="History list"></a>History list</h2><p>以下函数在全局历史记录列表上操作：</p>
+<h3 id="clear-history"><a href="#clear-history" class="headerlink" title="clear_history()"></a>clear_history()</h3><p>​    readline.<strong>clear_history</strong>()</p>
+<p>​    清空当前的历史，底层调用<code>clear_history()</code>，只有为支持该版本的函数库编译了Python时，该函数才存在。</p>
+<h3 id="get-current-history-length"><a href="#get-current-history-length" class="headerlink" title="get_current_history_length()"></a>get_current_history_length()</h3><p>​    readline.<strong>get_current_history_length</strong>()</p>
+<p>​    返回当前存在的历史数据的<strong>项目数</strong>，这有别于返回当前历史文件数据所需行数的<code>get_historty_length()</code>。</p>
+<h3 id="get-history-item"><a href="#get-history-item" class="headerlink" title="get_history_item()"></a>get_history_item()</h3><p>​    readline.<strong>get_history_item</strong>(<em>index</em>)</p>
+<p>​    返回索引index处历史项的当前内容，项目索引是从1开始，底层库中会调用<code>history_get()</code>    </p>
+<h3 id="remove-history-item"><a href="#remove-history-item" class="headerlink" title="remove_history_item()"></a>remove_history_item()</h3><p>​    readline.<strong>remove_history_item</strong>(<em>pos</em>)</p>
+<p>​    从历史记录中删除由pos指定位置的历史纪录项，位置是从0开始，底层库中会调用<code>remove_history()</code></p>
+<h3 id="replace-history-item"><a href="#replace-history-item" class="headerlink" title="replace_history_item()"></a>replace_history_item()</h3><p>​    readline.<strong>replace_history_item</strong>(<em>pos, line</em>)</p>
+<p>​    用line替换由pos指定位置的历史纪录项，位置是从0开始，调用底层库的<code>replace_history_entry()</code>函数</p>
+<h3 id="add-history"><a href="#add-history" class="headerlink" title="add_history()"></a>add_history()</h3><p>​    readline.<strong>add_history</strong>(<em>line</em>)</p>
+<p>​    向历史纪录缓存器<strong>history buffer</strong>中追加指定的line，追加到最后一行，会调用底层库中的<code>add_history()</code>    </p>
+<h3 id="set-auto-history"><a href="#set-auto-history" class="headerlink" title="set_auto_history()"></a>set_auto_history()</h3><p>​    readline.<strong>set_auto_history</strong>(<em>enabled</em>)</p>
+<p>​    设置当通过<strong>readline</strong>读取输入时，启动或禁用<code>_history（）</code>的自动调用，enabled是一个bool值，如果为True，则启用自动历史记录；如果为False，则禁用自动历史记录。 </p>
+<p>​    不过在Python3.6版本之后，默认设置为启动自动历史纪录，对某个历史记录的更改不会在多个会话中持续。</p>
+<h2 id="Starup-hooks"><a href="#Starup-hooks" class="headerlink" title="Starup hooks"></a>Starup hooks</h2><p>​    以下功能函数工组在 strapup hooks 启动钩子文件上:</p>
+<h3 id="set-starup-hook"><a href="#set-starup-hook" class="headerlink" title="set_starup_hook()"></a>set_starup_hook()</h3><p>​        readline.<strong>set_starup_hook</strong>(<em>function</em>) 设置或删除由底层库的<code>rl_startup_hook</code>回调调用的函数，如果指定了函数，它将用作新的钩子函数；如果省略或不指定，则删除已安装的任何函数。如果调用 启动钩子在readline打印第一个提示之前，则调用函数不带任何参数。</p>
+<h3 id="set-pre-input-hook"><a href="#set-pre-input-hook" class="headerlink" title="set_pre_input_hook__()"></a>set_pre_input_hook__()</h3><p>​        readline.<strong>set_pre_input_hook</strong>(<em>function</em>)设置或删除由底层库的<code>rl_pre_input_hook</code>回调调用的函数。如果指定了函数，它将用作新的钩子函数；如果省略或不指定，则删除已安装的任何函数。如果调用钩子的时机在打印第一个提示之后且readline开始读取输入字符之前，则调用的时候不带任何参数。只有在版本支持该函数并且编译了python时，该函数才存在。</p>
+<h2 id="Completion-补全机制"><a href="#Completion-补全机制" class="headerlink" title="Completion - 补全机制"></a>Completion - 补全机制</h2><p>​        以下函数与实现自动补全相关，通常由tab键操作，按tab键进行补全，可以建议并自动完成正在键入的单词。默认情况下，<strong>readline</strong>设置为由<strong>rlcompleter</strong>用于完成交互式解释器的python标识符。如果<strong>readline</strong>模块要与自定义完成符一起使用，则应设置一组不同的单词分隔符。</p>
+<h3 id="set-completer"><a href="#set-completer" class="headerlink" title="set_completer()"></a>set_completer()</h3><p>​    readline.<strong>set_completer</strong>(<em>function</em>) 设置或删除完成功能。如果指定了函数，将指定的函数新的新的完成器函数；如果省略或不指定，则删除已安装的任何完成器函数。<strong>completer函数</strong>被作为文本状态函数调用，用于0、1、2……中的状态，直到它返回一个非字符串值。从文本开始返回下一个完成状态。</p>
+<p>​    已安装的完成器函数由传递给底层库<code>rl_completion_matches（）</code>的 <code>entry_func</code> 回调调用。文本字符串来自底层库的<code>rl_attempted_completion_function</code>回调的第一个参数。</p>
+<h3 id="get-completer"><a href="#get-completer" class="headerlink" title="get_completer()"></a>get_completer()</h3><p>​    readline.<strong>get_completer</strong>()</p>
+<p>​    获取completer函数，如果未设置completer函数，则不获取。</p>
+<h3 id="get-completion-type"><a href="#get-completion-type" class="headerlink" title="get_completion_type()"></a>get_completion_type()</h3><p>​    readline.<strong>get_completion_type</strong>() </p>
+<p>​    获取正在尝试完成的类型，以整数形式返回基础库中的rl_completion_类型变量。</p>
+<h3 id="get-begidx"><a href="#get-begidx" class="headerlink" title="get_begidx()"></a>get_begidx()</h3><p>​    readline.<strong>get_begidx</strong>() </p>
+<p>​    获取完成范围的开始索引。索引是传递给底层库<code>rl_attempted_completion_function</code>回调的开始参数。</p>
+<h3 id="get-endidx"><a href="#get-endidx" class="headerlink" title="get_endidx()"></a>get_endidx()</h3><p>​    readline.<strong>get_endidx</strong>()</p>
+<p>​    获取完成范围的结束索引。索引是传递给底层库<code>rl_attempted_completion_function</code>回调的结束参数。    </p>
+<h3 id="set-completer-delims"><a href="#set-completer-delims" class="headerlink" title="set_completer_delims()"></a>set_completer_delims()</h3><p>​    readline.<strong>set_completer_delims</strong>(<em>string</em>)</p>
+<p>​    设置要完成的单词分隔符。单词分隔符决定了要完成的单词的开头（完成范围），需要访问底层库中的<code>rl_completer_word_break_characters</code>变量 。</p>
+<h3 id="get-completer-delims"><a href="#get-completer-delims" class="headerlink" title="get_completer_delims()"></a>get_completer_delims()</h3><p>​    readline.<strong>get_completer_delims</strong>() </p>
+<p>​    获取要完成的单词分隔符。单词分隔符决定了要完成的单词的开头（完成范围），需要访问底层库中的<code>rl_completer_word_break_characters</code>变量 。</p>
+<h3 id="set-completion-display-matches-hook"><a href="#set-completion-display-matches-hook" class="headerlink" title="set_completion_display_matches_hook()"></a>set_completion_display_matches_hook()</h3><p>​    readline.<strong>set_completion_display_matches_hook</strong>(<em>function</em>) </p>
+<p>​    设置或删除完成显示功能，如果指定了函数，指定的函数用作新的完成显示函数；如果省略或不指定，则删除已安装的任何完成显示函数。这将设置或清除底层库中的<code>rl_completion_display_matches_hook</code>回调。每次需要显示匹配的时候，完成显示函数作为function(substitution, [matches], longest_match_length)调用。</p>
+<h2 id="readline使用综合示例"><a href="#readline使用综合示例" class="headerlink" title="readline使用综合示例"></a>readline使用综合示例</h2><pre><code class="python">&gt;&gt;&gt; #demo 演示如何使用readline模块的历史读取和写入功能从用户的主目录自动加载和保存名为.python_history的历史文件，以下代码通常在用户的pythonstartup文件的交互会话期间自动执行。当以交互模式运行python时，此代码实际上是自动运行的（请参见readline配置）。
+&gt;&gt;&gt; import atexit
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; import readline
+&gt;&gt;&gt; histfile = os.path.join(os.path.expanduser(&#39;~&#39;), &#39;.python_history&#39;)
+&gt;&gt;&gt; try:
+    readline.read_history_file(histfile)
+    # default history len is -1 (infinite), which may grow unruly
+    readline.set_history_length(1000)
+except FileNotFoundError:
+    pass
+
+&gt;&gt;&gt; atexit.register(readline.write_history_file, histfile)
+&lt;built-in function write_history_file&gt;
+&gt;&gt;&gt; 
+</code></pre>
+<pre><code class="python">&gt;&gt;&gt; #下面的示例实现了相同的目标，但只通过附加新的历史记录来支持并发的交互式会话。
+&gt;&gt;&gt; import atexit
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; import readline
+&gt;&gt;&gt; histile = os.path.join(os.path.expanduser(&#39;~&#39;), &#39;.python_history&#39;)
+&gt;&gt;&gt; try:
+    readline.read_history_file(histfile)
+    h_len = readline.get_current_history_length()
+except FileNotFoundError:
+    open(histfile, &#39;wb&#39;).close()
+    h_len = 0
+
+
+&gt;&gt;&gt; def save(prev_h_len, histfile):
+    new_h_len = readling.get_current_history_length()
+    readline.set_history_length(1000)
+    readline.append_history_file(new_h_len - prev_h_len, histfile)
+
+
+&gt;&gt;&gt; atexit.register(save, h_len, histfile)
+&lt;function save at 0x10b795e18&gt;
+</code></pre>
+<pre><code class="python">&gt;&gt;&gt; #下面的示例扩展了code.InteractiveConsole类以支持历史记录保存/还原
+&gt;&gt;&gt; import atexit
+&gt;&gt;&gt; import code
+&gt;&gt;&gt; import os
+&gt;&gt;&gt; import readline
+&gt;&gt; class HistoryConsole(code.InteractiveConsole):
+    def __init__(self, locals=None, filename=&quot;&lt;console&gt;&quot;,
+                 histfile=os.path.expanduser(&quot;~/.console-history&quot;)):
+        code.InteractiveConsole.__init__(self, locals, filename)
+        self.init_history(histfile)
+
+    def init_history(self, histfile):
+        readline.parse_and_bind(&quot;tab: complete&quot;)
+        if hasattr(readline, &quot;read_history_file&quot;):
+            try:
+                readline.read_history_file(histfile)
+            except FileNotFoundError:
+                pass
+            atexit.register(self.save_history, histfile)
+
+    def save_history(self, histfile):
+        readline.set_history_length(1000)
+        readline.write_history_file(histfile)
+
+
+&gt;&gt;&gt; 
+</code></pre>
 
       
     </div>
@@ -787,7 +911,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unicodedata模块"><span class="nav-number">1.</span> <span class="nav-text">unicodedata模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-lookup"><span class="nav-number">1.1.</span> <span class="nav-text">unicodedata.lookup()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-name"><span class="nav-number">1.2.</span> <span class="nav-text">unicodedata.name()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-decimal"><span class="nav-number">1.3.</span> <span class="nav-text">unicodedata.decimal()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-digit"><span class="nav-number">1.4.</span> <span class="nav-text">unicodedata.digit()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-numeric"><span class="nav-number">1.5.</span> <span class="nav-text">unicodedata.numeric()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-category"><span class="nav-number">1.6.</span> <span class="nav-text">unicodedata.category()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-bidirectional-chr"><span class="nav-number">1.7.</span> <span class="nav-text">unicodedata.bidirectional(chr)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-combining"><span class="nav-number">1.8.</span> <span class="nav-text">unicodedata.combining()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-east-asian-width"><span class="nav-number">1.9.</span> <span class="nav-text">unicodedata.east_asian_width()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-mirrored"><span class="nav-number">1.10.</span> <span class="nav-text">unicodedata.mirrored()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-decomposition"><span class="nav-number">1.11.</span> <span class="nav-text">unicodedata.decomposition()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-normalize-form-unistr"><span class="nav-number">1.12.</span> <span class="nav-text">unicodedata.normalize(form, unistr)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-unidata-version"><span class="nav-number">1.13.</span> <span class="nav-text">unicodedata.unidata_version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-ucd-3-2-0"><span class="nav-number">1.14.</span> <span class="nav-text">unicodedata.ucd_3_2_0</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stringprep模块-处理Intnet字符"><span class="nav-number">2.</span> <span class="nav-text">stringprep模块-处理Intnet字符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stringprep列表"><span class="nav-number">2.1.</span> <span class="nav-text">stringprep列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#readline-GNU-readline接口"><span class="nav-number">3.</span> <span class="nav-text">readline - GNU readline接口</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#unicodedata模块"><span class="nav-number">1.</span> <span class="nav-text">unicodedata模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-lookup"><span class="nav-number">1.1.</span> <span class="nav-text">unicodedata.lookup()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-name"><span class="nav-number">1.2.</span> <span class="nav-text">unicodedata.name()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-decimal"><span class="nav-number">1.3.</span> <span class="nav-text">unicodedata.decimal()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-digit"><span class="nav-number">1.4.</span> <span class="nav-text">unicodedata.digit()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-numeric"><span class="nav-number">1.5.</span> <span class="nav-text">unicodedata.numeric()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-category"><span class="nav-number">1.6.</span> <span class="nav-text">unicodedata.category()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-bidirectional-chr"><span class="nav-number">1.7.</span> <span class="nav-text">unicodedata.bidirectional(chr)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-combining"><span class="nav-number">1.8.</span> <span class="nav-text">unicodedata.combining()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-east-asian-width"><span class="nav-number">1.9.</span> <span class="nav-text">unicodedata.east_asian_width()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-mirrored"><span class="nav-number">1.10.</span> <span class="nav-text">unicodedata.mirrored()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-decomposition"><span class="nav-number">1.11.</span> <span class="nav-text">unicodedata.decomposition()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-normalize-form-unistr"><span class="nav-number">1.12.</span> <span class="nav-text">unicodedata.normalize(form, unistr)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-unidata-version"><span class="nav-number">1.13.</span> <span class="nav-text">unicodedata.unidata_version</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unicodedata-ucd-3-2-0"><span class="nav-number">1.14.</span> <span class="nav-text">unicodedata.ucd_3_2_0</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stringprep模块-处理Intnet字符"><span class="nav-number">2.</span> <span class="nav-text">stringprep模块-处理Intnet字符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stringprep列表"><span class="nav-number">2.1.</span> <span class="nav-text">stringprep列表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#readline模块-GNU-readline接口"><span class="nav-number">3.</span> <span class="nav-text">readline模块 - GNU readline接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Init-file-初始化文件"><span class="nav-number">3.1.</span> <span class="nav-text">Init file 初始化文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pares-and-bind"><span class="nav-number">3.1.1.</span> <span class="nav-text">pares_and_bind()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#read-init-file"><span class="nav-number">3.1.2.</span> <span class="nav-text">read_init_file()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Line-buffer"><span class="nav-number">3.2.</span> <span class="nav-text">Line buffer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#get-line-buffer"><span class="nav-number">3.2.1.</span> <span class="nav-text">get_line_buffer()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insert-text"><span class="nav-number">3.2.2.</span> <span class="nav-text">insert_text()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redisplay"><span class="nav-number">3.2.3.</span> <span class="nav-text">redisplay()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History-file"><span class="nav-number">3.3.</span> <span class="nav-text">History file</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#read-history-file"><span class="nav-number">3.3.1.</span> <span class="nav-text">read_history_file()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#write-history-file"><span class="nav-number">3.3.2.</span> <span class="nav-text">write_history_file()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#append-history-file"><span class="nav-number">3.3.3.</span> <span class="nav-text">append_history_file()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-history-length"><span class="nav-number">3.3.4.</span> <span class="nav-text">get_history_length()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-history-length"><span class="nav-number">3.3.5.</span> <span class="nav-text">set_history_length()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History-list"><span class="nav-number">3.4.</span> <span class="nav-text">History list</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#clear-history"><span class="nav-number">3.4.1.</span> <span class="nav-text">clear_history()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-current-history-length"><span class="nav-number">3.4.2.</span> <span class="nav-text">get_current_history_length()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-history-item"><span class="nav-number">3.4.3.</span> <span class="nav-text">get_history_item()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove-history-item"><span class="nav-number">3.4.4.</span> <span class="nav-text">remove_history_item()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replace-history-item"><span class="nav-number">3.4.5.</span> <span class="nav-text">replace_history_item()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-history"><span class="nav-number">3.4.6.</span> <span class="nav-text">add_history()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-auto-history"><span class="nav-number">3.4.7.</span> <span class="nav-text">set_auto_history()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Starup-hooks"><span class="nav-number">3.5.</span> <span class="nav-text">Starup hooks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#set-starup-hook"><span class="nav-number">3.5.1.</span> <span class="nav-text">set_starup_hook()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-pre-input-hook"><span class="nav-number">3.5.2.</span> <span class="nav-text">set_pre_input_hook__()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Completion-补全机制"><span class="nav-number">3.6.</span> <span class="nav-text">Completion - 补全机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#set-completer"><span class="nav-number">3.6.1.</span> <span class="nav-text">set_completer()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-completer"><span class="nav-number">3.6.2.</span> <span class="nav-text">get_completer()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-completion-type"><span class="nav-number">3.6.3.</span> <span class="nav-text">get_completion_type()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-begidx"><span class="nav-number">3.6.4.</span> <span class="nav-text">get_begidx()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-endidx"><span class="nav-number">3.6.5.</span> <span class="nav-text">get_endidx()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-completer-delims"><span class="nav-number">3.6.6.</span> <span class="nav-text">set_completer_delims()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-completer-delims"><span class="nav-number">3.6.7.</span> <span class="nav-text">get_completer_delims()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set-completion-display-matches-hook"><span class="nav-number">3.6.8.</span> <span class="nav-text">set_completion_display_matches_hook()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#readline使用综合示例"><span class="nav-number">3.7.</span> <span class="nav-text">readline使用综合示例</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -828,7 +952,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.8k</span>
+    <span title="Site words total count">57.8k</span>
   
 </div>
 
