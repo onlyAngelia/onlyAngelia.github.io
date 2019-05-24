@@ -130,18 +130,18 @@
 
 
 
-<meta name="description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
+<meta name="description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python运算(五)统计statistic模块">
-<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsStatisticModule/index.html">
+<meta property="og:title" content="Python数字运算(三)cmath模块">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonBasic/PythonNumberCaculationsCmathModule/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
+<meta property="og:description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T11:18:33.904Z">
+<meta property="og:updated_time" content="2019-05-24T01:57:03.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python运算(五)统计statistic模块">
-<meta name="twitter:description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
+<meta name="twitter:title" content="Python数字运算(三)cmath模块">
+<meta name="twitter:description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
 
 
 
@@ -171,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsStatisticModule/">
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonBasic/PythonNumberCaculationsCmathModule/">
 
 
 
 
 
-  <title>Python运算(五)统计statistic模块 | 莯滢</title>
+  <title>Python数字运算(三)cmath模块 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python运算(五)统计statistic模块</h1>
+          <h1 class="post-title" itemprop="name headline">Python数字运算(三)cmath模块</h1>
         
 
         <div class="post-meta">
@@ -345,7 +345,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T22:44:39+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T12:56:50+08:00">
                 2017-05-03
               </time>
             
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/PythonAdvance/" itemprop="url" rel="index">
-                    <span itemprop="name">Python进阶</span>
+                  <a href="../../categories/PythonBasic/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
                   </a>
                 </span>
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  939
+                  838
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  3
                 </span>
               
             </div>
@@ -436,8 +436,45 @@
       
 
       
-        <p><strong>statistics</strong>模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 <strong>int</strong>, <strong>float</strong>, <strong>decimal.Decimal</strong> 和 <strong>fractions.Fraction</strong>。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用<code>map()</code>函数转换成可识别的类型<code>map(float, inpud_data)</code>。 <strong>statistics</strong>模块中的统计函数有：</p>
-<h2 id="平均-amp-中位数函数-平均值、中位数等"><a href="#平均-amp-中位数函数-平均值、中位数等" class="headerlink" title="平均&amp;中位数函数(平均值、中位数等)"></a>平均&amp;中位数函数(平均值、中位数等)</h2><table>
+        <p><strong>cmath</strong>模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算</p>
+<h2 id="复数极坐标系转换函数"><a href="#复数极坐标系转换函数" class="headerlink" title="复数极坐标系转换函数"></a>复数极坐标系转换函数</h2><p>在<a href="https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/">Python数据类型(一)数字类型</a>中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>phase</strong>(x)</td>
+<td>以浮点数的形式返回x的弧度，范围在[-π，π]</td>
+</tr>
+<tr>
+<td>cmath.<strong>polar</strong>(x)</td>
+<td>返回x在极坐标系中的坐标(r,phi)</td>
+</tr>
+<tr>
+<td>cmath.<strong>rect</strong>(r, phi)</td>
+<td>返回坐标(r, phi)在极坐标系中对应的复数</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">&gt;&gt;&gt; import cmath
+&gt;&gt;&gt; cmath.phase(complex(-1.0, 0.0))
+3.141592653589793
+&gt;&gt;&gt; cmath.phase(complex(-1.0,0.0))
+3.141592653589793
+&gt;&gt;&gt; cmath.phase(complex(-0.5, 0.0))
+3.141592653589793
+&gt;&gt;&gt; cmath.phase(complex(-0.5, 0.3))
+2.601173153319209
+&gt;&gt;&gt; cmath.polar(complex(-0.5, 0.3))
+(0.58309518948453, 2.601173153319209)
+&gt;&gt;&gt; cmath.rect(0.58309518948453, 2.601173153319209)
+(-0.49999999999999994+0.3j)
+</code></pre>
+<h2 id="幂函数与对数函数"><a href="#幂函数与对数函数" class="headerlink" title="幂函数与对数函数"></a>幂函数与对数函数</h2><table>
 <thead>
 <tr>
 <th>函数</th>
@@ -446,62 +483,33 @@
 </thead>
 <tbody>
 <tr>
-<td>statistic.<strong>mean</strong>()</td>
-<td>返回数据的算术平均值，如果数据为空，则会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a>。算术平均值容易受到异常值的影响，并不是一个稳定的估量值。</td>
+<td>cmath.<strong>exp</strong>(x)</td>
+<td>返回<code>e**x</code></td>
 </tr>
 <tr>
-<td>statistic.<strong>harmonic_mean</strong>()</td>
-<td>返回调和优化平均值。调和平均值又被称为倒数平均值，是算术平均值的倒数。计算形式如下：数据a，b，c 的调和平均值为$\dfrac{3}{\dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}}$     如果数据为空，或数据存在负数，同样会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a></td>
+<td>cmath.<strong>log</strong>(x,base)</td>
+<td>返回以base为底x的对数</td>
 </tr>
 <tr>
-<td>statistic.<strong>median</strong>()</td>
-<td>返回数据的中位数，如果数据总和为偶数，则返回中间两个数字的平均值。中位数比较稳定，不太容易受异常数据的影响。如果数据为空，同样会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a></td>
+<td>cmath.<strong>log10</strong>(x)</td>
+<td>返回以10为底x的对数</td>
 </tr>
 <tr>
-<td>statistic.<strong>median_low</strong>()</td>
-<td>返回较低平均值，当数据总数为偶数时，取中间位置较小的数值</td>
-</tr>
-<tr>
-<td>statistic.<strong>median_high</strong>()</td>
-<td>返回较高平均值，当数据总数为偶数时，取中间位置较大的数值</td>
-</tr>
-<tr>
-<td>statistic.<strong>median_grouped</strong>(data, interval = 1)</td>
-<td>返回分组连续数据的中位数，以50%位数计算，interval代表计算间距，默认为1</td>
-</tr>
-<tr>
-<td>statistic.<strong>media_mode</strong>()</td>
-<td>返回出现频率最高的数值</td>
+<td>cmath.<strong>sqrt</strong>(x)</td>
+<td>x的开方</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="python">&gt;&gt;&gt; import statistics
-&gt;&gt;&gt; statistics.mean([23.4,47.2,56.45,65.8])
-48.2125
-&gt;&gt;&gt; statistics.harmonic_mean([2.4, 3.6, 12.3])
-3.867248908296943
-&gt;&gt;&gt; statistics.median([12,4,6,8,9,14,35])
-9
-&gt;&gt;&gt; statistics.median([1,3,5,7])
-4.0
-&gt;&gt;&gt; statistics.median_low([1,3,5,7])
-3
-&gt;&gt;&gt; statistics.median_high([1,3,5,7])
-5
-&gt;&gt;&gt; statistics.median_grouped([52,52,53,54])
-52.5
-&gt;&gt;&gt; statistics.median_grouped([1,2,2,3,4,4,4,4,4,5])
-3.7
-&gt;&gt;&gt; statistics.median_grouped([1,3,5,7], interval =1)
-4.5
-&gt;&gt;&gt; statistics.median_grouped([1,3,5,7], interval = 2)
-4.0
-&gt;&gt;&gt; statistics.mode([1,1,2,3,3,3,3,4])
-3
-&gt;&gt;&gt; statistics.mode([&#39;red&#39;,&#39;blue&#39;,&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;,&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;,&#39;red&#39;])
-&#39;red&#39;
+<pre><code class="python">&gt;&gt;&gt; cmath.exp(complex(2.0, 0.0))
+(7.38905609893065+0j)
+&gt;&gt;&gt; cmath.exp(complex(10.0, 2.0))
+(-9166.244060822655+20028.608669281643j)
+&gt;&gt;&gt; cmath.log10(complex(100.0,2.0))
+(2.0000868415292326+0.008684731797315706j)
+&gt;&gt;&gt; cmath.sqrt(complex(2.0, 1.0))
+(1.455346690225355+0.34356074972251244j)
 </code></pre>
-<h2 id="分布函数-方差、标准差等"><a href="#分布函数-方差、标准差等" class="headerlink" title="分布函数(方差、标准差等)"></a>分布函数(方差、标准差等)</h2><table>
+<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
 <thead>
 <tr>
 <th>函数</th>
@@ -510,33 +518,130 @@
 </thead>
 <tbody>
 <tr>
-<td>statistics.<strong>pstdev</strong>(data, mu=None)</td>
-<td>返回数据的总体标准差，mu为平均值，如果给值则用指定的数值，如果没有指定，则自动计算</td>
+<td>cmath.<strong>acos</strong>(x)</td>
+<td>返回x的反余弦值</td>
 </tr>
 <tr>
-<td>statistics.<strong>pvariance</strong>(data, mu=None)</td>
-<td>返回数据的总体方差,mu为平均值，如果指定数据则用给定值，如果未给出，则自动计算</td>
+<td>cmath.<strong>asin</strong>(x)</td>
+<td>返回x的反正弦值</td>
 </tr>
 <tr>
-<td>statistics.<strong>stdev</strong>(data, xbar=None)</td>
-<td>返回数据的样品标准差，xbar如果指定则用给的值，如果没有指定则自动计算。</td>
+<td>cmath.<strong>atan</strong>(x)</td>
+<td>返回x的反正切值</td>
 </tr>
 <tr>
-<td>statistics.<strong>variance</strong>(data, xbar=None)</td>
-<td>返回样本方差，如果指定xbar则用给的值，如果没有给出，则自动计算</td>
+<td>cmath.<strong>cos</strong>(x)</td>
+<td>返回x的余弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>sin</strong>(x)</td>
+<td>返回x的正弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>tan</strong>(x)</td>
+<td>返回x的正切值</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="python">&gt;&gt;&gt; statistics.pstdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-0.986893273527251
-&gt;&gt;&gt; statistics.pvariance([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-0.9739583333333334
-&gt;&gt;&gt; statistics.stdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-1.0810874155219827
-&gt;&gt;&gt; statistics.variance([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-1.16875
-</code></pre>
-<p>有关Python针对数据的运算各个类型数据的运算和相关的算术模块整理完毕，正因为Python对数据运算处理的庞大，使得Python在数据分析之中占有重要的位置。同时有许多外置框架将Python数据结构改良和对统计模块的扩展，例如Numpy、Pandas等，非常方便数据清洗。</p>
+<h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>acosh</strong>(x)</td>
+<td>返回双曲线中x的反余弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>asinh</strong>(x)</td>
+<td>返回双曲线中x的反正弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>atanh</strong>(x)</td>
+<td>返回双曲线中x的反正切值</td>
+</tr>
+<tr>
+<td>cmath.<strong>cosh</strong>(x)</td>
+<td>返回双曲线中x的余弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>sinh</strong>(x)</td>
+<td>返回双曲线中x的正弦值</td>
+</tr>
+<tr>
+<td>cmath.<strong>tanh</strong>(x)</td>
+<td>返回双曲线中x的正切值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="分类函数"><a href="#分类函数" class="headerlink" title="分类函数"></a>分类函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>isfinite</strong>(x)</td>
+<td>模数r和弧度phi都是有理数，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>cmath.<strong>isinf</strong>(x)</td>
+<td>模数r和弧度phi都趋近于正无穷，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>cmath.<strong>isnan</strong>(x)</td>
+<td>模数r和弧度phi都是Nan，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>cmath.<strong>isclose</strong>(a,b,*,rel_tol,abs_tol)</td>
+<td>若a和b的值比较接近则返回True，否则返回False。判定标准是根据给定的绝对和相对容差。rel_tol是相对容差，必须大于0，是a和b之间允许的最大差值。abs_tol是最小绝对容差，至少为0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常数"><a href="#常数" class="headerlink" title="常数"></a>常数</h2><table>
+<thead>
+<tr>
+<th>常数名</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cmath.<strong>pi</strong></td>
+<td>常数π=3.141926….</td>
+</tr>
+<tr>
+<td>cmath.<strong>e</strong></td>
+<td>常数e= 2.718281….</td>
+</tr>
+<tr>
+<td>cmath.<strong>tau</strong></td>
+<td>常数τ = 6.283185…，为π的两倍</td>
+</tr>
+<tr>
+<td>cmath.<strong>inf</strong></td>
+<td>正无穷大浮点数</td>
+</tr>
+<tr>
+<td>cmath.<strong>infj</strong></td>
+<td>实部为0，虚部为正无穷大浮点数的复数</td>
+</tr>
+<tr>
+<td>cmath.<strong>nan</strong></td>
+<td>浮点数”非数值”</td>
+</tr>
+<tr>
+<td>cmath.<strong>nanj</strong></td>
+<td>实部为0，虚部为Nan的”非数值”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>cmath</strong>模块与<strong>math</strong>模块许多功能看上去相似，但实际上是不同的功能。cmath返回的值是复数，哪怕虚部为0。许多人不理解为什么单独定义一个cmath模块而不是math模块一起解决复数运算问题。假设有一天需要用特别复杂的方式去计算，就会理解这么定义的原因。</p>
 
       
     </div>
@@ -586,7 +691,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsStatisticModule/" title="Python运算(五)统计statistic模块">https://onlyangelia.github.io/PythonAdvance/PythonCaculationsStatisticModule/</a>
+    <a href="https://onlyangelia.github.io/PythonBasic/PythonNumberCaculationsCmathModule/" title="Python数字运算(三)cmath模块">https://onlyangelia.github.io/PythonBasic/PythonNumberCaculationsCmathModule/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -614,8 +719,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../PythonNumberCaculationsRandomAndSecrets/" rel="next" title="Python运算(四)random模块&secrets模块">
-                <i class="fa fa-chevron-left"></i> Python运算(四)random模块&secrets模块
+              <a href="../PythonCaculationsMathModule/" rel="next" title="Python运算(二)math模块">
+                <i class="fa fa-chevron-left"></i> Python运算(二)math模块
               </a>
             
           </div>
@@ -624,8 +729,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="../PythonDataTypeString/" rel="prev" title="Python数据类型(二)文本类型-str">
-                Python数据类型(二)文本类型-str <i class="fa fa-chevron-right"></i>
+              <a href="../PythonNumberCaculationsRandomAndSecrets/" rel="prev" title="Python运算(四)random模块&secrets模块">
+                Python运算(四)random模块&secrets模块 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -719,7 +824,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="../../categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -792,7 +897,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#平均-amp-中位数函数-平均值、中位数等"><span class="nav-number">1.</span> <span class="nav-text">平均&amp;中位数函数(平均值、中位数等)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布函数-方差、标准差等"><span class="nav-number">2.</span> <span class="nav-text">分布函数(方差、标准差等)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#复数极坐标系转换函数"><span class="nav-number">1.</span> <span class="nav-text">复数极坐标系转换函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂函数与对数函数"><span class="nav-number">2.</span> <span class="nav-text">幂函数与对数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角函数"><span class="nav-number">3.</span> <span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲函数"><span class="nav-number">4.</span> <span class="nav-text">双曲函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类函数"><span class="nav-number">5.</span> <span class="nav-text">分类函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常数"><span class="nav-number">6.</span> <span class="nav-text">常数</span></a></li></ol></div>
             
 
           </div>
@@ -833,7 +938,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.8k</span>
+    <span title="Site words total count">58.1k</span>
   
 </div>
 

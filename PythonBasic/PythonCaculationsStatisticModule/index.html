@@ -130,18 +130,18 @@
 
 
 
-<meta name="description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
+<meta name="description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python运算(二)math模块">
-<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/index.html">
+<meta property="og:title" content="Python运算(五)统计statistic模块">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonBasic/PythonCaculationsStatisticModule/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
+<meta property="og:description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T11:17:34.918Z">
+<meta property="og:updated_time" content="2019-05-24T01:57:27.957Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python运算(二)math模块">
-<meta name="twitter:description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
+<meta name="twitter:title" content="Python运算(五)统计statistic模块">
+<meta name="twitter:description" content="statistics模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 int, float, decimal.Decimal 和 fractions.Fraction。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用map()函数转换成可识别的类型map(float, inpud_data)。 statistics模块中的统计函数有： 平均&amp;a">
 
 
 
@@ -171,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/">
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonBasic/PythonCaculationsStatisticModule/">
 
 
 
 
 
-  <title>Python运算(二)math模块 | 莯滢</title>
+  <title>Python运算(五)统计statistic模块 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python运算(二)math模块</h1>
+          <h1 class="post-title" itemprop="name headline">Python运算(五)统计statistic模块</h1>
         
 
         <div class="post-meta">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T13:49:09+08:00">
-                2017-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T22:44:39+08:00">
+                2017-05-03
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/PythonAdvance/" itemprop="url" rel="index">
-                    <span itemprop="name">Python进阶</span>
+                  <a href="../../categories/PythonBasic/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
                   </a>
                 </span>
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  939
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  4
                 </span>
               
             </div>
@@ -436,328 +436,107 @@
       
 
       
-        <p><strong>math</strong>是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用<strong>cmath</strong>模块的同名函数，无特殊情况下，<strong>math</strong>模块中的函数返回值均为浮点数。</p>
-<h2 id="数论与表示函数"><a href="#数论与表示函数" class="headerlink" title="数论与表示函数"></a>数论与表示函数</h2><table>
+        <p><strong>statistics</strong>模块为具有数字特性的数据提供数学统计计算函数，若无明确指明，支持的数据类型 <strong>int</strong>, <strong>float</strong>, <strong>decimal.Decimal</strong> 和 <strong>fractions.Fraction</strong>。其它类型暂不支持，混合类型也不能独立操作，如果 输入的数据是混合类型，必须用<code>map()</code>函数转换成可识别的类型<code>map(float, inpud_data)</code>。 <strong>statistics</strong>模块中的统计函数有：</p>
+<h2 id="平均-amp-中位数函数-平均值、中位数等"><a href="#平均-amp-中位数函数-平均值、中位数等" class="headerlink" title="平均&amp;中位数函数(平均值、中位数等)"></a>平均&amp;中位数函数(平均值、中位数等)</h2><table>
 <thead>
 <tr>
-<th>函数名</th>
-<th>释义/代码实例</th>
+<th>函数</th>
+<th>释义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>math.<strong>ceil</strong>(x)</td>
-<td>返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.<strong>ceil</strong>()返回一个Integer类的值</td>
+<td>statistic.<strong>mean</strong>()</td>
+<td>返回数据的算术平均值，如果数据为空，则会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a>。算术平均值容易受到异常值的影响，并不是一个稳定的估量值。</td>
 </tr>
 <tr>
-<td>math.<strong>copysign</strong>(x,y)</td>
-<td>返回一个基于x的绝对值和y的符号的浮点数&gt;&gt;&gt; math.copysign(2.4, -1.2)<br>-2.4</td>
+<td>statistic.<strong>harmonic_mean</strong>()</td>
+<td>返回调和优化平均值。调和平均值又被称为倒数平均值，是算术平均值的倒数。计算形式如下：数据a，b，c 的调和平均值为$\dfrac{3}{\dfrac{1}{a} + \dfrac{1}{b} + \dfrac{1}{c}}$     如果数据为空，或数据存在负数，同样会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a></td>
 </tr>
 <tr>
-<td>math.<strong>fabs</strong>(x)</td>
-<td>返回x的绝对值</td>
+<td>statistic.<strong>median</strong>()</td>
+<td>返回数据的中位数，如果数据总和为偶数，则返回中间两个数字的平均值。中位数比较稳定，不太容易受异常数据的影响。如果数据为空，同样会触发<a href="https://docs.python.org/zh-cn/3.6/library/statistics.html#statistics.StatisticsError"><code>StatisticsError</code></a></td>
 </tr>
 <tr>
-<td>math.<strong>factorial</strong>(x)</td>
-<td>返回x的阶乘，当x不是整数或者是负数时，引发ValueError异常</td>
+<td>statistic.<strong>median_low</strong>()</td>
+<td>返回较低平均值，当数据总数为偶数时，取中间位置较小的数值</td>
 </tr>
 <tr>
-<td>math.<strong>floor</strong>(x)</td>
-<td>返回x的向下取整，小于或等于x的最大整数，如果x不是浮点数，则委托x.<strong>floor</strong>()返回一个Integral值</td>
+<td>statistic.<strong>median_high</strong>()</td>
+<td>返回较高平均值，当数据总数为偶数时，取中间位置较大的数值</td>
 </tr>
 <tr>
-<td>math.<strong>fmod</strong>(x,y)</td>
-<td>x除以y的余数，但结果并不一定与x%y相同，x%y取余是向下取余，而fomd函数是向靠近0的方向取余，并且fmod函数精度更准确，所以fmod()函数更适合浮点数</td>
+<td>statistic.<strong>median_grouped</strong>(data, interval = 1)</td>
+<td>返回分组连续数据的中位数，以50%位数计算，interval代表计算间距，默认为1</td>
 </tr>
 <tr>
-<td>math.<strong>frexp</strong>(x)</td>
-<td>返回x的尾数和指数对(m，e),m是一个浮点数，e是一个整数，m和e要满足 <code>x== m * 2 **e</code>。 如果x为零，则返回(0.0,0)</td>
-</tr>
-<tr>
-<td>math.<strong>fsum</strong>(iterable)</td>
-<td>返回迭代中的精确浮点值，通过跟踪多个中间部分和 以此避免精度损失。该方法的准确性取决于IEEE-754算术保证和 舍入模式为半偶的典型情况，在一些非Windows版本中，底层C库使用扩展精度添加，并且有时可能会使中间和加倍，导致在最低有效位中关闭。<br>&gt;&gt;&gt; sum([.1, .1, .1, .1, .1, .1, .1, .1, .1, .1])<br>0.9999999999999999<br>&gt;&gt;&gt; math. fsum([.1, .1, .1, .1, .1, .1, .1, .1, .1, .1])<br>1.0<br></td>
-</tr>
-<tr>
-<td>math.<strong>gcd</strong>(a,b)</td>
-<td>返回a和b的最大公约数，如果a或b之一非负，则函数函数的值是同时能正常a和b的最大正整数，gcd(0，0)则返回0</td>
-</tr>
-<tr>
-<td>math.<strong>isclose</strong>(a,b,*,rel_tol=1e-09,abs_tol=0.0)</td>
-<td>若a和b的值比较接近则返回True，否则返回False。判定标准是根据给定的绝对和相对容差。rel_tol是相对容差，必须大于0，是a和b之间允许的最大差值。abs_tol是最小绝对容差，至少为0</td>
-</tr>
-<tr>
-<td>math.<strong>isfinite</strong>(x)</td>
-<td>如果x是有限位数，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>math.<strong>isinf</strong>(x)</td>
-<td>如果x是正无穷或负无穷，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>math.<strong>isnan</strong>(x)</td>
-<td>如果x是NaN，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>math.<strong>ldexp</strong>(x,i)</td>
-<td>返回<code>x*(2**i)</code>, 是函数frexp()的反函数</td>
-</tr>
-<tr>
-<td>math.<strong>modf</strong>(x)</td>
-<td>返回x的小数和整数部分，两个结果都带有x的符号并且是浮点数</td>
-</tr>
-<tr>
-<td>math.<strong>trunc</strong>(x)</td>
-<td>返回x实部截断Integeral</td>
+<td>statistic.<strong>media_mode</strong>()</td>
+<td>返回出现频率最高的数值</td>
 </tr>
 </tbody>
 </table>
-<h2 id="幂函数与对数函数"><a href="#幂函数与对数函数" class="headerlink" title="幂函数与对数函数"></a>幂函数与对数函数</h2><table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>释义/代码示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>exp</strong>(x)</td>
-<td>返回 e**x</td>
-</tr>
-<tr>
-<td>math.<strong>expm1</strong>(x)</td>
-<td>返回e**x - 1</td>
-</tr>
-<tr>
-<td>math.<strong>log</strong>(x,base)</td>
-<td>使用一个参数，则返回x的自然对数(底为e)。使用两个参数，返回给定的base的对数x，计算为log(x)/log(base)。</td>
-</tr>
-<tr>
-<td>math.<strong>log1p</strong>(x)</td>
-<td>返回1+x(base e)的自然对数</td>
-</tr>
-<tr>
-<td>math.<strong>log2</strong>(x)</td>
-<td>返回x以2为底的对数，比log(x,2)准确度高</td>
-</tr>
-<tr>
-<td>math.<strong>log10</strong>(x)</td>
-<td>返回x底为10的对数，比log(x,10)准确度高</td>
-</tr>
-<tr>
-<td>math.<strong>pow</strong>(x,y)</td>
-<td>返回x的y次幂</td>
-</tr>
-<tr>
-<td>math.<strong>sqrt</strong>(x)</td>
-<td>返回x的平方根</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="python">&gt;&gt;&gt; x = 5
-&gt;&gt;&gt; math.exp(x)
-148.4131591025766
-&gt;&gt;&gt; math.expm1(x)
-147.4131591025766
-&gt;&gt;&gt; math.log(x)
-1.6094379124341003
-&gt;&gt;&gt; math.log(x, 2)
-2.321928094887362
-&gt;&gt;&gt; math.log1p(x)
-1.791759469228055
-&gt;&gt;&gt; math.log2(x)
-2.321928094887362
-&gt;&gt;&gt; math.log10(x)
-0.6989700043360189
-&gt;&gt;&gt; math.pow(x, 2)
-25.0
-&gt;&gt;&gt; math.sqrt(x)
-2.23606797749979
+<pre><code class="python">&gt;&gt;&gt; import statistics
+&gt;&gt;&gt; statistics.mean([23.4,47.2,56.45,65.8])
+48.2125
+&gt;&gt;&gt; statistics.harmonic_mean([2.4, 3.6, 12.3])
+3.867248908296943
+&gt;&gt;&gt; statistics.median([12,4,6,8,9,14,35])
+9
+&gt;&gt;&gt; statistics.median([1,3,5,7])
+4.0
+&gt;&gt;&gt; statistics.median_low([1,3,5,7])
+3
+&gt;&gt;&gt; statistics.median_high([1,3,5,7])
+5
+&gt;&gt;&gt; statistics.median_grouped([52,52,53,54])
+52.5
+&gt;&gt;&gt; statistics.median_grouped([1,2,2,3,4,4,4,4,4,5])
+3.7
+&gt;&gt;&gt; statistics.median_grouped([1,3,5,7], interval =1)
+4.5
+&gt;&gt;&gt; statistics.median_grouped([1,3,5,7], interval = 2)
+4.0
+&gt;&gt;&gt; statistics.mode([1,1,2,3,3,3,3,4])
+3
+&gt;&gt;&gt; statistics.mode([&#39;red&#39;,&#39;blue&#39;,&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;,&#39;red&#39;,&#39;green&#39;,&#39;blue&#39;,&#39;red&#39;])
+&#39;red&#39;
 </code></pre>
-<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
+<h2 id="分布函数-方差、标准差等"><a href="#分布函数-方差、标准差等" class="headerlink" title="分布函数(方差、标准差等)"></a>分布函数(方差、标准差等)</h2><table>
 <thead>
 <tr>
-<th>函数名</th>
-<th>释义/代码示例</th>
+<th>函数</th>
+<th>释义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>math.<strong>acos</strong>(x)</td>
-<td>以弧度为单位返回x的反余弦值</td>
+<td>statistics.<strong>pstdev</strong>(data, mu=None)</td>
+<td>返回数据的总体标准差，mu为平均值，如果给值则用指定的数值，如果没有指定，则自动计算</td>
 </tr>
 <tr>
-<td>math.<strong>asin</strong>(x)</td>
-<td>以弧度为单位返回x的反正弦值</td>
+<td>statistics.<strong>pvariance</strong>(data, mu=None)</td>
+<td>返回数据的总体方差,mu为平均值，如果指定数据则用给定值，如果未给出，则自动计算</td>
 </tr>
 <tr>
-<td>math.<strong>atan</strong>(x)</td>
-<td>以弧度为单位返回x的反正切值</td>
+<td>statistics.<strong>stdev</strong>(data, xbar=None)</td>
+<td>返回数据的样品标准差，xbar如果指定则用给的值，如果没有指定则自动计算。</td>
 </tr>
 <tr>
-<td>math.<strong>atan2</strong>(y,x)</td>
-<td>以弧度为单位返回athan(y/x)，结果在-pi和pi之间，可以计算角度的正确象限</td>
-</tr>
-<tr>
-<td>math.<strong>cos</strong>(x)</td>
-<td>返回x弧度的余弦值</td>
-</tr>
-<tr>
-<td>math.<strong>hypot</strong>(x,y)</td>
-<td>返回欧几里德范数，sqrt(x<em>x + y\</em>y),是原点到点(x，y)的向量距离</td>
-</tr>
-<tr>
-<td>math.<strong>sin</strong>(x)</td>
-<td>返回x弧度的正弦值</td>
-</tr>
-<tr>
-<td>math.<strong>tan</strong>(x)</td>
-<td>返回x弧度的正切值</td>
+<td>statistics.<strong>variance</strong>(data, xbar=None)</td>
+<td>返回样本方差，如果指定xbar则用给的值，如果没有给出，则自动计算</td>
 </tr>
 </tbody>
 </table>
-<p>注意： x的取值若超出范围，否则会报<code>ValueError: math domain error</code></p>
-<pre><code class="python">&gt;&gt;&gt; math.acos(2.3)
-Traceback (most recent call last):
-  File &quot;&lt;pyshell#26&gt;&quot;, line 1, in &lt;module&gt;
-    math.acos(2.3)
-ValueError: math domain error
-&gt;&gt;&gt; math.acos(0.5)
-1.0471975511965976
-&gt;&gt;&gt; math.asin(0.5)
-0.5235987755982988
-&gt;&gt;&gt; math.atan(0.5)
-0.46364760900080615
-&gt;&gt;&gt; math.atan2(0.5,0.5)
-0.7853981633974483
-&gt;&gt;&gt; math.cos(0.5)
-0.8775825618903728
-&gt;&gt;&gt; math.hypot(0.5,0.5)
-0.7071067811865476
-&gt;&gt;&gt; math.sin(0.5)
-0.479425538604203
-&gt;&gt;&gt; math.tan(0.5)
-0.5463024898437905
-&gt;&gt;&gt; math.tan(1)
-1.557407724654902
-&gt;&gt;&gt; math.tan(1.4)
-5.797883715482887
-&gt;&gt;&gt; math.tan(2)
--2.185039863261519
-&gt;&gt;&gt; math.tan(2.5)
--0.7470222972386602
+<pre><code class="python">&gt;&gt;&gt; statistics.pstdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
+0.986893273527251
+&gt;&gt;&gt; statistics.pvariance([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
+0.9739583333333334
+&gt;&gt;&gt; statistics.stdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
+1.0810874155219827
+&gt;&gt;&gt; statistics.variance([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
+1.16875
 </code></pre>
-<h2 id="角度转换"><a href="#角度转换" class="headerlink" title="角度转换"></a>角度转换</h2><table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>degrees</strong>(x)</td>
-<td>将角度x从弧度转换为度数</td>
-</tr>
-<tr>
-<td>math.<strong>radians</strong>(x)</td>
-<td>将角度x从度数转换为弧度</td>
-</tr>
-</tbody>
-</table>
-<h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><p>双曲函数是基于双曲线而非圆来对三角函数进行模拟</p>
-<table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>acosh</strong>(x)</td>
-<td>返回x的反双曲余弦值</td>
-</tr>
-<tr>
-<td>math.<strong>asinh</strong>(x)</td>
-<td>返回x的反双曲正弦值</td>
-</tr>
-<tr>
-<td>math.<strong>atanh</strong>(x)</td>
-<td>返回x的反双曲正切值</td>
-</tr>
-<tr>
-<td>math.<strong>cosh</strong>(x)</td>
-<td>返回x的双曲余弦值</td>
-</tr>
-<tr>
-<td>math.<strong>sinh</strong>(x)</td>
-<td>返回x的双曲正弦值</td>
-</tr>
-<tr>
-<td>math.<strong>tanh</strong>(x)</td>
-<td>返回x的双曲正切值</td>
-</tr>
-</tbody>
-</table>
-<h2 id="特殊函数"><a href="#特殊函数" class="headerlink" title="特殊函数"></a>特殊函数</h2><table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>erf</strong>(x)</td>
-<td>用来计算传统的统计函数，如累积标准正态分布</td>
-</tr>
-<tr>
-<td>math.<strong>erfc</strong>(x)</td>
-<td>返回x的互补误差函数，<a href="https://en.wikipedia.org/wiki/Error_function">互补错误函数</a> 定义为 <code>1.0 - erf(x)</code></td>
-</tr>
-<tr>
-<td>math.<strong>gamma</strong>(x)</td>
-<td>返回x的伽马函数值</td>
-</tr>
-<tr>
-<td>math.<strong>lgamma</strong>(x)</td>
-<td>返回Gamma函数x绝对值的自然对数</td>
-</tr>
-</tbody>
-</table>
-<h2 id="math模块中的常数"><a href="#math模块中的常数" class="headerlink" title="math模块中的常数"></a>math模块中的常数</h2><table>
-<thead>
-<tr>
-<th>常数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>math.<strong>pi</strong></td>
-<td>数学常数π=3.1415926…</td>
-</tr>
-<tr>
-<td>math.<strong>e</strong></td>
-<td>数学常数e= 2.718281….</td>
-</tr>
-<tr>
-<td>math.<strong>tau</strong></td>
-<td>数学常数τ = 6.283185…</td>
-</tr>
-<tr>
-<td>math.<strong>inf</strong></td>
-<td>正无穷大浮点数，负无穷大浮点数使用-math.<strong>inf</strong></td>
-</tr>
-<tr>
-<td>math.<strong>nan</strong></td>
-<td>浮点”非数字”值</td>
-</tr>
-</tbody>
-</table>
-<p>math模块是数学函数的包装模块，若使用不符合数学规范，则会触发<a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#ValueError"><code>ValueError</code></a> </p>
-<p>参考文献：</p>
-<p>1.<a href="https://docs.python.org/English/3.6/library/math.html#math.fmod">https://docs.python.org/English/3.6/library/math.html#math.fmod</a></p>
+<p>有关Python针对数据的运算各个类型数据的运算和相关的算术模块整理完毕，正因为Python对数据运算处理的庞大，使得Python在数据分析之中占有重要的位置。同时有许多外置框架将Python数据结构改良和对统计模块的扩展，例如Numpy、Pandas等，非常方便数据清洗。</p>
 
       
     </div>
@@ -807,7 +586,7 @@ ValueError: math domain error
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/" title="Python运算(二)math模块">https://onlyangelia.github.io/PythonAdvance/PythonCaculationsMathModule/</a>
+    <a href="https://onlyangelia.github.io/PythonBasic/PythonCaculationsStatisticModule/" title="Python运算(五)统计statistic模块">https://onlyangelia.github.io/PythonBasic/PythonCaculationsStatisticModule/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -835,8 +614,8 @@ ValueError: math domain error
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../PythonNumberCaculations/" rel="next" title="Python数字运算(-)数值、哈希、按位、布尔等运算">
-                <i class="fa fa-chevron-left"></i> Python数字运算(-)数值、哈希、按位、布尔等运算
+              <a href="../PythonNumberCaculationsRandomAndSecrets/" rel="next" title="Python运算(四)random模块&secrets模块">
+                <i class="fa fa-chevron-left"></i> Python运算(四)random模块&secrets模块
               </a>
             
           </div>
@@ -845,8 +624,8 @@ ValueError: math domain error
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="../PythonNumberCaculationsCmathModule/" rel="prev" title="Python数字运算(三)cmath模块">
-                Python数字运算(三)cmath模块 <i class="fa fa-chevron-right"></i>
+              <a href="../PythonDataTypeString/" rel="prev" title="Python数据类型(二)文本类型-str">
+                Python数据类型(二)文本类型-str <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -940,7 +719,7 @@ ValueError: math domain error
               
               <div class="site-state-item site-state-categories">
                 <a href="../../categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1013,7 +792,7 @@ ValueError: math domain error
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论与表示函数"><span class="nav-number">1.</span> <span class="nav-text">数论与表示函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂函数与对数函数"><span class="nav-number">2.</span> <span class="nav-text">幂函数与对数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角函数"><span class="nav-number">3.</span> <span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#角度转换"><span class="nav-number">4.</span> <span class="nav-text">角度转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲函数"><span class="nav-number">5.</span> <span class="nav-text">双曲函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊函数"><span class="nav-number">6.</span> <span class="nav-text">特殊函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#math模块中的常数"><span class="nav-number">7.</span> <span class="nav-text">math模块中的常数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#平均-amp-中位数函数-平均值、中位数等"><span class="nav-number">1.</span> <span class="nav-text">平均&amp;中位数函数(平均值、中位数等)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分布函数-方差、标准差等"><span class="nav-number">2.</span> <span class="nav-text">分布函数(方差、标准差等)</span></a></li></ol></div>
             
 
           </div>
@@ -1054,7 +833,7 @@ ValueError: math domain error
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.8k</span>
+    <span title="Site words total count">58.1k</span>
   
 </div>
 

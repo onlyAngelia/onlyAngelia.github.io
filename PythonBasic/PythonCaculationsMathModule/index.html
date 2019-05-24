@@ -130,18 +130,18 @@
 
 
 
-<meta name="description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
+<meta name="description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python数字运算(三)cmath模块">
-<meta property="og:url" content="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/index.html">
+<meta property="og:title" content="Python运算(二)math模块">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonBasic/PythonCaculationsMathModule/index.html">
 <meta property="og:site_name" content="莯滢">
-<meta property="og:description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
+<meta property="og:description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-17T11:17:43.605Z">
+<meta property="og:updated_time" content="2019-05-24T01:56:55.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python数字运算(三)cmath模块">
-<meta name="twitter:description" content="cmath模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算 复数极坐标系转换函数在Python数据类型(一)数字类型中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：    函数名 释义     cmath.phase(x) 以浮点数的形式返回x的弧度，范围在[-π，π]   cmath.polar(x) 返回x在极坐标系中的坐标(r,phi)   cmat">
+<meta name="twitter:title" content="Python运算(二)math模块">
+<meta name="twitter:description" content="math是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用cmath模块的同名函数，无特殊情况下，math模块中的函数返回值均为浮点数。 数论与表示函数   函数名 释义/代码实例     math.ceil(x) 返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.ceil()返回一个Integer类的值   math.copysign(x,y) 返">
 
 
 
@@ -171,13 +171,13 @@
 
 
 
-  <link rel="canonical" href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/">
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonBasic/PythonCaculationsMathModule/">
 
 
 
 
 
-  <title>Python数字运算(三)cmath模块 | 莯滢</title>
+  <title>Python运算(二)math模块 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python数字运算(三)cmath模块</h1>
+          <h1 class="post-title" itemprop="name headline">Python运算(二)math模块</h1>
         
 
         <div class="post-meta">
@@ -345,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-03T12:56:50+08:00">
-                2017-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T13:49:09+08:00">
+                2017-05-02
               </time>
             
 
@@ -368,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="../../categories/PythonAdvance/" itemprop="url" rel="index">
-                    <span itemprop="name">Python进阶</span>
+                  <a href="../../categories/PythonBasic/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
                   </a>
                 </span>
 
@@ -399,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  838
+                  1.6k
                 </span>
               
 
@@ -415,7 +415,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  7
                 </span>
               
             </div>
@@ -436,8 +436,235 @@
       
 
       
-        <p><strong>cmath</strong>模块为复数提供了有关数学运算函数，使得复数也能想整型或浮点型数字一样计算</p>
-<h2 id="复数极坐标系转换函数"><a href="#复数极坐标系转换函数" class="headerlink" title="复数极坐标系转换函数"></a>复数极坐标系转换函数</h2><p>在<a href="https://onlyangelia.github.io/PythonAdvance/PythonBasicDataTypeNumber/">Python数据类型(一)数字类型</a>中讲到复数的存储本质，和在极坐标系的定义，有关极坐标转换函数如下：</p>
+        <p><strong>math</strong>是Python自带的数学函数模块，对大多数数字类型适用，但不适用于复数，如果是复数需要使用<strong>cmath</strong>模块的同名函数，无特殊情况下，<strong>math</strong>模块中的函数返回值均为浮点数。</p>
+<h2 id="数论与表示函数"><a href="#数论与表示函数" class="headerlink" title="数论与表示函数"></a>数论与表示函数</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义/代码实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>ceil</strong>(x)</td>
+<td>返回大于或等于x的最小整数，如果x不是浮点数，则会委托x.<strong>ceil</strong>()返回一个Integer类的值</td>
+</tr>
+<tr>
+<td>math.<strong>copysign</strong>(x,y)</td>
+<td>返回一个基于x的绝对值和y的符号的浮点数&gt;&gt;&gt; math.copysign(2.4, -1.2)<br>-2.4</td>
+</tr>
+<tr>
+<td>math.<strong>fabs</strong>(x)</td>
+<td>返回x的绝对值</td>
+</tr>
+<tr>
+<td>math.<strong>factorial</strong>(x)</td>
+<td>返回x的阶乘，当x不是整数或者是负数时，引发ValueError异常</td>
+</tr>
+<tr>
+<td>math.<strong>floor</strong>(x)</td>
+<td>返回x的向下取整，小于或等于x的最大整数，如果x不是浮点数，则委托x.<strong>floor</strong>()返回一个Integral值</td>
+</tr>
+<tr>
+<td>math.<strong>fmod</strong>(x,y)</td>
+<td>x除以y的余数，但结果并不一定与x%y相同，x%y取余是向下取余，而fomd函数是向靠近0的方向取余，并且fmod函数精度更准确，所以fmod()函数更适合浮点数</td>
+</tr>
+<tr>
+<td>math.<strong>frexp</strong>(x)</td>
+<td>返回x的尾数和指数对(m，e),m是一个浮点数，e是一个整数，m和e要满足 <code>x== m * 2 **e</code>。 如果x为零，则返回(0.0,0)</td>
+</tr>
+<tr>
+<td>math.<strong>fsum</strong>(iterable)</td>
+<td>返回迭代中的精确浮点值，通过跟踪多个中间部分和 以此避免精度损失。该方法的准确性取决于IEEE-754算术保证和 舍入模式为半偶的典型情况，在一些非Windows版本中，底层C库使用扩展精度添加，并且有时可能会使中间和加倍，导致在最低有效位中关闭。<br>&gt;&gt;&gt; sum([.1, .1, .1, .1, .1, .1, .1, .1, .1, .1])<br>0.9999999999999999<br>&gt;&gt;&gt; math. fsum([.1, .1, .1, .1, .1, .1, .1, .1, .1, .1])<br>1.0<br></td>
+</tr>
+<tr>
+<td>math.<strong>gcd</strong>(a,b)</td>
+<td>返回a和b的最大公约数，如果a或b之一非负，则函数函数的值是同时能正常a和b的最大正整数，gcd(0，0)则返回0</td>
+</tr>
+<tr>
+<td>math.<strong>isclose</strong>(a,b,*,rel_tol=1e-09,abs_tol=0.0)</td>
+<td>若a和b的值比较接近则返回True，否则返回False。判定标准是根据给定的绝对和相对容差。rel_tol是相对容差，必须大于0，是a和b之间允许的最大差值。abs_tol是最小绝对容差，至少为0</td>
+</tr>
+<tr>
+<td>math.<strong>isfinite</strong>(x)</td>
+<td>如果x是有限位数，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>math.<strong>isinf</strong>(x)</td>
+<td>如果x是正无穷或负无穷，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>math.<strong>isnan</strong>(x)</td>
+<td>如果x是NaN，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>math.<strong>ldexp</strong>(x,i)</td>
+<td>返回<code>x*(2**i)</code>, 是函数frexp()的反函数</td>
+</tr>
+<tr>
+<td>math.<strong>modf</strong>(x)</td>
+<td>返回x的小数和整数部分，两个结果都带有x的符号并且是浮点数</td>
+</tr>
+<tr>
+<td>math.<strong>trunc</strong>(x)</td>
+<td>返回x实部截断Integeral</td>
+</tr>
+</tbody>
+</table>
+<h2 id="幂函数与对数函数"><a href="#幂函数与对数函数" class="headerlink" title="幂函数与对数函数"></a>幂函数与对数函数</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义/代码示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>exp</strong>(x)</td>
+<td>返回 e**x</td>
+</tr>
+<tr>
+<td>math.<strong>expm1</strong>(x)</td>
+<td>返回e**x - 1</td>
+</tr>
+<tr>
+<td>math.<strong>log</strong>(x,base)</td>
+<td>使用一个参数，则返回x的自然对数(底为e)。使用两个参数，返回给定的base的对数x，计算为log(x)/log(base)。</td>
+</tr>
+<tr>
+<td>math.<strong>log1p</strong>(x)</td>
+<td>返回1+x(base e)的自然对数</td>
+</tr>
+<tr>
+<td>math.<strong>log2</strong>(x)</td>
+<td>返回x以2为底的对数，比log(x,2)准确度高</td>
+</tr>
+<tr>
+<td>math.<strong>log10</strong>(x)</td>
+<td>返回x底为10的对数，比log(x,10)准确度高</td>
+</tr>
+<tr>
+<td>math.<strong>pow</strong>(x,y)</td>
+<td>返回x的y次幂</td>
+</tr>
+<tr>
+<td>math.<strong>sqrt</strong>(x)</td>
+<td>返回x的平方根</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="python">&gt;&gt;&gt; x = 5
+&gt;&gt;&gt; math.exp(x)
+148.4131591025766
+&gt;&gt;&gt; math.expm1(x)
+147.4131591025766
+&gt;&gt;&gt; math.log(x)
+1.6094379124341003
+&gt;&gt;&gt; math.log(x, 2)
+2.321928094887362
+&gt;&gt;&gt; math.log1p(x)
+1.791759469228055
+&gt;&gt;&gt; math.log2(x)
+2.321928094887362
+&gt;&gt;&gt; math.log10(x)
+0.6989700043360189
+&gt;&gt;&gt; math.pow(x, 2)
+25.0
+&gt;&gt;&gt; math.sqrt(x)
+2.23606797749979
+</code></pre>
+<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义/代码示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>acos</strong>(x)</td>
+<td>以弧度为单位返回x的反余弦值</td>
+</tr>
+<tr>
+<td>math.<strong>asin</strong>(x)</td>
+<td>以弧度为单位返回x的反正弦值</td>
+</tr>
+<tr>
+<td>math.<strong>atan</strong>(x)</td>
+<td>以弧度为单位返回x的反正切值</td>
+</tr>
+<tr>
+<td>math.<strong>atan2</strong>(y,x)</td>
+<td>以弧度为单位返回athan(y/x)，结果在-pi和pi之间，可以计算角度的正确象限</td>
+</tr>
+<tr>
+<td>math.<strong>cos</strong>(x)</td>
+<td>返回x弧度的余弦值</td>
+</tr>
+<tr>
+<td>math.<strong>hypot</strong>(x,y)</td>
+<td>返回欧几里德范数，sqrt(x<em>x + y\</em>y),是原点到点(x，y)的向量距离</td>
+</tr>
+<tr>
+<td>math.<strong>sin</strong>(x)</td>
+<td>返回x弧度的正弦值</td>
+</tr>
+<tr>
+<td>math.<strong>tan</strong>(x)</td>
+<td>返回x弧度的正切值</td>
+</tr>
+</tbody>
+</table>
+<p>注意： x的取值若超出范围，否则会报<code>ValueError: math domain error</code></p>
+<pre><code class="python">&gt;&gt;&gt; math.acos(2.3)
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#26&gt;&quot;, line 1, in &lt;module&gt;
+    math.acos(2.3)
+ValueError: math domain error
+&gt;&gt;&gt; math.acos(0.5)
+1.0471975511965976
+&gt;&gt;&gt; math.asin(0.5)
+0.5235987755982988
+&gt;&gt;&gt; math.atan(0.5)
+0.46364760900080615
+&gt;&gt;&gt; math.atan2(0.5,0.5)
+0.7853981633974483
+&gt;&gt;&gt; math.cos(0.5)
+0.8775825618903728
+&gt;&gt;&gt; math.hypot(0.5,0.5)
+0.7071067811865476
+&gt;&gt;&gt; math.sin(0.5)
+0.479425538604203
+&gt;&gt;&gt; math.tan(0.5)
+0.5463024898437905
+&gt;&gt;&gt; math.tan(1)
+1.557407724654902
+&gt;&gt;&gt; math.tan(1.4)
+5.797883715482887
+&gt;&gt;&gt; math.tan(2)
+-2.185039863261519
+&gt;&gt;&gt; math.tan(2.5)
+-0.7470222972386602
+</code></pre>
+<h2 id="角度转换"><a href="#角度转换" class="headerlink" title="角度转换"></a>角度转换</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>math.<strong>degrees</strong>(x)</td>
+<td>将角度x从弧度转换为度数</td>
+</tr>
+<tr>
+<td>math.<strong>radians</strong>(x)</td>
+<td>将角度x从度数转换为弧度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><p>双曲函数是基于双曲线而非圆来对三角函数进行模拟</p>
 <table>
 <thead>
 <tr>
@@ -447,201 +674,90 @@
 </thead>
 <tbody>
 <tr>
-<td>cmath.<strong>phase</strong>(x)</td>
-<td>以浮点数的形式返回x的弧度，范围在[-π，π]</td>
+<td>math.<strong>acosh</strong>(x)</td>
+<td>返回x的反双曲余弦值</td>
 </tr>
 <tr>
-<td>cmath.<strong>polar</strong>(x)</td>
-<td>返回x在极坐标系中的坐标(r,phi)</td>
+<td>math.<strong>asinh</strong>(x)</td>
+<td>返回x的反双曲正弦值</td>
 </tr>
 <tr>
-<td>cmath.<strong>rect</strong>(r, phi)</td>
-<td>返回坐标(r, phi)在极坐标系中对应的复数</td>
+<td>math.<strong>atanh</strong>(x)</td>
+<td>返回x的反双曲正切值</td>
+</tr>
+<tr>
+<td>math.<strong>cosh</strong>(x)</td>
+<td>返回x的双曲余弦值</td>
+</tr>
+<tr>
+<td>math.<strong>sinh</strong>(x)</td>
+<td>返回x的双曲正弦值</td>
+</tr>
+<tr>
+<td>math.<strong>tanh</strong>(x)</td>
+<td>返回x的双曲正切值</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="python">&gt;&gt;&gt; import cmath
-&gt;&gt;&gt; cmath.phase(complex(-1.0, 0.0))
-3.141592653589793
-&gt;&gt;&gt; cmath.phase(complex(-1.0,0.0))
-3.141592653589793
-&gt;&gt;&gt; cmath.phase(complex(-0.5, 0.0))
-3.141592653589793
-&gt;&gt;&gt; cmath.phase(complex(-0.5, 0.3))
-2.601173153319209
-&gt;&gt;&gt; cmath.polar(complex(-0.5, 0.3))
-(0.58309518948453, 2.601173153319209)
-&gt;&gt;&gt; cmath.rect(0.58309518948453, 2.601173153319209)
-(-0.49999999999999994+0.3j)
-</code></pre>
-<h2 id="幂函数与对数函数"><a href="#幂函数与对数函数" class="headerlink" title="幂函数与对数函数"></a>幂函数与对数函数</h2><table>
+<h2 id="特殊函数"><a href="#特殊函数" class="headerlink" title="特殊函数"></a>特殊函数</h2><table>
 <thead>
 <tr>
-<th>函数</th>
+<th>函数名</th>
 <th>释义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>cmath.<strong>exp</strong>(x)</td>
-<td>返回<code>e**x</code></td>
+<td>math.<strong>erf</strong>(x)</td>
+<td>用来计算传统的统计函数，如累积标准正态分布</td>
 </tr>
 <tr>
-<td>cmath.<strong>log</strong>(x,base)</td>
-<td>返回以base为底x的对数</td>
+<td>math.<strong>erfc</strong>(x)</td>
+<td>返回x的互补误差函数，<a href="https://en.wikipedia.org/wiki/Error_function">互补错误函数</a> 定义为 <code>1.0 - erf(x)</code></td>
 </tr>
 <tr>
-<td>cmath.<strong>log10</strong>(x)</td>
-<td>返回以10为底x的对数</td>
+<td>math.<strong>gamma</strong>(x)</td>
+<td>返回x的伽马函数值</td>
 </tr>
 <tr>
-<td>cmath.<strong>sqrt</strong>(x)</td>
-<td>x的开方</td>
+<td>math.<strong>lgamma</strong>(x)</td>
+<td>返回Gamma函数x绝对值的自然对数</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="python">&gt;&gt;&gt; cmath.exp(complex(2.0, 0.0))
-(7.38905609893065+0j)
-&gt;&gt;&gt; cmath.exp(complex(10.0, 2.0))
-(-9166.244060822655+20028.608669281643j)
-&gt;&gt;&gt; cmath.log10(complex(100.0,2.0))
-(2.0000868415292326+0.008684731797315706j)
-&gt;&gt;&gt; cmath.sqrt(complex(2.0, 1.0))
-(1.455346690225355+0.34356074972251244j)
-</code></pre>
-<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><table>
+<h2 id="math模块中的常数"><a href="#math模块中的常数" class="headerlink" title="math模块中的常数"></a>math模块中的常数</h2><table>
 <thead>
 <tr>
-<th>函数</th>
+<th>常数</th>
 <th>释义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>cmath.<strong>acos</strong>(x)</td>
-<td>返回x的反余弦值</td>
+<td>math.<strong>pi</strong></td>
+<td>数学常数π=3.1415926…</td>
 </tr>
 <tr>
-<td>cmath.<strong>asin</strong>(x)</td>
-<td>返回x的反正弦值</td>
+<td>math.<strong>e</strong></td>
+<td>数学常数e= 2.718281….</td>
 </tr>
 <tr>
-<td>cmath.<strong>atan</strong>(x)</td>
-<td>返回x的反正切值</td>
+<td>math.<strong>tau</strong></td>
+<td>数学常数τ = 6.283185…</td>
 </tr>
 <tr>
-<td>cmath.<strong>cos</strong>(x)</td>
-<td>返回x的余弦值</td>
+<td>math.<strong>inf</strong></td>
+<td>正无穷大浮点数，负无穷大浮点数使用-math.<strong>inf</strong></td>
 </tr>
 <tr>
-<td>cmath.<strong>sin</strong>(x)</td>
-<td>返回x的正弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>tan</strong>(x)</td>
-<td>返回x的正切值</td>
+<td>math.<strong>nan</strong></td>
+<td>浮点”非数字”值</td>
 </tr>
 </tbody>
 </table>
-<h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>acosh</strong>(x)</td>
-<td>返回双曲线中x的反余弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>asinh</strong>(x)</td>
-<td>返回双曲线中x的反正弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>atanh</strong>(x)</td>
-<td>返回双曲线中x的反正切值</td>
-</tr>
-<tr>
-<td>cmath.<strong>cosh</strong>(x)</td>
-<td>返回双曲线中x的余弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>sinh</strong>(x)</td>
-<td>返回双曲线中x的正弦值</td>
-</tr>
-<tr>
-<td>cmath.<strong>tanh</strong>(x)</td>
-<td>返回双曲线中x的正切值</td>
-</tr>
-</tbody>
-</table>
-<h2 id="分类函数"><a href="#分类函数" class="headerlink" title="分类函数"></a>分类函数</h2><table>
-<thead>
-<tr>
-<th>函数</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>isfinite</strong>(x)</td>
-<td>模数r和弧度phi都是有理数，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>cmath.<strong>isinf</strong>(x)</td>
-<td>模数r和弧度phi都趋近于正无穷，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>cmath.<strong>isnan</strong>(x)</td>
-<td>模数r和弧度phi都是Nan，则返回True，否则返回False</td>
-</tr>
-<tr>
-<td>cmath.<strong>isclose</strong>(a,b,*,rel_tol,abs_tol)</td>
-<td>若a和b的值比较接近则返回True，否则返回False。判定标准是根据给定的绝对和相对容差。rel_tol是相对容差，必须大于0，是a和b之间允许的最大差值。abs_tol是最小绝对容差，至少为0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="常数"><a href="#常数" class="headerlink" title="常数"></a>常数</h2><table>
-<thead>
-<tr>
-<th>常数名</th>
-<th>释义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cmath.<strong>pi</strong></td>
-<td>常数π=3.141926….</td>
-</tr>
-<tr>
-<td>cmath.<strong>e</strong></td>
-<td>常数e= 2.718281….</td>
-</tr>
-<tr>
-<td>cmath.<strong>tau</strong></td>
-<td>常数τ = 6.283185…，为π的两倍</td>
-</tr>
-<tr>
-<td>cmath.<strong>inf</strong></td>
-<td>正无穷大浮点数</td>
-</tr>
-<tr>
-<td>cmath.<strong>infj</strong></td>
-<td>实部为0，虚部为正无穷大浮点数的复数</td>
-</tr>
-<tr>
-<td>cmath.<strong>nan</strong></td>
-<td>浮点数”非数值”</td>
-</tr>
-<tr>
-<td>cmath.<strong>nanj</strong></td>
-<td>实部为0，虚部为Nan的”非数值”</td>
-</tr>
-</tbody>
-</table>
-<p><strong>cmath</strong>模块与<strong>math</strong>模块许多功能看上去相似，但实际上是不同的功能。cmath返回的值是复数，哪怕虚部为0。许多人不理解为什么单独定义一个cmath模块而不是math模块一起解决复数运算问题。假设有一天需要用特别复杂的方式去计算，就会理解这么定义的原因。</p>
+<p>math模块是数学函数的包装模块，若使用不符合数学规范，则会触发<a href="https://docs.python.org/zh-cn/3.6/library/exceptions.html#ValueError"><code>ValueError</code></a> </p>
+<p>参考文献：</p>
+<p>1.<a href="https://docs.python.org/English/3.6/library/math.html#math.fmod">https://docs.python.org/English/3.6/library/math.html#math.fmod</a></p>
 
       
     </div>
@@ -691,7 +807,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/" title="Python数字运算(三)cmath模块">https://onlyangelia.github.io/PythonAdvance/PythonNumberCaculationsCmathModule/</a>
+    <a href="https://onlyangelia.github.io/PythonBasic/PythonCaculationsMathModule/" title="Python运算(二)math模块">https://onlyangelia.github.io/PythonBasic/PythonCaculationsMathModule/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -719,8 +835,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="../PythonCaculationsMathModule/" rel="next" title="Python运算(二)math模块">
-                <i class="fa fa-chevron-left"></i> Python运算(二)math模块
+              <a href="../PythonNumberCaculations/" rel="next" title="Python数字运算(-)数值、哈希、按位、布尔等运算">
+                <i class="fa fa-chevron-left"></i> Python数字运算(-)数值、哈希、按位、布尔等运算
               </a>
             
           </div>
@@ -729,8 +845,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="../PythonNumberCaculationsRandomAndSecrets/" rel="prev" title="Python运算(四)random模块&secrets模块">
-                Python运算(四)random模块&secrets模块 <i class="fa fa-chevron-right"></i>
+              <a href="../PythonNumberCaculationsCmathModule/" rel="prev" title="Python数字运算(三)cmath模块">
+                Python数字运算(三)cmath模块 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -824,7 +940,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="../../categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -897,7 +1013,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#复数极坐标系转换函数"><span class="nav-number">1.</span> <span class="nav-text">复数极坐标系转换函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂函数与对数函数"><span class="nav-number">2.</span> <span class="nav-text">幂函数与对数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角函数"><span class="nav-number">3.</span> <span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲函数"><span class="nav-number">4.</span> <span class="nav-text">双曲函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分类函数"><span class="nav-number">5.</span> <span class="nav-text">分类函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常数"><span class="nav-number">6.</span> <span class="nav-text">常数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论与表示函数"><span class="nav-number">1.</span> <span class="nav-text">数论与表示函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂函数与对数函数"><span class="nav-number">2.</span> <span class="nav-text">幂函数与对数函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三角函数"><span class="nav-number">3.</span> <span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#角度转换"><span class="nav-number">4.</span> <span class="nav-text">角度转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双曲函数"><span class="nav-number">5.</span> <span class="nav-text">双曲函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊函数"><span class="nav-number">6.</span> <span class="nav-text">特殊函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#math模块中的常数"><span class="nav-number">7.</span> <span class="nav-text">math模块中的常数</span></a></li></ol></div>
             
 
           </div>
@@ -938,7 +1054,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.8k</span>
+    <span title="Site words total count">58.1k</span>
   
 </div>
 
