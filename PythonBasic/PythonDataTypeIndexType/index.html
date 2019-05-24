@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next gemini" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="../../lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="../../lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="../../lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="../../lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="../../css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="../../images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,">
+
+
+
+
+
+  <link rel="alternate" href="../../atom.xml" title="莯滢" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="数据结构类型是指用来存储数据、文字、字符、二进制、类对象，进一步方便操作查找存储内容的结构。数据类型分为了序列类型、集合类型、映射类型、迭代器类型。  **序列类型**是Python数据类型的内置基本数据类型，有三种基本序列类型：**list**，**tuple**和**range**。同样，序列类型分为通用序列类型、可变类型和不可变类型。 ​    集合类型是指由具有唯一性的hashable对象">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python数据类型(三)数据结构类型—list、tuple、range、set、frozenset、dict、迭代器">
+<meta property="og:url" content="https://onlyangelia.github.io/PythonBasic/PythonDataTypeIndexType/index.html">
+<meta property="og:site_name" content="莯滢">
+<meta property="og:description" content="数据结构类型是指用来存储数据、文字、字符、二进制、类对象，进一步方便操作查找存储内容的结构。数据类型分为了序列类型、集合类型、映射类型、迭代器类型。  **序列类型**是Python数据类型的内置基本数据类型，有三种基本序列类型：**list**，**tuple**和**range**。同样，序列类型分为通用序列类型、可变类型和不可变类型。 ​    集合类型是指由具有唯一性的hashable对象">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-24T11:17:35.520Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python数据类型(三)数据结构类型—list、tuple、range、set、frozenset、dict、迭代器">
+<meta name="twitter:description" content="数据结构类型是指用来存储数据、文字、字符、二进制、类对象，进一步方便操作查找存储内容的结构。数据类型分为了序列类型、集合类型、映射类型、迭代器类型。  **序列类型**是Python数据类型的内置基本数据类型，有三种基本序列类型：**list**，**tuple**和**range**。同样，序列类型分为通用序列类型、可变类型和不可变类型。 ​    集合类型是指由具有唯一性的hashable对象">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://onlyangelia.github.io/PythonBasic/PythonDataTypeIndexType/">
+
+
+
+
+
+  <title>Python数据类型(三)数据结构类型—list、tuple、range、set、frozenset、dict、迭代器 | 莯滢</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/onlyAngelia" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">莯滢</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不念过往、不负当下、不畏将来</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-一份耕耘">
+          <a href="https://onlyangelia.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            一份耕耘
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-一份收获">
+          <a href="https://onlyangelia.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            一份收获
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-果实标签">
+          <a href="https://onlyangelia.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            果实标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-果实分类">
+          <a href="https://onlyangelia.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-folder"></i> <br>
+            
+            果实分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于耕作者">
+          <a href="https://onlyangelia.github.io/aboutMe/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于耕作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://onlyangelia.github.io">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="莯滢">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="../../images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="莯滢">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python数据类型(三)数据结构类型—list、tuple、range、set、frozenset、dict、迭代器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-07T09:53:06+08:00">
+                2017-05-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="../../categories/PythonBasic/" itemprop="url" rel="index">
+                    <span itemprop="name">Python基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  28
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>数据结构类型是指用来存储数据、文字、字符、二进制、类对象，进一步方便操作查找存储内容的结构。数据类型分为了<strong>序列类型</strong>、<strong>集合类型</strong>、<strong>映射类型</strong>、<strong>迭代器类型</strong>。</p>
+<pre><code> **序列类型**是Python数据类型的内置基本数据类型，有三种基本序列类型：**list**，**tuple**和**range**。同样，序列类型分为通用序列类型、可变类型和不可变类型。
+</code></pre><p>​    <strong>集合类型</strong>是指由具有唯一性的<strong>hashable</strong>对象锁组成的无序多项集。无序多项集与序列类型不同，作为无序的集合并不支持记录元素的位置和插入顺序，相应地集合也不支持索引、切片或其他序列类的操作。目前有两种集合类型：<strong>set</strong>和<strong>frozenset</strong>。</p>
+<p>​    <strong>映射类型</strong>会将<strong>hashable</strong>值映射到任意对象，映射属于可变对象，目前只有一种标准映射类型对象：<strong>dic</strong>。</p>
+<p>   <strong>迭代器类型</strong>是指Python中通过使用特定的单独方法支持在容器中进行迭代的类型。</p>
+<h1 id="序列类型-list，tupe，range"><a href="#序列类型-list，tupe，range" class="headerlink" title="序列类型-list，tupe，range"></a>序列类型-list，tupe，range</h1><p>序列类型有通用序列，可变序列和不可变序列。序列支持一系列的操作。</p>
+<h2 id="通用序列操作支持"><a href="#通用序列操作支持" class="headerlink" title="通用序列操作支持"></a>通用序列操作支持</h2><p>通用序列支持的操作可变序列和不可变序列都支持，下面是通用序列的支持操作：</p>
+<p>备注：表格中s和t是具有相同类型的序列，<em>n</em>, <em>i</em>, <em>j</em> 和 <em>k</em> 是整数，<em>x</em> 是任何满足 <em>s</em> 所规定的类型和值限制的任意对象，序列的操作同样具有优先级顺序，表格是按照优先级降序排列(not in  和 in 优先级相同)</p>
+<table>
+<thead>
+<tr>
+<th>运算</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s.<strong>count</strong>(x)</td>
+<td>x在s中出现的总次数</td>
+</tr>
+<tr>
+<td>s.<strong>index</strong>(x,i,j)</td>
+<td>x在s中首次出现项的索引号(索引号在i或其后且在j之前)</td>
+</tr>
+<tr>
+<td><strong>max</strong>(s)</td>
+<td>s的最大项</td>
+</tr>
+<tr>
+<td><strong>min</strong>(s)</td>
+<td>s的最小项</td>
+</tr>
+<tr>
+<td><strong>len</strong>(s)</td>
+<td>s的长度</td>
+</tr>
+<tr>
+<td>s[i:j:k]</td>
+<td>s从i到j步长为k的切片</td>
+</tr>
+<tr>
+<td>s[i:j]</td>
+<td>s从i到j的切片</td>
+</tr>
+<tr>
+<td>s[i]</td>
+<td>s的第i项</td>
+</tr>
+<tr>
+<td>s<em>n 或n\</em>s</td>
+<td>相当于s与自身进行n次拼接</td>
+</tr>
+<tr>
+<td>s+t</td>
+<td>s与t两个序列进行拼接</td>
+</tr>
+<tr>
+<td>x not in s</td>
+<td>如果x不存在于s项中，则返回True，如果存在于s中，则返回False</td>
+</tr>
+<tr>
+<td>x in s</td>
+<td>如果x存在于s中，则返回True，如果不存在于s中，则返回True</td>
+</tr>
+</tbody>
+</table>
+<p>想同类型的序列支持比较，tuple和list的比较是通过比较对应元素的顺序，若比较结果相同，则每个元素比较结构都必须相等，并且两个序列长度必须相同。</p>
+<h2 id="可变序列操作支持"><a href="#可变序列操作支持" class="headerlink" title="可变序列操作支持"></a>可变序列操作支持</h2><p>通用序列的操作在可变序列中适用，但可变序列也有部分自己的支持操作，可变序列的操作如下表所示：</p>
+<p>备注：s是可变序列类型的实例，t是任意可迭代对象， <em>x</em> 是符合对 <em>s</em> 所规定类型与值限制的任何对象</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s[i] =x</td>
+<td>将s的第i项替换为x</td>
+</tr>
+<tr>
+<td>s[i:j] = t</td>
+<td>将s从i到j的切片替换为可迭代对象t的内容</td>
+</tr>
+<tr>
+<td>del s[i:j]</td>
+<td>删除s从i到j的切片 等同于s[i:j] = []</td>
+</tr>
+<tr>
+<td>s[i:j:k] =t</td>
+<td>将s从i到j步长为k的切片替换为可迭代对象t的内容</td>
+</tr>
+<tr>
+<td>del s[i:j:k]</td>
+<td>删除s从i到j步长为k的切片 等于s[i:j:k] = []</td>
+</tr>
+<tr>
+<td>s.append(x)</td>
+<td>将x添加到序列的末尾</td>
+</tr>
+<tr>
+<td>s.clear()</td>
+<td>将s中的所有项移除 等同于del s[:]</td>
+</tr>
+<tr>
+<td>s.copy()</td>
+<td>创建s的浅拷贝</td>
+</tr>
+<tr>
+<td>s.extend(t)或 s+=t</td>
+<td>用 <em>t</em> 的内容扩展 <em>s</em>  两个序列的合并</td>
+</tr>
+<tr>
+<td>s*=n</td>
+<td>shiyongs的内容重复n次来对其进行更新</td>
+</tr>
+<tr>
+<td>s.<strong>insert</strong>(i,x)</td>
+<td>在由 <em>i</em> 给出的索引位置将 <em>x</em> 插入 <em>s</em> (等同于 <code>s[i:i] = [x]</code>)</td>
+</tr>
+<tr>
+<td>s.<strong>pop</strong>(i)</td>
+<td>提取在i位置上的序列项，并从s中移除该项</td>
+</tr>
+<tr>
+<td>s.<strong>remove</strong>(x)</td>
+<td>若x在s中存在，则将s[i] (s[i]==x)的第一个元素移除</td>
+</tr>
+<tr>
+<td>s.<strong>reverse</strong>()</td>
+<td>将列表中的元素逆序</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-列表"><a href="#list-列表" class="headerlink" title="list - 列表"></a>list - 列表</h2><p>​    列表是可变序列，通常用于存放同类项目的集合（其中精确的相似程度将根据应用而变化）。</p>
+<h3 id="list构建-以及list方法"><a href="#list构建-以及list方法" class="headerlink" title="list构建 以及list方法"></a>list构建 以及list方法</h3><p>列表的构建有多种方式</p>
+<ul>
+<li><p>使用一对方括号来表示空列表: <code>[]</code></p>
+</li>
+<li><p>使用方括号构建，列表中的项以逗号分割:[a,b,c]</p>
+</li>
+<li><p>使用列表推导式: [x for x in iterable]</p>
+</li>
+<li><p>使用类型构造器: list()  或list(iterable)。构造器将构造一个列表，其中的项与 <em>iterable</em> 中的项具有相同的的值与顺序。 <em>iterable</em> 可以是序列、支持迭代的容器或其它可迭代对象。 如果 <em>iterable</em> 已经是一个列表，将创建并返回其副本，类似于 <code>iterable[:]</code>。 例如，<code>list(&#39;abc&#39;)</code> 返回 <code>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</code> 而 <code>list( (1, 2, 3) )</code> 返回 <code>[1, 2, 3]</code>。 如果没有给出参数，构造器将创建一个空列表 <code>[]</code>。</p>
+</li>
+<li><p>其它操作，例如sorted()内置函数，分类后会产生一个列表。</p>
+<p>列表作为序列类型，实现了所有通用序列和可变序列的操作，如下：</p>
+<p>| 列表实现的序列操作            | 释                                                           |<br>| —————————– | ———————————————————— |<br>| list.<strong>append</strong>(<em>x</em>)          | 在列表的末尾添加一个元素。                                   |<br>| list.<strong>extend</strong>(iterable)     | 使用可迭代对象中的所有元素来扩展列表                         |<br>| list.<strong>insert</strong>(i,x)          | 在给定的位置插入一个元素。第一个参数是要插入的元素的索引，所以 <code>a.insert(0, x)</code> 插入列表头部， <code>a.insert(len(a), x)</code> 等同于 <code>a.append(x)</code> |<br>| list.<strong>remove</strong>(x)            | 若x在列表中存在，则将列表中的项的值为x的第一个元素移除       |<br>| list.<strong>pop</strong>(i)               | 删除列表中给定位置的元素并返回它。如果没有给定位置，<code>a.pop()</code> 将会删除并返回列表中的最后一个元素。 |<br>| list.<strong>clear</strong>()              | 删除列表中所有的元素                                         |<br>| list.<strong>index</strong>(x, start, end) | 返回x出现的第一个索引位置，索引位置在start和end之间          |<br>| list.<strong>count</strong>(x)             | 返回元素 <em>x</em> 在列表中出现的次数                              |<br>| list.<strong>reverse</strong>()            | 反转列表中的元素                                             |<br>| list.<strong>copy</strong>()               | 返回列表的一个浅拷贝。相当于 <code>a[:]</code>                          |</p>
+<p>除了以上列表实现的序列操作之外，列表还增加了一个方法:</p>
+<p>list.<strong>sort</strong>(*, key=None, reverse=False)</p>
+<p>此方法会对列表进行原地排序，只使用 <code>&lt;</code> 来进行各项间比较。 异常不会被屏蔽 —— 如果有任何比较操作失败，整个排序操作将失败（而列表可能会处于被部分修改的状态）。此外，<strong>sort()</strong>排序是稳定排序。</p>
+<p><strong>sort()</strong>接受两个仅限以关键字形式传入的参数:<em>key</em> 指定带有一个参数的函数，用于从每个列表元素中提取比较键 (例如 <code>key=str.lower</code>)。 对应于列表中每一项的键会被计算一次，然后在整个排序过程中使用。 默认值 <code>None</code> 表示直接对列表项排序而不计算一个单独的键值。    </p>
+<p><em>reverse</em> 为一个布尔值。 如果设为 <code>True</code>，则每个列表元素将按反向顺序比较进行排序。</p>
+</li>
+</ul>
+<p>list方法代码示例：</p>
+<pre><code class="python">&gt;&gt;&gt; fruits = [&#39;orange&#39;, &#39;apple&#39;, &#39;pear&#39;, &#39;banana&#39;, &#39;kiwi&#39;, &#39;apple&#39;, &#39;banana&#39;]
+&gt;&gt;&gt; fruits.count(&#39;apple&#39;)
+2
+&gt;&gt;&gt; fruits.index(&#39;banana&#39;)
+3
+&gt;&gt;&gt; fruits.index(&#39;banana&#39;, 4)
+6
+&gt;&gt;&gt;#像 insert ，remove 或者 sort 方法，只修改列表，没有打印出返回值——它们返回默认值 None ,这是Python中所有可变数据结构的设计原则。
+&gt;&gt;&gt; fruits.reverse()
+&gt;&gt;&gt; fruits
+[&#39;banana&#39;, &#39;apple&#39;, &#39;kiwi&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;apple&#39;, &#39;orange&#39;]
+&gt;&gt;&gt; fruits.append(&#39;grape&#39;)
+&gt;&gt;&gt; fruits
+[&#39;banana&#39;, &#39;apple&#39;, &#39;kiwi&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;apple&#39;, &#39;orange&#39;, &#39;grape&#39;]
+&gt;&gt;&gt; fruits.sort()
+&gt;&gt;&gt; fruits
+[&#39;apple&#39;, &#39;apple&#39;, &#39;banana&#39;, &#39;banana&#39;, &#39;grape&#39;, &#39;kiwi&#39;, &#39;orange&#39;, &#39;pear&#39;]
+&gt;&gt;&gt; fruits.pop()
+&#39;pear&#39;
+&gt;&gt;&gt; 
+</code></pre>
+<h3 id="列表作为栈和队列使用"><a href="#列表作为栈和队列使用" class="headerlink" title="列表作为栈和队列使用"></a>列表作为栈和队列使用</h3><p>列表的append和pop方法使得列表作为堆栈非常容易，最后一个插入，最先取出，这样完全符合栈的先进后出原则；要添加一个元素到堆栈的顶端，使用 <code>append()</code> 。要从堆栈顶部取出一个元素，使用 <code>pop()</code> ，不用指定索引。</p>
+<pre><code class="python">&gt;&gt;&gt; stack = [1,2,3,4]
+&gt;&gt;&gt; stack.append(5)
+&gt;&gt;&gt; stack.append(6)
+&gt;&gt;&gt; stack
+[1, 2, 3, 4, 5, 6]
+&gt;&gt;&gt; stack.pop()
+6
+&gt;&gt;&gt; stack
+[1, 2, 3, 4, 5]
+&gt;&gt;&gt; stack.pop()
+5
+&gt;&gt;&gt; stack
+[1, 2, 3, 4]
+&gt;&gt;&gt; 
+</code></pre>
+<p>列表除了上述可以作为队列使用之外，还可以用作队列使用，其中先添加的元素被最先取出就完全符合队列的先进先出原则；然而列表用作这个目的相当低效，因为在列表的末尾添加和弹出元素非常快，但是在列表的开头插入或弹出元素却很慢 (因为所有的其他元素都必须移动一位)，但若要实现一个队列，<strong>collections</strong>类中的<strong>deque</strong>可以快速的从两段操作。</p>
+<h3 id="列表推导式"><a href="#列表推导式" class="headerlink" title="列表推导式"></a>列表推导式</h3><p>列表推导式提供了一个更简单的创建列表的方法。常见的用法是把某种操作应用于序列或可迭代对象的每个元素上，然后使用其结果来创建列表，或者通过满足某些特定条件元素来创建子序列。</p>
+<p>创建方式有–</p>
+<p>普通方法：</p>
+<pre><code class="python">&gt;&gt;&gt; squares = []
+&gt;&gt;&gt; for x in range(10):
+    squares.append(x**2)
+
+
+&gt;&gt;&gt; squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</code></pre>
+<p>上面的普通方法创建方式名为x的变量在for循环后仍然存在，可以利用<strong>lambda</strong>表达式解决该问题。</p>
+<p>lambda表达式方法：</p>
+<pre><code class="python">&gt;&gt;&gt; squares = list(map(lambda x:x **2, range(10)))
+&gt;&gt;&gt; squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</code></pre>
+<p>与lambda等效的还有一种更简化的方式。</p>
+<pre><code class="python">&gt;&gt;&gt; squares = [x**2 for x in range(10)]
+&gt;&gt;&gt; squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</code></pre>
+<p>括号，其中包含一个表达式，后跟一个for子句，然后是零个或多个for或if子句的表达式形式也能创建列表</p>
+<pre><code class="python">&gt;&gt;&gt; [(x,y) for x in [1,2,3] for y in [3,1,4] if x!= y]
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+</code></pre>
+<p>其等价于</p>
+<pre><code class="python">&gt;&gt;&gt; combs = []
+&gt;&gt;&gt; for x in [1,2,3]:
+...     for y in [3,1,4]:
+...         if x != y:
+...             combs.append((x, y))
+...
+&gt;&gt;&gt; combs
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+</code></pre>
+<p>列表推导式可以使用复杂的表达式和嵌套函数</p>
+<pre><code class="python">&gt;&gt;&gt; from math import pi
+&gt;&gt;&gt; [str(round(pi, i)) for i in range(1,6)]
+[&#39;3.1&#39;, &#39;3.14&#39;, &#39;3.142&#39;, &#39;3.1416&#39;, &#39;3.14159&#39;]
+</code></pre>
+<h3 id="嵌套列表推导式"><a href="#嵌套列表推导式" class="headerlink" title="嵌套列表推导式"></a>嵌套列表推导式</h3><p>列表推导式中的初始表达式可以是任何表达式，包括另一个列表推导式。</p>
+<p>如下是3X4矩阵</p>
+<pre><code class="python">&gt;&gt;&gt; matrix = [[1,2,3,4],    
+              [5,6,7,8],    
+              [9,10,11,12],]
+</code></pre>
+<p>要想交换其行和列，写法如下：</p>
+<pre><code class="python">&gt;&gt;&gt; [[row[i] for row in matrix] for i in range(4)]
+[[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+</code></pre>
+<p>实际应用中，使用内置函数组成复杂的流程语句，zip()函数能高效的处理此种情况</p>
+<pre><code class="python">&gt;&gt;&gt; list(zip(*matrix))
+[(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]
+</code></pre>
+<h2 id="tuple-——元组"><a href="#tuple-——元组" class="headerlink" title="tuple ——元组"></a>tuple ——元组</h2><p>元组是不可变序列，通常用于存储异构数据的多项集(例如由<code>enumerate()</code>内置函数所产生的二元组)，元组也被用于需要同构数据的不可变序列的情况(例如允许存储到<strong>set</strong>或<strong>dict</strong>的实例)。</p>
+<h3 id="tuple元组构建"><a href="#tuple元组构建" class="headerlink" title="tuple元组构建"></a>tuple元组构建</h3><p>元组的构建有多种方式：</p>
+<ul>
+<li>使用一对圆括号来表示空元组: <code>()</code></li>
+<li>使用一个后缀逗号表示单元组: <code>a,</code> 或 <code>(a,)</code></li>
+<li>使用以逗号分隔的多个项：<code>a, b, c</code> or <code>(a, b, c)</code></li>
+<li>使用内置的<strong>tuple()</strong>:tuple()<code>或</code>tuple(iterable)。tuple()构造器会构造一个元组，元组中的项与iterable中的项具有相同的值与顺序。 <em>iterable</em> 可以是序列、支持迭代的容器或其他可迭代对象。 如果 <em>iterable</em> 已经是一个元组，会不加改变地将其返回。 例如，<code>tuple(&#39;abc&#39;)</code> 返回 <code>(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)</code> 而 <code>tuple( [1, 2, 3] )</code> 返回 <code>(1, 2, 3)</code>。 如果没有给出参数，构造器将创建一个空元组 <code>()</code>。</li>
+</ul>
+<p>元组实现了通用序列的支持操作，所有通用序列支持的操作同样适合于元组,除了更改序列操作，元组作为不可变序列，是不支持修改其中元素的。</p>
+<pre><code class="python">&gt;&gt;&gt; t = 12345, 54321, &#39;hello!&#39;
+&gt;&gt;&gt; t[0]
+12345
+&gt;&gt;&gt; t
+(12345, 54321, &#39;hello!&#39;)
+&gt;&gt;&gt; u = t, (1,2,3,4,5)
+&gt;&gt;&gt; u
+((12345, 54321, &#39;hello!&#39;), (1, 2, 3, 4, 5))
+&gt;&gt;&gt; v = ([1,2,3], [3,2,1])
+&gt;&gt;&gt; v
+([1, 2, 3], [3, 2, 1])
+&gt;&gt;&gt; #序列解包
+&gt;&gt;&gt; x,y,z = t
+&gt;&gt;&gt; x
+12345
+&gt;&gt;&gt; y
+54321
+&gt;&gt;&gt; z
+&#39;hello!&#39;
+&gt;&gt;&gt; 
+</code></pre>
+<h2 id="range类型"><a href="#range类型" class="headerlink" title="range类型"></a>range类型</h2><p>range类型表示不可变的数字序列，通常用于在for循环中指定次数。</p>
+<p>range的构造需要调用系统模块函数：<strong>range</strong>(stop) 或<strong>range</strong>(start, stop, step)</p>
+<p>​    range构造器参数必须为整数，（可以是内置的 <a href="https://docs.python.org/zh-cn/3.6/library/functions.html#int"><code>int</code></a> 或任何实现了 <code>__index__</code> 特殊方法的对象）。如果省略了step参数，则默认为1。 如果省略了start参数，默认值为0， 如果step为0则会引发ValueError；如果step为正值，确定range <code>r</code>内容的公式为<code>r[i] = start + step*i</code>,其中<code>i &gt;= 0</code> 且 <code>r[i] &lt; stop</code>；如果step为负值，确定range内容的公式仍然是<code>i &gt;= 0</code> 且 <code>r[i] &lt; stop</code>，但限制条件改为 <code>i &gt;= 0</code> 且 <code>r[i] &gt; stop</code>。range 对象确实支持负索引，但是会将其解读为从正索引所确定的序列的末尾开始索引。range对象的元素绝对值大于 <code>sys.maxsize</code>是被允许的。</p>
+<pre><code class="python">&gt;&gt;&gt; list(range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+&gt;&gt;&gt; list (range(1,11))
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&gt;&gt;&gt; list (range(0, 30, 5))
+[0, 5, 10, 15, 20, 25]
+&gt;&gt;&gt; list (range(0,10,3))
+[0, 3, 6, 9]
+&gt;&gt;&gt; list(range(0,-10,-1))
+[0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+&gt;&gt;&gt; list(range(0))
+[]
+&gt;&gt;&gt; list(range(1,0))
+[]
+</code></pre>
+<p><strong>range</strong>类型与<strong>list</strong>和<strong>tuple</strong>相比，优势在于<strong>range</strong>对象总是占用固定数量的（较小）内存不论其所表示的范围有多大（因为它只保存了 <code>start</code>, <code>stop</code> 和 <code>step</code> 值，并会根据需要计算具体单项或子范围的值）。<strong>range</strong>提供包含检测、元素索引查找、切片等特性，并支持负索引 。</p>
+<pre><code class="python">&gt;&gt;&gt; r = range(0,20,2)
+&gt;&gt;&gt; r
+range(0, 20, 2)
+&gt;&gt;&gt; 11 in r
+False
+&gt;&gt;&gt; 10 in r
+True
+&gt;&gt;&gt; r.index(10)
+5
+&gt;&gt;&gt; r[5]
+10
+&gt;&gt;&gt; r[:5]
+range(0, 10, 2)
+&gt;&gt;&gt; r[-1]
+18
+&gt;&gt;&gt; 
+</code></pre>
+<h1 id="集合类型——set、frozenset"><a href="#集合类型——set、frozenset" class="headerlink" title="集合类型——set、frozenset"></a>集合类型——set、frozenset</h1><p>目前有两种集合类型：<strong>set</strong>和<strong>frozenset</strong></p>
+<h3 id="set类型"><a href="#set类型" class="headerlink" title="set类型"></a>set类型</h3><p>​    set类型是可变的， 其内容可以使用 <code>add()</code> 和 <code>remove()</code> 这样的方法来改变，因为是可变的，所以没有哈希值，且不能呗用作字典的键或其它集合的元素。</p>
+<p>​    set构建除了使用set构造器，非空的set还可以通过将以逗号分隔的元素列表包含于花括号之内来创建。</p>
+<p>构造器方法：</p>
+<p>​    <strong>set</strong>(iterable) :返回一个新的set对象，其元素来自于iterable。如果未指定 <em>iterable</em>，则将返回一个新的空集合。</p>
+<p>只适用于<strong>set</strong>的操作如下：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>update</strong>(*others)</td>
+<td>set\</td>
+<td>= other \</td>
+<td>… 更新集合，添加来自 others 中的所有元素。</td>
+</tr>
+<tr>
+<td><strong>intersection_update</strong>(*others)</td>
+<td>set &amp;= other &amp;… 更新集合，只保留其中在所有 others 中也存在的元素。</td>
+</tr>
+<tr>
+<td><strong>difference_update</strong>(*others)</td>
+<td>set -= other\</td>
+<td>…  更新集合，移除其中也存在于 others 中的元素。</td>
+</tr>
+<tr>
+<td><strong>symmetric_differenct_update</strong>(other)</td>
+<td>set ^= other   更新集合，只保留存在于集合的一方而非共同存在的元素。</td>
+</tr>
+<tr>
+<td><strong>add</strong>(elem)</td>
+<td>将元素 elem 添加到集合中。</td>
+</tr>
+<tr>
+<td><strong>remove</strong>(elem)</td>
+<td>从集合中移除元素 elem。 如果 elem 不存在于集合中则会引发 KeyError。</td>
+</tr>
+<tr>
+<td><strong>discard</strong>(elem)</td>
+<td>如果元素 elem 存在于集合中则将其移除。</td>
+</tr>
+<tr>
+<td><strong>pop</strong>()</td>
+<td>从集合中移除并返回任意一个元素。 如果集合为空则会引发 KeyError。</td>
+</tr>
+<tr>
+<td><strong>clear</strong>()</td>
+<td>从集合中移除所有元素。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="frozenset类型"><a href="#frozenset类型" class="headerlink" title="frozenset类型"></a>frozenset类型</h3><p>​    <strong>frozenset</strong>类型是不可变的，并且能<strong>hashable</strong>，其内容在被创建后不能再改变，因此可以被用作字典的键值或其它集合的元素。</p>
+<p>构造方法：</p>
+<p>​    <strong>frozenset</strong>(iterable): 返回一个新的<strong>frozenset</strong>对象，其元素来自于iterable。集合的元素必须为 <strong>hashable</strong>。 要表示由集合对象构成的集合，所有的内层集合必须为 <strong>frozenset</strong>对象。 如果未指定 <em>iterable</em>，则将返回一个新的空集合。</p>
+<h3 id="set和frozenset共同支持的操作"><a href="#set和frozenset共同支持的操作" class="headerlink" title="set和frozenset共同支持的操作"></a>set和frozenset共同支持的操作</h3><p>set和frozenset的实例提供以下操作：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>len</strong>(s)</td>
+<td>返回集合s的长度</td>
+</tr>
+<tr>
+<td>x in s</td>
+<td>检测元素x是否存在于集合s中，若存在，则返回True，否则返回False</td>
+</tr>
+<tr>
+<td>x not in s</td>
+<td>检测元素x是否存在于集合s中，若存在，则返回False，否则返回True</td>
+</tr>
+<tr>
+<td><strong>isdisjoint</strong>(other)</td>
+<td>如果集合中没有与other共有的元素则返回True，当且仅当两个集合的交集为空集合时，两者为不相交集合</td>
+</tr>
+<tr>
+<td><strong>issubset</strong>(other)</td>
+<td>set &lt;= other： 检测是否结合中的每个元素都在other之中；set &lt; other 检测结合是否为other的真子集</td>
+</tr>
+<tr>
+<td><strong>issuperset</strong>(other)</td>
+<td>set &gt;= other：检测是否other中的每个元素都在集合之中；set &gt; other：检测集合是否为other的真超集</td>
+</tr>
+<tr>
+<td><strong>union</strong>(*others)</td>
+<td>__set \</td>
+<td>other \</td>
+<td>…  ： 返回一个新集合，其中包含来自原集合以及 others 指定的所有集合中的元素。</td>
+</tr>
+<tr>
+<td><strong>intersection</strong>(*others)</td>
+<td>set &amp; other&amp;…  返回一个新集合，其中包含原集合以及 others 指定的所有集合中共有的元素。</td>
+</tr>
+<tr>
+<td><strong>difference</strong>(*others)</td>
+<td>set-other-…   返回一个新集合，其中包含原集合中在 others 指定的其他集合中不存在的元素</td>
+</tr>
+<tr>
+<td><strong>symmetric_difference</strong>(other)</td>
+<td>set ^ other 返回一个新集合，其中元素属于原集合或属于other指定的其他集合，但不能同时属于两者。</td>
+</tr>
+<tr>
+<td><strong>copy</strong>()</td>
+<td>返回集合的浅拷贝</td>
+</tr>
+</tbody>
+</table>
+<p>set 和 frozenset示例：</p>
+<pre><code class="python">&gt;&gt;&gt; basket = {&#39;apple&#39;, &#39;orange&#39;, &#39;apple&#39;, &#39;pear&#39;, &#39;orange&#39;, &#39;banana&#39;}
+&gt;&gt;&gt; print (basket)
+{&#39;pear&#39;, &#39;banana&#39;, &#39;apple&#39;, &#39;orange&#39;}
+&gt;&gt;&gt; &#39;orange&#39; in basket
+True
+&gt;&gt;&gt; &#39;crabgrass&#39; in basket
+False
+&gt;&gt;&gt; a = set(&#39;abracadabra&#39;)
+&gt;&gt;&gt; b = set(&#39;alacazam&#39;)
+&gt;&gt;&gt; a
+{&#39;r&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;, &#39;b&#39;}
+&gt;&gt;&gt; a - b
+{&#39;r&#39;, &#39;b&#39;, &#39;d&#39;}
+&gt;&gt;&gt; a | b
+{&#39;r&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;, &#39;b&#39;, &#39;z&#39;, &#39;l&#39;, &#39;m&#39;}
+&gt;&gt;&gt; a &amp; b
+{&#39;c&#39;, &#39;a&#39;}
+&gt;&gt;&gt; a ^ b
+{&#39;r&#39;, &#39;d&#39;, &#39;b&#39;, &#39;z&#39;, &#39;l&#39;, &#39;m&#39;}
+&gt;&gt;&gt; #集合同样支持推导形式
+&gt;&gt;&gt; a = [x for x in &#39;abracadabra&#39; if x not in &#39;abc&#39;]
+&gt;&gt;&gt; a
+[&#39;r&#39;, &#39;d&#39;, &#39;r&#39;]
+&gt;&gt;&gt; 
+</code></pre>
+<p><strong>set</strong>和<strong>frozenset</strong>总结：</p>
+<p>（1）<strong>set</strong>和<strong>frozenset</strong>均支持集合与集合的比较。两个集合当且仅当每个集合中的每个元素均包含于另一个集合之内（即各为对方的子集）时则相等。 一个集合当且仅当其为另一个集合的真子集（即为后者的子集但两者不相等）时则小于另一个集合。 一个集合当且仅当其为另一个集合的真超集（即为后者的超集但两者不相等）时则大于另一个集合。</p>
+<p>（2）由于集合仅定义了部分排序（子集关系），因此由集合构成的列表 <strong>list.sort()</strong>方法的输出并无定义。</p>
+<p>   (3)  集合的元素，与字典的键类似，必须为<strong>hashable</strong></p>
+<p>   (4)   混合了<strong>set</strong>实例与<strong>frozenset</strong>的 二进制位运算将返回与第一个操作数相同的类型。例如: <code>frozenset(&#39;ab&#39;) |set(&#39;bc&#39;)</code> 将返回<strong>frozenset</strong>的实例。</p>
+<p>   (5)  要创建一个空集合你只能用 <code>set()</code> 而不能用 <code>{}</code>，因为后者是创建一个空字典</p>
+<h1 id="映射类型-——dict"><a href="#映射类型-——dict" class="headerlink" title="映射类型 ——dict"></a>映射类型 ——dict</h1><p>​    <strong>dict</strong>字典是目前唯一的映射类型，字典的键值可以是任何值，除了非 hashable的值（包含列表、集合、字典或其他可变类型的值）。数字类型用作键时遵循数字比较的一般规则：如果两个数值相等 (例如 <code>1</code> 和 <code>1.0</code>) 则两者可以被用来索引同一字典条目。 （但是，由于计算机对于浮点数存储的只是近似值，因此将其用作字典键是不明智的，这点在讲数字类型的时候提及过）</p>
+<p>​    字典可以通过将以逗号分隔的 <code>键: 值</code> 对列表包含于花括号之内来创建，例如: <code>{&#39;jack&#39;: 4098, &#39;sjoerd&#39;: 4127}</code> 或 <code>{4098: &#39;jack&#39;, 4127: &#39;sjoerd&#39;}</code>，也可以通过 <strong>dict</strong>构造器来创建。</p>
+<h3 id="dict构建"><a href="#dict构建" class="headerlink" title="dict构建"></a>dict构建</h3><p><strong>dict构造器</strong>：</p>
+<p>​        <strong>dict</strong>(**kwarg)</p>
+<p>​        <strong>dict</strong>(mapping, **kwarg)</p>
+<p>​        <strong>dict</strong>(iterable, **kwarg)</p>
+<p>以上构造器方法都返回一个新的字典，基于可选的位置参数和可能为空的关键字参数集来初始化。如果没有给出位置参数，将创建一个空字典。 如果给出一个位置参数并且其属于映射对象，将创建一个具有与映射对象相同键值对的字典。 否则的话，位置参数必须为一个iterable对象象。 该可迭代对象中的每一项本身必须为一个刚好包含两个元素的可迭代对象。 每一项中的第一个对象将成为新字典的一个键，第二个对象将成为其对应的值。 如果一个键出现一次以上，该键的最后一个值将成为其在新字典中对应的值。如果给出了关键字参数，则关键字参数及其值会被加入到基于位置参数创建的字典。 如果要加入的键已存在，来自关键字参数的值将替代来自位置参数的值。</p>
+<pre><code class="python">&gt;&gt;&gt; a = dict(one=1, two=2, three=3)
+&gt;&gt;&gt; b = {&#39;one&#39;:1, &#39;two&#39;:2, &#39;three&#39;:3}
+&gt;&gt;&gt; c = dict(zip([&#39;one&#39;, &#39;two&#39;, &#39;three&#39;], [1,2,3]))
+&gt;&gt;&gt; d = dict([(&#39;two&#39;, 2), (&#39;one&#39;,1), (&#39;three&#39;, 3)])
+&gt;&gt;&gt; e = dict({&#39;three&#39;:3, &#39;one&#39;:1, &#39;two&#39;:2})
+&gt;&gt;&gt; a ==b == c == d ==e
+True
+</code></pre>
+<h3 id="dict支持的操作"><a href="#dict支持的操作" class="headerlink" title="dict支持的操作"></a>dict支持的操作</h3><p>dict支持的操作如下：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>len</strong>(d)</td>
+<td>返回字典d中的项数</td>
+</tr>
+<tr>
+<td><strong>d[key]</strong></td>
+<td>返回d中以key为键的项，如果映射中不存在key则会引发keyError</td>
+</tr>
+<tr>
+<td><strong>d[key]=value</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>del d[key]</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>key in d</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>key not in d</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>iter</strong>(d)</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>clear</strong>()</td>
+<td>移除原字典的浅拷贝</td>
+</tr>
+<tr>
+<td><strong>copy</strong>()</td>
+<td>返回原字典的浅拷贝。</td>
+</tr>
+<tr>
+<td><strong>get</strong>(key, default)</td>
+<td>如果 key 存在于字典中则返回 key 的值，否则返回 default。 如果 default 未给出则默认为 None，因而此方法绝不会引发 KeyError。</td>
+</tr>
+<tr>
+<td><strong>items</strong>()</td>
+<td>返回由字典项 (<code>(键, 值)</code> 对) 组成的一个新视图</td>
+</tr>
+<tr>
+<td><strong>keys</strong>()</td>
+<td>返回由字典键组成的一个新视图。</td>
+</tr>
+<tr>
+<td><strong>pop</strong>(key, default)</td>
+<td>如果 key 存在于字典中则将其移除并返回其值，否则返回 default。 如果 default 未给出且 key 不存在于字典中，则会引发 KeyError。</td>
+</tr>
+<tr>
+<td><strong>popitem</strong>()</td>
+<td>从字典中随机移除一项(key, value)并返回该项的值，如果字典为空，则会引发valueError</td>
+</tr>
+<tr>
+<td><strong>setdefault</strong>(key, default)</td>
+<td>如果字典存在键 key ，返回它的值。如果不存在，插入值为 default 的键 key ，并返回 default 。 default 默认为 None。</td>
+</tr>
+<tr>
+<td><strong>update</strong>(other)</td>
+<td>使用来自 <em>other</em> 的键/值对更新字典，覆盖原有的键。 返回 <code>None</code>。<a href="https://docs.python.org/zh-cn/3.6/library/stdtypes.html#dict.update"><code>update()</code></a> 接受另一个字典对象，或者一个包含键/值对（以长度为二的元组或其他可迭代对象表示）的可迭代对象。 如果给出了关键字参数，则会以其所指定的键/值对更新字典: <code>d.update(red=1, blue=2)</code>。</td>
+</tr>
+<tr>
+<td><strong>values</strong>()</td>
+<td>返回由字典值组成的一个新视图</td>
+</tr>
+<tr>
+<td><strong>fromkeys</strong>(seq, value) 此为类方法</td>
+<td>属于类方法，会返回一个新字典。 <em>value</em> 默认为 <code>None</code>。会利用seq创建keys，value创建values，返回创建好的新字典</td>
+</tr>
+</tbody>
+</table>
+<p><strong>dict代码示例</strong>：</p>
+<pre><code class="python">&gt;&gt;&gt; tel = {&#39;jack&#39;:4098, &#39;space&#39;:4139}
+&gt;&gt;&gt; tel[&#39;guido&#39;] = 4127
+&gt;&gt;&gt; tel
+{&#39;jack&#39;: 4098, &#39;space&#39;: 4139, &#39;guido&#39;: 4127}
+&gt;&gt;&gt; tel[&#39;jack&#39;]
+4098
+&gt;&gt;&gt; del tel[&#39;space&#39;]
+&gt;&gt;&gt; tel[&#39;irv&#39;]=4127
+&gt;&gt;&gt; tel
+{&#39;jack&#39;: 4098, &#39;guido&#39;: 4127, &#39;irv&#39;: 4127}
+&gt;&gt;&gt; list(tel.keys())
+[&#39;jack&#39;, &#39;guido&#39;, &#39;irv&#39;]
+&gt;&gt;&gt; sorted(tel.keys())
+[&#39;guido&#39;, &#39;irv&#39;, &#39;jack&#39;]
+&gt;&gt;&gt; &#39;guido&#39; in tel
+True
+&gt;&gt;&gt; &#39;jack&#39; not in tel
+False
+&gt;&gt;&gt; # 字典同样支持推导式
+&gt;&gt;&gt; {x: x**2 for x in (2,4,6)}
+{2: 4, 4: 16, 6: 36}
+</code></pre>
+<h1 id="数据结构类型循环过程优化"><a href="#数据结构类型循环过程优化" class="headerlink" title="数据结构类型循环过程优化"></a>数据结构类型循环过程优化</h1><p>1.对于字典，循环过程中，可以用items()方法将关键字和对应的值同时取出</p>
+<pre><code class="python">&gt;&gt;&gt; for k, v in tel.items():
+    print(k, v)
+
+
+jack 4098
+guido 4127
+irv 4127
+</code></pre>
+<p>2.单个序列循环时，可以用enumerate()函数将索引位置和其对应的值同时取出</p>
+<pre><code class="python">&gt;&gt;&gt; for i, v in enumerate([&#39;tic&#39;, &#39;tac&#39;, &#39;toe&#39;]):
+    print (i, v)
+
+
+0 tic
+1 tac
+2 toe
+</code></pre>
+<p>3.两个或多个序列中循环时，可以用zip()函数将其内元素一一匹配</p>
+<pre><code class="python">&gt;&gt;&gt; questions = [&#39;name&#39;, &#39;quest&#39;, &#39;favorite color&#39;]
+&gt;&gt;&gt; answers = [&#39;lancelot&#39;, &#39;the holy grail&#39;, &#39;blue&#39;]
+&gt;&gt;&gt; for q, a in zip(questions, answers):
+    print (&#39;what is your{0}? It is {1}.&#39; .format(q, a))
+
+
+what is yourname? It is lancelot.
+what is yourquest? It is the holy grail.
+what is yourfavorite color? It is blue.
+</code></pre>
+<p>4.当逆向循环一个序列时， 先正向定位序列，然后调用reversed()函数</p>
+<pre><code class="python">&gt;&gt;&gt; for i in reversed(range(1, 10, 2)):
+    print (i)
+
+
+9
+7
+5
+3
+1
+&gt;&gt;&gt; 
+</code></pre>
+<p>5.如果要按某个顺序循环一个序列，可以用sorted()函数，它可以在不改动原序列的基础上返回一个新的排好序的序列</p>
+<pre><code class="python">&gt;&gt;&gt; for f in sorted(set(basket)):
+    print (f)
+
+
+apple
+banana
+orange
+pear
+</code></pre>
+<p>6.若想在循环时修改列表内容，一般改为创建一个新列表</p>
+<pre><code class="python">&gt;&gt;&gt; import math
+&gt;&gt;&gt; raw_data = [56.2, float(&#39;NaN&#39;), 51.7, 55.3, 52.5, float(&#39;NaN&#39;), 47.8]
+&gt;&gt;&gt; filtered_data = []
+&gt;&gt;&gt; for value in raw_data:
+    if not math.isnan(value):
+        filtered_data.append(value)
+
+
+&gt;&gt;&gt; filtered_data
+[56.2, 51.7, 55.3, 52.5, 47.8]
+&gt;&gt;&gt; 
+</code></pre>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/mine_wxpay.jpeg" alt="莯滢 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/mine_alipay.jpg" alt="莯滢 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>作者：</strong>
+    莯滢
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://onlyangelia.github.io/PythonBasic/PythonDataTypeIndexType/" title="Python数据类型(三)数据结构类型—list、tuple、range、set、frozenset、dict、迭代器">https://onlyangelia.github.io/PythonBasic/PythonDataTypeIndexType/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="../../tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="../PythonStringOperationsUnicodedataStringprepAndReadlineModules/" rel="next" title="Python文本处理(三)unicodedata & stringprep & readline模块">
+                <i class="fa fa-chevron-left"></i> Python文本处理(三)unicodedata & stringprep & readline模块
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="../../MySQL/MySQlEnginesAndIndex/" rel="prev" title="MySQL数据存储引擎 & B+树索引">
+                MySQL数据存储引擎 & B+树索引 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDAxMy8yMDU0OA=="></div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="../../images/avatar.jpg" alt="莯滢">
+            
+              <p class="site-author-name" itemprop="name">莯滢</p>
+              <p class="site-description motion-element" itemprop="description">从事过编程，源于兴趣，目前在数据分析进修的路上</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="../../archives">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="../../categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="../../tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="../../atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/2683037683" target="_blank" title="weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/onlyAngelia" target="_blank" title="Github">
+                      
+                        <i class="fa fa-fw fa-github"></i>Github</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="lanjiying@163.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope-o"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序列类型-list，tupe，range"><span class="nav-number">1.</span> <span class="nav-text">序列类型-list，tupe，range</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通用序列操作支持"><span class="nav-number">1.1.</span> <span class="nav-text">通用序列操作支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可变序列操作支持"><span class="nav-number">1.2.</span> <span class="nav-text">可变序列操作支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list-列表"><span class="nav-number">1.3.</span> <span class="nav-text">list - 列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#list构建-以及list方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">list构建 以及list方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表作为栈和队列使用"><span class="nav-number">1.3.2.</span> <span class="nav-text">列表作为栈和队列使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表推导式"><span class="nav-number">1.3.3.</span> <span class="nav-text">列表推导式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套列表推导式"><span class="nav-number">1.3.4.</span> <span class="nav-text">嵌套列表推导式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tuple-——元组"><span class="nav-number">1.4.</span> <span class="nav-text">tuple ——元组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tuple元组构建"><span class="nav-number">1.4.1.</span> <span class="nav-text">tuple元组构建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#range类型"><span class="nav-number">1.5.</span> <span class="nav-text">range类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合类型——set、frozenset"><span class="nav-number">2.</span> <span class="nav-text">集合类型——set、frozenset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#set类型"><span class="nav-number">2.0.1.</span> <span class="nav-text">set类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#frozenset类型"><span class="nav-number">2.0.2.</span> <span class="nav-text">frozenset类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#set和frozenset共同支持的操作"><span class="nav-number">2.0.3.</span> <span class="nav-text">set和frozenset共同支持的操作</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#映射类型-——dict"><span class="nav-number">3.</span> <span class="nav-text">映射类型 ——dict</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dict构建"><span class="nav-number">3.0.1.</span> <span class="nav-text">dict构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dict支持的操作"><span class="nav-number">3.0.2.</span> <span class="nav-text">dict支持的操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构类型循环过程优化"><span class="nav-number">4.</span> <span class="nav-text">数据结构类型循环过程优化</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">莯滢</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">64.9k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="../../lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="../../lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="../../js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../../js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="../../js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="../../js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="../../js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="../../js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="../../js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+ 
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
