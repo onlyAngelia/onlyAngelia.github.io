@@ -133,14 +133,14 @@
 <meta name="description" content="迭代器类型是指Python中通过使用特定的单独方法支持在容器中进行迭代的类型。容器对象要提供迭代支持，必须定义container.iter()方法来返回一个迭代器对象，并且迭代器对象本身需要支持iterator.__iter__()和iterator.__next__()，这两者共同组成了迭代器协议。Python 定义了几种迭代器对象以支持对一般和特定序列类型、字典和其他更特别的形式进行迭代。 除">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python数据类型(四)迭代器 &amp; yield">
+<meta property="og:title" content="Python数据类型(四)迭代器 &amp; yield表达式">
 <meta property="og:url" content="https://onlyangelia.github.io/PythonBasic/PythonIteratorsAndGenerators/index.html">
 <meta property="og:site_name" content="莯滢">
 <meta property="og:description" content="迭代器类型是指Python中通过使用特定的单独方法支持在容器中进行迭代的类型。容器对象要提供迭代支持，必须定义container.iter()方法来返回一个迭代器对象，并且迭代器对象本身需要支持iterator.__iter__()和iterator.__next__()，这两者共同组成了迭代器协议。Python 定义了几种迭代器对象以支持对一般和特定序列类型、字典和其他更特别的形式进行迭代。 除">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-26T12:51:20.586Z">
+<meta property="og:updated_time" content="2019-05-27T03:20:43.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python数据类型(四)迭代器 &amp; yield">
+<meta name="twitter:title" content="Python数据类型(四)迭代器 &amp; yield表达式">
 <meta name="twitter:description" content="迭代器类型是指Python中通过使用特定的单独方法支持在容器中进行迭代的类型。容器对象要提供迭代支持，必须定义container.iter()方法来返回一个迭代器对象，并且迭代器对象本身需要支持iterator.__iter__()和iterator.__next__()，这两者共同组成了迭代器协议。Python 定义了几种迭代器对象以支持对一般和特定序列类型、字典和其他更特别的形式进行迭代。 除">
 
 
@@ -177,7 +177,7 @@
 
 
 
-  <title>Python数据类型(四)迭代器 & yield | 莯滢</title>
+  <title>Python数据类型(四)迭代器 & yield表达式 | 莯滢</title>
   
 
 
@@ -333,7 +333,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python数据类型(四)迭代器 & yield</h1>
+          <h1 class="post-title" itemprop="name headline">Python数据类型(四)迭代器 & yield表达式</h1>
         
 
         <div class="post-meta">
@@ -439,8 +439,7 @@
         <p><strong>迭代器类型</strong>是指Python中通过使用特定的单独方法支持在容器中进行迭代的类型。容器对象要提供迭代支持，必须定义container.<strong>iter</strong>()方法来返回一个迭代器对象，并且迭代器对象本身需要支持<code>iterator.__iter__()</code>和<code>iterator.__next__()</code>，这两者共同组成了迭代器协议。Python 定义了几种迭代器对象以支持对一般和特定序列类型、字典和其他更特别的形式进行迭代。 除了迭代器协议的实现，特定类型的其他性质对迭代操作来说都不重要。</p>
 <p>container.<strong>iter</strong>()</p>
 <p>​        返回一个迭代器对象，该对象需要支持迭代协议。如果容器支持不同的迭代类型，则可以提供额外的方法来专门地请求不同迭代类型的迭代器。 （支持多种迭代形式的对象的例子有同时支持广度优先和深度优先遍历的树结构。） 此方法对应于 Python/C API 中 Python 对象类型结构体的 <strong>tp_iter</strong> 槽位。</p>
-<pre><code>## 迭代器协议
-</code></pre><p>​    迭代器协议由<code>iterator.__iter__()</code>和<code>iterator.__next__()</code>构成。</p>
+<h2 id="迭代器协议"><a href="#迭代器协议" class="headerlink" title="迭代器协议"></a>迭代器协议</h2><p>​    迭代器协议由<code>iterator.__iter__()</code>和<code>iterator.__next__()</code>构成。</p>
 <p>​    iterator.<strong>__</strong>iter______()</p>
 <p>​                返回迭代器对象本身，实现该方法是同时允许容器和迭代器配合<strong>for</strong>和<strong>in</strong>语句使用的必要条件，此方法对    应于 Python/C API 中 Python 对象类型结构体的 <strong>tp_iter</strong>槽位。</p>
 <p>​    iterator.<strong>__</strong>next______()</p>
@@ -682,7 +681,7 @@ async def agen():
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://onlyangelia.github.io/PythonBasic/PythonIteratorsAndGenerators/" title="Python数据类型(四)迭代器 & yield">https://onlyangelia.github.io/PythonBasic/PythonIteratorsAndGenerators/</a>
+    <a href="https://onlyangelia.github.io/PythonBasic/PythonIteratorsAndGenerators/" title="Python数据类型(四)迭代器 & yield表达式">https://onlyangelia.github.io/PythonBasic/PythonIteratorsAndGenerators/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -888,7 +887,7 @@ async def agen():
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器协议实现原理"><span class="nav-number">1.</span> <span class="nav-text">迭代器协议实现原理</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#generator-——生成器"><span class="nav-number"></span> <span class="nav-text">generator ——生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器表达式"><span class="nav-number">1.</span> <span class="nav-text">生成器表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器-迭代器方法"><span class="nav-number">2.</span> <span class="nav-text">生成器-迭代器方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield表达式"><span class="nav-number"></span> <span class="nav-text">yield表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步生成器"><span class="nav-number"></span> <span class="nav-text">异步生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异步生成器-迭代器方法"><span class="nav-number">1.</span> <span class="nav-text">异步生成器-迭代器方法</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代器协议"><span class="nav-number">1.</span> <span class="nav-text">迭代器协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#迭代器协议实现原理"><span class="nav-number">1.1.</span> <span class="nav-text">迭代器协议实现原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generator-——生成器"><span class="nav-number">2.</span> <span class="nav-text">generator ——生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器表达式"><span class="nav-number">2.1.</span> <span class="nav-text">生成器表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成器-迭代器方法"><span class="nav-number">2.2.</span> <span class="nav-text">生成器-迭代器方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield表达式"><span class="nav-number">3.</span> <span class="nav-text">yield表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步生成器"><span class="nav-number">4.</span> <span class="nav-text">异步生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#异步生成器-迭代器方法"><span class="nav-number">4.1.</span> <span class="nav-text">异步生成器-迭代器方法</span></a></li></ol></li></ol></div>
             
 
           </div>
